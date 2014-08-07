@@ -11,5 +11,9 @@ FactoryGirl.define do
     poster_link "http://content6.flixster.com/movie/11/16/80/1116809..."
     rating "R"
     rt_link "http://www.rottentomatoes.com/m/matrix/"
+
+    factory :movie_without_filmetric do
+      filmetric nil
+    end
   end
 end
