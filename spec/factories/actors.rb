@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :actor do
-    name "MyString"
+    name "Amy Adams"
   end
 end

@@ -2,6 +2,11 @@
 
 FactoryGirl.define do
   factory :director do
-    name "MyString"
+    factory :cuaron do
+      name "Alfonso Cuaron"
+    end
+    factory :nolan do
+      name "Christopher Nolan"
+    end
   end
 end
