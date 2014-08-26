@@ -8,6 +8,10 @@ class Movie < ActiveRecord::Base
 
   before_save :calculate_filmetric
 
+  def category
+    :film
+  end
+
   private
 
   def calculate_filmetric
