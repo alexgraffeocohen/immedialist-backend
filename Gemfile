@@ -58,4 +58,4 @@ end
 
 gem "bootstrap-sass", "~> 3.1.1"
 gem "themoviedb"
-gem "figaro"
+gem 'figaro', git: 'https://github.com/laserlemon/figaro.git'
