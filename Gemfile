@@ -61,3 +61,4 @@ gem "themoviedb"
 gem 'figaro', git: 'https://github.com/laserlemon/figaro.git'
 gem 'vacuum'
 gem 'goodreads'
+gem 'rspotify'
