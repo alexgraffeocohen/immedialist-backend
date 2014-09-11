@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140907204818) do
+ActiveRecord::Schema.define(version: 20140911050540) do
 
   create_table "actor_movies", force: true do |t|
     t.integer  "movie_id"
@@ -22,6 +22,32 @@ ActiveRecord::Schema.define(version: 20140907204818) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "albums", force: true do |t|
+    t.string   "title"
+    t.date     "release_date"
+    t.string   "album_type"
+    t.integer  "spotify_id"
+    t.integer  "spotify_popularity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "artist_albums", force: true do |t|
+    t.integer  "artist_id"
+    t.integer  "album_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "artists", force: true do |t|
+    t.string   "name"
+    t.integer  "spotify_id"
+    t.integer  "spotify_popularity"
+    t.string   "spotify_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,6 +87,24 @@ ActiveRecord::Schema.define(version: 20140907204818) do
     t.string   "poster_link"
     t.string   "rating"
     t.string   "rt_link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "song_artists", force: true do |t|
+    t.integer  "song_id"
+    t.integer  "artist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "songs", force: true do |t|
+    t.string   "title"
+    t.integer  "duration_ms"
+    t.string   "spotify_preview_url"
+    t.string   "spotify_url"
+    t.integer  "spotify_popularity"
+    t.integer  "spotify_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
