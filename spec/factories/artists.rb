@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :artist do
-    name "MyString"
-    spotify_id 1
-    spotify_popularity 1
-    spotify_url "MyString"
+    name "The National"
+    spotify_id "2cCUtGK9sDU2EoElnk0GNB"
+    spotify_popularity 65
+    spotify_url "https://open.spotify.com/artist/2cCUtGK9sDU2EoElnk0GNB"
   end
 end

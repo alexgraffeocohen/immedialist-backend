@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :album do
-    title "MyString"
-    release_date "2014-09-11"
-    album_type "MyString"
-    spotify_id 1
-    spotify_popularity 1
+    title "Boxer"
+    release_date "2007-05-21"
+    album_type "album"
+    spotify_id "2pG7mDkQhia2OyGE6fbkmJ"
+    spotify_popularity 64
   end
 end

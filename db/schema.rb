@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911050540) do
+ActiveRecord::Schema.define(version: 20140912020108) do
 
   create_table "actor_movies", force: true do |t|
     t.integer  "movie_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140911050540) do
     t.string   "title"
     t.date     "release_date"
     t.string   "album_type"
-    t.integer  "spotify_id"
+    t.string   "spotify_id"
     t.integer  "spotify_popularity"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20140911050540) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
-    t.integer  "spotify_id"
+    t.string   "spotify_id"
     t.integer  "spotify_popularity"
     t.string   "spotify_url"
     t.datetime "created_at"
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 20140911050540) do
     t.string   "spotify_preview_url"
     t.string   "spotify_url"
     t.integer  "spotify_popularity"
-    t.integer  "spotify_id"
+    t.string   "spotify_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
