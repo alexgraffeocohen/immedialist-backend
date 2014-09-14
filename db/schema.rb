@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914041642) do
+ActiveRecord::Schema.define(version: 20140914234916) do
 
   create_table "actor_movies", force: true do |t|
     t.integer  "movie_id"
@@ -90,6 +90,43 @@ ActiveRecord::Schema.define(version: 20140914041642) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "trailer_link"
+  end
+
+  create_table "show_actors", force: true do |t|
+    t.integer  "show_id"
+    t.integer  "actor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "show_directors", force: true do |t|
+    t.integer  "show_id"
+    t.integer  "director_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "show_genres", force: true do |t|
+    t.integer  "show_id"
+    t.integer  "genre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shows", force: true do |t|
+    t.string   "title"
+    t.string   "creator"
+    t.integer  "episode_length"
+    t.date     "first_air_date"
+    t.date     "last_air_date"
+    t.string   "status"
+    t.integer  "seasons_count"
+    t.integer  "episodes_count"
+    t.integer  "tmdb_id"
+    t.text     "overview"
+    t.integer  "imdb_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "song_artists", force: true do |t|
