@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Actor, :type => :model do
-  let(:actor) { create(:actor) }
+  let(:actor) { build(:actor) }
 
   it 'has many movies' do
-    5.times { actor.movies << create(:movie) }
-    expect(actor.movies.count).to eq 5
+    actor.movies << build(:movie) << build(:movie)
+    expect(actor.movies.length).to eq 2
   end
 end
