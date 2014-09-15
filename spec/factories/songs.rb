@@ -8,5 +8,7 @@ FactoryGirl.define do
     spotify_url "https://open.spotify.com/track/6aUAF8JOd8zEl41B6I18xL"
     spotify_popularity 61
     spotify_id "6aUAF8JOd8zEl41B6I18xL"
+
+    association :album, strategy: :build
   end
 end

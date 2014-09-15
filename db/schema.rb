@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140914234916) do
-
-  create_table "actor_movies", force: true do |t|
-    t.integer  "movie_id"
-    t.integer  "actor_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140915042802) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
@@ -52,28 +45,35 @@ ActiveRecord::Schema.define(version: 20140914234916) do
     t.datetime "updated_at"
   end
 
-  create_table "director_movies", force: true do |t|
-    t.integer  "movie_id"
-    t.integer  "director_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "directors", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "genre_movies", force: true do |t|
-    t.integer  "movie_id"
-    t.integer  "genre_id"
+  create_table "genres", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "genres", force: true do |t|
-    t.string   "name"
+  create_table "movie_actors", force: true do |t|
+    t.integer  "movie_id"
+    t.integer  "actor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "movie_directors", force: true do |t|
+    t.integer  "movie_id"
+    t.integer  "director_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "movie_genres", force: true do |t|
+    t.integer  "movie_id"
+    t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -145,6 +145,7 @@ ActiveRecord::Schema.define(version: 20140914234916) do
     t.string   "spotify_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "album_id"
   end
 
 end
