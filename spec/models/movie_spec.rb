@@ -21,7 +21,7 @@ RSpec.describe Movie, :type => :model do
     expect(movie.directors.length).to eq 2
   end
 
-  it 'belongs to the :film category' do
+  it 'belongs to the film category' do
     expect(movie.category).to eq(:film);
   end
 end
