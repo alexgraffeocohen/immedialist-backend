@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915042802) do
+ActiveRecord::Schema.define(version: 20140915235113) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
@@ -41,6 +41,35 @@ ActiveRecord::Schema.define(version: 20140915042802) do
     t.string   "spotify_id"
     t.integer  "spotify_popularity"
     t.string   "spotify_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authors", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "book_authors", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "book_genres", force: true do |t|
+    t.integer  "book_id"
+    t.integer  "genre_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "books", force: true do |t|
+    t.string   "title"
+    t.date     "release_date"
+    t.string   "isbn"
+    t.text     "cover_link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
