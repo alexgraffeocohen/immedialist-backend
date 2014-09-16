@@ -2,6 +2,18 @@
 
 FactoryGirl.define do
   factory :genre do
-    name 'Action'
+    name 'Amazing Genre'
+
+    factory :movie_genre do
+      name 'Action'
+    end
+
+    factory :artist_genre do
+      name 'Indie'
+    end
+
+    factory :book_genre do
+      name 'Western'
+    end
   end
 end

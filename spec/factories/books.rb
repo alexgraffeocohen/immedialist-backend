@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :book do
-    title "MyString"
-    release_date "2014-09-15"
-    isbn "MyString"
-    cover_link "MyText"
+    title "Plainsong"
+    release_date "2000-08-22"
+    isbn "0375705856"
+    cover_link "link_url"
   end
 end

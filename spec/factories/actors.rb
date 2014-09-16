@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :actor do
-    name "Amy Adams"
+    name "Keanu Reeves"
   end
 end
