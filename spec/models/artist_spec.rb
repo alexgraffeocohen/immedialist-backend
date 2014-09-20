@@ -14,4 +14,10 @@ RSpec.describe Artist, :type => :model do
 
     expect(artist.albums.length).to eq 2
   end
+
+  it 'has many genres' do
+    artist.genres << build(:genre) << build(:genre)
+
+    expect(artist.genres.length).to eq 2
+  end
 end
