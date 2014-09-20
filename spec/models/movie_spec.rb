@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Movie, :type => :model do
-  let(:movie) { build(:movie) }
+  let(:movie) { create(:movie) }
 
   it 'has many genres' do
     movie.genres << build(:genre) << build(:genre)
@@ -22,6 +22,6 @@ RSpec.describe Movie, :type => :model do
   end
 
   it 'belongs to the film category' do
-    expect(movie.category).to eq(:film);
+    expect(movie.category.name).to eq("Film");
   end
 end
