@@ -6,17 +6,16 @@ class Actor < ActiveRecord::Base
   has_many :categories, through: :actor_categories
   has_many :actor_categories
 
-  before_save :define_categories
+  before_create :assign_to_person_category
+  before_save :assign_associated_categories
 
   private
 
-  def define_categories
+  def assign_associated_categories
+    CategoryManager.new(self).assign_categories
+  end
+
+  def assign_to_person_category
     self.categories << Category.find_or_create_by(name: "Person")
-    if self.movies
-      self.categories << Category.find_or_create_by(name: "Movie")
-    end
-    if self.shows
-      self.categories << Category.find_or_create_by(name: "Television")
-    end
   end
 end
