@@ -6,8 +6,8 @@ class Director < ActiveRecord::Base
   has_many :categories, through: :director_categories
   has_many :director_categories
 
-  before_create :assign_to_person_category
-  before_save :assign_associated_categories
+  after_create :assign_to_person_category
+  after_save :assign_associated_categories
 
   private
 

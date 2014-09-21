@@ -7,11 +7,11 @@ class Movie < ActiveRecord::Base
   has_many :movie_directors
   belongs_to :category
 
-  before_save :define_category
+  after_create :assign_to_film_category
 
   private
 
-  def define_category
+  def assign_to_film_category
     self.category = Category.find_or_create_by(name: "Film")
   end
 end

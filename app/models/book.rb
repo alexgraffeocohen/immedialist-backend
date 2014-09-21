@@ -5,11 +5,11 @@ class Book < ActiveRecord::Base
   has_many :genres, through: :book_genres
   belongs_to :category
 
-  before_save :define_category
+  after_create :assign_to_book_category
 
   private
 
-  def define_category
+  def assign_to_book_category
     self.category = Category.find_or_create_by(name: "Book")
   end
 end
