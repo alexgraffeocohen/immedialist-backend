@@ -21,14 +21,14 @@ RSpec.describe Actor, :type => :model do
 
   it 'will belong to the movie category if it has movies' do
     actor.movies << build(:movie)
-    CategoryManager.new(actor).assign_categories
+    actor.save
 
     expect(category_names_for(actor)).to include("Film")
   end
 
   it 'will belong to the show category if it has shows' do
     actor.shows << build(:show)
-    CategoryManager.new(actor).assign_categories
+    actor.save
 
     expect(category_names_for(actor)).to include("Television")
   end

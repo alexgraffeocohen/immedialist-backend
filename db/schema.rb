@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921185026) do
+ActiveRecord::Schema.define(version: 20140921214924) do
 
   create_table "actor_categories", force: true do |t|
     t.integer  "actor_id"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20140921185026) do
     t.string   "spotify_id"
     t.integer  "spotify_popularity"
     t.string   "spotify_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "author_categories", force: true do |t|
+    t.integer  "author_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
