@@ -12,5 +12,11 @@ class Actor < ActiveRecord::Base
 
   def define_categories
     self.categories << Category.find_or_create_by(name: "Person")
+    if self.movies
+      self.categories << Category.find_or_create_by(name: "Movie")
+    end
+    if self.shows
+      self.categories << Category.find_or_create_by(name: "Television")
+    end
   end
 end

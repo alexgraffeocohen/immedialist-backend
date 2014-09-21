@@ -16,6 +16,18 @@ RSpec.describe Actor, :type => :model do
   end
 
   it 'belongs to the person category' do
-    expect(actor.categories.map(&:name)).to include("Person")
+    expect(category_names_for(actor)).to include("Person")
+  end
+
+  it 'will belong to the movie category if it has movies' do
+    actor.movies << build(:movie)
+
+    expect(category_names_for(actor)).to include("Movie")
+  end
+
+  it 'will belong to the show category if it has shows' do
+    actor.shows << build(:show)
+
+    expect(category_names_for(actor)).to include("Television")
   end
 end
