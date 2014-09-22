@@ -10,13 +10,13 @@ RSpec.describe Movie, :type => :model do
   end
 
   it 'has many actors' do
-    movie.actors << build(:actor) << build(:actor)
+    movie.actors << build(:person) << build(:person)
 
     expect(movie.actors.length).to eq 2
   end
 
   it 'has many directors' do
-    movie.directors << build(:director) << build(:director)
+    movie.directors << build(:person) << build(:person)
 
     expect(movie.directors.length).to eq 2
   end

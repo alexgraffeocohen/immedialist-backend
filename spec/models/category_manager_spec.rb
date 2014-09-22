@@ -12,7 +12,7 @@ RSpec.describe CategoryManager, :type => :model do
   end
 
   it 'will not assign the movie category if model has no movies' do
-    actor = create(:actor)
+    actor = create(:person)
     CategoryManager.new(actor).assign_categories
 
     expect(category_names_for(actor)).to_not include "Film"

@@ -4,15 +4,13 @@ RSpec.describe Person, :type => :model do
   let(:person) { create(:person) }
 
   it 'can have many movies as director' do
-    movie = create(:movie)
-    movie.directors << person
+    person.movies_directed << build(:movie)
 
     expect(person.movies_directed.length).to eq 1
   end
 
   it 'can have many shows as director' do
-    show = create(:show)
-    show.directors << person
+    person.shows_directed << build(:show)
 
     expect(person.shows_directed.length).to eq 1
   end
