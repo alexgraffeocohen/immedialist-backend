@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922011639) do
-
-  create_table "actor_categories", force: true do |t|
-    t.integer  "actor_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140922025328) do
 
   create_table "actors", force: true do |t|
     t.string   "name"
@@ -59,13 +52,6 @@ ActiveRecord::Schema.define(version: 20140922011639) do
     t.datetime "updated_at"
   end
 
-  create_table "author_categories", force: true do |t|
-    t.integer  "author_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "authors", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -98,13 +84,6 @@ ActiveRecord::Schema.define(version: 20140922011639) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "director_categories", force: true do |t|
-    t.integer  "director_id"
-    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -211,13 +190,6 @@ ActiveRecord::Schema.define(version: 20140922011639) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
-  end
-
-  create_table "song_artists", force: true do |t|
-    t.integer  "song_id"
-    t.integer  "artist_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "songs", force: true do |t|
