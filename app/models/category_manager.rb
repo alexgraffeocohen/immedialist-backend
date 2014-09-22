@@ -2,10 +2,13 @@ class CategoryManager
   attr_accessor :model
 
   ASSOCIATION_CATEGORY_MAP = {
-    movies: "Film",
-    shows:  "Television",
+    movies_directed: "Film",
+    movies_acted_in: "Film",
+    shows_directed:  "Television",
+    shows_acted_in:  "Television",
     books:  "Book",
     songs:  "Music",
+    albums: "Music",
   }
   POSSIBLE_ASSOCIATIONS = ASSOCIATION_CATEGORY_MAP.keys
 
@@ -15,7 +18,9 @@ class CategoryManager
 
   def assign_categories
     POSSIBLE_ASSOCIATIONS.each do |association|
-      assign_category_for(association) if model_has(association)
+      if model_has(association) && !model.categories.map(&:name).include?(ASSOCIATION_CATEGORY_MAP[association])
+        assign_category_for(association)
+      end
     end
   end
 

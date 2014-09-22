@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe CategoryManager, :type => :model do
   it 'can assign the movie category if model has movie(s)' do
-    actor = create(:actor)
-    actor.movies << build(:movie)
+    actor = create(:person)
+    movie = create(:movie)
+    movie.actors << actor
     category_manager = CategoryManager.new(actor)
     category_manager.assign_categories
 

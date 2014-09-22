@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140921235642) do
+ActiveRecord::Schema.define(version: 20140922011639) do
 
   create_table "actor_categories", force: true do |t|
     t.integer  "actor_id"
@@ -164,6 +164,13 @@ ActiveRecord::Schema.define(version: 20140921235642) do
     t.string   "spotify_url"
     t.date     "date_of_birth"
     t.date     "date_of_death"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "person_categories", force: true do |t|
+    t.integer  "person_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

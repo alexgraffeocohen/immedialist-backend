@@ -15,4 +15,9 @@ class Person < ActiveRecord::Base
   has_many :movie_actors, foreign_key: :actor_id
   has_many :shows_acted_in, through: :show_actors, source: :show, foreign_key: :actor_id
   has_many :show_actors, foreign_key: :actor_id
+
+  has_many :categories, through: :person_categories
+  has_many :person_categories
+
+  include PeopleCallbacks
 end

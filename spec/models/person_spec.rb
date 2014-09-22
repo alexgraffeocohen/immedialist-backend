@@ -75,8 +75,12 @@ RSpec.describe Person, :type => :model do
     movie = create(:movie)
     movie.directors << person
     movie.actors << person
+    show = create(:show)
+    show.directors << person
+    show.actors << person
     book = create(:book)
     person.books << book
+    person.save
 
     expect(category_names_for(person)).to include "Film"
     expect(category_names_for(person)).to include "Book"
