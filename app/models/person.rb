@@ -5,6 +5,8 @@ class Person < ActiveRecord::Base
   has_many :albums, through: :artist_albums, foreign_key: :artist_id
   has_many :artist_albums, foreign_key: :artist_id
   has_many :songs, through: :albums
+  has_many :music_genres, through: :artist_genres, source: :genre, foreign_key: :artist_id
+  has_many :artist_genres, foreign_key: :artist_id
 
   has_many :movies_directed, through: :movie_directors, source: :movie, foreign_key: :director_id
   has_many :movie_directors, foreign_key: :director_id

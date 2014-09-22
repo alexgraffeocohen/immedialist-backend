@@ -61,6 +61,12 @@ RSpec.describe Person, :type => :model do
     expect(person.songs.length).to eq 2
   end
 
+  it 'can have many music genres' do
+    person.music_genres << build(:genre) << build(:genre)
+
+    expect(person.music_genres.length).to eq 2
+  end
+
   it 'can have many books' do
     person.books << build(:book) << build(:book)
 
