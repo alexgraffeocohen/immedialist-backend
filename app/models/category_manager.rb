@@ -18,7 +18,7 @@ class CategoryManager
 
   def assign_categories
     POSSIBLE_ASSOCIATIONS.each do |association|
-      if model_has(association) && !model.categories.map(&:name).include?(ASSOCIATION_CATEGORY_MAP[association])
+      if model_has(association) && model_does_not_already_have_category_for(association)
         assign_category_for(association)
       end
     end
@@ -32,5 +32,9 @@ class CategoryManager
 
   def model_has(association)
     model.try(association) && !model.send(association).empty?
+  end
+
+  def model_does_not_already_have_category_for(association)
+    !model.categories.map(&:name).include?(ASSOCIATION_CATEGORY_MAP[association])
   end
 end

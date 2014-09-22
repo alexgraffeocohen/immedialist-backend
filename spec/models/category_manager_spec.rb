@@ -17,4 +17,13 @@ RSpec.describe CategoryManager, :type => :model do
 
     expect(category_names_for(actor)).to_not include "Film"
   end
+
+  it 'will not assign the same category twice' do
+    talented_woman = create(:person)
+    talented_woman.movies_directed << create(:movie)
+    talented_woman.movies_acted_in << create(:movie)
+    CategoryManager.new(talented_woman).assign_categories
+
+    expect(category_names_for(talented_woman)).to eq ["Person", "Film"]
+  end
 end
