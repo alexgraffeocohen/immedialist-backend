@@ -5,7 +5,7 @@ class Book < ActiveRecord::Base
   has_many :genres, through: :book_genres
   belongs_to :category
 
-  after_create :assign_to_book_category
+  before_create :assign_to_book_category
 
   private
 

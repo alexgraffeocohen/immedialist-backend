@@ -7,7 +7,7 @@ class Movie < ActiveRecord::Base
   has_many :movie_directors
   belongs_to :category
 
-  after_create :assign_to_film_category
+  before_create :assign_to_film_category
 
   private
 

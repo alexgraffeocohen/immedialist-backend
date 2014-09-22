@@ -4,7 +4,7 @@ class Song < ActiveRecord::Base
   belongs_to :album
   belongs_to :category
 
-  after_create :assign_to_music_category
+  before_create :assign_to_music_category
 
   private
 

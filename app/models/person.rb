@@ -21,8 +21,8 @@ class Person < ActiveRecord::Base
   has_many :categories, through: :person_categories
   has_many :person_categories
 
-  after_create :assign_to_person_category
-  after_save :assign_associated_categories
+  before_create :assign_to_person_category
+  before_save :assign_associated_categories
 
   private
 
