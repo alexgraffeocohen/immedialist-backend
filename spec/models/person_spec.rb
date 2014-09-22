@@ -67,22 +67,45 @@ RSpec.describe Person, :type => :model do
     expect(person.books.length).to eq 2
   end
 
-  it 'can be assigned the book, film, music, and television categories' do
-    album = create(:album)
-    person.albums << album
-    movie = create(:movie)
-    movie.directors << person
-    movie.actors << person
-    show = create(:show)
-    show.directors << person
-    show.actors << person
-    book = create(:book)
-    person.books << book
+  it 'can be assigned the book category' do
+    person.books << create(:book)
+    person.save
+
+    expect(category_names_for(person)).to include "Book"
+  end
+
+  it 'can be assigned the music category' do
+    person.albums << create(:album)
+    person.save
+
+    expect(category_names_for(person)).to include "Music"
+  end
+
+  it 'can be assigned the film category via director' do
+    person.movies_directed << create(:movie)
     person.save
 
     expect(category_names_for(person)).to include "Film"
-    expect(category_names_for(person)).to include "Book"
+  end
+
+  it 'can be assigned the film category via actor' do
+    person.movies_acted_in << create(:movie)
+    person.save
+
+    expect(category_names_for(person)).to include "Film"
+  end
+
+  it 'can be assigned the television category via director' do
+    person.shows_directed << create(:show)
+    person.save
+
     expect(category_names_for(person)).to include "Television"
-    expect(category_names_for(person)).to include "Music"
+  end
+
+  it 'can be assigned the television category via actor' do
+    person.shows_acted_in << create(:show)
+    person.save
+
+    expect(category_names_for(person)).to include "Television"
   end
 end
