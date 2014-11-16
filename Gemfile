@@ -35,29 +35,30 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 group :test, :development do
-  gem "rspec-rails"
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "better_errors"
-  gem "sprockets_better_errors"
-  gem "binding_of_caller"
-  gem "factory_girl_rails"
-  gem "simplecov"
-  gem "database_cleaner"
-  gem "sqlite3"
-  gem "pry"
-  gem "guard-rspec", require: false
-  gem "thin"
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'better_errors'
+  gem 'sprockets_better_errors'
+  gem 'binding_of_caller'
+  gem 'factory_girl_rails'
+  gem 'simplecov'
+  gem 'database_cleaner'
+  gem 'sqlite3'
+  gem 'pry'
+  gem 'guard-rspec', require: false
+  gem 'thin'
 end
 
 group :production do
-  gem "pg"
-  gem "google-analytics-rails"
-  gem "rails_12factor"
+  gem 'pg'
+  gem 'google-analytics-rails'
+  gem 'rails_12factor'
 end
 
-gem "bootstrap-sass", "~> 3.1.1"
-gem "themoviedb"
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'themoviedb'
+gem 'rottentomatoes'
 gem 'figaro', git: 'https://github.com/laserlemon/figaro.git'
 gem 'vacuum'
 gem 'goodreads'
