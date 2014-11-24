@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/movie?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=When%20You%20Bite%20The%20Fry,%20the%20Fry%20Bites%20Back
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 24 Nov 2014 04:42:06 GMT
+      Etag:
+      - '"a8d277d2d95f2ea20f792a48c43093dc"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '6482'
+      X-Memc-Expires:
+      - '4318'
+      X-Memc-Key:
+      - 7ecf571b873f94b20f73df2e906dda1a
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
+    http_version: 
+  recorded_at: Mon, 24 Nov 2014 04:42:06 GMT
+recorded_with: VCR 2.9.3
