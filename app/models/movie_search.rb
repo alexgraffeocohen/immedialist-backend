@@ -1,8 +1,9 @@
 class MovieSearch
-  attr_reader :search_params, :result
+  attr_reader :title, :external_id, :result
 
   def initialize(search_params)
-    @search_params = search_params
+    @title = search_params[:title]
+    @external_id = search_params[:external_id]
   end
 
   def search
@@ -16,14 +17,14 @@ class MovieSearch
   private
 
   def only_title_provided
-    search_params.key?(:title) && search_params.keys.count == 1
+    external_id.nil?
   end
 
   def search_by_title
-    ::Tmdb::Movie.find(search_params[:title])
+    ::Tmdb::Movie.find(title)
   end
 
   def search_by_id
-    ::Tmdb::Movie.detail(search_params[:search_id])
+    ::Tmdb::Movie.detail(external_id)
   end
 end
