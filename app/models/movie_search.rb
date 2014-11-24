@@ -1,5 +1,5 @@
 class MovieSearch
-  attr_reader :title, :external_id, :result
+  attr_reader :result
 
   def initialize(search_params)
     @title = search_params[:title]
@@ -15,6 +15,8 @@ class MovieSearch
   end
 
   private
+
+  attr_reader :title, :external_id
 
   def only_title_provided
     external_id.nil?
