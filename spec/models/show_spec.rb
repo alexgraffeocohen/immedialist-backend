@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Show, :type => :model do
-  let(:show) { create(:show) }
+  let(:show) { build(:show) }
 
   it 'has many genres' do
     show.genres << build(:genre) << build(:genre)
@@ -22,6 +22,8 @@ RSpec.describe Show, :type => :model do
   end
 
   it 'belongs to the television category' do
+    show.save
+
     expect(show.category.name).to eq("Television");
   end
 

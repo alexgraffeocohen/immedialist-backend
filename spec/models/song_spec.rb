@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Song, :type => :model do
-  let(:song) { create(:song) }
+  let(:song) { build(:song) }
 
   it 'has many artists through its album' do
-    album = create(:album)
-    album.artists << create(:person) << create(:person)
+    album = build(:album)
+    album.artists << build(:person) << build(:person)
     song.album = album
+    song.save
 
     expect(song.artists.length).to eq 2
   end
@@ -16,6 +17,8 @@ RSpec.describe Song, :type => :model do
   end
 
   it 'belongs to the music category' do
+    song.save
+
     expect(song.category.name).to eq("Music");
   end
 end

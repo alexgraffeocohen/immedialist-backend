@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Book, :type => :model do
-  let(:book) { create(:book) }
+  let(:book) { build(:book) }
 
   it 'has many authors' do
     book.authors << build(:person) << build(:person)
@@ -16,6 +16,8 @@ RSpec.describe Book, :type => :model do
   end
 
   it 'belongs to the book category' do
+    book.save
+
     expect(book.category.name).to eq("Book");
   end
 end
