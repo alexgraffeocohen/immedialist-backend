@@ -1,17 +1,15 @@
 class MovieSearch
-  attr_reader :result
-
   def initialize(search_params)
     @title = search_params[:title]
     @external_id = search_params[:external_id]
   end
 
   def search
-    @result = if only_title_provided
-                search_by_title
-              else
-                search_by_id
-              end
+    if only_title_provided
+      search_by_title
+    else
+      search_by_id
+    end
   end
 
   private

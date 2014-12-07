@@ -52,14 +52,4 @@ describe MovieSearch do
       end
     end
   end
-
-  describe '#result' do
-    it 'returns the result from a search' do
-      VCR.use_cassette('real_id_movie_search') do
-        search_results = movie_search_with_real_id.search
-
-        expect(movie_search_with_real_id.result).to eq(search_results)
-      end
-    end
-  end
 end
