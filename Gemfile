@@ -48,6 +48,9 @@ group :test, :development do
   gem 'pry'
   gem 'guard-rspec', require: false
   gem 'thin'
+end
+
+group :test do
   gem 'vcr'
   gem 'webmock'
 end
