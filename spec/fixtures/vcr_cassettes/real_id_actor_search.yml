@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/person/6384?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Mon, 08 Dec 2014 05:16:16 GMT
+      Etag:
+      - '"361b33a5737e95c2e18eba3307229d0c"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '18516'
+      X-Memc-Expires:
+      - '3084'
+      X-Memc-Key:
+      - e8c6c710292140b5451a305e684864e2
+      Content-Length:
+      - '1146'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"also_known_as":[],"biography":"Keanu Charles Reeves
+        is a Canadian actor. Reeves is known for his roles in Bill &amp; Ted''s Excellent
+        Adventure, Speed, Point Break, and The Matrix trilogy as Neo. He has collaborated
+        with major directors such as Stephen Frears (in the 1988 period drama Dangerous
+        Liaisons); Gus Van Sant (in the 1991 independent film My Own Private Idaho);
+        and Bernardo Bertolucci (in the 1993 film Little Buddha). Referring to his
+        1991 film releases, The New York Times'' critic, Janet Maslin, praised Reeves''
+        versatility, saying that he \"displays considerable discipline and range.
+        He moves easily between the buttoned-down demeanor that suits a police procedural
+        story and the loose-jointed manner of his comic roles.\" A repeated theme
+        in roles he has portrayed is that of saving the world, including the characters
+        of Ted Logan, Buddha, Neo, Johnny Mnemonic, John Constantine and Klaatu.","birthday":"1964-09-02","deathday":"","homepage":"","id":6384,"imdb_id":"nm0000206","name":"Keanu
+        Reeves","place_of_birth":"Beirut, Lebanon","popularity":7.73797971470884,"profile_path":"/id1qIb7cZs2eQno90KsKwG8VLGN.jpg"}'
+    http_version: 
+  recorded_at: Mon, 08 Dec 2014 05:16:16 GMT
+recorded_with: VCR 2.9.3
