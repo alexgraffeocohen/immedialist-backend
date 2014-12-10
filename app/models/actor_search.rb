@@ -1,11 +1,6 @@
-class ActorSearch
-  def initialize(search_params)
-    @name = search_params[:name]
-    @external_id = search_params[:external_id]
-  end
-
+class ActorSearch < Search
   def search
-    if only_name_provided
+    if no_external_id_provided
       search_by_name
     else
       search_by_id
@@ -13,12 +8,6 @@ class ActorSearch
   end
 
   private
-
-  attr_reader :name, :external_id
-
-  def only_name_provided
-    external_id.nil?
-  end
 
   def search_by_name
     ::Tmdb::Person.find(name)
