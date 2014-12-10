@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/person?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=Richard%20Linklater
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 10 Dec 2014 04:55:55 GMT
+      Etag:
+      - '"a81b66e6c82f3f165bd1a9f46e8a13a1"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '141'
+      X-Memc-Expires:
+      - '10659'
+      X-Memc-Key:
+      - 347378ead65413052835a4a91ff4f385
+      Content-Length:
+      - '1087'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"id":564,"known_for":[{"adult":false,"backdrop_path":"/nLUO2kQyyvG1DlCnHuxHwapbCTX.jpg","id":1584,"original_title":"School
+        of Rock","release_date":"2003-10-03","poster_path":"/cREN222Yw78zvSQ9bg17Y9QZS0c.jpg","popularity":0.518054234745685,"title":"School
+        of Rock","vote_average":6.2,"vote_count":315,"media_type":"movie"},{"adult":false,"backdrop_path":"/ebUFKuBssx20rpNcismrXt7nPn6.jpg","id":76,"original_title":"Before
+        Sunrise","release_date":"1995-01-27","poster_path":"/9NBjDNPHA6SkThIweOs8iCfsA8a.jpg","popularity":0.81475902251948,"title":"Before
+        Sunrise","vote_average":7.3,"vote_count":234,"media_type":"movie"},{"adult":false,"backdrop_path":"/i7bLaLUKcrbVifTq18xYZNc1Ln7.jpg","id":85350,"original_title":"Boyhood","release_date":"2014-07-11","poster_path":"/eKi4e5zXhQKs0De4xu5AAMvu376.jpg","popularity":3.0071146173349,"title":"Boyhood","vote_average":8.4,"vote_count":207,"media_type":"movie"}],"name":"Richard
+        Linklater","popularity":1.64397116520914,"profile_path":"/ypiAch9og80uE5hnVBAyXXtY4B1.jpg"}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Wed, 10 Dec 2014 04:55:55 GMT
+recorded_with: VCR 2.9.3

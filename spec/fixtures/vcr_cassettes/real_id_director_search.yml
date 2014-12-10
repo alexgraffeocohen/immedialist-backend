@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/person/564?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 10 Dec 2014 04:55:55 GMT
+      Etag:
+      - '"5e68b1f8a50e68c9cc650f5aa9f4a52e"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '20723'
+      X-Memc-Expires:
+      - '877'
+      X-Memc-Key:
+      - 23ea45b1e4b7fc4d3d4b2acc304fc538
+      Content-Length:
+      - '1104'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImFsc29fa25vd25fYXMiOltdLCJiaW9ncmFwaHki
+        OiLigItGcm9tIFdpa2lwZWRpYSwgdGhlIGZyZWUgZW5jeWNsb3BlZGlhLsKg
+        wqDCoMKgwqDCoMKgwqDCoMKgICBTZWxmLXRhdWdodCB3cml0ZXItZGlyZWN0
+        b3IgUmljaGFyZCBMaW5rbGF0ZXIgd2FzIGFtb25nIHRoZSBmaXJzdCBhbmQg
+        bW9zdCBzdWNjZXNzZnVsIHRhbGVudHMgdG8gZW1lcmdlIGR1cmluZyB0aGUg
+        QW1lcmljYW4gaW5kZXBlbmRlbnQgZmlsbSByZW5haXNzYW5jZSBvZiB0aGUg
+        MTk5MHMuIFR5cGljYWxseSBzZXR0aW5nIGVhY2ggb2YgaGlzIG1vdmllcyBk
+        dXJpbmcgb25lIDI0LWhvdXIgcGVyaW9kLCBMaW5rbGF0ZXIncyB3b3JrIGV4
+        cGxvcmVkIHdoYXQgaGUgZHViYmVkIFwidGhlIHlvdXRoIHJlYmVsbGlvbiBj
+        b250aW51dW0sXCIgZm9jdXNpbmcgaW4gZmluZSBkZXRhaWwgb24gZ2VuZXJh
+        dGlvbmFsIHJpdGVzIGFuZCBtb3JlcyB3aXRoIHJhcmUgY29tcGFzc2lvbiBh
+        bmQgdW5kZXJzdGFuZGluZyB3aGlsZSBkZWZpbml0aXZlbHkgY2FwdHVyaW5n
+        IHRoZSAyMC1zb21ldGhpbmcgY3VsdHVyZSBvZiBoaXMgZXJhIHRocm91Z2gg
+        YSBzZXJpZXMgb2YgbnVhbmNlZCwgaWxsdW1pbmF0aW5nIGVuc2VtYmxlIHBp
+        ZWNlcyB3aGljaCBpbnRyb2R1Y2VkIGFueSBudW1iZXIgb2YgdGFsZW50ZWQg
+        eW91bmcgYWN0b3JzIGludG8gdGhlIEhvbGx5d29vZCBmaXJtYW1lbnQuICBE
+        ZXNjcmlwdGlvbiBhYm92ZSBmcm9tIHRoZSBXaWtpcGVkaWEgYXJ0aWNsZSBS
+        aWNoYXJkIExpbmtsYXRlciwgbGljZW5zZWQgdW5kZXIgQ0MtQlktU0EsIGZ1
+        bGwgbGlzdCBvZiBjb250cmlidXRvcnMgb24gV2lraXBlZGlhLiIsImJpcnRo
+        ZGF5IjoiMTk2MC0wNy0zMCIsImRlYXRoZGF5IjoiIiwiaG9tZXBhZ2UiOiJo
+        dHRwOi8vd3d3LmRldG91cmZpbG0uY29tLyIsImlkIjo1NjQsImltZGJfaWQi
+        OiJubTAwMDA1MDAiLCJuYW1lIjoiUmljaGFyZCBMaW5rbGF0ZXIiLCJwbGFj
+        ZV9vZl9iaXJ0aCI6IkhvdXN0b24sIFRleGFzLCBVU0EiLCJwb3B1bGFyaXR5
+        IjoxLjY0Mzk3MTE2NTIwOTE0LCJwcm9maWxlX3BhdGgiOiIveXBpQWNoOW9n
+        ODB1RTVoblZCQXlYWHRZNEIxLmpwZyJ9
+    http_version: 
+  recorded_at: Wed, 10 Dec 2014 04:55:55 GMT
+recorded_with: VCR 2.9.3
