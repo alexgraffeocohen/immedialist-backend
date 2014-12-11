@@ -1,9 +1,7 @@
-class PersonSearch
-  include SearchHelper
-
+class PersonSearch < Search
   def initialize(search_params)
-    @external_id = search_params[:external_id]
     @name = search_params[:name]
+    super(search_params)
   end
 
   def search
@@ -16,7 +14,7 @@ class PersonSearch
 
   private
 
-  attr_reader :external_id, :name
+  attr_reader :name
 
   def search_by_name
     raise NotImplementedError

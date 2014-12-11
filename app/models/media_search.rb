@@ -1,9 +1,7 @@
-class MediaSearch
-  include SearchHelper
-
+class MediaSearch < Search
   def initialize(search_params)
-    @external_id = search_params[:external_id]
     @title = search_params[:title]
+    super(search_params)
   end
 
   def search
@@ -16,7 +14,7 @@ class MediaSearch
 
   private
 
-  attr_reader :external_id, :title
+  attr_reader :title
 
   def search_by_title
     raise NotImplementedError
