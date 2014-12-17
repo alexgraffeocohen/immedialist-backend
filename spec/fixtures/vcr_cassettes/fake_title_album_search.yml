@@ -1,0 +1,129 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=The%20Worst%20Album%20Ever%20Ever%20Ever&type=album
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 17 Dec 2014 22:13:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAJRUXU/bMBR951dEeag2UZFvJ6lUTUALVGu7iLYwNk3ISRxq
+        LW26xOnoEP998UkoBcEYL6f29bnnnti3925PUVSahuWiUJWOcldtq8A8Z4nc
+        qnMhVkVH0+iKHxSrTPBkcxBlC21taAWjeTT/9Ktk+aY7nbP9yywvxP6h1Nrv
+        r1n+CK0sSQomunor5QsuuqbeEpsV66Ku2q5rcsFqD98bFw/GriUXbnb58nRN
+        eUrDlF0vaP6TiSZbPeyp7QrPgVPgTOJRH3gK/AIE5/gQeAYcAnF6XJ9eAb9J
+        7EGh9xkITv8YiHh/IvFkAETu6RGwXsPJGXLPxkC4GiB3gNwBOEMoDOs1OMML
+        iSPUGiE++gqEtzH4Yzgfw9UYbgN8VwD9AF8XgBNAIUDuOfgTcCa4mQnUJvA5
+        Qd0p/E8vJc7gc3alKj+278BuBcuXNL0u83Sni3DWNM2TZspWbPmkm/Cumn57
+        cTK1w2DK3cw/9c/Li9lN0FMbrfttuf9pzrqjX5PcSvEYQm/SFvSGPetNaYTx
+        m7mQYWLr7cd4dQ1P/FXuonhZWdMgpOkssYgX6b4ZMt/1HJ/GhNm+Uy11SmIj
+        co04YYmu7mj+5rGYN6W2N/KyGUt/jxmTUGrYtmNHoek6NImjUA9DiziWH7ke
+        oW7CGI0M80UzVak3zBD7HV5smzLXMxwvjiyTWC4jse5YIYkdi3mEWHYcup7l
+        2K9czIOVndZc0kU9OqoBpXy4LPM/QsGc+ih/0lgZlQWPFAwtRY6qx0d/beqU
+        OUe46bgOjjv/at6tIRXjT2abzROpy+rPIwPLMk2bUD0sZfCBtMrZmmdl8Ywo
+        MkFxoUa1v9+7/wsAAP//AwCSDfupzAUAAA==
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 22:13:51 GMT
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=GKFJGBNDJKGKFJFBDHDBGKGJDBGKGJDBGKDHGB&type=album
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 17 Dec 2014 22:20:18 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAFyOQQqDMBBF954iZOGqGOtSkEIIRhR6gdKFLQkGoknNKBXx
+        7tVoKXQzzH885s8cIIRr/Rhah1GK5jWuoOmF3CJuAKxLCamtipw1oOQUPU1L
+        xjNxou6fzeU1iH7KeJWXnF5ZWW1bTlnBKK94+Zus4DQ0UjoBWRxq1SrIkjiE
+        yYrM9+PT3q1A7L/c0P1A3t5QEh+kE28PukHrA+23N/iVbC9GZQb3J4KBWntv
+        zUuwfAAAAP//AwAuRFCYAwEAAA==
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 22:20:19 GMT
+recorded_with: VCR 2.9.3
