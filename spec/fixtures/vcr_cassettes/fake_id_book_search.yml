@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.goodreads.com/book/show?format=xml&id=ithinkicanithinkicanithinkican&key=eOR87hBs1BBAUmTdh7EMEA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Sat, 10 Jan 2015 22:24:48 GMT
+      Server:
+      - Server
+      Content-Type:
+      - text/html; charset=utf-8
+      Status:
+      - 302 Found
+      Vary:
+      - User-Agent,Accept-Encoding
+      Location:
+      - http://www.goodreads.com/book
+      X-Request-Id:
+      - 0NBXAPBV9BC65SQVPKJ0
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Runtime:
+      - '0.050060'
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - _session_id2=3384dfea1bf3fe5722de14305581a507; path=/; expires=Sun, 11-Jan-2015
+        04:24:48 GMT; HttpOnly
+      - csid=BAhJIhg2NjItNzc4NTYwMC0wNzQwNTUwBjoGRVQ%3D--8127a60bc14b5814f9ecf264245820166826d62a;
+        path=/; expires=Wed, 10-Jan-2035 22:24:48 GMT
+      - locale=en; path=/
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '102'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAx3MwQ2AIAwAwFUIA9C/qezhE2gFolhTMcTtTbgBDktvp8co
+        9PlNXhOUTeR6ZYPBFOV9taX3ewEYY7gsQsqBHpekQRQ5rFemqpw6E0LwDmFe
+        CDP+ASo9K9FfAAAA
+    http_version: 
+  recorded_at: Sat, 10 Jan 2015 22:24:48 GMT
+recorded_with: VCR 2.9.3
