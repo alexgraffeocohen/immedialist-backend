@@ -11,6 +11,14 @@ class BookQuerier
     client.book(external_id)
   end
 
+  def search_by_author_name(name)
+    client.author_by_name(name)
+  end
+
+  def search_by_author_id(external_id)
+    client.author(external_id)
+  end
+
   private
 
   attr_reader :client
