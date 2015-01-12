@@ -1,5 +1,4 @@
 class Song < ActiveRecord::Base
-  # has_many   :song_artists
   has_many   :artists, through: :album
   belongs_to :album
   belongs_to :category
