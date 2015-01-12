@@ -6,6 +6,7 @@ class Show < ActiveRecord::Base
   has_many :genres, through: :show_genres
   has_many :show_genres
   belongs_to :category
+  has_many :list_items, as: :item
 
   after_create :assign_to_television_category
 

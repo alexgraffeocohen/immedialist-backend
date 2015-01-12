@@ -3,6 +3,7 @@ class Album < ActiveRecord::Base
   has_many :artists, through: :artist_albums, class_name: Person, foreign_key: :artist_id
   has_many :songs
   belongs_to :category
+  has_many :list_items, as: :item
 
   before_create :assign_to_music_category
 

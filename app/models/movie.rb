@@ -6,6 +6,7 @@ class Movie < ActiveRecord::Base
   has_many :directors, through: :movie_directors, class_name: Person, foreign_key: :director_id
   has_many :movie_directors
   belongs_to :category
+  has_many :list_items, as: :item
 
   before_create :assign_to_film_category
 

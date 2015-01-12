@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
   has_many :book_genres
   has_many :genres, through: :book_genres
   belongs_to :category
+  has_many :list_items, as: :item
 
   before_create :assign_to_book_category
 

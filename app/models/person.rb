@@ -21,6 +21,8 @@ class Person < ActiveRecord::Base
   has_many :categories, through: :person_categories
   has_many :person_categories
 
+  has_many :list_items, as: :item
+
   before_create :assign_to_person_category
   before_save :assign_associated_categories
 
