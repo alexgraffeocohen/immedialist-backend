@@ -271,6 +271,8 @@ GEM
     simplecov-html (0.8.0)
     slop (3.6.0)
     spring (1.2.0)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -343,6 +345,7 @@ DEPENDENCIES
   selenium-webdriver
   simplecov
   spring
+  spring-commands-rspec
   sqlite3
   themoviedb
   thin
