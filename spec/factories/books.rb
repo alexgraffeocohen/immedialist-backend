@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :book do
-    title "Plainsong"
+    name "Plainsong"
     release_date "2000-08-22"
     isbn "0375705856"
     cover_link "link_url"

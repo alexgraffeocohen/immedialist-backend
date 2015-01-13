@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :movie do
-    title "The Matrix"
+    name "The Matrix"
     release_date "1999-03-31"
     critics_score 87
     audience_score 85

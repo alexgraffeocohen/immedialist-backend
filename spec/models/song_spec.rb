@@ -13,7 +13,7 @@ RSpec.describe Song, :type => :model do
   end
 
   it 'belongs to an album' do
-    expect(song.album.title).to eq "Boxer"
+    expect(song.album.name).to eq "Boxer"
   end
 
   it 'belongs to the music category' do

@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :show do
-    title "Battlestar Galactica"
+    name "Battlestar Galactica"
     creator "Ronald D. Moore"
     episode_length 44
     first_air_date "2005-01-14"

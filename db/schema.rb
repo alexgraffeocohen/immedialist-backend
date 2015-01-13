@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150112000722) do
+ActiveRecord::Schema.define(version: 20150112044153) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "name"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20150112000722) do
   end
 
   create_table "albums", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.date     "release_date"
     t.string   "album_type"
     t.string   "spotify_id"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20150112000722) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.date     "release_date"
     t.string   "isbn"
     t.text     "cover_link"
@@ -136,7 +136,7 @@ ActiveRecord::Schema.define(version: 20150112000722) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.date     "release_date"
     t.integer  "critics_score"
     t.integer  "audience_score"
@@ -190,7 +190,7 @@ ActiveRecord::Schema.define(version: 20150112000722) do
   end
 
   create_table "shows", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.string   "creator"
     t.integer  "episode_length"
     t.date     "first_air_date"
@@ -207,7 +207,7 @@ ActiveRecord::Schema.define(version: 20150112000722) do
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string   "title"
+    t.string   "name"
     t.integer  "duration_ms"
     t.string   "spotify_preview_url"
     t.string   "spotify_url"

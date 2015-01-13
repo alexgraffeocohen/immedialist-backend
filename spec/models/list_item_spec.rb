@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe ListItem, :type => :model do
   let(:list_item) { FactoryGirl.create(:list_item) }
 
-  it 'can be attached to a media item' do
-    tv_show = FactoryGirl.create(:show)
+  it 'will receive the title of the item it is attached to' do
+    tv_show = FactoryGirl.create(:show, name: 'Boardwalk Empire')
     list_item.item = tv_show
     list_item.save
 
     expect(list_item.item).to eq(tv_show)
-    expect(list_item.item_type).to eq('Show')
+    expect(list_item.name).to eq('Boardwalk Empire')
   end
 end
