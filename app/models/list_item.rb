@@ -3,13 +3,13 @@ class ListItem < ActiveRecord::Base
   belongs_to :item, polymorphic: true
   belongs_to :category
 
-  after_save :change_name_to_item_name
+  after_save :change_name_to_item_if_item_present
 
   validates_presence_of :category
 
   private
 
-  def change_name_to_item_name
+  def change_name_to_item_if_item_present
     if item
       self.name = item.name
     end
