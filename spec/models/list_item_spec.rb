@@ -11,10 +11,4 @@ RSpec.describe ListItem, :type => :model do
 
     expect(list_item.name).to eq(item.name)
   end
-
-  it 'can only be assigned an item corresponding to its category' do
-    list_item.item = build(:book)
-
-    expect(list_item).to_not be_valid
-  end
 end
