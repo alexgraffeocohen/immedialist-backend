@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.goodreads.com/search/index?format=xml&key=eOR87hBs1BBAUmTdh7EMEA&q=The%20Greatest%20Book%20in%20The%20World:%20This%20is%20a%20Tribute
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 20 Jan 2015 02:42:21 GMT
+      Server:
+      - Server
+      Content-Type:
+      - application/xml; charset=utf-8
+      Status:
+      - 200 OK
+      Vary:
+      - User-Agent
+      X-Request-Id:
+      - 19PWZT5PEYKA6NNZWD1T
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.049538'
+      X-Content-Type-Options:
+      - nosniff
+      Content-Encoding:
+      - gzip
+      Set-Cookie:
+      - _session_id2=08470c693e86c943ddbfc71a53fb0e9b; path=/; expires=Tue, 20-Jan-2015
+        08:42:21 GMT; HttpOnly
+      - csid=BAhJIhgyNzUtOTA0NDE4Mi04NTE0NTY5BjoGRVQ%3D--a068ee3c3ae36e94c89e5a5e33855d49da261e0c;
+        path=/; expires=Sat, 20-Jan-2035 02:42:21 GMT
+      - locale=en; path=/
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2WRsW7CMBCGd57CzR4SusBgjJKWMlWVUFAHhJAbnxqLxG59
+        l4q+fZ04FNJKGc6/P58/5/jq3NTsCxxqa5bRbJpGDExplTbvy2hXPMWLaCUm
+        fGOtciAVbgE/rEEQE8b4Fj5bQOpqv5ItVWBIl5J8M0GuBZ78CXvSsyf4Fvxu
+        //CYFdkeXraLeZXjLM+zXVOoar5+XmeHg+BJx4XuDVBl1fUQgnRlddRGwblH
+        B6DzSm7EeAB7X2/rbu4tKmAb/yryb2C5tSemDevCV+tq5SuNzH+SFU6/tQT9
+        NaFHcHKAbU0YI0lHYsaTcTCGwCiRXpFuGQCyJOt4ONoh4yBAaFtXgvidA0+G
+        JGz3VjHpBmKE0hqFIp2m94PueGOkNThczP2ok8sP8+X/sf8AIGjqZjECAAA=
+    http_version: 
+  recorded_at: Tue, 20 Jan 2015 02:42:21 GMT
+recorded_with: VCR 2.9.3

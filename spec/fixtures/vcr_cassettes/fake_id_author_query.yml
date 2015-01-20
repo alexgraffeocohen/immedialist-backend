@@ -1,0 +1,55 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.goodreads.com/author/show?format=xml&id=ithinkicanithinkicanithinkican&key=eOR87hBs1BBAUmTdh7EMEA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Tue, 20 Jan 2015 02:42:20 GMT
+      Server:
+      - Server
+      Content-Type:
+      - application/xml; charset=utf-8
+      Status:
+      - 404 Not Found
+      Vary:
+      - User-Agent
+      X-Request-Id:
+      - 1VCSEGKKRJTHFKBK4NMH
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Runtime:
+      - '0.042502'
+      Content-Encoding:
+      - gzip
+      Set-Cookie:
+      - _session_id2=b54a183f8b98be14999f75eff53cc97d; path=/; expires=Tue, 20-Jan-2015
+        08:42:20 GMT; HttpOnly
+      - csid=BAhJIhg1MzUtMzIyOTg1My05MzE0ODQwBjoGRVQ%3D--ad39821db9da97e593194b37c515b5502d8e3c42;
+        path=/; expires=Sat, 20-Jan-2035 02:42:20 GMT
+      - locale=en; path=/
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA7NJLSrKL7Lzyy9RSMsvzUux0YcIAABys8EIGAAAAA==
+    http_version: 
+  recorded_at: Tue, 20 Jan 2015 02:42:20 GMT
+recorded_with: VCR 2.9.3

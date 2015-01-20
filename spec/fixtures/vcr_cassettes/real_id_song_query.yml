@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/tracks/6aUAF8JOd8zEl41B6I18xL
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 20 Jan 2015 02:42:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAOxVy3LaQBC85ytUOjvWk5XEjYeMsTEmBpLYqRS12l2ZLSRQ
+        ScKPuPzvkVoyDjY4ruSQSzh0wcxsT+/szPDwQVFUGgXrWFWaykPx6+n3LL9P
+        RGms3Qe174bKiAaRmMU0XYg8K0O+KWqrqx4UeAGcAKcltn1gD3gOREynBTwG
+        DoDwdirvJfCqxC4YuqdAxPgdIOz+uMSjPhBne21g9R1KjnH2eAiEqj7O9nG2
+        j5gBGAbVd8QMPpd4hlxnX4FQNUTkEJqH0DOEzhFuNALzCPcaIWYEzhHOXiB+
+        jJgxajIG2xgKx8g4gfLJlxKnl6ryva68uMtFuqTRbJ1G2fNrFZ4sWeUyvMdj
+        zfM8yZqatkrE8rB2HLJVrOEVNTPpOXF38WkuqXl+3/NJGCziExVMj3WieSrC
+        LS6ayC2qG6Niy/bR1USSg+Y3QTG9FnUXbW40F/J6npdGYusHT9bi4lu6ClWM
+        LwtJGkg0Si2HGgZpBIwHNm9YlOmmyxlxiSE4D3XbcgzGPHXDeCt5Pq/T1DXY
+        JcLS3y/CCbnNjNAJDduxnUboERZYLrdIIHSThjahQmc24ztEFGneEEHsd2tg
+        zDWo6wZGYHDmuUVOx/Qsx3R0wqhHbLeQYNkm21mISsKm7ZY0rtZAe3Un0qdX
+        270c1qmEsW6WJpzN/T2HjlNpmsss32qBv252UGom60zz3qmXdaemv/Kj5ULv
+        Ddt/0O2Vwn18L9r9zaBNOSdzoQxpLlfFLV9XFQn3lhXe5v7b1a/3f1n/m2Wt
+        cpmx2XIdB8XAFBU3KuM6xXPPYjyDqTf0arcVzZ5EkklMeUijTNTWegQk/2UC
+        VJmlDN3Qa7euRrqjFx/reZj2DM77xiZPKVtohE5bR+7JOXd/+JFttEnfcO8G
+        zyneMzFgyvZRgaYel7dCNsNyRBdC8eNEpqLyJKtkHdFU5rhRw6mMqbiR4nb2
+        cj0mm/UYJ9bHOkrzgpDoxLBs13WLfw6qByazHWF41Glww2kwixSbU6/+LVRc
+        6NWbbgYW7iry5bTC1dxX1MefAAAA//8DAIUGYrCCCQAA
+    http_version: 
+  recorded_at: Tue, 20 Jan 2015 02:42:27 GMT
+recorded_with: VCR 2.9.3

@@ -1,13 +1,17 @@
-class Query < ActiveRecord::Base
-  belongs_to :list_item
-
-  after_create :inherit_list_item_name
-
-  validates_presence_of :list_item
+class Query
+  def initialize(query_params)
+    @external_id = query_params[:external_id]
+  end
 
   private
 
-  def inherit_list_item_name
-    self.name = list_item.name
+  attr_reader :external_id
+
+  def no_external_id_provided
+    external_id.nil?
+  end
+
+  def query_by_external_id
+    raise NotImplementedError
   end
 end

@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/person/90909090?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=21600
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Tue, 20 Jan 2015 02:42:23 GMT
+      Etag:
+      - '"37a6259cc0c1dae299a7866489dff0bd"'
+      Server:
+      - nginx
+      Status:
+      - 404 Not Found
+      X-Memc:
+      - MISS
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '21600'
+      X-Memc-Key:
+      - 8020bc5fb634a15fa3e136cb4a160d11
+      Content-Length:
+      - '94'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"status_code":6,"status_message":"Invalid id: The pre-requisite id
+        is invalid or not found."}'
+    http_version: 
+  recorded_at: Tue, 20 Jan 2015 02:42:23 GMT
+recorded_with: VCR 2.9.3
