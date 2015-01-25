@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 20 Jan 2015 02:42:18 GMT
+      - Sun, 25 Jan 2015 05:57:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -50,5 +50,5 @@ http_interactions:
         H4sIAAAAAAAAAKrmUlBQSi0qyi9SslKoBnKA3OKSxJLSYiDfxMBAByKUm1pc
         nJieChRTyswrS8zJTFHITFECytVy1QIAAAD//wMAY9kknkMAAAA=
     http_version: 
-  recorded_at: Tue, 20 Jan 2015 02:42:18 GMT
+  recorded_at: Sun, 25 Jan 2015 05:57:25 GMT
 recorded_with: VCR 2.9.3

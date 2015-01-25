@@ -1,4 +1,4 @@
-class ActorQuery < PersonQuery
+class ActorQuery < Query
   private
 
   def query_by_name

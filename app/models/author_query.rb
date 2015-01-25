@@ -1,4 +1,4 @@
-class AuthorQuery < PersonQuery
+class AuthorQuery < Query
   private
 
   def query_by_name

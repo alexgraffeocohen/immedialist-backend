@@ -1,6 +1,6 @@
 class MusicQuerier
-  def self.search_by_song_title(title)
-    RSpotify::Track.search(title)
+  def self.search_by_song_name(name)
+    RSpotify::Track.search(name)
   end
 
   def self.search_by_song_id(external_id)
@@ -15,8 +15,8 @@ class MusicQuerier
     RSpotify::Artist.find(external_id)
   end
 
-  def self.search_by_album_title(title)
-    RSpotify::Album.search(title)
+  def self.search_by_album_name(name)
+    RSpotify::Album.search(name)
   end
 
   def self.search_by_album_id(external_id)

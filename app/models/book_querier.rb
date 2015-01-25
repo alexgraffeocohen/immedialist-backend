@@ -3,8 +3,8 @@ class BookQuerier
     @client = Goodreads::Client.new(Goodreads.configuration)
   end
 
-  def search_by_book_title(title)
-    client.search_books(title)
+  def search_by_book_name(name)
+    client.search_books(name)
   end
 
   def search_by_book_id(external_id)

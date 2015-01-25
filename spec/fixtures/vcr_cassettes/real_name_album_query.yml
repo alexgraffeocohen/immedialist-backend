@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 20 Jan 2015 02:42:16 GMT
+      - Sun, 25 Jan 2015 06:03:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -91,7 +91,7 @@ http_interactions:
         BnooOi+Gxv93Gw1+djrpw2lZDQfXHOuqdnm1DR5/+uHT3wAAAP//AwCOnwck
         hycAAA==
     http_version: 
-  recorded_at: Tue, 20 Jan 2015 02:42:16 GMT
+  recorded_at: Sun, 25 Jan 2015 06:03:12 GMT
 - request:
     method: get
     uri: https://api.spotify.com/v1/albums/4m2880jivSbbyEGAKfITCa
@@ -113,7 +113,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 20 Jan 2015 02:42:17 GMT
+      - Sun, 25 Jan 2015 06:03:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -201,5 +201,5 @@ http_interactions:
         KAgei2YnrU0Ln5TM+KJR8kYxjVIRzHr9y9MJhMsOLV1AlmnVl1VnGf75PwAA
         AP//AwABmSIIA1UAAA==
     http_version: 
-  recorded_at: Tue, 20 Jan 2015 02:42:17 GMT
+  recorded_at: Sun, 25 Jan 2015 06:03:12 GMT
 recorded_with: VCR 2.9.3

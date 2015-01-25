@@ -1,30 +1,30 @@
 require 'rails_helper'
 
 describe BookQuery do
-  let(:book_query_with_real_title)  { BookQuery.new(title: real_title) }
-  let(:book_query_with_fake_title)  { BookQuery.new(title: fake_title) }
-  let(:book_query_with_real_id)     { BookQuery.new(external_id: real_id) }
-  let(:book_query_with_fake_id)     { BookQuery.new(external_id: fake_id) }
-  let(:real_title)                  { "The Goldfinch" }
-  let(:fake_title)                  { "The Greatest Book in The World: This is a Tribute" }
-  let(:real_id)                     { "17333223" }
-  let(:isbn)                        { "0316055433" }
-  let(:fake_id)                     { "ithinkicanithinkicanithinkican" }
+  let(:book_query_with_real_name)  { BookQuery.new(name: real_name) }
+  let(:book_query_with_fake_name)  { BookQuery.new(name: fake_name) }
+  let(:book_query_with_real_id)    { BookQuery.new(external_id: real_id) }
+  let(:book_query_with_fake_id)    { BookQuery.new(external_id: fake_id) }
+  let(:real_name)                  { "The Goldfinch" }
+  let(:fake_name)                  { "The Greatest Book in The World: This is a Tribute" }
+  let(:real_id)                    { "17333223" }
+  let(:isbn)                       { "0316055433" }
+  let(:fake_id)                    { "ithinkicanithinkicanithinkican" }
 
   describe '#query' do
-    context 'with a title' do
+    context 'with a name' do
       it 'returns an array of book results if there is a match' do
-        VCR.use_cassette('real_title_book_query') do
-          result = book_query_with_real_title.query
+        VCR.use_cassette('real_name_book_query') do
+          result = book_query_with_real_name.query
 
           expect(result.results.work).to be_an Array
-          expect(result.results.work.first.best_book.title).to eq(real_title)
+          expect(result.results.work.first.best_book.title).to eq(real_name)
         end
       end
 
       it 'returns an empty array if there is no match' do
-        VCR.use_cassette('fake_title_book_query') do
-          result = book_query_with_fake_title.query
+        VCR.use_cassette('fake_name_book_query') do
+          result = book_query_with_fake_name.query
 
           expect(result.total_results).to eq('0')
         end
@@ -36,7 +36,7 @@ describe BookQuery do
         VCR.use_cassette('real_id_book_query') do
           result = book_query_with_real_id.query
 
-          expect(result.title).to eq(real_title)
+          expect(result.title).to eq(real_name)
           expect(result.isbn).to eq(isbn)
         end
       end

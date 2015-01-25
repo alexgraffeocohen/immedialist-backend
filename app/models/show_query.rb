@@ -1,8 +1,8 @@
-class ShowQuery < MediaQuery
+class ShowQuery < Query
   private
 
-  def query_by_title
-    TVQuerier.search_by_tv_title(title)
+  def query_by_name
+    TVQuerier.search_by_tv_name(name)
   end
 
   def query_by_external_id

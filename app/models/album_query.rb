@@ -1,8 +1,8 @@
-class AlbumQuery < MediaQuery
+class AlbumQuery < Query
   private
 
-  def query_by_title
-    MusicQuerier.search_by_album_title(title)
+  def query_by_name
+    MusicQuerier.search_by_album_name(name)
   end
 
   def query_by_external_id

@@ -1,4 +1,4 @@
-class ArtistQuery < PersonQuery
+class ArtistQuery < Query
   private
 
   def query_by_name

@@ -19,7 +19,7 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Tue, 20 Jan 2015 02:42:22 GMT
+      - Sun, 25 Jan 2015 05:57:27 GMT
       Server:
       - Server
       Content-Type:
@@ -31,7 +31,7 @@ http_interactions:
       Location:
       - http://www.goodreads.com/book
       X-Request-Id:
-      - 07S41HBNQZDXJB9C6Y6X
+      - 0GM2XKYAEENP1RH0F4JM
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
@@ -39,14 +39,14 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Runtime:
-      - '0.020715'
+      - '0.029021'
       X-Content-Type-Options:
       - nosniff
       Set-Cookie:
-      - _session_id2=4babd5a460b18d1f804233d3d829f683; path=/; expires=Tue, 20-Jan-2015
-        08:42:22 GMT; HttpOnly
-      - csid=BAhJIhg0OTItNTY1OTUwMC01MTM3MTIxBjoGRVQ%3D--7d915077df46ecfa420335f06896e8662e04bc50;
-        path=/; expires=Sat, 20-Jan-2035 02:42:22 GMT
+      - _session_id2=42ef76a20cbf156cd1bd521f552c1efc; path=/; expires=Sun, 25-Jan-2015
+        11:57:27 GMT; HttpOnly
+      - csid=BAhJIhg2MTktMTkwMDc3OS02MjY0NTgzBjoGRVQ%3D--50036c75c009b339fb7d86ced746b999303d25ed;
+        path=/; expires=Thu, 25-Jan-2035 05:57:27 GMT
       - locale=en; path=/
       Content-Encoding:
       - gzip
@@ -59,5 +59,5 @@ http_interactions:
         9PlNXhOUTeR6ZYPBFOV9taX3ewEYY7gsQsqBHpekQRQ5rFemqpw6E0LwDmFe
         CDP+ASo9K9FfAAAA
     http_version: 
-  recorded_at: Tue, 20 Jan 2015 02:42:22 GMT
+  recorded_at: Sun, 25 Jan 2015 05:57:27 GMT
 recorded_with: VCR 2.9.3

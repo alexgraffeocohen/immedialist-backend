@@ -1,8 +1,8 @@
-class SongQuery < MediaQuery
+class SongQuery < Query
   private
 
-  def query_by_title
-    MusicQuerier.search_by_song_title(title)
+  def query_by_name
+    MusicQuerier.search_by_song_name(name)
   end
 
   def query_by_external_id

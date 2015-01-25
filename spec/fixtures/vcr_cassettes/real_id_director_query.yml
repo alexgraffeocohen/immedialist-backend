@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Tue, 20 Jan 2015 02:42:23 GMT
+      - Sun, 25 Jan 2015 05:57:28 GMT
       Etag:
-      - '"b763f19c2d186dbd8c6c19aec3614cf2"'
+      - '"7063821eaea3db8c8bab6479719a1489"'
       Server:
       - nginx
       Status:
@@ -35,13 +35,13 @@ http_interactions:
       X-Memc:
       - HIT
       X-Memc-Age:
-      - '4479'
+      - '4227'
       X-Memc-Expires:
-      - '17121'
+      - '17373'
       X-Memc-Key:
       - 23ea45b1e4b7fc4d3d4b2acc304fc538
       Content-Length:
-      - '1104'
+      - '1105'
       Connection:
       - keep-alive
     body:
@@ -70,8 +70,8 @@ http_interactions:
         dHRwOi8vd3d3LmRldG91cmZpbG0uY29tLyIsImlkIjo1NjQsImltZGJfaWQi
         OiJubTAwMDA1MDAiLCJuYW1lIjoiUmljaGFyZCBMaW5rbGF0ZXIiLCJwbGFj
         ZV9vZl9iaXJ0aCI6IkhvdXN0b24sIFRleGFzLCBVU0EiLCJwb3B1bGFyaXR5
-        IjoxLjg1NTU1NDAxMDA0MjM4LCJwcm9maWxlX3BhdGgiOiIveXBpQWNoOW9n
-        ODB1RTVoblZCQXlYWHRZNEIxLmpwZyJ9
+        IjowLjYxMjgyMzQ5NDM2NjYwNCwicHJvZmlsZV9wYXRoIjoiL3lwaUFjaDlv
+        ZzgwdUU1aG5WQkF5WFh0WTRCMS5qcGcifQ==
     http_version: 
-  recorded_at: Tue, 20 Jan 2015 02:42:23 GMT
+  recorded_at: Sun, 25 Jan 2015 05:57:28 GMT
 recorded_with: VCR 2.9.3

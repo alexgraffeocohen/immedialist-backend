@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/tv?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=Battlestar%20Galactica
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Sun, 25 Jan 2015 06:03:16 GMT
+      Etag:
+      - '"76586d51a570f3a9815c7ba107584ef6"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '10800'
+      X-Memc-Key:
+      - 6ad7e6433d249d2ec5354526d08d5976
+      Content-Length:
+      - '2297'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"backdrop_path":"/jUPkQdETILcxIW2xSNEzAxUeHgR.jpg","id":1972,"original_name":"Battlestar
+        Galactica","first_air_date":"2005-01-14","origin_country":["US","CA","GB"],"poster_path":"/2jf8SNzIct51xqWBPAO6Gv8NDd6.jpg","popularity":0.94421178039152,"name":"Battlestar
+        Galactica","vote_average":8.9,"vote_count":30},{"backdrop_path":"/z6mCUw3jFrCehJv3CjQ9vIIafSs.jpg","id":501,"original_name":"Battlestar
+        Galactica","first_air_date":"1978-09-17","origin_country":["US"],"poster_path":"/vEMEwqmOEZ4u0yVnlZ4d93sh1mE.jpg","popularity":0.0172600039143986,"name":"Battlestar
+        Galactica","vote_average":0.0,"vote_count":0},{"backdrop_path":"/kprS28D7NuLYmyqMd5RihTRLLCs.jpg","id":4882,"original_name":"Battlestar
+        Galactica: The Resistance","first_air_date":"2006-09-05","origin_country":["US"],"poster_path":"/nyz4S8ozmucWk0WjQUMo5lgHryx.jpg","popularity":0.0547854622598495,"name":"Battlestar
+        Galactica: The Resistance","vote_average":0.0,"vote_count":0},{"backdrop_path":"/h1gSOip8kSS8NHu3A0YSdjSxY9k.jpg","id":33240,"original_name":"Battlestar
+        Galactica : Blood & Chrome","first_air_date":"2012-11-09","origin_country":["US","CA"],"poster_path":"/wl6V9trvlfTfnkKhSgEMt5jRvGi.jpg","popularity":0.0315708080466234,"name":"Battlestar
+        Galactica: Blood & Chrome","vote_average":0.0,"vote_count":0},{"backdrop_path":"/V1oqPZqiHEDo0Y2620lo9CfEeX.jpg","id":61910,"original_name":"Battlestar
+        Galactica: Razor Flashbacks","first_air_date":"2007-10-05","origin_country":["US"],"poster_path":"/kpPjkgo5baGA5M50zvqF4fpRozj.jpg","popularity":0.009834375,"name":"Battlestar
+        Galactica: Razor Flashbacks","vote_average":7.0,"vote_count":1},{"backdrop_path":null,"id":17392,"original_name":"Battlestar
+        Galactica: The Plan","first_air_date":null,"origin_country":[],"poster_path":"/mXpffsu7CPV6Hg0iyNQCVh68jir.jpg","popularity":4.21859812066768e-25,"name":"Battlestar
+        Galactica: The Plan","vote_average":10.0,"vote_count":1},{"backdrop_path":"/kMZBSo1NVVIts5p5KOaGNVmESE8.jpg","id":8546,"original_name":"Battlestar
+        Galactica: The Face of the Enemy","first_air_date":"2008-12-12","origin_country":[],"poster_path":"/8tAG4khFuqIAIKYnm8SA3RfokZL.jpg","popularity":5.70539414370401e-27,"name":"Battlestar
+        Galactica: The Face of the Enemy","vote_average":0.0,"vote_count":0}],"total_pages":1,"total_results":7}'
+    http_version: 
+  recorded_at: Sun, 25 Jan 2015 06:03:16 GMT
+recorded_with: VCR 2.9.3

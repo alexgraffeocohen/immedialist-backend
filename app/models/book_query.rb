@@ -1,8 +1,8 @@
-class BookQuery < MediaQuery
+class BookQuery < Query
   private
 
-  def query_by_title
-    BookQuerier.new.search_by_book_title(title)
+  def query_by_name
+    BookQuerier.new.search_by_book_name(name)
   end
 
   def query_by_external_id

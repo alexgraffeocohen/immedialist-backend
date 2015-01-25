@@ -1,8 +1,8 @@
-class MovieQuery < MediaQuery
+class MovieQuery < Query
   private
 
-  def query_by_title
-    FilmQuerier.search_by_movie_title(title)
+  def query_by_name
+    FilmQuerier.search_by_movie_name(name)
   end
 
   def query_by_external_id

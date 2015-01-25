@@ -6,11 +6,11 @@ describe DirectorQuery do
   let(:director_query_with_fake_name)   { DirectorQuery.new(name: fake_name) }
   let(:director_query_with_real_id)     { DirectorQuery.new(external_id: real_id) }
   let(:director_query_with_fake_id)     { DirectorQuery.new(external_id: fake_id) }
-  let(:real_name)                        { "Richard Linklater" }
-  let(:common_name)                      { "Richard" }
-  let(:fake_name)                        { "The Worst director Ever" }
-  let(:real_id)                          { 564 }
-  let(:fake_id)                          { 90909090 }
+  let(:real_name)                       { "Richard Linklater" }
+  let(:common_name)                     { "Richard" }
+  let(:fake_name)                       { "The Worst director Ever" }
+  let(:real_id)                         { 564 }
+  let(:fake_id)                         { 90909090 }
 
   describe '#query' do
     context 'with an exact name' do

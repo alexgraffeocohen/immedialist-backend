@@ -1,6 +1,6 @@
 class FilmQuerier
-  def self.search_by_movie_title(title)
-    ::Tmdb::Movie.find(title)
+  def self.search_by_movie_name(name)
+    ::Tmdb::Movie.find(name)
   end
 
   def self.search_by_movie_id(id)

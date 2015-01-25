@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Tue, 20 Jan 2015 02:42:15 GMT
+      - Sun, 25 Jan 2015 06:03:11 GMT
       Etag:
-      - '"54e615555803fb98ed471074fb5963aa"'
+      - '"c1f8f300f811e5b38dc31c857b23f57a"'
       Server:
       - nginx
       Status:
@@ -33,11 +33,11 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Age:
-      - '0'
+      - '1250'
       X-Memc-Expires:
-      - '10800'
+      - '9550'
       X-Memc-Key:
       - 3f3f1269383239c29c1c9be6cafc173c
       Content-Length:
@@ -47,13 +47,13 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"id":6384,"known_for":[{"adult":false,"backdrop_path":"/yQeEMjnBOIAtFqIuEphyesH0a6y.jpg","id":603,"original_title":"The
-        Matrix","release_date":"1999-03-30","poster_path":"/gynBNzwyaHKtXqlEKKLioNkjKgN.jpg","popularity":4.20257353132182,"title":"The
-        Matrix","video":false,"vote_average":7.5,"vote_count":4043,"media_type":"movie"},{"adult":false,"backdrop_path":"/Fp3piEuHXxKnPBO5R0Wj4wjZHg.jpg","id":604,"original_title":"The
-        Matrix Reloaded","release_date":"2003-05-06","poster_path":"/ezIurBz2fdUc68d98Fp9dRf5ihv.jpg","popularity":3.25486379075253,"title":"The
-        Matrix Reloaded","video":false,"vote_average":6.5,"vote_count":1459,"media_type":"movie"},{"adult":false,"backdrop_path":"/pdVHUsb2eEz9ALNTr6wfRJe5xVa.jpg","id":605,"original_title":"The
-        Matrix Revolutions","release_date":"2003-10-26","poster_path":"/sKogjhfs5q3azmpW7DFKKAeLEG8.jpg","popularity":3.39954020454396,"title":"The
-        Matrix Revolutions","video":false,"vote_average":6.3,"vote_count":1318,"media_type":"movie"}],"name":"Keanu
-        Reeves","popularity":9.14214591647143,"profile_path":"/id1qIb7cZs2eQno90KsKwG8VLGN.jpg"}],"total_pages":1,"total_results":1}'
+        Matrix","release_date":"1999-03-30","poster_path":"/gynBNzwyaHKtXqlEKKLioNkjKgN.jpg","popularity":4.11005976368111,"title":"The
+        Matrix","video":false,"vote_average":7.6,"vote_count":4058,"media_type":"movie"},{"adult":false,"backdrop_path":"/Fp3piEuHXxKnPBO5R0Wj4wjZHg.jpg","id":604,"original_title":"The
+        Matrix Reloaded","release_date":"2003-05-06","poster_path":"/ezIurBz2fdUc68d98Fp9dRf5ihv.jpg","popularity":1.64271433901153,"title":"The
+        Matrix Reloaded","video":false,"vote_average":6.5,"vote_count":1462,"media_type":"movie"},{"adult":false,"backdrop_path":"/pdVHUsb2eEz9ALNTr6wfRJe5xVa.jpg","id":605,"original_title":"The
+        Matrix Revolutions","release_date":"2003-10-26","poster_path":"/sKogjhfs5q3azmpW7DFKKAeLEG8.jpg","popularity":3.06744841269704,"title":"The
+        Matrix Revolutions","video":false,"vote_average":6.4,"vote_count":1324,"media_type":"movie"}],"name":"Keanu
+        Reeves","popularity":17.6481770728851,"profile_path":"/id1qIb7cZs2eQno90KsKwG8VLGN.jpg"}],"total_pages":1,"total_results":1}'
     http_version: 
-  recorded_at: Tue, 20 Jan 2015 02:42:15 GMT
+  recorded_at: Sun, 25 Jan 2015 06:03:11 GMT
 recorded_with: VCR 2.9.3

@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Tue, 20 Jan 2015 02:42:25 GMT
+      - Sun, 25 Jan 2015 06:03:17 GMT
       Etag:
       - '"a8d277d2d95f2ea20f792a48c43093dc"'
       Server:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
     http_version: 
-  recorded_at: Tue, 20 Jan 2015 02:42:25 GMT
+  recorded_at: Sun, 25 Jan 2015 06:03:17 GMT
 recorded_with: VCR 2.9.3

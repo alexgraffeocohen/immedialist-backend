@@ -1,4 +1,4 @@
-class DirectorQuery < PersonQuery
+class DirectorQuery < Query
   private
 
   def query_by_name
