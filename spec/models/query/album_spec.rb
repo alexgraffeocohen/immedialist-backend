@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe AlbumQuery do
-  let(:album_query_with_real_name)  { AlbumQuery.new(name: real_name) }
-  let(:album_query_with_fake_name)  { AlbumQuery.new(name: fake_name) }
-  let(:album_query_with_real_id)    { AlbumQuery.new(external_id: real_id) }
-  let(:album_query_with_fake_id)    { AlbumQuery.new(external_id: fake_id) }
+describe Query::Album do
+  let(:album_query_with_real_name)  { Query::Album.new(name: real_name) }
+  let(:album_query_with_fake_name)  { Query::Album.new(name: fake_name) }
+  let(:album_query_with_real_id)    { Query::Album.new(external_id: real_id) }
+  let(:album_query_with_fake_id)    { Query::Album.new(external_id: fake_id) }
   let(:real_name)                   { "Random Access Memories" }
   let(:fake_name)                   { "GKFJGBNDJKGKFJFBDHDBGKGJDBGKGJDBGKDHGB" }
   let(:release_date)                { "2013-05-17" }

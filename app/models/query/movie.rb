@@ -1,4 +1,4 @@
-class MovieQuery < Query
+class Query::Movie < Query
   private
 
   def query_by_name

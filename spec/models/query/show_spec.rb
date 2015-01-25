@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe ShowQuery do
-  let(:show_query_with_real_name)  { ShowQuery.new(name: real_name) }
-  let(:show_query_with_fake_name)  { ShowQuery.new(name: fake_name) }
-  let(:show_query_with_real_id)    { ShowQuery.new(external_id: real_id) }
-  let(:show_query_with_fake_id)    { ShowQuery.new(external_id: fake_id) }
+describe Query::Show do
+  let(:show_query_with_real_name)  { Query::Show.new(name: real_name) }
+  let(:show_query_with_fake_name)  { Query::Show.new(name: fake_name) }
+  let(:show_query_with_real_id)    { Query::Show.new(external_id: real_id) }
+  let(:show_query_with_fake_id)    { Query::Show.new(external_id: fake_id) }
   let(:real_name)                  { "Battlestar Galactica" }
   let(:first_air_date)             { "2005-01-14" }
   let(:fake_name)                  { "The Worst show Show Ever" }

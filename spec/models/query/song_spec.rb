@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe SongQuery do
-  let(:song_query_with_real_name)  { SongQuery.new(name: real_name) }
-  let(:song_query_with_fake_name)  { SongQuery.new(name: fake_name) }
-  let(:song_query_with_real_id)    { SongQuery.new(external_id: real_id) }
-  let(:song_query_with_fake_id)    { SongQuery.new(external_id: fake_id) }
+describe Query::Song do
+  let(:song_query_with_real_name)  { Query::Song.new(name: real_name) }
+  let(:song_query_with_fake_name)  { Query::Song.new(name: fake_name) }
+  let(:song_query_with_real_id)    { Query::Song.new(external_id: real_id) }
+  let(:song_query_with_fake_id)    { Query::Song.new(external_id: fake_id) }
   let(:real_name)                  { "Fake Empire" }
   let(:fake_name)                  { "The Greatest Song in The World: This is a Tribute" }
   let(:real_id)                    { "6aUAF8JOd8zEl41B6I18xL" }

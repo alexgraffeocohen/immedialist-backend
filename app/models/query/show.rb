@@ -1,4 +1,4 @@
-class ShowQuery < Query
+class Query::Show < Query
   private
 
   def query_by_name

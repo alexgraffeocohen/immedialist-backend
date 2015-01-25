@@ -1,4 +1,4 @@
-class AlbumQuery < Query
+class Query::Album < Query
   private
 
   def query_by_name

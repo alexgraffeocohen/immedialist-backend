@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe BookQuery do
-  let(:book_query_with_real_name)  { BookQuery.new(name: real_name) }
-  let(:book_query_with_fake_name)  { BookQuery.new(name: fake_name) }
-  let(:book_query_with_real_id)    { BookQuery.new(external_id: real_id) }
-  let(:book_query_with_fake_id)    { BookQuery.new(external_id: fake_id) }
+describe Query::Book do
+  let(:book_query_with_real_name)  { Query::Book.new(name: real_name) }
+  let(:book_query_with_fake_name)  { Query::Book.new(name: fake_name) }
+  let(:book_query_with_real_id)    { Query::Book.new(external_id: real_id) }
+  let(:book_query_with_fake_id)    { Query::Book.new(external_id: fake_id) }
   let(:real_name)                  { "The Goldfinch" }
   let(:fake_name)                  { "The Greatest Book in The World: This is a Tribute" }
   let(:real_id)                    { "17333223" }

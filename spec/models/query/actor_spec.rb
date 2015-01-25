@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe ActorQuery do
-  let(:actor_query_with_real_name)   { ActorQuery.new(name: real_name) }
-  let(:actor_query_with_common_name) { ActorQuery.new(name: common_name) }
-  let(:actor_query_with_fake_name)   { ActorQuery.new(name: fake_name) }
-  let(:actor_query_with_real_id)     { ActorQuery.new(external_id: real_id) }
-  let(:actor_query_with_fake_id)     { ActorQuery.new(external_id: fake_id) }
+describe Query::Actor do
+  let(:actor_query_with_real_name)    { Query::Actor.new(name: real_name) }
+  let(:actor_query_with_common_name)  { Query::Actor.new(name: common_name) }
+  let(:actor_query_with_fake_name)    { Query::Actor.new(name: fake_name) }
+  let(:actor_query_with_real_id)      { Query::Actor.new(external_id: real_id) }
+  let(:actor_query_with_fake_id)      { Query::Actor.new(external_id: fake_id) }
   let(:real_name)                     { "Keanu Reeves" }
   let(:common_name)                   { "Jennifer" }
   let(:fake_name)                     { "The Worst Actor Ever" }

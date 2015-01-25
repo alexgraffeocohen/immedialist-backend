@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe ArtistQuery do
-  let(:artist_query_with_real_name)   { ArtistQuery.new(name: real_name) }
-  let(:artist_query_with_common_name) { ArtistQuery.new(name: common_name) }
-  let(:artist_query_with_fake_name)   { ArtistQuery.new(name: fake_name) }
-  let(:artist_query_with_real_id)     { ArtistQuery.new(external_id: real_id) }
-  let(:artist_query_with_fake_id)     { ArtistQuery.new(external_id: fake_id) }
+describe Query::Artist do
+  let(:artist_query_with_real_name)   { Query::Artist.new(name: real_name) }
+  let(:artist_query_with_common_name) { Query::Artist.new(name: common_name) }
+  let(:artist_query_with_fake_name)   { Query::Artist.new(name: fake_name) }
+  let(:artist_query_with_real_id)     { Query::Artist.new(external_id: real_id) }
+  let(:artist_query_with_fake_id)     { Query::Artist.new(external_id: fake_id) }
   let(:real_name)                     { "The National" }
   let(:fake_name)                     { "Why Did I Even Start Writing Music I'm a Failure" }
   let(:real_id)                       { "2cCUtGK9sDU2EoElnk0GNB" }

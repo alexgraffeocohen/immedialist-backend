@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe AuthorQuery do
-  let(:author_query_with_real_name) { AuthorQuery.new(name: real_name) }
-  let(:author_query_with_fake_name) { AuthorQuery.new(name: fake_name) }
-  let(:author_query_with_real_id)    { AuthorQuery.new(external_id: real_id) }
-  let(:author_query_with_fake_id)    { AuthorQuery.new(external_id: fake_id) }
+describe Query::Author do
+  let(:author_query_with_real_name)   { Query::Author.new(name: real_name) }
+  let(:author_query_with_fake_name)   { Query::Author.new(name: fake_name) }
+  let(:author_query_with_real_id)     { Query::Author.new(external_id: real_id) }
+  let(:author_query_with_fake_id)     { Query::Author.new(external_id: fake_id) }
   let(:real_name)                     { "William Faulkner" }
   let(:fake_name)                     { "The Greatest author in The World: This is a Tribute" }
   let(:real_id)                       { "3535" }

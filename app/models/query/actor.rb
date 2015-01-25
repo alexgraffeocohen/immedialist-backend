@@ -1,4 +1,4 @@
-class DirectorQuery < Query
+class Query::Actor < Query
   private
 
   def query_by_name

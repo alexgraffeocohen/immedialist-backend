@@ -1,4 +1,4 @@
-class SongQuery < Query
+class Query::Song < Query
   private
 
   def query_by_name

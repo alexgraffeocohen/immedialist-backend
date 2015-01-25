@@ -1,4 +1,4 @@
-class AuthorQuery < Query
+class Query::Author < Query
   private
 
   def query_by_name

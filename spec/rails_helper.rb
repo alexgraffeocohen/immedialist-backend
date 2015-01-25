@@ -13,6 +13,11 @@ require 'rspec/rails'
 # option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+# Require all nested query and search models to avoid model name collision when
+# all specs are run together
+Dir[Rails.root.join("app/models/query/*.rb")].each { |f| require f }
+Dir[Rails.root.join("app/models/search/*.rb")].each { |f| require f }
+
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!

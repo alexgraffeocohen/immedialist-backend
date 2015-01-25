@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-describe DirectorQuery do
-  let(:director_query_with_real_name)   { DirectorQuery.new(name: real_name) }
-  let(:director_query_with_common_name) { DirectorQuery.new(name: common_name) }
-  let(:director_query_with_fake_name)   { DirectorQuery.new(name: fake_name) }
-  let(:director_query_with_real_id)     { DirectorQuery.new(external_id: real_id) }
-  let(:director_query_with_fake_id)     { DirectorQuery.new(external_id: fake_id) }
+describe Query::Director do
+  let(:director_query_with_real_name)   { Query::Director.new(name: real_name) }
+  let(:director_query_with_common_name) { Query::Director.new(name: common_name) }
+  let(:director_query_with_fake_name)   { Query::Director.new(name: fake_name) }
+  let(:director_query_with_real_id)     { Query::Director.new(external_id: real_id) }
+  let(:director_query_with_fake_id)     { Query::Director.new(external_id: fake_id) }
   let(:real_name)                       { "Richard Linklater" }
   let(:common_name)                     { "Richard" }
   let(:fake_name)                       { "The Worst director Ever" }

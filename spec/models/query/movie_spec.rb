@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe MovieQuery do
-  let(:movie_query_with_real_name)  { MovieQuery.new(name: real_name) }
-  let(:movie_query_with_fake_name)  { MovieQuery.new(name: fake_name) }
-  let(:movie_query_with_real_id)    { MovieQuery.new(external_id: real_id) }
-  let(:movie_query_with_fake_id)    { MovieQuery.new(external_id: fake_id) }
+describe Query::Movie do
+  let(:movie_query_with_real_name)  { Query::Movie.new(name: real_name) }
+  let(:movie_query_with_fake_name)  { Query::Movie.new(name: fake_name) }
+  let(:movie_query_with_real_id)    { Query::Movie.new(external_id: real_id) }
+  let(:movie_query_with_fake_id)    { Query::Movie.new(external_id: fake_id) }
   let(:real_name)                   { "The Matrix" }
   let(:release_year)                { "1999" }
   let(:fake_name)                   { "When You Bite The Fry, the Fry Bites Back" }

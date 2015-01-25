@@ -1,4 +1,4 @@
-class BookQuery < Query
+class Query::Book < Query
   private
 
   def query_by_name
