@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe CategoryManager, :type => :model do
+RSpec.describe AssignCategoriesToPerson, :type => :service do
   it 'can assign the movie category if person has movie(s)' do
     actor = build(:person)
     movie = build(:movie)
     movie.actors << actor
     movie.save
-    CategoryManager.new(actor).assign_categories
+    AssignCategoriesToPerson.call(actor)
 
     expect(category_names_for(actor)).to include "Film"
   end
@@ -16,7 +16,7 @@ RSpec.describe CategoryManager, :type => :model do
     show = build(:show)
     show.actors << actor
     show.save
-    CategoryManager.new(actor).assign_categories
+    AssignCategoriesToPerson.call(actor)
 
     expect(category_names_for(actor)).to include "Television"
   end
@@ -26,7 +26,7 @@ RSpec.describe CategoryManager, :type => :model do
     album  = build(:album)
     artist.albums << album
     album.save
-    CategoryManager.new(artist).assign_categories
+    AssignCategoriesToPerson.call(artist)
 
     expect(category_names_for(artist)).to include "Music"
   end
@@ -36,7 +36,7 @@ RSpec.describe CategoryManager, :type => :model do
     book   = build(:book)
     author.books << book
     author.save
-    CategoryManager.new(author).assign_categories
+    AssignCategoriesToPerson.call(author)
 
     expect(category_names_for(author)).to include "Book"
   end
@@ -44,7 +44,7 @@ RSpec.describe CategoryManager, :type => :model do
   it 'will not assign the movie category if model has no movies' do
     actor = build(:person)
     actor.save
-    CategoryManager.new(actor).assign_categories
+    AssignCategoriesToPerson.call(actor)
 
     expect(category_names_for(actor)).to_not include "Film"
   end
@@ -54,7 +54,7 @@ RSpec.describe CategoryManager, :type => :model do
     talented_woman.movies_directed << build(:movie)
     talented_woman.movies_acted_in << build(:movie)
     talented_woman.save
-    CategoryManager.new(talented_woman).assign_categories
+    AssignCategoriesToPerson.call(talented_woman)
 
     expect(category_names_for(talented_woman)).to include "Person"
     expect(category_names_for(talented_woman)).to include "Film"

@@ -1,6 +1,4 @@
-class CategoryManager
-  attr_accessor :model
-
+class AssignCategoriesToPerson
   ASSOCIATION_CATEGORY_MAP = {
     movies_directed: "Film",
     movies_acted_in: "Film",
@@ -12,11 +10,15 @@ class CategoryManager
   }
   POSSIBLE_ASSOCIATIONS = ASSOCIATION_CATEGORY_MAP.keys
 
-  def initialize(model)
-    self.model = model
+  def self.call(person_model)
+    new(person_model).call
   end
 
-  def assign_categories
+  def initialize(person_model)
+    @person_model = person_model
+  end
+
+  def call
     POSSIBLE_ASSOCIATIONS.each do |association|
       if model_has(association) && model_does_not_already_have_category_for(association)
         assign_category_for(association)
@@ -26,15 +28,17 @@ class CategoryManager
 
   private
 
+  attr_reader :person_model
+
   def assign_category_for(association)
-    model.categories << Category.find_or_create_by(name: ASSOCIATION_CATEGORY_MAP[association])
+    person_model.categories << Category.find_or_create_by(name: ASSOCIATION_CATEGORY_MAP[association])
   end
 
   def model_has(association)
-    model.try(association) && !model.send(association).empty?
+    person_model.try(association) && !person_model.send(association).empty?
   end
 
   def model_does_not_already_have_category_for(association)
-    !model.categories.map(&:name).include?(ASSOCIATION_CATEGORY_MAP[association])
+    !person_model.categories.map(&:name).include?(ASSOCIATION_CATEGORY_MAP[association])
   end
 end

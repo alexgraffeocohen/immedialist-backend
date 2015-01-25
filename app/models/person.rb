@@ -29,7 +29,7 @@ class Person < ActiveRecord::Base
   private
 
   def assign_associated_categories
-    CategoryManager.new(self).assign_categories
+    AssignCategoriesToPerson.call(self)
   end
 
   def assign_to_person_category
