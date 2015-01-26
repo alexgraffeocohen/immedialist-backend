@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ListItem, :type => :model do
-  let!(:film)     { FactoryGirl.create(:film_category) }
-  let(:list_item) { FactoryGirl.build(:list_item, category: film) }
+  let(:list_item) { FactoryGirl.build(:list_item) }
 
   it 'will receive the name of the item it is attached to' do
     item = FactoryGirl.create(:movie, name: 'Interstellar')
