@@ -7,7 +7,7 @@ module Immedialist
 
       case item_type
       when ItemType then item_type
-      else Immedialist::ItemType.const_get(item_type).new
+      else ItemType.const_get(item_type).new
       end
 
     rescue

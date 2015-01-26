@@ -1,15 +1,15 @@
 module Immedialist
-  class ItemType
-    SUPPORTED_TYPES = [:movie, :show, :actor, :director, :book, :author,
-                       :song, :album, :artist]
+  SUPPORTED_ITEM_TYPES = [:movie, :show, :actor, :director, :book, :author,
+                          :song, :album, :artist]
 
+  class ItemType
     def name
       self.class.name.split('::').last
     end
 
-    SUPPORTED_TYPES.each do |type|
+    SUPPORTED_ITEM_TYPES.each do |type|
       class_name = type.to_s.capitalize
-      Immedialist::ItemType.const_set(class_name, Class.new(ItemType))
+      self.const_set(class_name, Class.new(self))
     end
   end
 end
