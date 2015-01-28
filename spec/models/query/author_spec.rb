@@ -10,11 +10,11 @@ describe Query::Author do
   let(:real_id)                       { "3535" }
   let(:fake_id)                       { "ithinkicanithinkicanithinkican" }
 
-  describe '#query' do
+  describe '#call' do
     context 'with an accurate name' do
       it 'returns the closest author match' do
         VCR.use_cassette('real_name_author_query') do
-          result = author_query_with_real_name.query
+          result = author_query_with_real_name.call
 
           expect(result.name).to eq(real_name)
         end
@@ -22,7 +22,7 @@ describe Query::Author do
 
       it 'returns nothing if there is no match' do
         VCR.use_cassette('fake_name_author_query') do
-          result = author_query_with_fake_name.query
+          result = author_query_with_fake_name.call
 
           expect(result).to be_empty
         end
@@ -32,7 +32,7 @@ describe Query::Author do
     context 'with an external id' do
       it 'returns a detailed author record if external id is recognized' do
         VCR.use_cassette('real_id_author_query') do
-          result = author_query_with_real_id.query
+          result = author_query_with_real_id.call
 
           expect(result.name).to eq(real_name)
           expect(result.books.book).to be_an Array
@@ -41,7 +41,7 @@ describe Query::Author do
 
       it 'returns an error object if external id is not recognized' do
         VCR.use_cassette('fake_id_author_query') do
-          expect { author_query_with_fake_id.query }.to raise_exception(Goodreads::NotFound)
+          expect { author_query_with_fake_id.call }.to raise_exception(Goodreads::NotFound)
         end
       end
     end

@@ -11,11 +11,11 @@ describe Query::Movie do
   let(:real_id)                     { 603 }
   let(:fake_id)                     { 90909090 }
 
-  describe '#query' do
+  describe '#call' do
     context 'with a name' do
       it 'returns an array of movie results if there is a match' do
         VCR.use_cassette('real_name_movie_query') do
-          result = movie_query_with_real_name.query
+          result = movie_query_with_real_name.call
 
           expect(result).to be_an Array
           expect(result.first.title).to eq(real_name)
@@ -26,7 +26,7 @@ describe Query::Movie do
 
       it 'returns an empty array if there is no match' do
         VCR.use_cassette('fake_name_movie_query') do
-          result = movie_query_with_fake_name.query
+          result = movie_query_with_fake_name.call
 
           expect(result).to be_an Array
           expect(result).to be_empty
@@ -37,7 +37,7 @@ describe Query::Movie do
     context 'with an external id' do
       it 'returns a detailed movie record if external id is recognized' do
         VCR.use_cassette('real_id_movie_query') do
-          result = movie_query_with_real_id.query
+          result = movie_query_with_real_id.call
 
           expect(result.title).to eq(real_name)
           expect(result.release_date).to include(release_year)
@@ -48,7 +48,7 @@ describe Query::Movie do
 
       it 'returns an error object if external id is not recognized' do
         VCR.use_cassette('fake_id_movie_query') do
-          result = movie_query_with_fake_id.query
+          result = movie_query_with_fake_id.call
 
           expect(result[:status_message]).to include("Invalid id")
         end

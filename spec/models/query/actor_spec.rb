@@ -12,11 +12,11 @@ describe Query::Actor do
   let(:real_id)                       { 6384 }
   let(:fake_id)                       { 90909090 }
 
-  describe '#query' do
+  describe '#call' do
     context 'with an exact name' do
       it 'returns an array with a single actor result' do
         VCR.use_cassette('exact_name_actor_query') do
-          result = actor_query_with_real_name.query
+          result = actor_query_with_real_name.call
 
           expect(result).to be_an Array
           expect(result.first.name).to eq(real_name)
@@ -28,7 +28,7 @@ describe Query::Actor do
     context 'with a common name' do
       it 'returns an array of actor results' do
         VCR.use_cassette('common_name_actor_query') do
-          result = actor_query_with_common_name.query
+          result = actor_query_with_common_name.call
 
           expect(result).to be_an Array
           expect(result.first.name).to include(common_name)
@@ -39,7 +39,7 @@ describe Query::Actor do
     context 'with a fake name' do
       it 'returns an empty array' do
         VCR.use_cassette('fake_name_actor_query') do
-          result = actor_query_with_fake_name.query
+          result = actor_query_with_fake_name.call
 
           expect(result).to be_an Array
           expect(result).to be_empty
@@ -50,7 +50,7 @@ describe Query::Actor do
     context 'with an external id' do
       it 'returns a detailed actor record if external id is recognized' do
         VCR.use_cassette('real_id_actor_query') do
-          result = actor_query_with_real_id.query
+          result = actor_query_with_real_id.call
 
           expect(result.name).to eq(real_name)
           expect(result.biography).to_not be_nil
@@ -59,7 +59,7 @@ describe Query::Actor do
 
       it 'returns an error object if external id is not recognized' do
         VCR.use_cassette('fake_id_actor_query') do
-          result = actor_query_with_fake_id.query
+          result = actor_query_with_fake_id.call
 
           expect(result[:status_message]).to include("Invalid id")
         end

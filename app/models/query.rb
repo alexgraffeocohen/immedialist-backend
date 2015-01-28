@@ -4,7 +4,7 @@ class Query
     @name = query_params[:name]
   end
 
-  def query
+  def call
     if no_external_id_provided
       query_by_name
     else

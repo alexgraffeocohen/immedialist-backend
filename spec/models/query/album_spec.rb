@@ -11,11 +11,11 @@ describe Query::Album do
   let(:real_id)                     { "4m2880jivSbbyEGAKfITCa" }
   let(:fake_id)                     { "ithinkicanithinkicanithinkican" }
 
-  describe '#query' do
+  describe '#call' do
     context 'with a name' do
       it 'returns an array of album results if there is a match' do
         VCR.use_cassette('real_name_album_query') do
-          result = album_query_with_real_name.query
+          result = album_query_with_real_name.call
 
           expect(result).to be_an Array
           expect(result.first.name).to eq(real_name)
@@ -25,7 +25,7 @@ describe Query::Album do
 
       it 'returns an empty array if there is no match' do
         VCR.use_cassette('fake_name_album_query') do
-          result = album_query_with_fake_name.query
+          result = album_query_with_fake_name.call
 
           expect(result).to be_an Array
           expect(result).to be_empty
@@ -36,7 +36,7 @@ describe Query::Album do
     context 'with an external id' do
       it 'returns a detailed album record if external id is recognized' do
         VCR.use_cassette('real_id_album_query') do
-          result = album_query_with_real_id.query
+          result = album_query_with_real_id.call
 
           expect(result.name).to eq(real_name)
           expect(result.release_date).to eq(release_date)
@@ -46,7 +46,7 @@ describe Query::Album do
 
       it 'returns an error object if external id is not recognized' do
         VCR.use_cassette('fake_id_album_query') do
-          expect { album_query_with_fake_id.query }.to raise_exception(RestClient::BadRequest)
+          expect { album_query_with_fake_id.call }.to raise_exception(RestClient::BadRequest)
         end
       end
     end
