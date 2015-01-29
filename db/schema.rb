@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126000130) do
+ActiveRecord::Schema.define(version: 20150128054513) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 20150126000130) do
     t.datetime "updated_at"
     t.string   "trailer_link"
     t.integer  "category_id"
+    t.integer  "tmdb_id"
   end
 
   create_table "people", force: :cascade do |t|
