@@ -15,4 +15,8 @@ RSpec.describe ExecuteQueryForSearch, type: :service do
     expect(search.results).to_not be_empty
     expect(search.results.map(&:class).uniq).to eq([Movie])
   end
+
+  it 'saves the search' do
+    expect(search).to be_persisted
+  end
 end
