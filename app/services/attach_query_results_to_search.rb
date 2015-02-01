@@ -10,8 +10,7 @@ class AttachQueryResultsToSearch
 
   def call
     query = query_class.new(name: search.name)
-    records_from_query = SaveResultsFromQuery.call(query, item_type)
-    search.results = records_from_query
+    search.results = SaveResultsFromQuery.call(query, item_type)
     search.save!
   end
 
