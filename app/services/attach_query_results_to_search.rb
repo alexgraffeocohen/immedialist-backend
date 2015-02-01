@@ -1,4 +1,4 @@
-class ExecuteQueryForSearch
+class AttachQueryResultsToSearch
   def self.call(search, item_type)
     new(search, item_type).call
   end
