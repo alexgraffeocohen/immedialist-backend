@@ -9,7 +9,6 @@ class AttachQueryResultsToSearch
   end
 
   def call
-    query = query_class.new(name: search.name)
     search.results = SaveResultsFromQuery.call(query, item_type)
     search.save!
   end
@@ -17,6 +16,10 @@ class AttachQueryResultsToSearch
   private
 
   attr_reader :search, :item_type
+
+  def query
+    query_class.new(name: search.name)
+  end
 
   def query_class
     Query.const_get(@item_type.name)
