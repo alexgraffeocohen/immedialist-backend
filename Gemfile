@@ -10,6 +10,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'fuubar'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
