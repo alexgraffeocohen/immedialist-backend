@@ -18,6 +18,7 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/models/query/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/models/search/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/services/query_saver/*.rb")].each { |f| require f }
+Dir[Rails.root.join("app/services/query_sanitizer/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
