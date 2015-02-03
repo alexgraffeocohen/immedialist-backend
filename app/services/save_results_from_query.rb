@@ -9,13 +9,11 @@ class SaveResultsFromQuery
   end
 
   def call
-    query.call
-    query_saver_class.call(query)
+    query_results = @query.call
+    query_saver_class.call(query_results)
   end
 
   private
-
-  attr_reader :query
 
   def query_saver_class
     QuerySaver.const_get(@item_type.name)

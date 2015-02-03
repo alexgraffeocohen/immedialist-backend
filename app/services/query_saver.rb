@@ -1,10 +1,10 @@
 class QuerySaver
-  def self.call(query)
-    new(query).call
+  def self.call(results)
+    new(results).call
   end
 
-  def initialize(query)
-    @results = query.results
+  def initialize(results)
+    @results = results
   end
 
   def call
