@@ -1,22 +1,43 @@
 require 'rails_helper'
 
 RSpec.describe AttachQueryResultsToSearch, type: :service do
-  let(:list_item) { ListItem.new(name: "The Matrix") }
-  let(:search)    { Search::Movie.create(list_item: list_item) }
+  let(:search) { Search::Movie.create(list_item: list_item) }
   let(:item_type) { Immedialist::ItemType::Movie.new }
 
-  before(:each) do
-    VCR.use_cassette('real_name_movie_query') do
-      AttachQueryResultsToSearch.call(search, item_type)
+  context 'given any search' do
+    let(:list_item) { build(:list_item, name: "Generic Query") }
+
+    it 'saves the search' do
+      VCR.use_cassette('generic_list_item_query') do
+        AttachQueryResultsToSearch.call(search, item_type)
+      end
+
+      expect(search).to be_persisted
     end
   end
 
-  it 'attaches query results to search as new item objects' do
-    expect(search.results).to_not be_empty
-    expect(search.results.map(&:class).uniq).to eq([Movie])
+  context 'given a search with results' do
+    let(:list_item) { build(:list_item, name: "The Matrix") }
+
+    it 'attaches query results to search as new item objects' do
+      VCR.use_cassette('real_name_movie_query') do
+        AttachQueryResultsToSearch.call(search, item_type)
+      end
+
+      expect(search.results).to_not be_empty
+      expect(search.results.map(&:class).uniq).to eq([Movie])
+    end
   end
 
-  it 'saves the search' do
-    expect(search).to be_persisted
+  context 'given a search without results' do
+    let(:list_item) { build(:list_item, name: "Absolutely No Results") }
+
+    it 'saves query results as empty collection' do
+      VCR.use_cassette('no_results_query') do
+        AttachQueryResultsToSearch.call(search, item_type)
+      end
+
+      expect(search.results).to be_empty
+    end
   end
 end
