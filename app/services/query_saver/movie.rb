@@ -7,12 +7,11 @@ class QuerySaver::Movie < QuerySaver
   private
 
   def build_movies
-    results.is_a?(Array) or raise TypeError, "Results is not an array"
     results.map do |movie_result|
       ::Movie.new(
-        name: movie_result.title,
-        release_date: movie_result.release_date,
-        tmdb_id: movie_result.id
+        name: movie_result.fetch(:title),
+        release_date: movie_result.fetch(:release_date),
+        tmdb_id: movie_result.fetch(:id)
       )
     end
   end
