@@ -2,12 +2,12 @@ require 'rails_helper'
 
 describe Query::Movie do
   let(:movie_query_with_real_name)  { Query::Movie.new(name: real_name) }
-  let(:movie_query_with_fake_name)  { Query::Movie.new(name: fake_name) }
+  let(:movie_query_with_fake_name)  { Query::Movie.new(name: non_existant_name) }
   let(:movie_query_with_real_id)    { Query::Movie.new(external_id: real_id) }
   let(:movie_query_with_fake_id)    { Query::Movie.new(external_id: fake_id) }
   let(:real_name)                   { "The Matrix" }
   let(:release_year)                { "1999" }
-  let(:fake_name)                   { "When You Bite The Fry, the Fry Bites Back" }
+  let(:non_existant_name)           { "There Are No Results For Sure" }
   let(:real_id)                     { 603 }
   let(:fake_id)                     { 90909090 }
 
@@ -25,7 +25,7 @@ describe Query::Movie do
       end
 
       it 'returns an empty array if there is no match' do
-        VCR.use_cassette('fake_name_movie_query') do
+        VCR.use_cassette('no_results_movie_query') do
           result = movie_query_with_fake_name.call
 
           expect(result).to be_an Array

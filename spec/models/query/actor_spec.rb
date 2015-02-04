@@ -3,19 +3,19 @@ require 'rails_helper'
 describe Query::Actor do
   let(:actor_query_with_real_name)    { Query::Actor.new(name: real_name) }
   let(:actor_query_with_common_name)  { Query::Actor.new(name: common_name) }
-  let(:actor_query_with_fake_name)    { Query::Actor.new(name: fake_name) }
+  let(:actor_query_with_fake_name)    { Query::Actor.new(name: non_existant_name) }
   let(:actor_query_with_real_id)      { Query::Actor.new(external_id: real_id) }
   let(:actor_query_with_fake_id)      { Query::Actor.new(external_id: fake_id) }
   let(:real_name)                     { "Keanu Reeves" }
   let(:common_name)                   { "Jennifer" }
-  let(:fake_name)                     { "The Worst Actor Ever" }
+  let(:non_existant_name)             { "There Are No Results For Sure" }
   let(:real_id)                       { 6384 }
   let(:fake_id)                       { 90909090 }
 
   describe '#call' do
     context 'with an exact name' do
       it 'returns an array with a single actor result' do
-        VCR.use_cassette('exact_name_actor_query') do
+        VCR.use_cassette('real_name_actor_query') do
           result = actor_query_with_real_name.call
 
           expect(result).to be_an Array
@@ -36,9 +36,9 @@ describe Query::Actor do
       end
     end
 
-    context 'with a fake name' do
+    context 'with a non-existant name' do
       it 'returns an empty array' do
-        VCR.use_cassette('fake_name_actor_query') do
+        VCR.use_cassette('no_results_actor_query') do
           result = actor_query_with_fake_name.call
 
           expect(result).to be_an Array

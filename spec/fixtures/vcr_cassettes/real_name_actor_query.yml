@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/person?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=Keanu%20Reeves
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 04 Feb 2015 02:59:50 GMT
+      Etag:
+      - '"654bb16789ef1427768268daf24776c6"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      Vary:
+      - Accept-Encoding
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '9358'
+      X-Memc-Expires:
+      - '1442'
+      X-Memc-Key:
+      - 3f3f1269383239c29c1c9be6cafc173c
+      Content-Length:
+      - '1155'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"id":6384,"known_for":[{"adult":false,"backdrop_path":"/yQeEMjnBOIAtFqIuEphyesH0a6y.jpg","id":603,"original_title":"The
+        Matrix","release_date":"1999-03-30","poster_path":"/gynBNzwyaHKtXqlEKKLioNkjKgN.jpg","popularity":4.4968535154412,"title":"The
+        Matrix","video":false,"vote_average":7.6,"vote_count":4080,"media_type":"movie"},{"adult":false,"backdrop_path":"/Fp3piEuHXxKnPBO5R0Wj4wjZHg.jpg","id":604,"original_title":"The
+        Matrix Reloaded","release_date":"2003-05-06","poster_path":"/ezIurBz2fdUc68d98Fp9dRf5ihv.jpg","popularity":8.00229601431251,"title":"The
+        Matrix Reloaded","video":false,"vote_average":6.5,"vote_count":1478,"media_type":"movie"},{"adult":false,"backdrop_path":"/pdVHUsb2eEz9ALNTr6wfRJe5xVa.jpg","id":605,"original_title":"The
+        Matrix Revolutions","release_date":"2003-10-26","poster_path":"/sKogjhfs5q3azmpW7DFKKAeLEG8.jpg","popularity":2.05744658312403,"title":"The
+        Matrix Revolutions","video":false,"vote_average":6.4,"vote_count":1337,"media_type":"movie"}],"name":"Keanu
+        Reeves","popularity":9.9732263053208,"profile_path":"/id1qIb7cZs2eQno90KsKwG8VLGN.jpg"}],"total_pages":1,"total_results":1}'
+    http_version: 
+  recorded_at: Wed, 04 Feb 2015 02:59:50 GMT
+recorded_with: VCR 2.9.3
