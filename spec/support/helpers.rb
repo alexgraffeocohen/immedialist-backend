@@ -3,7 +3,7 @@ module Helpers
     model.categories.map(&:name)
   end
 
-  def call_query_with_cassette(vcr_cassette)
+  def call_query_with_cassette(query, vcr_cassette)
     VCR.use_cassette(vcr_cassette) do
       query.call
     end
