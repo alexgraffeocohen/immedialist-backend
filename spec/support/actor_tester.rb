@@ -1,6 +1,6 @@
 require 'support/helpers'
 
-class MovieTester
+class ActorTester
   include Helpers
 
   def call_query_with_results
@@ -14,18 +14,18 @@ class MovieTester
   private
 
   def query_with_results
-    Query::Movie.new(name: "The Matrix")
+    Query::Actor.new(name: "Keanu Reeves")
   end
 
   def results_cassette
-    'real_name_movie_query'
+    'real_name_actor_query'
   end
 
   def query_with_no_results
-    Query::Movie.new(name: "There Are No Results For Sure")
+    Query::Actor.new(name: "There Are No Results For Sure")
   end
 
   def no_results_cassette
-    'no_results_movie_query'
+    'no_results_actor_query'
   end
 end
