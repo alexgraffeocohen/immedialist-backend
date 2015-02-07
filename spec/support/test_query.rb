@@ -2,20 +2,24 @@ class TestQuery
   include FactoryGirl::Syntax::Methods
   include Immedialist::ItemTypeConversion
 
-  def self.call_with_real_name
-    new.call_real_name_query
+  def call_with_real_name
+    self.query = query_class.new(name: real_name)
+    call_query_with_cassette(real_name_cassette)
   end
 
-  def self.call_with_fake_name
-    new.call_fake_name_query
+  def call_with_fake_name
+    self.query = query_class.new(name: fake_name)
+    call_query_with_cassette(fake_name_cassette)
   end
 
-  def self.call_with_real_id
-    new.call_real_id_query
+  def call_with_real_id
+    self.query = query_class.new(external_id: real_external_id)
+    call_query_with_cassette(real_id_cassette)
   end
 
-  def self.call_with_fake_id
-    new.call_fake_id_query
+  def call_with_fake_id
+    self.query = query_class.new(external_id: fake_external_id)
+    call_query_with_cassette(fake_id_cassette)
   end
 
   private

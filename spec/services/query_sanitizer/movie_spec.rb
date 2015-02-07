@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe QuerySanitizer::Movie, type: :service do
-  let(:test_query) { TestQuery::Movie }
+  let(:test_query) { TestQuery::Movie.new }
 
   context 'when query has multiple results' do
     let(:query_results) { test_query.call_with_real_name }

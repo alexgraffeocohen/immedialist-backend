@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Query::Movie do
-  let(:test_query) { TestQuery::Movie }
+  let(:test_query) { TestQuery::Movie.new }
   let(:real_movie) { build(:real_movie) }
   let(:fake_movie) { build(:fake_movie) }
 
