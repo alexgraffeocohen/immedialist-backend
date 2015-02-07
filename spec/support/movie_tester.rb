@@ -4,17 +4,28 @@ class MovieTester
   include Helpers
 
   def call_query_with_results
-    call_query_with_cassette(query_with_results, results_cassette)
+    self.query = query_with_results
+    call_query_with_cassette(results_cassette)
   end
 
   def call_query_with_no_results
-    call_query_with_cassette(query_with_no_results, no_results_cassette)
+    self.query = query_with_no_results
+    call_query_with_cassette(no_results_cassette)
+  end
+
+  def movie_name
+    "The Matrix"
+  end
+
+  def movie_release_year
+    "1999"
   end
 
   private
+  attr_accessor :query
 
   def query_with_results
-    Query::Movie.new(name: "The Matrix")
+    Query::Movie.new(name: movie_name)
   end
 
   def results_cassette

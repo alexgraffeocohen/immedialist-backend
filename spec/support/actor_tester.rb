@@ -4,14 +4,17 @@ class ActorTester
   include Helpers
 
   def call_query_with_results
-    call_query_with_cassette(query_with_results, results_cassette)
+    self.query = query_with_results
+    call_query_with_cassette(results_cassette)
   end
 
   def call_query_with_no_results
-    call_query_with_cassette(query_with_no_results, no_results_cassette)
+    self.query = query_with_no_results
+    call_query_with_cassette(no_results_cassette)
   end
 
   private
+  attr_accessor :query
 
   def query_with_results
     Query::Actor.new(name: "Keanu Reeves")

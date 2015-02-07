@@ -1,5 +1,10 @@
 module Immedialist
   module ItemTypeConversion
+    def to_item_type
+      type_name = self.class.name.split('::').last
+      ItemType(type_name)
+    end
+
     module_function
 
     def ItemType(item_type)
