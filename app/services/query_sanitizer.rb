@@ -20,6 +20,13 @@ class QuerySanitizer
     raise NotImplementedError
   end
 
+  def tmdb_person_api_expecations
+    results.is_a?(Array) or raise TypeError, "Results is not an array"
+    return [] if results.empty?
+    results.first.is_a?(Tmdb::Person) or
+      raise TypeError, "Result is not a TMDB person object"
+  end
+
   def sanitize_results
     raise NotImplementedError
   end

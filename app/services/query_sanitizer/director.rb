@@ -1,4 +1,4 @@
-class QuerySanitizer::Actor < QuerySanitizer
+class QuerySanitizer::Director < QuerySanitizer
   private
 
   def compare_results_to_api_expectations
