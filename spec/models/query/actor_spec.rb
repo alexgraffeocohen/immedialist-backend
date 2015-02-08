@@ -26,7 +26,7 @@ describe Query::Actor do
       end
     end
 
-    context 'with a non-existant name' do
+    context 'with a fake name' do
       it 'returns an empty array' do
         result = test_query.call_with_fake_name
 
