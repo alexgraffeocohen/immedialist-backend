@@ -2,8 +2,8 @@ class TestQuery
   include FactoryGirl::Syntax::Methods
   include Immedialist::ItemTypeConversion
 
-  delegate :real_name_fixture, :fake_name_fixture, :real_id_fixture,
-    :fake_id_fixture, to: :fixture_handler
+  delegate :real_name_fixture, :common_name_fixture, :fake_name_fixture,
+    :real_id_fixture, :fake_id_fixture, to: :fixture_handler
 
   def initialize
     @fixture_handler = FixtureHandler.new(item_type_name)
@@ -12,6 +12,11 @@ class TestQuery
   def call_with_real_name
     self.query = query_class.new(name: real_name)
     call_query_with_fixture(real_name_fixture)
+  end
+
+  def call_with_common_name
+    self.query = query_class.new(name: common_name)
+    call_query_with_fixture(common_name_fixture)
   end
 
   def call_with_fake_name
