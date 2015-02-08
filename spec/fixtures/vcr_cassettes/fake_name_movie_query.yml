@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.themoviedb.org/3/search/movie?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=There%20Are%20No%20Results%20For%20Sure
+    uri: http://api.themoviedb.org/3/search/movie?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=The%20Most%20Obscure%20Movie%20Ever
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sat, 07 Feb 2015 21:37:24 GMT
+      - Sun, 08 Feb 2015 04:20:17 GMT
       Etag:
       - '"a8d277d2d95f2ea20f792a48c43093dc"'
       Server:
@@ -37,7 +37,7 @@ http_interactions:
       X-Memc-Expires:
       - '10800'
       X-Memc-Key:
-      - e7857811231e62d84f88162e3ec7f17e
+      - 27ece79c23f5dcf2a3b7a4d7d39ea640
       Content-Length:
       - '57'
       Connection:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
     http_version: 
-  recorded_at: Sat, 07 Feb 2015 21:37:23 GMT
+  recorded_at: Sun, 08 Feb 2015 04:20:17 GMT
 recorded_with: VCR 2.9.3

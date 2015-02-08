@@ -19,7 +19,7 @@ FactoryGirl.define do
     end
 
     factory :fake_actor do
-      name "There Are No Results For Sure"
+      name "The Worst Actor Ever"
       tmdb_id 90909090
     end
   end

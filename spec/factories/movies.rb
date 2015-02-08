@@ -19,7 +19,7 @@ FactoryGirl.define do
     end
 
     factory :fake_movie do
-      name "There Are No Results For Sure"
+      name "The Most Obscure Movie Ever"
       release_date ""
       tmdb_id 90909090
     end

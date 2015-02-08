@@ -8,7 +8,7 @@ describe Query::Director do
   let(:director_query_with_fake_id)     { Query::Director.new(external_id: fake_id) }
   let(:real_name)                       { "Richard Linklater" }
   let(:common_name)                     { "Richard" }
-  let(:fake_name)                       { "The Worst director Ever" }
+  let(:fake_name)                       { "The Worst Director Ever" }
   let(:real_id)                         { 564 }
   let(:fake_id)                         { 90909090 }
 
