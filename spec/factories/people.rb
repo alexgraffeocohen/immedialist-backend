@@ -22,5 +22,19 @@ FactoryGirl.define do
       name "The Worst Actor Ever"
       tmdb_id 90909090
     end
+
+    factory :real_director do
+      name "Richard Linklater"
+      tmdb_id 564
+    end
+
+    factory :director_with_common_name do
+      name "Richard"
+    end
+
+    factory :fake_director do
+      name "The Worst Director Ever"
+      tmdb_id 90909090
+    end
   end
 end
