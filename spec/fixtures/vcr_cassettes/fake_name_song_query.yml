@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=The%20Greatest%20Song%20in%20The%20World:%20This%20is%20a%20Tribute&type=track
+    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=Even%20The%20Hipsters%20Don%27t%20Know%20This%20Song%20It%27s%20So%20Obscure&type=track
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 25 Jan 2015 06:03:17 GMT
+      - Sun, 08 Feb 2015 05:47:41 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAFyOsQrCMBCGd58iFOwSaWvdhCJOPoAFB3GI9WoP0yQm12IR
-        3900rYtwy/fxcfzvBWMRWVE9XMS27O3Ri8ZCPWLUEBm3TVNhMHFGE9ZDUuk2
-        7depA2GrZvfswA5F2QA/WBAEjvhRqztHxUd50lbelpu9B3Tcn+ClxWtHEOu6
-        dkBFFktskYo8i2kwUIQx0WoaggRtGHZml1mFelR5NhsFryBUJ+Wspt+j/EXG
-        Qo+6c38haRIydJ4/i88XAAD//wMAF0UGYBABAAA=
+        H4sIAAAAAAAAAFzOMQvCMBAF4N1fEQp2idjaRRCKi4Li4KCbONRyNcE2iblr
+        tUj/u2laF7e87x7hfSaMBWSz/IEBW7GPiw6EhaKPgSAyuIqizMg5Gk2yaOe5
+        rqJmESFkNhfrZw22TbcNKH4WwHfSIIFFvtFqmiyJH5R+uYtEftLqzvfktH/z
+        4w3z2kKoiwKB0jgsZSUpTeKQWgOp3xTMhj2SoPL7Luw6km/3lMSjKHh7UHVZ
+        jjT83eOvZCw0Utf4VyRNWel7LneT7gsAAP//AwCzmX0eFwEAAA==
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 06:03:17 GMT
+  recorded_at: Sun, 08 Feb 2015 05:47:41 GMT
 recorded_with: VCR 2.9.3
