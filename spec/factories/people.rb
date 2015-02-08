@@ -2,11 +2,25 @@
 
 FactoryGirl.define do
   factory :person do
-    name "MyString"
+    name "Amazing Person"
     spotify_id "MyString"
     spotify_popularity 1
     spotify_url "MyString"
     date_of_birth "2014-09-21"
     date_of_death "2014-09-21"
+
+    factory :real_actor do
+      name "Keanu Reeves"
+      tmdb_id 6384
+    end
+
+    factory :real_actor_with_common_name do
+      name "Jennifer"
+    end
+
+    factory :fake_actor do
+      name "There Are No Results For Sure"
+      tmdb_id 90909090
+    end
   end
 end

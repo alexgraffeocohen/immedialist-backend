@@ -11,6 +11,10 @@ class FixtureHandler
     "fake_name_#{model_name}_query"
   end
 
+  def common_name_fixture
+    "common_name_#{model_name}_query"
+  end
+
   def real_id_fixture
     "real_id_#{model_name}_query"
   end
