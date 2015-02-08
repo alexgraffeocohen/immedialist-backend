@@ -10,13 +10,13 @@ RSpec.describe Show, :type => :model do
   end
 
   it 'has many directors' do
-    show.directors << build(:person) << build(:person)
+    show.directors << build(:creator) << build(:creator)
 
     expect(show.directors.length).to eq 2
   end
 
   it 'has many actors' do
-    show.actors << build(:person) << build(:person)
+    show.actors << build(:creator) << build(:creator)
 
     expect(show.actors.length).to eq 2
   end

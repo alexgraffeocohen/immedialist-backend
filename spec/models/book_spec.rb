@@ -4,7 +4,7 @@ RSpec.describe Book, :type => :model do
   let(:book) { build(:book) }
 
   it 'has many authors' do
-    book.authors << build(:person) << build(:person)
+    book.authors << build(:creator) << build(:creator)
 
     expect(book.authors.length).to eq 2
   end

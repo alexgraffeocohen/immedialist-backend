@@ -1,8 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :person do
-    name "Amazing Person"
+  factory :creator do
+    name "Amazing Creator"
     spotify_id "MyString"
     spotify_popularity 1
     spotify_url "MyString"

@@ -8,7 +8,7 @@ class QuerySaver::Actor < QuerySaver
 
   def build_actors
     results.map do |actor_result|
-      ::Person.new(
+      ::Creator.new(
         name: actor_result.fetch(:name),
         tmdb_id: actor_result.fetch(:id)
       )

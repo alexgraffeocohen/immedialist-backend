@@ -1,4 +1,4 @@
-class AssignCategoriesToPerson
+class AssignCategoriesToCreator
   ASSOCIATION_CATEGORY_MAP = {
     movies_directed: "Film",
     movies_acted_in: "Film",
@@ -10,12 +10,12 @@ class AssignCategoriesToPerson
   }
   POSSIBLE_ASSOCIATIONS = ASSOCIATION_CATEGORY_MAP.keys
 
-  def self.call(person_model)
-    new(person_model).call
+  def self.call(creator_model)
+    new(creator_model).call
   end
 
-  def initialize(person_model)
-    @person_model = person_model
+  def initialize(creator_model)
+    @creator_model = creator_model
   end
 
   def call
@@ -28,17 +28,17 @@ class AssignCategoriesToPerson
 
   private
 
-  attr_reader :person_model
+  attr_reader :creator_model
 
   def assign_category_for(association)
-    person_model.categories << Category.find_or_create_by(name: ASSOCIATION_CATEGORY_MAP[association])
+    creator_model.categories << Category.find_or_create_by(name: ASSOCIATION_CATEGORY_MAP[association])
   end
 
   def model_has(association)
-    person_model.try(association) && !person_model.send(association).empty?
+    creator_model.try(association) && !creator_model.send(association).empty?
   end
 
   def model_does_not_already_have_category_for(association)
-    !person_model.categories.map(&:name).include?(ASSOCIATION_CATEGORY_MAP[association])
+    !creator_model.categories.map(&:name).include?(ASSOCIATION_CATEGORY_MAP[association])
   end
 end

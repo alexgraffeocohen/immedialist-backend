@@ -5,7 +5,7 @@ RSpec.describe Song, :type => :model do
 
   it 'has many artists through its album' do
     album = build(:album)
-    album.artists << build(:person) << build(:person)
+    album.artists << build(:creator) << build(:creator)
     song.album = album
     song.save
 

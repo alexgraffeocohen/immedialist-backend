@@ -8,7 +8,7 @@ class QuerySaver::Director < QuerySaver
 
   def build_directors
     results.map do |director_result|
-      ::Person.new(
+      ::Creator.new(
         name: director_result.fetch(:name),
         tmdb_id: director_result.fetch(:id)
       )

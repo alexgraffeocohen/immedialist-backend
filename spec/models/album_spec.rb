@@ -10,7 +10,7 @@ RSpec.describe Album, :type => :model do
   end
 
   it 'has many artists' do
-    album.artists << build(:person) << build(:person)
+    album.artists << build(:creator) << build(:creator)
 
     expect(album.artists.length).to eq 2
   end

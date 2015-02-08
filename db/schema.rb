@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208040424) do
+ActiveRecord::Schema.define(version: 20150208192600) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 20150208040424) do
   end
 
   create_table "artist_albums", force: :cascade do |t|
-    t.integer  "artist_id"
+    t.integer  "creator_id"
     t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "artist_genres", force: :cascade do |t|
-    t.integer  "artist_id"
+    t.integer  "creator_id"
     t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150208040424) do
 
   create_table "book_authors", force: :cascade do |t|
     t.integer  "book_id"
-    t.integer  "author_id"
+    t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,6 +83,25 @@ ActiveRecord::Schema.define(version: 20150208040424) do
     t.datetime "updated_at"
   end
 
+  create_table "creator_categories", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "creators", force: :cascade do |t|
+    t.string   "name"
+    t.string   "spotify_id"
+    t.integer  "spotify_popularity"
+    t.string   "spotify_url"
+    t.date     "date_of_birth"
+    t.date     "date_of_death"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tmdb_id"
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -104,14 +123,14 @@ ActiveRecord::Schema.define(version: 20150208040424) do
 
   create_table "movie_actors", force: :cascade do |t|
     t.integer  "movie_id"
-    t.integer  "actor_id"
+    t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "movie_directors", force: :cascade do |t|
     t.integer  "movie_id"
-    t.integer  "director_id"
+    t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -146,25 +165,6 @@ ActiveRecord::Schema.define(version: 20150208040424) do
     t.integer  "tmdb_id"
   end
 
-  create_table "people", force: :cascade do |t|
-    t.string   "name"
-    t.string   "spotify_id"
-    t.integer  "spotify_popularity"
-    t.string   "spotify_url"
-    t.date     "date_of_birth"
-    t.date     "date_of_death"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "tmdb_id"
-  end
-
-  create_table "person_categories", force: :cascade do |t|
-    t.integer  "person_id"
-    t.integer  "category_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "searches", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
@@ -175,14 +175,14 @@ ActiveRecord::Schema.define(version: 20150208040424) do
 
   create_table "show_actors", force: :cascade do |t|
     t.integer  "show_id"
-    t.integer  "actor_id"
+    t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "show_directors", force: :cascade do |t|
     t.integer  "show_id"
-    t.integer  "director_id"
+    t.integer  "creator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
