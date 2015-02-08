@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201005011) do
+ActiveRecord::Schema.define(version: 20150208040424) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -155,6 +155,7 @@ ActiveRecord::Schema.define(version: 20150201005011) do
     t.date     "date_of_death"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tmdb_id"
   end
 
   create_table "person_categories", force: :cascade do |t|
