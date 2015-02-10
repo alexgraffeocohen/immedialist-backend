@@ -8,6 +8,6 @@ class QuerySanitizer::Song < QuerySanitizer
   end
 
   def sanitize_results
-    results.map(&:as_json).map(&:symbolize_keys)
+    results.map(&:as_json).map(&:deep_symbolize_keys)
   end
 end
