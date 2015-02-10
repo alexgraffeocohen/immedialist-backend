@@ -19,6 +19,7 @@ RSpec.shared_examples "a query saver" do |item_type, associated_items|
   end
 
   it "saves the #{item_name.pluralize}" do
+    expect(saved_item).to_not be_nil
     expect(saved_item).to be_persisted
   end
 
