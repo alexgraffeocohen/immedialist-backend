@@ -15,6 +15,10 @@ class QuerySaver::Song < QuerySaver
       )
 
       album = save_associated_album(song_result)
+      artists = save_associated_artists(song_result)
+
+      # NOTE: songs gets artists through albums
+      album.artists = artists
       song.album = album
 
       song
@@ -25,5 +29,10 @@ class QuerySaver::Song < QuerySaver
     album_results = [song_result.fetch(:album)]
     albums = QuerySaver::Album.call(album_results)
     albums.first
+  end
+
+  def save_associated_artists(song_result)
+    artist_results = song_result.fetch(:artists)
+    QuerySaver::Artist.call(artist_results)
   end
 end

@@ -1,4 +1,4 @@
-RSpec.shared_examples "a query saver" do |item_type, associated_items|
+RSpec.shared_examples "a query saver" do |item_type, associations|
   item_name = item_type.name.downcase
 
   let(:query_results) { TestQuery.const_get(item_type.name).new.call_with_real_name }
@@ -23,10 +23,13 @@ RSpec.shared_examples "a query saver" do |item_type, associated_items|
     expect(saved_item).to be_persisted
   end
 
-  if associated_items
-    associated_items.each do |associated_item|
-      it "saves an associated #{associated_item} and links it to the #{item_name}" do
-        expect(saved_item.send(associated_item)).to be_persisted
+  if associations
+    associations.each do |association|
+      it "saves the associated #{association} and links to #{item_name}" do
+        db_response = saved_item.send(association)
+        Array(db_response).each do |associated_item|
+          expect(associated_item).to be_persisted
+        end
       end
     end
   end
