@@ -36,5 +36,15 @@ FactoryGirl.define do
       name "The Worst Director Ever"
       tmdb_id 90909090
     end
+
+    factory :real_artist do
+      name "The National"
+      spotify_id "2cCUtGK9sDU2EoElnk0GNB"
+    end
+
+    factory :fake_artist do
+      name "Why Did I Even Start Writing Music I'm a Failure"
+      spotify_id "ithinkicanithinkicanithinkican"
+    end
   end
 end
