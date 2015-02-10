@@ -27,6 +27,7 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Helpers
+  config.include Immedialist
 
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
