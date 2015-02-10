@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=GKFJGBNDJKGKFJFBDHDBGKGJDBGKGJDBGKDHGB&type=album
+    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=This%20Album%20Is%20So%20Bad%20Don%27t%20Listen%20To%20It&type=album
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 25 Jan 2015 06:03:12 GMT
+      - Mon, 09 Feb 2015 02:01:08 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -51,11 +51,11 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAFyOQQqDMBBF954iZOGqGOtSkEIIRhR6gdKFLQkGoknNKBXx
-        7tVoKXQzzH885s8cIIRr/Rhah1GK5jWuoOmF3CJuAKxLCamtipw1oOQUPU1L
-        xjNxou6fzeU1iH7KeJWXnF5ZWW1bTlnBKK94+Zus4DQ0UjoBWRxq1SrIkjiE
-        yYrM9+PT3q1A7L/c0P1A3t5QEh+kE28PukHrA+23N/iVbC9GZQb3J4KBWntv
-        zUuwfAAAAP//AwAuRFCYAwEAAA==
+        H4sIAAAAAAAAAFyOTQuCQBRF9/2KQcjNhGNuAkGiaCO0y120mOyJA6MzzXtK
+        Iv73/GrT8h4O995+w5gn9bOp0GMx68c4gtJBMUWvJLIYCyGtCtAaUkUX5KYS
+        7V4gSJeXx3cDrkuyUiE/TTU8RX4z/Cxf/GLqbXQgflVIUPPM8JR8UxQIlIS+
+        VpWiJAp96iwk8wVvt8wrguXOnT1WNNsTisKV1PCZQd1ovaKle4I/yTpolWnw
+        TyRDUs/emIfN8AUAAP//AwAUqgVeBgEAAA==
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 06:03:12 GMT
+  recorded_at: Mon, 09 Feb 2015 02:01:08 GMT
 recorded_with: VCR 2.9.3
