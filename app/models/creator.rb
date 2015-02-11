@@ -18,21 +18,5 @@ class Creator < ActiveRecord::Base
   has_many :shows_acted_in, through: :show_actors, source: :show
   has_many :show_actors
 
-  has_many :categories, through: :creator_categories
-  has_many :creator_categories
-
   has_many :list_items, as: :item
-
-  before_create :assign_to_creator_category
-  before_save :assign_associated_categories
-
-  private
-
-  def assign_associated_categories
-    AssignCategoriesToCreator.call(self)
-  end
-
-  def assign_to_creator_category
-    self.categories << Category.find_or_create_by(name: "Creator")
-  end
 end

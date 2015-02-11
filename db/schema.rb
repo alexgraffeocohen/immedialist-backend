@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210025508) do
+ActiveRecord::Schema.define(version: 20150211052312) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 20150210025508) do
     t.integer  "spotify_popularity"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
     t.string   "cover_url"
   end
 
@@ -73,20 +72,6 @@ ActiveRecord::Schema.define(version: 20150210025508) do
     t.date     "release_date"
     t.string   "isbn"
     t.text     "cover_link"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "category_id"
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "creator_categories", force: :cascade do |t|
-    t.integer  "creator_id"
-    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -162,7 +147,6 @@ ActiveRecord::Schema.define(version: 20150210025508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "trailer_link"
-    t.integer  "category_id"
     t.integer  "tmdb_id"
   end
 
@@ -209,7 +193,6 @@ ActiveRecord::Schema.define(version: 20150210025508) do
     t.integer  "imdb_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -222,7 +205,6 @@ ActiveRecord::Schema.define(version: 20150210025508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "album_id"
-    t.integer  "category_id"
   end
 
   create_table "users", force: :cascade do |t|

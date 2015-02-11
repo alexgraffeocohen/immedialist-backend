@@ -5,14 +5,5 @@ class Show < ActiveRecord::Base
   has_many :show_actors
   has_many :genres, through: :show_genres
   has_many :show_genres
-  belongs_to :category
   has_many :list_items, as: :item
-
-  after_create :assign_to_television_category
-
-  private
-
-  def assign_to_television_category
-    self.category = Category.find_or_create_by(name: "Television")
-  end
 end

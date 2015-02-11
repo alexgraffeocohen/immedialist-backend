@@ -30,46 +30,4 @@ RSpec.describe Creator, :type => :model do
        source(:book) }
 
   it { should have_many(:list_items) }
-
-  it 'can be assigned the book category' do
-    creator.books << build(:book)
-    creator.save
-
-    expect(category_names_for(creator)).to include "Book"
-  end
-
-  it 'can be assigned the music category' do
-    creator.albums << build(:album)
-    creator.save
-
-    expect(category_names_for(creator)).to include "Music"
-  end
-
-  it 'can be assigned the film category via director' do
-    creator.movies_directed << build(:movie)
-    creator.save
-
-    expect(category_names_for(creator)).to include "Film"
-  end
-
-  it 'can be assigned the film category via actor' do
-    creator.movies_acted_in << build(:movie)
-    creator.save
-
-    expect(category_names_for(creator)).to include "Film"
-  end
-
-  it 'can be assigned the television category via director' do
-    creator.shows_directed << build(:show)
-    creator.save
-
-    expect(category_names_for(creator)).to include "Television"
-  end
-
-  it 'can be assigned the television category via actor' do
-    creator.shows_acted_in << build(:show)
-    creator.save
-
-    expect(category_names_for(creator)).to include "Television"
-  end
 end
