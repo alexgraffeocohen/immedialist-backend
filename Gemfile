@@ -31,7 +31,7 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', require: false
 end
 
 group :production do
