@@ -3,20 +3,18 @@ class QuerySaver::Song < QuerySaver
 
   def build_objects
     results.map do |song_result|
-      song = ::Song.new(
-        name: song_result.fetch(:name),
-        spotify_preview_url: song_result.fetch(:preview_url),
-        spotify_id: song_result.fetch(:id)
-      )
-
       album = save_associated_album(song_result)
       artists = save_associated_artists(song_result)
 
       # NOTE: songs gets artists through albums
       album.artists = artists
-      song.album = album
 
-      song
+      ::Song.new(
+        name: song_result.fetch(:name),
+        spotify_preview_url: song_result.fetch(:preview_url),
+        spotify_id: song_result.fetch(:id),
+        album: album
+      )
     end
   end
 
