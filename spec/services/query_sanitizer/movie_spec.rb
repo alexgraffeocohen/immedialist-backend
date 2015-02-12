@@ -1,17 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe QuerySanitizer::Movie, type: :service do
-  let(:test_query) { TestQuery::Movie.new }
-
-  context 'when query has multiple results' do
-    let(:query_results) { test_query.call_with_real_name }
-
-    it_behaves_like "a query sanitizer with results"
-  end
-
-  context 'when query has no results' do
-    let(:query_results) { test_query.call_with_fake_name }
-
-    it_behaves_like "a query sanitizer with no results"
-  end
+  it_behaves_like "a query sanitizer", TestQuery::Movie.new
 end
