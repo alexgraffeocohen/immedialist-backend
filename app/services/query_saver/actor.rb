@@ -1,12 +1,7 @@
 class QuerySaver::Actor < QuerySaver
-  def call
-    actors = build_actors
-    actors.each(&:save!)
-  end
-
   private
 
-  def build_actors
+  def build_objects
     results.map do |actor_result|
       ::Creator.new(
         name: actor_result.fetch(:name),

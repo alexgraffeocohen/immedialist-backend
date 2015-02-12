@@ -1,12 +1,7 @@
 class QuerySaver::Show < QuerySaver
-  def call
-    shows = build_shows
-    shows.each(&:save!)
-  end
-
   private
 
-  def build_shows
+  def build_objects
     results.map do |show_result|
       ::Show.new(
         name: show_result.fetch(:name),

@@ -1,12 +1,7 @@
 class QuerySaver::Artist < QuerySaver
-  def call
-    artists = build_artists
-    artists.each(&:save!)
-  end
-
   private
 
-  def build_artists
+  def build_objects
     results.map do |artist_result|
       ::Creator.new(
         name: artist_result.fetch(:name),

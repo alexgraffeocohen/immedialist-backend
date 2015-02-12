@@ -8,10 +8,13 @@ class QuerySaver
   end
 
   def call
-    raise NotImplementedError
+    build_objects.each(&:save!)
   end
 
   private
-
   attr_reader :results
+
+  def build_objects
+    raise NotImplementedError
+  end
 end

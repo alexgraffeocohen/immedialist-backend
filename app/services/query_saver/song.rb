@@ -1,12 +1,7 @@
 class QuerySaver::Song < QuerySaver
-  def call
-    songs = build_songs
-    songs.each(&:save!)
-  end
-
   private
 
-  def build_songs
+  def build_objects
     results.map do |song_result|
       song = ::Song.new(
         name: song_result.fetch(:name),

@@ -1,12 +1,7 @@
 class QuerySaver::Director < QuerySaver
-  def call
-    directors = build_directors
-    directors.each(&:save!)
-  end
-
   private
 
-  def build_directors
+  def build_objects
     results.map do |director_result|
       ::Creator.new(
         name: director_result.fetch(:name),

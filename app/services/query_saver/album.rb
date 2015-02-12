@@ -1,12 +1,7 @@
 class QuerySaver::Album < QuerySaver
-  def call
-    albums = build_albums
-    albums.each(&:save!)
-  end
-
   private
 
-  def build_albums
+  def build_objects
     results.map do |album_result|
       ::Album.new(
         name: album_result.fetch(:name),
