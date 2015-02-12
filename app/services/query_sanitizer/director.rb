@@ -2,7 +2,7 @@ class QuerySanitizer::Director < QuerySanitizer
   private
 
   def compare_results_to_api_expectations
-    tmdb_person_api_expecations
+    tmdb_api_expectations_for("Person")
   end
 
   def sanitize_results
