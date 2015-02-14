@@ -10,12 +10,12 @@ FactoryGirl.define do
     factory :real_book do
       name "The Goldfinch"
       isbn "0316055433"
-      goodreads_id "17333223"
+      goodreads_id 17333223
     end
 
     factory :fake_book do
       name "The Greatest Book in the World: This is a Tribute"
-      goodreads_id "ithinkicanithinkicanithinkican"
+      goodreads_id 999999999
     end
   end
 end
