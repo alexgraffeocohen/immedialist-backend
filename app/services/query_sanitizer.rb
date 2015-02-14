@@ -11,8 +11,10 @@ class QuerySanitizer
   end
 
   def call
-    compare_results_to_api_expectations
-    sanitize_results
+    catch(:no_results) do
+      compare_results_to_api_expectations
+      sanitize_results
+    end
   end
 
   private
