@@ -9,9 +9,12 @@ describe Query::Book do
     context 'with a name' do
       it 'returns a Hashie object with an array of book results' do
         result = test_query.call_with_real_name
+        book_results = result.results.work
+        first_book_result = book_results.first.best_book
 
-        expect(result.results.work).to be_an(Array)
-        expect(result.results.work.first.best_book.title).to eq(real_book.name)
+        expect(book_results).to be_an(Array)
+        expect(first_book_result.title).to eq(real_book.name)
+        expect(first_book_result.id).to eq(real_book.goodreads_id)
       end
 
       it 'retuns a Hashie object with total results set to zero when there are no results' do
