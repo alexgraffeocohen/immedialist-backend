@@ -1,50 +1,36 @@
 require 'rails_helper'
 
 describe Query::Book do
-  let(:book_query_with_real_name)  { Query::Book.new(name: real_name) }
-  let(:book_query_with_fake_name)  { Query::Book.new(name: fake_name) }
-  let(:book_query_with_real_id)    { Query::Book.new(external_id: real_id) }
-  let(:book_query_with_fake_id)    { Query::Book.new(external_id: fake_id) }
-  let(:real_name)                  { "The Goldfinch" }
-  let(:fake_name)                  { "The Greatest Book in The World: This is a Tribute" }
-  let(:real_id)                    { "17333223" }
-  let(:isbn)                       { "0316055433" }
-  let(:fake_id)                    { "ithinkicanithinkicanithinkican" }
+  let(:test_query) { TestQuery::Book.new }
+  let(:real_book)  { build(:real_book) }
+  let(:fake_book)  { build(:fake_book) }
 
   describe '#call' do
     context 'with a name' do
       it 'returns an array of book results if there is a match' do
-        VCR.use_cassette('real_name_book_query') do
-          result = book_query_with_real_name.call
+        result = test_query.call_with_real_name
 
-          expect(result.results.work).to be_an Array
-          expect(result.results.work.first.best_book.title).to eq(real_name)
-        end
+        expect(result.results.work).to be_an(Array)
+        expect(result.results.work.first.best_book.title).to eq(real_book.name)
       end
 
       it 'returns an empty array if there is no match' do
-        VCR.use_cassette('fake_name_book_query') do
-          result = book_query_with_fake_name.call
+        result = test_query.call_with_fake_name
 
-          expect(result.total_results).to eq('0')
-        end
+        expect(result.total_results).to eq('0')
       end
     end
 
     context 'with an external id' do
       it 'returns a detailed book record if external id is recognized' do
-        VCR.use_cassette('real_id_book_query') do
-          result = book_query_with_real_id.call
+        result = test_query.call_with_real_id
 
-          expect(result.title).to eq(real_name)
-          expect(result.isbn).to eq(isbn)
-        end
+        expect(result.title).to eq(real_book.name)
+        expect(result.isbn).to eq(real_book.isbn)
       end
 
       it 'returns an error object if external id is not recognized' do
-        VCR.use_cassette('fake_id_book_query') do
-          expect { book_query_with_fake_id.call }.to raise_exception(NoMethodError)
-        end
+        expect { test_query.call_with_fake_id }.to raise_exception(NoMethodError)
       end
     end
   end
