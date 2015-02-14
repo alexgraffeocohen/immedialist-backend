@@ -7,11 +7,10 @@ class QuerySanitizer
   end
 
   def initialize(query_results)
-    @results = Array(query_results)
+    @results = query_results
   end
 
   def call
-    return [] if results.empty?
     compare_results_to_api_expectations
     sanitize_results
   end
