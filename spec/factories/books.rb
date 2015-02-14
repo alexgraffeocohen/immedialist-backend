@@ -5,7 +5,7 @@ FactoryGirl.define do
     name "The Best Book Ever"
     release_date "2034-09-12"
     isbn "1234567890"
-    cover_link "link_url"
+    cover_url "link_url"
 
     factory :real_book do
       name "The Goldfinch"
