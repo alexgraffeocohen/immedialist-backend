@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214205629) do
+ActiveRecord::Schema.define(version: 20150215210206) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20150214205629) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tmdb_id"
+    t.integer  "goodreads_id"
   end
 
   create_table "genres", force: :cascade do |t|

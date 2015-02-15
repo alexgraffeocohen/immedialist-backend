@@ -46,5 +46,15 @@ FactoryGirl.define do
       name "Why Did I Even Start Writing Music I'm a Failure"
       spotify_id "ithinkicanithinkicanithinkican"
     end
+
+    factory :real_author do
+      name "Donna Tartt"
+      goodreads_id 8719
+    end
+
+    factory :fake_author do
+      name "The Greatest Author in The World: This is a Tribute"
+      goodreads_id 999999999
+    end
   end
 end
