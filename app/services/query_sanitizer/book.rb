@@ -21,7 +21,7 @@ class QuerySanitizer::Book < QuerySanitizer
 
   def sanitize_results
     book_results = truncate_book_results(results.results.work)
-    book_results.map(&:as_json).map(&:symbolize_keys)
+    book_results.map(&:as_json).map(&:deep_symbolize_keys)
   end
 
   def truncate_book_results(verbose_book_results)
