@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.goodreads.com/api/author_url?format=xml&id=The%20Greatest%20author%20in%20The%20World:%20This%20is%20a%20Tribute&key=eOR87hBs1BBAUmTdh7EMEA
+    uri: http://www.goodreads.com/api/author_url?format=xml&id=The%20Greatest%20Author%20in%20The%20World:%20This%20is%20a%20Tribute&key=eOR87hBs1BBAUmTdh7EMEA
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 25 Jan 2015 06:03:13 GMT
+      - Sun, 15 Feb 2015 21:27:26 GMT
       Server:
       - Server
       Content-Type:
@@ -27,22 +27,22 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 0P9ABNXV1V2M64TTPZ08
+      - 17SB01ZPQ0QX9JVTCAC6
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.040385'
+      - '0.052249'
       X-Content-Type-Options:
       - nosniff
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=7521b68a9309188520bc4faf236f5a56; path=/; expires=Sun, 25-Jan-2015
-        12:03:13 GMT; HttpOnly
-      - csid=BAhJIhg0NTAtNjA3NzExMy0wMjY3MjkzBjoGRVQ%3D--67fd1706d9913408269ec20feb44c5f26739499d;
-        path=/; expires=Thu, 25-Jan-2035 06:03:13 GMT
+      - _session_id2=616fc07737d91366bcd9d554e8534a20; path=/; expires=Mon, 16-Feb-2015
+        03:27:26 GMT; HttpOnly
+      - csid=BAhJIhg4MDItNTg5MDIyMS01NDYxMjYwBjoGRVQ%3D--8b8dcdad273e3bd4dbdf57fd1c8e57af4a060c99;
+        path=/; expires=Thu, 15-Feb-2035 21:27:26 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -57,5 +57,5 @@ http_interactions:
         vSZSbhTRrE9Z48WnmBYFwchwL3sPupHs81QNvDRyOZYdF+1CvxmThr7aLIz+
         +58PoqkR+gAAAA==
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 06:03:13 GMT
+  recorded_at: Sun, 15 Feb 2015 21:27:25 GMT
 recorded_with: VCR 2.9.3

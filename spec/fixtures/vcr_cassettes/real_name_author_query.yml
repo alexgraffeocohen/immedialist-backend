@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.goodreads.com/api/author_url?format=xml&id=William%20Faulkner&key=eOR87hBs1BBAUmTdh7EMEA
+    uri: http://www.goodreads.com/api/author_url?format=xml&id=Donna%20Tartt&key=eOR87hBs1BBAUmTdh7EMEA
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 25 Jan 2015 06:03:13 GMT
+      - Sun, 15 Feb 2015 21:27:25 GMT
       Server:
       - Server
       Content-Type:
@@ -27,22 +27,22 @@ http_interactions:
       Status:
       - 200 OK
       X-Request-Id:
-      - 15AG691TWMKXKJYD61MV
+      - 10VSVG3DYF4KFAHYPAH7
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.071179'
+      - '0.085426'
       X-Content-Type-Options:
       - nosniff
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=357e4c1bfebc5404d9af18f41e850f0e; path=/; expires=Sun, 25-Jan-2015
-        12:03:13 GMT; HttpOnly
-      - csid=BAhJIhg3MjUtMzMzNjIyOS01NjQyNDE1BjoGRVQ%3D--0f5e65a92e1f01f66d9c31ad2db38871c149ae67;
-        path=/; expires=Thu, 25-Jan-2035 06:03:13 GMT
+      - _session_id2=d8b2ec1e82ba8a50b70691f26dc1e9f9; path=/; expires=Mon, 16-Feb-2015
+        03:27:25 GMT; HttpOnly
+      - csid=BAhJIhg0MjQtNTI1MzgzMC0yMzc3NDQzBjoGRVQ%3D--a5df488d732c2dbac44f5f431a40cf5c972037e5;
+        path=/; expires=Thu, 15-Feb-2035 21:27:25 GMT
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -51,13 +51,13 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA2WRX0/CMBTFn9mnmHvwzVVCCES7kqHgkzEhEB8IWZr1hjWs
-        7ewfp9/etoAQTV9ub05/59xbPPsSbfoJ2nAli2yY32cpyFoxLvdFtlkv76bZ
-        jCT4RSmmgTKzAtMpaYAkaYpX8OHA2FD7G3W2AWl5Ta2HEasdYPSnGZVee4Bv
-        gm+2T8/lutzC22o6aeZmOJ+XG7FmzWTxuih3O4JR0B3pAmyj2OUR7XgV4EpX
-        LZeHqD5pQjR0lS1JBoOYTumUsyIbjUfjjPjmAEsq4MJ8523LqUiX1LUHCTpC
-        oySKgw9prO0eEOr7Pt+fl5LXSsRJlUamUf3MuwST/ASszsBbKrpHZ0UlgHEn
-        Cj/Eb8sop2sormbCKDqG9Ce6r/1JMPr/Hz81XguNygEAAA==
+        H4sIAAAAAAAAA2WRwU/DIBTGz+tfUXvwZnGnTaU0nZuejMnSnZalIeVlJRu8
+        CtTqfy/gdIuGy+Pj4/e+B7T8UMf0HYyVqItsmt9mKegWhdT7ItvUTzfzrGQJ
+        fUYUBriwa7A9agssSVO6hrcBrAu13/HBdaCdbLnzMObMAJT8EaPTew/wyejV
+        9nFZ1dUWXtfzWbew08Wi2qhadLPVy6ra7RglwfdNV+A6FOdLvJdNgKNpjlIf
+        ovvkCdHIRbYkmUxiOjSpFEU2n03vMubFCdVcwZm5RK15WnPjXOTF0+gLLVjn
+        XH9PyDiO+f7nPfIWVRwSDbEdjqVvEPh5ZDWRdc1V/zA41SgQclCFj/4rWRxM
+        C8XFJJTEZiHzCexrvxJK/v/CF7xg89bAAQAA
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 06:03:13 GMT
+  recorded_at: Sun, 15 Feb 2015 21:27:25 GMT
 recorded_with: VCR 2.9.3

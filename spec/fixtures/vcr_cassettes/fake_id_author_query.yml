@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.goodreads.com/author/show?format=xml&id=ithinkicanithinkicanithinkican&key=eOR87hBs1BBAUmTdh7EMEA
+    uri: http://www.goodreads.com/author/show?format=xml&id=999999999&key=eOR87hBs1BBAUmTdh7EMEA
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Sun, 25 Jan 2015 05:57:27 GMT
+      - Sun, 15 Feb 2015 21:27:27 GMT
       Server:
       - Server
       Content-Type:
@@ -29,27 +29,28 @@ http_interactions:
       Vary:
       - User-Agent
       X-Request-Id:
-      - 13NMK7ERZT9SXF31PJWQ
+      - 03ZFJW8SRXX0TY4D3NP5
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Cache-Control:
       - no-cache
       X-Runtime:
-      - '0.071233'
+      - '0.036373'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=93b31dce3663c3f25989c2207514821b; path=/; expires=Sun, 25-Jan-2015
-        11:57:27 GMT; HttpOnly
-      - csid=BAhJIhg0NDUtNDY4NTgyOS02MzYyOTU5BjoGRVQ%3D--9cad1b56ab34d8c47c29c294cb23cdabac55c5bd;
-        path=/; expires=Thu, 25-Jan-2035 05:57:26 GMT
+      - _session_id2=382ba9d4229a788a73bdd43185ad313a; path=/; expires=Mon, 16-Feb-2015
+        03:27:27 GMT; HttpOnly
+      - csid=BAhJIhgxNzktMjM2OTA4MC00NjI2MjUxBjoGRVQ%3D--c9debfb8a50d53d6ca73ebb09638b0b4333cf9f1;
+        path=/; expires=Thu, 15-Feb-2035 21:27:27 GMT
       - locale=en; path=/
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA7NJLSrKL7Lzyy9RSMsvzUux0YcIAABys8EIGAAAAA==
+        H4sIAAAAAAAAA7NJLSrKL7JLLC3JyC9SyMsvUUjLL81LsdGHiHMBAOdbIYIg
+        AAAA
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 05:57:27 GMT
+  recorded_at: Sun, 15 Feb 2015 21:27:26 GMT
 recorded_with: VCR 2.9.3

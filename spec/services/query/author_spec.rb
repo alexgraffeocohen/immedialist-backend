@@ -1,48 +1,35 @@
 require 'rails_helper'
 
 describe Query::Author do
-  let(:author_query_with_real_name)   { Query::Author.new(name: real_name) }
-  let(:author_query_with_fake_name)   { Query::Author.new(name: fake_name) }
-  let(:author_query_with_real_id)     { Query::Author.new(external_id: real_id) }
-  let(:author_query_with_fake_id)     { Query::Author.new(external_id: fake_id) }
-  let(:real_name)                     { "William Faulkner" }
-  let(:fake_name)                     { "The Greatest author in The World: This is a Tribute" }
-  let(:real_id)                       { "3535" }
-  let(:fake_id)                       { "ithinkicanithinkicanithinkican" }
+  let(:test_query)  { TestQuery::Author.new }
+  let(:real_author) { build(:real_author) }
+  let(:fake_author) { build(:fake_author) }
 
   describe '#call' do
     context 'with an accurate name' do
-      it 'returns the closest author match' do
-        VCR.use_cassette('real_name_author_query') do
-          result = author_query_with_real_name.call
+      it 'returns the closest author match in a Hashie object' do
+        result = test_query.call_with_real_name
 
-          expect(result.name).to eq(real_name)
-        end
+        expect(result.name).to eq(real_author.name)
       end
 
-      it 'returns nothing if there is no match' do
-        VCR.use_cassette('fake_name_author_query') do
-          result = author_query_with_fake_name.call
+      it 'returns an empty Hashie object if there is no match' do
+        result = test_query.call_with_fake_name
 
-          expect(result).to be_empty
-        end
+        expect(result).to be_empty
       end
     end
 
     context 'with an external id' do
       it 'returns a detailed author record if external id is recognized' do
-        VCR.use_cassette('real_id_author_query') do
-          result = author_query_with_real_id.call
+        result = test_query.call_with_real_id
 
-          expect(result.name).to eq(real_name)
-          expect(result.books.book).to be_an Array
-        end
+        expect(result.name).to eq(real_author.name)
+        expect(result.books.book).to be_an Array
       end
 
-      it 'returns an error object if external id is not recognized' do
-        VCR.use_cassette('fake_id_author_query') do
-          expect { author_query_with_fake_id.call }.to raise_exception(Goodreads::NotFound)
-        end
+      it 'raises an excpection if external id is not recognized' do
+        expect { test_query.call_with_fake_id }.to raise_exception(Goodreads::NotFound)
       end
     end
   end
