@@ -27,6 +27,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_model_serializers (0.8.3)
+      activemodel (>= 3.0)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -114,9 +116,6 @@ GEM
     i18n (0.7.0)
     imdb (0.8.1)
       nokogiri (>= 1.6.0)
-    jbuilder (2.2.6)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
     jeff (1.1.0)
       excon (>= 0.22.1)
     jquery-rails (4.0.3)
@@ -304,6 +303,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (~> 0.8.3)
   bootstrap-sass (~> 3.1.1)
   capybara
   coffee-rails (~> 4.0.0)
@@ -314,7 +314,6 @@ DEPENDENCIES
   fuubar
   goodreads
   imdb
-  jbuilder (~> 2.0)
   jquery-rails
   pg
   pry
