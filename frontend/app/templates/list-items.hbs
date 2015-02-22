@@ -1,30 +1,12 @@
 <section id="list-items" class="text-center">
+  {{view "select" content=controller.types value=type}}
+  {{input value=name placeholder="enter item"}}
   <ul class="list-unstyled">
-    <li>
-      <select class="categories">
-        <option value="movie">Movie</option>
-        <option value="actor">Actor</option>
-        <option value="director">Director</option>
-        <option value="song">Song</option>
-        <option value="album">Album</option>
-        <option value="artist">Artist</option>
-        <option value="book">Book</option>
-        <option value="author">Author</option>
-      </select>
-      {{input}}
-    </li>
-    <li>
-      <select class="categories">
-        <option value="movie">Movie</option>
-        <option value="actor">Actor</option>
-        <option value="director">Director</option>
-        <option value="song">Song</option>
-        <option value="album">Album</option>
-        <option value="artist">Artist</option>
-        <option value="book">Book</option>
-        <option value="author">Author</option>
-      </select>
-      {{input}}
-    </li>
+    {{#each}}
+      <li>
+        {{type}}
+        {{name}}
+      </li>
+    {{/each}}
   </ul>
 </section>
