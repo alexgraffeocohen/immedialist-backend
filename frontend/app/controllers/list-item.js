@@ -13,5 +13,15 @@ export default Ember.ObjectController.extend({
         return "fa-music"
       break;
     }
+  }.property('model.type'),
+  typeColor: function() {
+    switch(this.get('model.type')) {
+      case "movie":
+        return "list-group-item-info"
+      break;
+      case "song":
+        return "list-group-item-success"
+      break;
+    }
   }.property('model.type')
 });
