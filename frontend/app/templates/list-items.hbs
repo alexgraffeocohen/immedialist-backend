@@ -2,9 +2,9 @@
   {{view "select" content=controller.types value=type}}
   {{input value=name placeholder="enter item"}}
   <ul class="list-unstyled">
-    {{#each}}
+    {{#each itemController="listItem"}}
       <li>
-        {{type}}
+        <i {{bind-attr class=":fa :fa-2x typeIcon"}}></i>
         {{name}}
       </li>
     {{/each}}
