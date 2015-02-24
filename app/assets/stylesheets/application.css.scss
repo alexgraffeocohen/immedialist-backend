@@ -20,18 +20,8 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-/* Some Style from the Bootstrap Default Theme */
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+
+#create-list-item {
+  margin-bottom: 10px;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
-}
-
-.theme-showcase > p > .btn {
-  margin: 5px 0;
-}
