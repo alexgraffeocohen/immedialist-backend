@@ -43,6 +43,18 @@ export default Ember.ObjectController.extend({
       case "book":
         return "list-group-item-danger"
       break;
+      case "actor":
+        return "list-group-item-warning"
+      break;
+      case "director":
+        return "list-group-item-warning"
+      break;
+      case "author":
+        return "list-group-item-warning"
+      break;
+      case "artist":
+        return "list-group-item-warning"
+      break;
     }
   }.property('model.type')
 });
