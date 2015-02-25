@@ -1,6 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  actions: {
+    deleteListItem: function() {
+      var listItem = this.get('model');
+      listItem.deleteRecord();
+      listItem.save();
+    }
+  },
   typeIcon: function() {
     switch(this.get('model.type')) {
       case "movie":

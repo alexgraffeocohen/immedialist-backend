@@ -17,7 +17,10 @@
         <a {{bind-attr class=":list-item :list-group-item typeColor"}} href="#">
           <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw typeIcon"}}></i>
           <span class="list-item__name">{{name}}</span>
-          <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <button type="button" class="close" aria-label="Close"
+            {{action "deleteListItem"}}>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </a>
       {{/each}}
     </div>
