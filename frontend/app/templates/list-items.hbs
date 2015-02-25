@@ -1,21 +1,25 @@
-<form id="create-list-item" action="#" class="form-inline text-center"
-  {{action "createListItem" newListItem on="submit"}}>
-  <div class="form-group">
-    {{view "select" content=controller.types value=newListItem.type class="form-control"}}
-  </div>
-  <div class="form-group">
-    {{input value=newListItem.name placeholder="enter item" class="form-control"}}
-  </div>
-</form>
+<section id="list-items">
+  <section class="create row">
+    <form action="#" class="form-inline text-center"
+      {{action "createListItem" newListItem on="submit"}}>
+      <div class="form-group">
+        {{view "select" content=controller.types value=newListItem.type class="form-control"}}
+      </div>
+      <div class="form-group">
+        {{input value=newListItem.name placeholder="enter item" class="form-control"}}
+      </div>
+    </form>
+  </section>
 
-<section id="list-items" class="row">
-  <div class="list-group col-md-6 col-md-offset-3">
-    {{#each itemController="listItem"}}
-      <a {{bind-attr class=":list-group-item typeColor"}} href="#">
-        <i {{bind-attr class=":fa :fa-2x :fa-fw typeIcon"}} style="padding-right: 10px;"></i>
-        <span style="font-size: 1.25em">{{name}}</span>
-        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </a>
-    {{/each}}
-  </div>
+  <section class="list row">
+    <div class="list-group col-md-6 col-md-offset-3">
+      {{#each itemController="listItem"}}
+        <a {{bind-attr class=":list-item :list-group-item typeColor"}} href="#">
+          <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw typeIcon"}}></i>
+          <span class="list-item__name">{{name}}</span>
+          <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </a>
+      {{/each}}
+    </div>
+  </section>
 </section>
