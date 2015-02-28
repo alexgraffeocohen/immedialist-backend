@@ -3,10 +3,10 @@
     <form action="#" class="create form-inline text-center"
       {{action "createListItem" newListItem on="submit"}}>
       <div class="form-group">
-        {{view "select" content=controller.types value=newListItem.type class="form-control"}}
+        {{view "select" content=controller.types value=listItemAttrs.type class="form-control"}}
       </div>
       <div class="form-group">
-        {{input value=newListItem.name placeholder="enter item" class="form-control"}}
+        {{input value=listItemAttrs.name placeholder="enter item" class="form-control"}}
       </div>
     </form>
   </div>
