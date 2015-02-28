@@ -1,6 +1,6 @@
 <section id="list-items">
-  <section class="create row">
-    <form action="#" class="form-inline text-center"
+  <div class="row">
+    <form action="#" class="create form-inline text-center"
       {{action "createListItem" newListItem on="submit"}}>
       <div class="form-group">
         {{view "select" content=controller.types value=newListItem.type class="form-control"}}
@@ -9,10 +9,10 @@
         {{input value=newListItem.name placeholder="enter item" class="form-control"}}
       </div>
     </form>
-  </section>
+  </div>
 
-  <section class="list row">
-    <div class="list-group col-md-6 col-md-offset-3">
+  <div class="row">
+    <section class="list list-group col-md-6 col-md-offset-3">
       {{#each itemController="listItem"}}
         <a {{bind-attr class=":list-item :list-group-item typeColor"}} href="#">
           <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw typeIcon"}}></i>
@@ -24,5 +24,5 @@
         </a>
       {{/each}}
     </div>
-  </section>
+  </div>
 </section>
