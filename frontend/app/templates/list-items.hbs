@@ -1,7 +1,6 @@
 <section id="list-items">
   <div class="row">
-    <form action="#" class="create form-inline text-center"
-      {{action "createListItem" newListItem on="submit"}}>
+    <form action="#" class="create form-inline text-center" {{action "createListItem" on="submit"}}>
       <div class="form-group">
         {{view "select" content=controller.types value=listItemAttrs.type class="form-control"}}
       </div>
@@ -17,8 +16,7 @@
         <a {{bind-attr class=":list-item :list-group-item typeColor"}} href="#">
           <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw typeIcon"}}></i>
           <span class="list-item__name">{{name}}</span>
-          <button type="button" class="close" aria-label="Close"
-            {{action "deleteListItem"}}>
+          <button type="button" class="close" aria-label="Close" {{action "deleteListItem"}}>
             <span aria-hidden="true">&times;</span>
           </button>
         </a>
