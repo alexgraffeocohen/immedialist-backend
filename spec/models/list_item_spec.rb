@@ -13,7 +13,7 @@ RSpec.describe ListItem, :type => :model do
   it 'will receive the name of the item it is attached to' do
     item = FactoryGirl.build(:movie, name: 'Interstellar')
     list_item.item = item
-    list_item.save
+    list_item.save!
 
     expect(list_item.name).to eq(item.name)
   end
