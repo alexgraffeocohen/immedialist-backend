@@ -7,6 +7,9 @@ RSpec.describe ListItem, :type => :model do
   it { should belong_to(:user) }
   it { should belong_to(:item) }
 
+  it_behaves_like 'it can be converted to an item type',
+    FactoryGirl.build(:list_item)
+
   it 'will receive the name of the item it is attached to' do
     item = FactoryGirl.build(:movie, name: 'Interstellar')
     list_item.item = item
