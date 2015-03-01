@@ -2,14 +2,13 @@ require 'rails_helper'
 
 RSpec.describe AttachQueryResultsToSearch, type: :service do
   let(:search) { Search::Movie.create(list_item: list_item) }
-  let(:item_type) { Immedialist::ItemType::Movie.new }
 
   context 'given any search' do
     let(:list_item) { build(:list_item, name: "Generic Query") }
 
     it 'saves the search' do
       VCR.use_cassette('generic_list_item_query') do
-        AttachQueryResultsToSearch.call(search, item_type)
+        AttachQueryResultsToSearch.call(search)
       end
 
       expect(search).to be_persisted
@@ -21,7 +20,7 @@ RSpec.describe AttachQueryResultsToSearch, type: :service do
 
     it 'attaches query results to search as new item objects' do
       VCR.use_cassette('real_name_movie_query') do
-        AttachQueryResultsToSearch.call(search, item_type)
+        AttachQueryResultsToSearch.call(search)
       end
 
       expect(search.results).to_not be_empty
@@ -34,7 +33,7 @@ RSpec.describe AttachQueryResultsToSearch, type: :service do
 
     it 'saves query results as empty collection' do
       VCR.use_cassette('no_results_query') do
-        AttachQueryResultsToSearch.call(search, item_type)
+        AttachQueryResultsToSearch.call(search)
       end
 
       expect(search.results).to be_empty

@@ -1,11 +1,10 @@
 class AttachQueryResultsToSearch
-  def self.call(search, item_type)
-    new(search, item_type).call
+  def self.call(search)
+    new(search).call
   end
 
-  def initialize(search, item_type)
+  def initialize(search)
     @search = search
-    @item_type = item_type
   end
 
   def call
@@ -16,13 +15,17 @@ class AttachQueryResultsToSearch
 
   private
 
-  attr_reader :search, :item_type
+  attr_reader :search
+
+  def item_type
+    search.to_item_type
+  end
 
   def query
     query_class.new(name: search.name)
   end
 
   def query_class
-    Query.const_get(@item_type.name)
+    Query.const_get(item_type.name)
   end
 end
