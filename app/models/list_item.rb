@@ -3,13 +3,11 @@ class ListItem < ActiveRecord::Base
   belongs_to :item, polymorphic: true
   has_one :search
 
-  after_save :change_name_to_item_if_item_present
+  after_save :inherit_item_name
 
   private
 
-  def change_name_to_item_if_item_present
-    if item
-      self.name = item.name
-    end
+  def inherit_item_name
+    self.name = item.name
   end
 end

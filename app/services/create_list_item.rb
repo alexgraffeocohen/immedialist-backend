@@ -1,20 +1,22 @@
 class CreateListItem
-  def self.call(list_item, requested_item_type)
-    new(list_item, requested_item_type).call
+  def self.call(list_item_params)
+    new(list_item_params).call
   end
 
-  def initialize(list_item, requested_item_type)
-    @item_type = LookUpItemType.call(requested_item_type)
-    @list_item = list_item
+  def initialize(list_item_params)
+    @item_type = LookUpItemType.call(list_item_params.fetch(:type))
+    @name = list_item_params.fetch(:name)
   end
 
   def call
-    AttachSearchToListItem.call(list_item, item_type)
-    AttachQueryResultsToSearch.call(list_item.search, item_type)
-    list_item.save!
+    ListItem.new(name: name) do |list_item|
+      AttachDummyItemToListItem.call(list_item, item_type)
+      AttachSearchToListItem.call(list_item, item_type)
+      AttachQueryResultsToSearch.call(list_item.search, item_type)
+    end
   end
 
   private
 
-  attr_reader :item_type, :list_item
+  attr_reader :item_type, :name
 end

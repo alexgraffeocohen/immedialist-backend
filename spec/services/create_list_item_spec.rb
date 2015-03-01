@@ -1,40 +1,35 @@
 require 'rails_helper'
 
 RSpec.describe CreateListItem, type: :service do
-  let(:search_results) { list_item.search.results }
-
   context 'given any list item' do
-    let(:list_item)           { build(:list_item, name: "Generic Query") }
-    let(:requested_item_type) { "Movie" }
+    let(:list_item_params) {{ name: "Generic Query", type: "Movie" }}
 
-    before(:each) do
+    it 'returns a saved list item' do
       VCR.use_cassette('generic_list_item_query') do
-        CreateListItem.call(list_item, requested_item_type)
-      end
-    end
+        list_item = CreateListItem.call(list_item_params)
 
-    it 'saves the list item passed to it' do
-      expect(list_item).to be_persisted
+        expect(list_item).to be_persisted
+      end
     end
   end
 
   context 'when the list item name yields query results' do
-    let(:list_item)           { build(:list_item, name: "The Matrix") }
-    let(:requested_item_type) { "Movie" }
-
-    before(:each) do
-      VCR.use_cassette('real_name_movie_query') do
-        CreateListItem.call(list_item, requested_item_type)
-      end
-    end
+    let(:list_item_params) {{ name: "The Matrix", type: "Movie" }}
 
     it 'attaches relevant results to the list item' do
-      expect(search_results).to_not be_empty
-      expect(search_results.map(&:class).uniq).to eq([Movie])
+      VCR.use_cassette('real_name_movie_query') do
+        list_item = CreateListItem.call(list_item_params)
+        search_results = list_item.search.results
 
-      relevant_movie = search_results.select { |m| m.name == "The Matrix" }
+        expect(search_results).to_not be_empty
+        expect(search_results.map(&:class).uniq).to eq([Movie])
 
-      expect(relevant_movie).to_not be_nil
+        relevant_movie = search_results.select do |m|
+          m.name == "The Matrix"
+        end
+
+        expect(relevant_movie).to_not be_nil
+      end
     end
   end
 end
