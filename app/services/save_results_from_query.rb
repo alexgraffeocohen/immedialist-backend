@@ -1,15 +1,16 @@
 class SaveResultsFromQuery
-  def self.call(query_results, item_type)
-    new(query_results, item_type).call
+  def self.call(query, item_type)
+    new(query, item_type).call
   end
 
-  def initialize(query_results, item_type)
-    @query_results = query_results
+  def initialize(query, item_type)
+    @query = query
     @item_type = item_type
   end
 
   def call
-    sanitized_results = query_sanitizer_class.call(@query_results)
+    query_results = @query.call
+    sanitized_results = query_sanitizer_class.call(query_results)
     return [] if sanitized_results.empty?
     query_saver_class.call(sanitized_results)
   end
