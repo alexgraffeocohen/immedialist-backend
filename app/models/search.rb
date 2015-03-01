@@ -1,4 +1,6 @@
 class Search < ActiveRecord::Base
+  include Immedialist::ItemTypeConversion
+
   belongs_to :list_item
 
   after_save :inherit_list_item_name
