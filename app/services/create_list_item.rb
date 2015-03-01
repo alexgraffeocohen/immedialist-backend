@@ -11,7 +11,7 @@ class CreateListItem
   def call
     ListItem.new(name: name) do |list_item|
       AttachDummyItemToListItem.call(list_item, item_type)
-      AttachSearchToListItem.call(list_item, item_type)
+      AttachSearchToListItem.call(list_item)
       AttachQueryResultsToSearch.call(list_item.search, item_type)
     end
   end
