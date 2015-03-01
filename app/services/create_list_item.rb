@@ -1,10 +1,12 @@
 class CreateListItem
+  include Immedialist::ItemTypeConversion
+
   def self.call(list_item_params)
     new(list_item_params).call
   end
 
   def initialize(list_item_params)
-    @item_type = LookUpItemType.call(list_item_params.fetch(:type))
+    @item_type = ItemType(list_item_params.fetch(:type))
     @name = list_item_params.fetch(:name)
   end
 
