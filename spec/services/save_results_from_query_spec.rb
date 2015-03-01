@@ -5,7 +5,7 @@ RSpec.describe SaveResultsFromQuery, type: :service do
   let(:test_query) { TestQuery::Movie.new }
   let(:saved_objects) {
     VCR.use_cassette(fixture) do
-      SaveResultsFromQuery.call(query, item_type)
+      SaveResultsFromQuery.call(query)
     end
   }
 

@@ -1,4 +1,6 @@
 class Query
+  include Immedialist::ItemTypeConversion
+
   def initialize(query_params)
     @external_id = query_params[:external_id]
     @name = query_params[:name]

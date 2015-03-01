@@ -1,15 +1,14 @@
 class SaveResultsFromQuery
-  def self.call(query, item_type)
-    new(query, item_type).call
+  def self.call(query)
+    new(query).call
   end
 
-  def initialize(query, item_type)
+  def initialize(query)
     @query = query
-    @item_type = item_type
   end
 
   def call
-    query_results = @query.call
+    query_results = query.call
     sanitized_results = query_sanitizer_class.call(query_results)
     return [] if sanitized_results.empty?
     query_saver_class.call(sanitized_results)
@@ -17,11 +16,17 @@ class SaveResultsFromQuery
 
   private
 
+  attr_reader :query
+
+  def item_type
+    query.to_item_type
+  end
+
   def query_sanitizer_class
-    QuerySanitizer.const_get(@item_type.name)
+    QuerySanitizer.const_get(item_type.name)
   end
 
   def query_saver_class
-    QuerySaver.const_get(@item_type.name)
+    QuerySaver.const_get(item_type.name)
   end
 end
