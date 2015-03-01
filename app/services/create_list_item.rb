@@ -1,6 +1,5 @@
 class CreateListItem
   def self.call(list_item, requested_item_type)
-    return if !list_item.valid?
     new(list_item, requested_item_type).call
   end
 
