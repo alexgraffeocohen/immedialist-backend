@@ -3,22 +3,22 @@ import Ember from 'ember';
 export default Ember.ArrayController.extend({
   actions: {
     createListItem: function() {
-      var listItemAttrs = this.get('listItemAttrs');
-      var typeForForm = listItemAttrs.type;
-      var listItem = this.store.createRecord('listItem', listItemAttrs);
-      this.set('listItemAttrs', {type: typeForForm});
+      var listItemAttrs = this.get('listItemAttrs'),
+      typeForForm = listItemAttrs.itemType,
+      listItem = this.store.createRecord('listItem', listItemAttrs);
+      this.set('listItemAttrs', {itemType: typeForForm});
       listItem.save();
     }
   },
   listItemAttrs: {},
   types: [
-    "movie",
-    "actor",
-    "director",
-    "song",
-    "album",
-    "artist",
-    "book",
-    "author"
+    "Movie",
+    "Actor",
+    "Director",
+    "Song",
+    "Album",
+    "Artist",
+    "Book",
+    "Author"
   ]
 });
