@@ -6,13 +6,12 @@ class CreateListItem
   end
 
   def initialize(list_item_params)
-    @item_type = ItemType(list_item_params.fetch(:type))
+    @item_type = list_item_params.fetch(:item_type)
     @name = list_item_params.fetch(:name)
   end
 
   def call
-    ListItem.new(name: name) do |list_item|
-      AttachDummyItemToListItem.call(list_item, item_type)
+    ListItem.new(name: name, item_type: item_type) do |list_item|
       AttachSearchToListItem.call(list_item)
       AttachQueryResultsToSearch.call(list_item.search)
     end

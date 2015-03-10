@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CreateListItem, type: :service do
   context 'given any list item' do
-    let(:list_item_params) {{ name: "Generic Query", type: "Movie" }}
+    let(:list_item_params) {{ name: "Generic Query", item_type: "Movie" }}
 
     it 'returns a saved list item' do
       VCR.use_cassette('generic_list_item_query') do
@@ -14,7 +14,7 @@ RSpec.describe CreateListItem, type: :service do
   end
 
   context 'when the list item name yields query results' do
-    let(:list_item_params) {{ name: "The Matrix", type: "Movie" }}
+    let(:list_item_params) {{ name: "The Matrix", item_type: "Movie" }}
 
     it 'attaches relevant results to the list item' do
       VCR.use_cassette('real_name_movie_query') do
