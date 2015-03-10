@@ -8,5 +8,5 @@ RSpec.describe ListItem, :type => :model do
   it { should belong_to(:item) }
 
   it_behaves_like 'it can be converted to an item type',
-    FactoryGirl.build(:list_item)
+    FactoryGirl.build(:list_item, item_type: "Movie")
 end
