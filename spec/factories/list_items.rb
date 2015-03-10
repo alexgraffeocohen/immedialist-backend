@@ -3,5 +3,4 @@ FactoryGirl.define do
     name 'List Item Name'
     association :item, factory: :movie, strategy: :build
   end
-
 end
