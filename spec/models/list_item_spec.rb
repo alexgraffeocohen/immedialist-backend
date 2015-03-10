@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ListItem, :type => :model do
   let(:list_item) { FactoryGirl.build(:list_item) }
 
-  it { should have_one(:search) }
+  it { should have_one(:search).dependent(:destroy) }
   it { should belong_to(:user) }
   it { should belong_to(:item) }
 
