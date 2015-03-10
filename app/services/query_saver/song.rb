@@ -20,12 +20,12 @@ class QuerySaver::Song < QuerySaver
 
   def save_associated_album(song_result)
     album_results = [song_result.fetch(:album)]
-    albums = QuerySaver::Album.call(album_results)
+    albums = ::QuerySaver::Album.call(album_results)
     albums.first
   end
 
   def save_associated_artists(song_result)
     artist_results = song_result.fetch(:artists)
-    QuerySaver::Artist.call(artist_results)
+    ::QuerySaver::Artist.call(artist_results)
   end
 end
