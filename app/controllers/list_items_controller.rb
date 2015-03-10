@@ -9,8 +9,7 @@ class ListItemsController < ActionController::Base
     if @list_item.save
       render status: :created, json: @list_item
     else
-      render status: :unprocessable_entity,
-        json: { errors: @list_item.errors }
+      render status: :unprocessable_entity, json: { errors: @list_item.errors }
     end
   end
 
