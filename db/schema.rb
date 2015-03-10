@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310042619) do
+ActiveRecord::Schema.define(version: 20150310044631) do
+
+  create_table "actor_searches", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.integer  "search_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "album_searches", force: :cascade do |t|
     t.integer  "album_id"
