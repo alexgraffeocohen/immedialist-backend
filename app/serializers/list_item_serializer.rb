@@ -3,5 +3,5 @@ class ListItemSerializer < ActiveModel::Serializer
 
   attributes :id, :name, :item_type
   has_one :item, polymorphic: true
-  has_one :search
+  has_one :search, serializer: SearchSerializer
 end

@@ -5,10 +5,13 @@ class ListItemsController < ActionController::Base
   end
 
   def create
-    item = Movie.new(name: params[:list_item][:name])
-    @list_item = ListItem.new(name: params[:list_item][:name], item: item)
-    @list_item.save
-    render json: @list_item
+    @list_item = CreateListItem.call(list_item_params)
+    if @list_item.save
+      render status: :created, json: @list_item
+    else
+      render status: :unprocessable_entity,
+        json: { errors: @list_item.errors }
+    end
   end
 
   def destroy
@@ -20,6 +23,6 @@ class ListItemsController < ActionController::Base
   private
 
   def list_item_params
-    params.require(:list_item).permit(:name)
+    params.require(:list_item).permit(:name, :item_type)
   end
 end

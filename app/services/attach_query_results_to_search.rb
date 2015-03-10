@@ -25,6 +25,6 @@ class AttachQueryResultsToSearch
   end
 
   def query_class
-    Query.const_get(item_type.name)
+    Query.const_get(item_type.name, false)
   end
 end

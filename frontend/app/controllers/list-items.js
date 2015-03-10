@@ -4,8 +4,12 @@ export default Ember.ArrayController.extend({
   actions: {
     createListItem: function() {
       var listItemAttrs = this.get('listItemAttrs'),
+      item = this.store.createRecord('movie', {
+        name: listItemAttrs.name
+      }),
       typeForForm = listItemAttrs.itemType,
       listItem = this.store.createRecord('listItem', listItemAttrs);
+      listItem.set('item', item)
       this.set('listItemAttrs', {itemType: typeForForm});
       listItem.save();
     }
