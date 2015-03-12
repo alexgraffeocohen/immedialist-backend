@@ -6,6 +6,6 @@ class ListItem < ActiveRecord::Base
   has_one :search, dependent: :destroy
 
   def to_item_type
-    ItemType(item_type)
+    item.to_item_type
   end
 end
