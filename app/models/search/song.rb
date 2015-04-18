@@ -1,4 +1,5 @@
 class Search::Song < Search
-  has_many :results, through: :song_searches, source: :song
-  has_many :song_searches
+  has_many :results, through: :song_searches, source: :song,
+    class_name: '::Song'
+  has_many :song_searches, foreign_key: 'search_id'
 end
