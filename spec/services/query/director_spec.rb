@@ -39,14 +39,14 @@ describe Query::Director do
       it 'returns a detailed director record if external id is recognized' do
         result = test_query.call_with_real_id
 
-        expect(result.name).to eq(real_director.name)
-        expect(result.biography).to_not be_nil
+        expect(result['name']).to eq(real_director.name)
+        expect(result['biography']).to_not be_nil
       end
 
       it 'returns an error object if external id is not recognized' do
         result = test_query.call_with_fake_id
 
-        expect(result[:status_message]).to include("Invalid id")
+        expect(result['status_message']).to include("Invalid id")
       end
     end
   end
