@@ -5,3 +5,16 @@
 .list-item__name {
   font-size: 1.25em;
 }
+
+.list-group .list-group-item-show {
+  background-color: #E3DAF4;
+  color: #5D5193;
+  &:hover {
+    background-color: #DBCFF2;
+    color: #5D5193;
+  }
+  &:focus {
+    background-color: #DBCFF2;
+    color: #5D5193;
+  }
+}

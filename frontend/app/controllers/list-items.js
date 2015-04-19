@@ -20,6 +20,7 @@ export default Ember.ArrayController.extend({
   attributes: {},
   types: [
     "Movie",
+    "Show",
     "Actor",
     "Director",
     "Song",

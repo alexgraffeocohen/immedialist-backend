@@ -1,0 +1,2 @@
+class ShowSerializer < MediaSerializer
+end

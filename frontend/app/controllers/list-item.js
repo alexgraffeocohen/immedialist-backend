@@ -16,6 +16,9 @@ export default Ember.ObjectController.extend({
       case "movie":
         return "fa-film"
       break;
+      case "show":
+        return "fa-video-camera"
+      break;
       case "actor":
         return "fa-user"
       break;
@@ -43,6 +46,9 @@ export default Ember.ObjectController.extend({
     switch(this.get('mediaType')) {
       case "movie":
         return "list-group-item-info"
+      break;
+      case "show":
+        return "list-group-item-show"
       break;
       case "song":
         return "list-group-item-success"
