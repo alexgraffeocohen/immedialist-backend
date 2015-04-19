@@ -1,3 +1,2 @@
-class MovieSerializer < ActiveModel::Serializer
-  attributes :id, :name
+class MovieSerializer < MediaSerializer
 end

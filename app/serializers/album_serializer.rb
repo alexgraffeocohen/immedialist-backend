@@ -1,3 +1,2 @@
-class AlbumSerializer < ActiveModel::Serializer
-  attributes :id, :name
+class AlbumSerializer < MediaSerializer
 end

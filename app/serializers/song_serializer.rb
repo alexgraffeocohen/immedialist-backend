@@ -1,3 +1,2 @@
-class SongSerializer < ActiveModel::Serializer
-  attributes :id, :name
+class SongSerializer < MediaSerializer
 end

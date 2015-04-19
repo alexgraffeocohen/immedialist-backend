@@ -1,3 +1,2 @@
-class BookSerializer < ActiveModel::Serializer
-  attributes :id, :name
+class BookSerializer < MediaSerializer
 end
