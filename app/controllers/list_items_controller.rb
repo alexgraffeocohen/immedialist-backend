@@ -5,8 +5,9 @@ class ListItemsController < ActionController::Base
   end
 
   def create
-    @list_item = CreateListItem.call(list_item_params)
-    if @list_item.save
+    @list_item = ListItem.new(list_item_params)
+    CreateListItem.call(@list_item)
+    if @list_item.persisted?
       render status: :created, json: @list_item
     else
       render status: :unprocessable_entity, json: { errors: @list_item.errors }
@@ -22,6 +23,6 @@ class ListItemsController < ActionController::Base
   private
 
   def list_item_params
-    params.require(:list_item).permit(:name, :item_type)
+    params.require(:list_item).permit(:name, :item_id, :item_type)
   end
 end

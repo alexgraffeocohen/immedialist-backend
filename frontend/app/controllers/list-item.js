@@ -8,8 +8,11 @@ export default Ember.ObjectController.extend({
       listItem.save();
     }
   },
+  mediaType: function() {
+    return this.get('model.mediaType').toLowerCase();
+  }.property('model.mediaType'),
   typeIcon: function() {
-    switch(this.get('model.itemType').toLowerCase()) {
+    switch(this.get('mediaType')) {
       case "movie":
         return "fa-film"
       break;
@@ -35,9 +38,9 @@ export default Ember.ObjectController.extend({
         return "fa-book"
       break;
     }
-  }.property('model.itemType'),
+  }.property('mediaType'),
   typeColor: function() {
-    switch(this.get('model.itemType').toLowerCase()) {
+    switch(this.get('mediaType')) {
       case "movie":
         return "list-group-item-info"
       break;
@@ -63,5 +66,5 @@ export default Ember.ObjectController.extend({
         return "list-group-item-warning"
       break;
     }
-  }.property('model.itemType')
+  }.property('mediaType')
 });

@@ -2,7 +2,7 @@
   <div class="row">
     <form action="#" class="create form-inline text-center" {{action "createListItem" on="submit"}}>
       <div class="form-group">
-        {{view "select" content=controller.types value=attributes.type class="form-control"}}
+        {{view "select" content=controller.types value=attributes.mediaType class="form-control"}}
       </div>
       <div class="form-group">
         {{input value=attributes.name placeholder="enter item" class="form-control"}}
