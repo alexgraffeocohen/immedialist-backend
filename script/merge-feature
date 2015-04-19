@@ -1,0 +1,1 @@
+git co master && git merge $1 && git branch -d $1
