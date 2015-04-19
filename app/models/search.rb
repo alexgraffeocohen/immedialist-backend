@@ -3,7 +3,7 @@ class Search < ActiveRecord::Base
 
   belongs_to :list_item
 
-  after_save :inherit_list_item_name
+  before_save :inherit_list_item_name
 
   validates_presence_of :list_item
 
