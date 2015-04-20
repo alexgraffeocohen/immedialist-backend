@@ -34,22 +34,20 @@ $person-text-color: #8a6d3b;
   font-size: 1.25em;
 }
 
-.list-group .show {
-  @include list-item-variant($show-base-bg, $show-text-color)
-}
-
-.list-group .movie {
-  @include list-item-variant($movie-base-bg, $movie-text-color)
-}
-
-.list-group .book {
-  @include list-item-variant($book-base-bg, $book-text-color)
-}
-
-.list-group .song, .list-group .album {
-  @include list-item-variant($music-base-bg, $music-text-color)
-}
-
-.list-group .actor, .list-group .director, .list-group .artist, .list-group .author {
-  @include list-item-variant($person-base-bg, $person-text-color)
+.list-group {
+  .show {
+    @include list-item-variant($show-base-bg, $show-text-color)
+  }
+  .movie {
+    @include list-item-variant($movie-base-bg, $movie-text-color)
+  }
+  .book {
+    @include list-item-variant($book-base-bg, $book-text-color)
+  }
+  .song, .album {
+    @include list-item-variant($music-base-bg, $music-text-color)
+  }
+  .actor, .director, .artist, .author {
+    @include list-item-variant($person-base-bg, $person-text-color)
+  }
 }
