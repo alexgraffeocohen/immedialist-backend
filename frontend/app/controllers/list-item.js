@@ -45,31 +45,31 @@ export default Ember.ObjectController.extend({
   typeColor: function() {
     switch(this.get('mediaType')) {
       case "movie":
-        return "list-group-item-info"
+        return "movie"
       break;
       case "show":
         return "show"
       break;
       case "song":
-        return "list-group-item-success"
+        return "song"
       break;
       case "album":
-        return "list-group-item-success"
+        return "album"
       break;
       case "book":
-        return "list-group-item-danger"
+        return "book"
       break;
       case "actor":
-        return "list-group-item-warning"
+        return "actor"
       break;
       case "director":
-        return "list-group-item-warning"
+        return "director"
       break;
       case "author":
-        return "list-group-item-warning"
+        return "author"
       break;
       case "artist":
-        return "list-group-item-warning"
+        return "artist"
       break;
     }
   }.property('mediaType')
