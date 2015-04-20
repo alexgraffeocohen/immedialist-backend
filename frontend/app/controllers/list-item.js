@@ -48,7 +48,7 @@ export default Ember.ObjectController.extend({
         return "list-group-item-info"
       break;
       case "show":
-        return "list-group-item-show"
+        return "show"
       break;
       case "song":
         return "list-group-item-success"

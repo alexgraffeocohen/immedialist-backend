@@ -1,7 +1,7 @@
 $show-base-bg: #E8E1F5;
 $show-text-color: #5D5193;
 
-@mixin list-group-item-variant($bg-color, $text-color) {
+@mixin list-item-variant($bg-color, $text-color) {
   background-color: $bg-color;
   color: $text-color;
   &:hover {
@@ -22,6 +22,6 @@ $show-text-color: #5D5193;
   font-size: 1.25em;
 }
 
-.list-group .list-group-item-show {
-  @include list-group-item-variant($show-base-bg, $show-text-color)
+.list-group .show {
+  @include list-item-variant($show-base-bg, $show-text-color)
 }
