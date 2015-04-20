@@ -41,36 +41,5 @@ export default Ember.ObjectController.extend({
         return "fa-book"
       break;
     }
-  }.property('mediaType'),
-  typeColor: function() {
-    switch(this.get('mediaType')) {
-      case "movie":
-        return "movie"
-      break;
-      case "show":
-        return "show"
-      break;
-      case "song":
-        return "song"
-      break;
-      case "album":
-        return "album"
-      break;
-      case "book":
-        return "book"
-      break;
-      case "actor":
-        return "actor"
-      break;
-      case "director":
-        return "director"
-      break;
-      case "author":
-        return "author"
-      break;
-      case "artist":
-        return "artist"
-      break;
-    }
   }.property('mediaType')
 });

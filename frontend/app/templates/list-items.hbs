@@ -13,7 +13,7 @@
   <div class="row">
     <section class="list list-group col-md-6 col-md-offset-3">
       {{#each itemController="listItem"}}
-        <a {{bind-attr class=":list-item :list-group-item typeColor"}} href="#">
+        <a {{bind-attr class=":list-item :list-group-item mediaType"}} href="#">
           <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw typeIcon"}}></i>
           <span class="list-item__name">{{name}}</span>
           <button type="button" class="close" aria-label="Close" {{action "deleteListItem"}}>
