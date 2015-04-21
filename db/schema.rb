@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150419183158) do
+ActiveRecord::Schema.define(version: 20150421040300) do
 
   create_table "actor_searches", force: :cascade do |t|
     t.integer  "creator_id"
@@ -109,6 +109,13 @@ ActiveRecord::Schema.define(version: 20150419183158) do
     t.datetime "updated_at"
     t.integer  "tmdb_id"
     t.integer  "goodreads_id"
+  end
+
+  create_table "director_searches", force: :cascade do |t|
+    t.integer  "search_id"
+    t.integer  "creator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "genres", force: :cascade do |t|
