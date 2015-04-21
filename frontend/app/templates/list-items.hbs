@@ -12,10 +12,10 @@
 
   <div class="row">
     <section class="list list-group col-md-6 col-md-offset-3">
-      {{#each itemController="listItem"}}
-        <a {{bind-attr class=":list-item :list-group-item mediaType"}} href="#">
-          <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw typeIcon"}}></i>
-          <span class="list-item__name">{{name}}</span>
+      {{#each item in controller}}
+        <a {{bind-attr class=":list-item :list-group-item item.mediaType"}} href="#">
+          <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw item.typeIcon"}}></i>
+          <span class="list-item__name">{{item.name}}</span>
           <button type="button" class="close" aria-label="Close" {{action "deleteListItem"}}>
             <span aria-hidden="true">&times;</span>
           </button>

@@ -17,6 +17,7 @@ export default Ember.ArrayController.extend({
       });
     }
   },
+  itemController: 'listItem',
   attributes: {},
   types: [
     "Movie",
