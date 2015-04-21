@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150421040300) do
+ActiveRecord::Schema.define(version: 20150421041013) do
 
   create_table "actor_searches", force: :cascade do |t|
     t.integer  "creator_id"
@@ -50,6 +50,13 @@ ActiveRecord::Schema.define(version: 20150421040300) do
     t.integer  "genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "artist_searches", force: :cascade do |t|
+    t.integer  "creator_id"
+    t.integer  "search_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "artists", force: :cascade do |t|
