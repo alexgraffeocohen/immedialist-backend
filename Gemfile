@@ -14,7 +14,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'fuubar'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'database_cleaner'
