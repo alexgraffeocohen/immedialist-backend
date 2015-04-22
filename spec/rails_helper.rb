@@ -4,6 +4,8 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda/matchers'
+require 'capybara/rspec'
+require 'capybara/poltergeist'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -20,6 +22,8 @@ Dir[Rails.root.join("app/models/search/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/services/query_saver/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/services/query_sanitizer/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/services/query/*.rb")].each { |f| require f }
+
+Capybara.javascript_driver = :poltergeist
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
