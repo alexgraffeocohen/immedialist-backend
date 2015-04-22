@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/heliostatic/goodreads.git
+  revision: 6057612724bfd5453d5397ec199482b95f53eb30
+  specs:
+    goodreads (0.3.1)
+      activesupport (~> 4.0)
+      hashie (~> 2.0)
+      i18n (~> 0.5)
+      oauth (~> 0.4)
+      rest-client (~> 1.6)
+
+GIT
   remote: https://github.com/laserlemon/figaro.git
   revision: 7d950c1c100f93142373ed9a1ef00868fa9d30a5
   specs:
@@ -108,12 +119,6 @@ GEM
       ruby-progressbar (~> 1.4)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    goodreads (0.3.0)
-      activesupport (>= 3)
-      hashie (~> 2.0)
-      i18n (~> 0.5)
-      oauth (~> 0.4)
-      rest-client (~> 1.6)
     hashie (2.1.2)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -319,7 +324,7 @@ DEPENDENCIES
   figaro!
   font-awesome-sass
   fuubar
-  goodreads
+  goodreads!
   imdb
   jquery-rails
   pg

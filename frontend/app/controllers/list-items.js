@@ -27,6 +27,7 @@ export default Ember.ArrayController.extend({
     "Song",
     "Album",
     "Artist",
-    "Book"
+    "Book",
+    "Author"
   ]
 });
