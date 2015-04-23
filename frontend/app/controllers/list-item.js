@@ -11,6 +11,9 @@ export default Ember.ObjectController.extend({
   mediaType: function() {
     return this.get('model.mediaType').toLowerCase();
   }.property('model.mediaType'),
+  paramName: function() {
+    return this.get('model.name').underscore();
+  }.property('model.name'),
   typeIcon: function() {
     switch(this.get('mediaType')) {
       case "movie":
