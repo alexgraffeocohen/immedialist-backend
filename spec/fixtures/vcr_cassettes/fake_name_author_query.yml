@@ -77,7 +77,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 00:09:59 GMT
+      - Thu, 23 Apr 2015 00:26:34 GMT
       Server:
       - Server
       Content-Type:
@@ -92,18 +92,18 @@ http_interactions:
       - nosniff
       - nosniff
       X-Request-Id:
-      - 1FZ7AV1Y4CDQB15S9DKJ
+      - 19YTRD692M884K13AF9A
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.054166'
+      - '0.058720'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=61560955fccc4437cda6d6deadc8663d; path=/; expires=Thu, 23 Apr
-        2015 06:09:59 -0000; HttpOnly
-      - csid=BAhJIhgyNzQtNzM2NTgzNS01NDYyMDY1BjoGRVQ%3D--4706eb663ad653ee2f9d3cadfe8e58e5385e096c;
-        path=/; expires=Mon, 23 Apr 2035 00:09:59 -0000
+      - _session_id2=1f5a282a55755b96cfd20719947682f4; path=/; expires=Thu, 23 Apr
+        2015 06:26:34 -0000; HttpOnly
+      - csid=BAhJIhg3MTMtOTE4NTgwMS04MzE1ODM0BjoGRVQ%3D--538d4f5be9ae70d260921ad1e61bd2e7e249dc19;
+        path=/; expires=Mon, 23 Apr 2035 00:26:34 -0000
       - locale=en; path=/
       Vary:
       - User-Agent
@@ -118,5 +118,5 @@ http_interactions:
         vSZSbhTRrE9Z48WnmBYFwchwL3sPupHs81QNvDRyOZYdF+1CvxmThr7aLIz+
         +58PoqkR+gAAAA==
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:09:59 GMT
+  recorded_at: Thu, 23 Apr 2015 00:26:34 GMT
 recorded_with: VCR 2.9.3
