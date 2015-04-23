@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.goodreads.com/api/author_url/Media%20Title?format=xml&id=Media%20Title&key=eOR87hBs1BBAUmTdh7EMEA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 22 Apr 2015 23:08:30 GMT
+      Server:
+      - Server
+      Content-Type:
+      - application/xml; charset=utf-8
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - ALLOWALL
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Request-Id:
+      - 02VGGT8F91FQ0X2Z2GED
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.379201'
+      Content-Encoding:
+      - gzip
+      Set-Cookie:
+      - _session_id2=e9f657b909a1394483ec2f2e79a5cb61; path=/; expires=Thu, 23 Apr
+        2015 05:08:30 -0000; HttpOnly
+      - csid=BAhJIhgzNTgtODY4MTEzOC0yMDg1ODY3BjoGRVQ%3D--84c1d82c962062093739915891b7c5839a3b55f3;
+        path=/; expires=Sun, 22 Apr 2035 23:08:30 -0000
+      - locale=en; path=/
+      Vary:
+      - User-Agent
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2WRwU/DIBjFz+tfUXvwZnHJYhulNK1OT8ak6U7L0mD5spIN
+        qECt/vdSNrdFwwW+PH7vPcD5l9iHn6ANVzKL5vFtFIJsFeNym0Wr+vkmjXIS
+        4BelmAbKTAWmV9IACcIQV/AxgLHT3p3oYDuQlrfUOhixegCM/gy90ml38E3w
+        1frxqaiLNbxVadKVZl6WxUrUrEuWr8tisyEYTboDXYDtFDtfoj1vJrjSzZ7L
+        nVcfNVM0dJEtCGYzn07pkLMsulss0iQibjrDkgo4QwvpWo5hqYHbd6qtp3qJ
+        F09GpLO2v0doHMd4+/sqcauEr6o0Mp0ac2fjXeIDsTkRr6noHwYrGgGMDyJz
+        NU4jowbdQnbRCiNvOeU/4t3erQCj/z/yA7/+V5/MAQAA
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 23:08:31 GMT
+recorded_with: VCR 2.9.3

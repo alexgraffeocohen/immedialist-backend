@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.themoviedb.org/3/search/person?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=Media%20Title
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - public, max-age=10800
+      Content-Type:
+      - application/json;charset=utf-8
+      Date:
+      - Wed, 22 Apr 2015 23:08:24 GMT
+      Etag:
+      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      Server:
+      - nginx
+      Status:
+      - 200 OK
+      X-Memc:
+      - HIT
+      X-Memc-Age:
+      - '377'
+      X-Memc-Expires:
+      - '10423'
+      X-Memc-Key:
+      - 7950a83b8238cf116bc92b5fd45de75e
+      Content-Length:
+      - '57'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 23:08:25 GMT
+recorded_with: VCR 2.9.3

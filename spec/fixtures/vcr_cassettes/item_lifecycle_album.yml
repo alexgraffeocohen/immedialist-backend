@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spotify.com/v1/search?limit=20&offset=0&q=Media%20Title&type=album
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 22 Apr 2015 23:08:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=600
+      Cache-Control:
+      - public, max-age=7200
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS, PUT, DELETE
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Content-Encoding:
+      - gzip
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000;
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAAFyNsQ6CMBRFd76i6cCiochI0vgFbm7GoeJreEmhpX0lEsK/
+        CwUXx3Nycu+cMcaVecUucFazecVVtB70hrwlcqEWQjksgrOEeioa24nxIgIo
+        37TXIYKf5A3eqE53JAO51ToAyTI32CHJqsxpciDTCT/vB0iwHz7Y81Cp3lRV
+        HqaHTxJ9NOZQ+/Ymf5HzMKKN4S8kS8qkbuUlW74AAAD//wMA99ddPegAAAA=
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 23:08:27 GMT
+recorded_with: VCR 2.9.3

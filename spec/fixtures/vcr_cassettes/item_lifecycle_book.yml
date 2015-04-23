@@ -1,0 +1,128 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.goodreads.com/search/index?format=xml&key=eOR87hBs1BBAUmTdh7EMEA&q=Media%20Title
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 22 Apr 2015 23:08:29 GMT
+      Server:
+      - Server
+      Content-Type:
+      - application/xml; charset=utf-8
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - ALLOWALL
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      Vary:
+      - User-Agent
+      X-Request-Id:
+      - 14HCV4GP3V1JE041QVRB
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.868378'
+      Content-Encoding:
+      - gzip
+      Set-Cookie:
+      - _session_id2=b9168dba500e9964e37be58e0191e34b; path=/; expires=Thu, 23 Apr
+        2015 05:08:29 -0000; HttpOnly
+      - csid=BAhJIhg5MTgtODIzNDQ2OS03NDk5NjE0BjoGRVQ%3D--f949fd69a65bda357a4240ee9323bd00d4406adf;
+        path=/; expires=Sun, 22 Apr 2035 23:08:28 -0000
+      - locale=en; path=/
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        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
+        AA==
+    http_version: 
+  recorded_at: Wed, 22 Apr 2015 23:08:29 GMT
+recorded_with: VCR 2.9.3

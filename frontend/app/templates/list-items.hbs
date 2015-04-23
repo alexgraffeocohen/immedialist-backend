@@ -5,7 +5,7 @@
         {{view "select" content=controller.types value=attributes.mediaType class="form-control"}}
       </div>
       <div class="form-group">
-        {{input value=attributes.name placeholder="enter item" class="form-control"}}
+        {{input value=attributes.name placeholder="enter item" id="list-item-name" class="form-control"}}
       </div>
       <input type="submit" class="btn btn-default" value="Add To List">
     </form>
@@ -17,7 +17,7 @@
         <a {{bind-attr class=":list-item :list-group-item item.mediaType item.paramName"}} href="#">
           <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw item.typeIcon"}}></i>
           <span class="list-item__name">{{item.name}}</span>
-          <button type="button" class="close" aria-label="Close" {{action "deleteListItem"}}>
+          <button type="button" class="close" aria-label="Close" id="list-item-delete" {{action "deleteListItem"}}>
             <span aria-hidden="true">&times;</span>
           </button>
         </a>
