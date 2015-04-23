@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sun, 25 Jan 2015 05:57:24 GMT
+      - Thu, 23 Apr 2015 00:04:55 GMT
       Etag:
-      - '"64daacd9c897f96ce966aa7c105be251"'
+      - '"447509277f26c3ec4a82b4361739d585"'
       Server:
       - nginx
       Status:
@@ -35,9 +35,9 @@ http_interactions:
       X-Memc:
       - HIT
       X-Memc-Age:
-      - '14050'
+      - '9110'
       X-Memc-Expires:
-      - '7550'
+      - '12490'
       X-Memc-Key:
       - e8c6c710292140b5451a305e684864e2
       Content-Length:
@@ -58,7 +58,7 @@ http_interactions:
         story and the loose-jointed manner of his comic roles.\" A repeated theme
         in roles he has portrayed is that of saving the world, including the characters
         of Ted Logan, Buddha, Neo, Johnny Mnemonic, John Constantine and Klaatu.","birthday":"1964-09-02","deathday":"","homepage":"","id":6384,"imdb_id":"nm0000206","name":"Keanu
-        Reeves","place_of_birth":"Beirut, Lebanon","popularity":17.6481770728851,"profile_path":"/id1qIb7cZs2eQno90KsKwG8VLGN.jpg"}'
+        Reeves","place_of_birth":"Beirut, Lebanon","popularity":7.56693424136379,"profile_path":"/id1qIb7cZs2eQno90KsKwG8VLGN.jpg"}'
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 05:57:24 GMT
+  recorded_at: Thu, 23 Apr 2015 00:04:55 GMT
 recorded_with: VCR 2.9.3

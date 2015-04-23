@@ -19,30 +19,34 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Sun, 15 Feb 2015 21:27:27 GMT
+      - Thu, 23 Apr 2015 00:05:01 GMT
       Server:
       - Server
       Content-Type:
       - application/xml; charset=utf-8
       Status:
       - 404 Not Found
+      X-Frame-Options:
+      - ALLOWALL
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
       Vary:
       - User-Agent
       X-Request-Id:
-      - 03ZFJW8SRXX0TY4D3NP5
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - 0XWRP3130XBE9DW9NRE4
       Cache-Control:
       - no-cache
       X-Runtime:
-      - '0.036373'
+      - '0.022724'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=382ba9d4229a788a73bdd43185ad313a; path=/; expires=Mon, 16-Feb-2015
-        03:27:27 GMT; HttpOnly
-      - csid=BAhJIhgxNzktMjM2OTA4MC00NjI2MjUxBjoGRVQ%3D--c9debfb8a50d53d6ca73ebb09638b0b4333cf9f1;
-        path=/; expires=Thu, 15-Feb-2035 21:27:27 GMT
+      - _session_id2=c83fe747b5aeeccd3301c75dc839bef0; path=/; expires=Thu, 23 Apr
+        2015 06:05:01 -0000; HttpOnly
+      - csid=BAhJIhgzNzktNzUyODk4MS0xNDgzMjU3BjoGRVQ%3D--a75129ca5056de52fbc877e24af8c6c8cdc09852;
+        path=/; expires=Mon, 23 Apr 2035 00:05:01 -0000
       - locale=en; path=/
       Transfer-Encoding:
       - chunked
@@ -52,5 +56,5 @@ http_interactions:
         H4sIAAAAAAAAA7NJLSrKL7JLLC3JyC9SyMsvUUjLL81LsdGHiHMBAOdbIYIg
         AAAA
     http_version: 
-  recorded_at: Sun, 15 Feb 2015 21:27:26 GMT
+  recorded_at: Thu, 23 Apr 2015 00:05:01 GMT
 recorded_with: VCR 2.9.3

@@ -60,4 +60,67 @@ http_interactions:
         C8XFJJTEZiHzCexrvxJK/v/CF7xg89bAAQAA
     http_version: 
   recorded_at: Sun, 15 Feb 2015 21:27:25 GMT
+- request:
+    method: get
+    uri: http://www.goodreads.com/api/author_url/Donna%20Tartt?format=xml&id=Donna%20Tartt&key=eOR87hBs1BBAUmTdh7EMEA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 23 Apr 2015 00:10:01 GMT
+      Server:
+      - Server
+      Content-Type:
+      - application/xml; charset=utf-8
+      Status:
+      - 200 OK
+      X-Frame-Options:
+      - ALLOWALL
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Request-Id:
+      - 0HYPDECQT9C8SD8GK9T9
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Runtime:
+      - '0.265436'
+      Content-Encoding:
+      - gzip
+      Set-Cookie:
+      - _session_id2=854149f38d8dd08a4557513c70e81152; path=/; expires=Thu, 23 Apr
+        2015 06:10:01 -0000; HttpOnly
+      - csid=BAhJIhg4MTUtNDYyNTc3MS0wMDUyNjA4BjoGRVQ%3D--96599aea4bd14a7f474a1121fc54fb330eb081e5;
+        path=/; expires=Mon, 23 Apr 2035 00:10:01 -0000
+      - locale=en; path=/
+      Vary:
+      - User-Agent
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA2WRwU/DIBTGz+tfUXvwZnGnTaU0nZuejMnSnZalIeVlJRu8
+        CtTqfy/gdIuGy+Pj4/e+B7T8UMf0HYyVqItsmt9mKegWhdT7ItvUTzfzrGQJ
+        fUYUBriwa7A9agssSVO6hrcBrAu13/HBdaCdbLnzMObMAJT8EaPTew/wyejV
+        9nFZ1dUWXtfzWbew08Wi2qhadLPVy6ra7RglwfdNV+A6FOdLvJdNgKNpjlIf
+        ovvkCdHIRbYkmUxiOjSpFEU2n03vMubFCdVcwZm5RK15WnPjXOTF0+gLLVjn
+        XH9PyDiO+f7nPfIWVRwSDbEdjqVvEPh5ZDWRdc1V/zA41SgQclCFj/4rWRxM
+        C8XFJJTEZiHzCexrvxJK/v/CF7xg89bAAQAA
+    http_version: 
+  recorded_at: Thu, 23 Apr 2015 00:10:01 GMT
 recorded_with: VCR 2.9.3

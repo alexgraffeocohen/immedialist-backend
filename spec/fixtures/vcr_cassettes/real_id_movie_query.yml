@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sun, 25 Jan 2015 05:57:28 GMT
+      - Thu, 23 Apr 2015 00:05:04 GMT
       Etag:
-      - '"0134fbad9676c38707ad5a6e858c994f"'
+      - '"5d33bed90058b1c94915ad398c32082a"'
       Server:
       - nginx
       Status:
@@ -35,30 +35,30 @@ http_interactions:
       X-Memc:
       - HIT
       X-Memc-Age:
-      - '18616'
+      - '5182'
       X-Memc-Expires:
-      - '2984'
+      - '16418'
       X-Memc-Key:
       - 4ae7e11d99f36addb309e5d76b273d25
       Content-Length:
-      - '1525'
+      - '1524'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"adult":false,"backdrop_path":"/yQeEMjnBOIAtFqIuEphyesH0a6y.jpg","belongs_to_collection":{"id":2344,"name":"The
+      string: '{"adult":false,"backdrop_path":"/7u3pxc0K1wx32IleAkLv78MKgrw.jpg","belongs_to_collection":{"id":2344,"name":"The
         Matrix Collection","poster_path":"/lh4aGpd3U9rm9B8Oqr6CUgQLtZL.jpg","backdrop_path":"/bRm2DEgUiYciDw3myHuYFInD7la.jpg"},"budget":63000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":878,"name":"Science
         Fiction"},{"id":53,"name":"Thriller"}],"homepage":"http://www.warnerbros.com/movies/home-entertainment/the-matrix/37313ac7-9229-474d-a423-44b7a6bc1a54.html","id":603,"imdb_id":"tt0133093","original_language":"en","original_title":"The
         Matrix","overview":"Thomas A. Anderson is a man living two lives. By day he
         is an average computer programmer and by night a malevolent hacker known as
         Neo, who finds himself targeted by the police when he is contacted by Morpheus,
-        a legendary computer hacker, who reveals the shocking truth about our reality.","popularity":4.11005976368111,"poster_path":"/gynBNzwyaHKtXqlEKKLioNkjKgN.jpg","production_companies":[{"name":"Silver
+        a legendary computer hacker, who reveals the shocking truth about our reality.","popularity":3.93507440650913,"poster_path":"/ZPMhHXEhYB33YoTZZNNmezth0V.jpg","production_companies":[{"name":"Silver
         Pictures","id":1885},{"name":"Warner Bros.","id":6194},{"name":"Village Roadshow
         Pictures","id":79},{"name":"Groucho II Film Partnership","id":372}],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-03-30","revenue":463517383,"runtime":136,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Welcome
-        to the Real World.","title":"The Matrix","video":false,"vote_average":7.6,"vote_count":4059}'
+        to the Real World.","title":"The Matrix","video":false,"vote_average":7.6,"vote_count":4216}'
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 05:57:28 GMT
+  recorded_at: Thu, 23 Apr 2015 00:05:04 GMT
 - request:
     method: get
     uri: http://api.themoviedb.org/3/movie/603?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1
@@ -82,9 +82,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sun, 25 Jan 2015 19:10:45 GMT
+      - Thu, 23 Apr 2015 00:09:58 GMT
       Etag:
-      - '"11fa3cf5519ea66852c24a81ab43c6c2"'
+      - '"5d33bed90058b1c94915ad398c32082a"'
       Server:
       - nginx
       Status:
@@ -94,28 +94,28 @@ http_interactions:
       X-Memc:
       - HIT
       X-Memc-Age:
-      - '1409'
+      - '5476'
       X-Memc-Expires:
-      - '20191'
+      - '16124'
       X-Memc-Key:
       - 4ae7e11d99f36addb309e5d76b273d25
       Content-Length:
-      - '1525'
+      - '1524'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"adult":false,"backdrop_path":"/yQeEMjnBOIAtFqIuEphyesH0a6y.jpg","belongs_to_collection":{"id":2344,"name":"The
+      string: '{"adult":false,"backdrop_path":"/7u3pxc0K1wx32IleAkLv78MKgrw.jpg","belongs_to_collection":{"id":2344,"name":"The
         Matrix Collection","poster_path":"/lh4aGpd3U9rm9B8Oqr6CUgQLtZL.jpg","backdrop_path":"/bRm2DEgUiYciDw3myHuYFInD7la.jpg"},"budget":63000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":878,"name":"Science
         Fiction"},{"id":53,"name":"Thriller"}],"homepage":"http://www.warnerbros.com/movies/home-entertainment/the-matrix/37313ac7-9229-474d-a423-44b7a6bc1a54.html","id":603,"imdb_id":"tt0133093","original_language":"en","original_title":"The
         Matrix","overview":"Thomas A. Anderson is a man living two lives. By day he
         is an average computer programmer and by night a malevolent hacker known as
         Neo, who finds himself targeted by the police when he is contacted by Morpheus,
-        a legendary computer hacker, who reveals the shocking truth about our reality.","popularity":4.48311792910433,"poster_path":"/gynBNzwyaHKtXqlEKKLioNkjKgN.jpg","production_companies":[{"name":"Silver
+        a legendary computer hacker, who reveals the shocking truth about our reality.","popularity":3.93507440650913,"poster_path":"/ZPMhHXEhYB33YoTZZNNmezth0V.jpg","production_companies":[{"name":"Silver
         Pictures","id":1885},{"name":"Warner Bros.","id":6194},{"name":"Village Roadshow
         Pictures","id":79},{"name":"Groucho II Film Partnership","id":372}],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-03-30","revenue":463517383,"runtime":136,"spoken_languages":[{"iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Welcome
-        to the Real World.","title":"The Matrix","video":false,"vote_average":7.6,"vote_count":4061}'
+        to the Real World.","title":"The Matrix","video":false,"vote_average":7.6,"vote_count":4216}'
     http_version: 
-  recorded_at: Sun, 25 Jan 2015 19:10:45 GMT
+  recorded_at: Thu, 23 Apr 2015 00:09:58 GMT
 recorded_with: VCR 2.9.3

@@ -23,7 +23,7 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sun, 08 Feb 2015 04:23:03 GMT
+      - Thu, 23 Apr 2015 00:05:04 GMT
       Etag:
       - '"c9c5e585a4d81ca208adb93d0d87ee42"'
       Server:
@@ -31,13 +31,13 @@ http_interactions:
       Status:
       - 200 OK
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Age:
-      - '166'
+      - '0'
       X-Memc-Expires:
-      - '10634'
+      - '10800'
       X-Memc-Key:
-      - a905ed12cbaf2ba3606ac97448f9fccb
+      - 39b63935e0e7d9debc25d4ceafb2df20
       Content-Length:
       - '57'
       Connection:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: UTF-8
       string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
     http_version: 
-  recorded_at: Sun, 08 Feb 2015 04:23:03 GMT
+  recorded_at: Thu, 23 Apr 2015 00:05:04 GMT
 recorded_with: VCR 2.9.3

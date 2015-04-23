@@ -19,34 +19,35 @@ http_interactions:
       message: Found
     headers:
       Date:
-      - Sat, 14 Feb 2015 03:34:53 GMT
+      - Thu, 23 Apr 2015 00:05:03 GMT
       Server:
       - Server
       Content-Type:
       - text/html; charset=utf-8
       Status:
       - 302 Found
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
       Vary:
       - User-Agent,Accept-Encoding
       Location:
       - http://www.goodreads.com/book
       X-Request-Id:
-      - 0P2W9Q8V2R9QW1GM5G9X
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
+      - 12VGTGQP0A6EVT9CE5XJ
       Cache-Control:
       - no-cache
-      X-Frame-Options:
-      - SAMEORIGIN
       X-Runtime:
-      - '0.027895'
-      X-Content-Type-Options:
-      - nosniff
+      - '0.024237'
       Set-Cookie:
-      - _session_id2=7c7c86e08fd8c4b89e8611f2327e8d18; path=/; expires=Sat, 14-Feb-2015
-        09:34:53 GMT; HttpOnly
-      - csid=BAhJIhg2OTktMDEyNDkxOC0zMDMwODcwBjoGRVQ%3D--8716f12aefe4f02caab4960d8c1c5ab177998fb5;
-        path=/; expires=Wed, 14-Feb-2035 03:34:53 GMT
+      - _session_id2=056f4b649b1a51824a3a5c6ef23b3574; path=/; expires=Thu, 23 Apr
+        2015 06:05:03 -0000; HttpOnly
+      - csid=BAhJIhg4NzMtNjQ1NDA1OC00OTAwMzEyBjoGRVQ%3D--e8e850609bb478c9ad08ab840b3fafbb1b15d4fe;
+        path=/; expires=Mon, 23 Apr 2035 00:05:03 -0000
       - locale=en; path=/
       Content-Encoding:
       - gzip
@@ -59,5 +60,5 @@ http_interactions:
         9PlNXhOUTeR6ZYPBFOV9taX3ewEYY7gsQsqBHpekQRQ5rFemqpw6E0LwDmFe
         CDP+ASo9K9FfAAAA
     http_version: 
-  recorded_at: Sat, 14 Feb 2015 03:34:53 GMT
+  recorded_at: Thu, 23 Apr 2015 00:05:03 GMT
 recorded_with: VCR 2.9.3

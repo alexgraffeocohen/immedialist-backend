@@ -23,9 +23,9 @@ http_interactions:
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Sun, 08 Feb 2015 04:30:25 GMT
+      - Thu, 23 Apr 2015 00:05:03 GMT
       Etag:
-      - '"f6a0b011a7a7ab090eedc9dac2d30532"'
+      - '"f7e7dd5674a3a8586ec4e0188ead727f"'
       Server:
       - nginx
       Status:
@@ -33,25 +33,25 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Age:
-      - '9493'
+      - '0'
       X-Memc-Expires:
-      - '1307'
+      - '10800'
       X-Memc-Key:
-      - 347378ead65413052835a4a91ff4f385
+      - 057e6d63b3bec3e2563a0ad7d33f164e
       Content-Length:
       - '1129'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"page":1,"results":[{"adult":false,"id":564,"known_for":[{"adult":false,"backdrop_path":"/f0HeQdnuFkboXWGBgqtwYUKgLZw.jpg","id":85350,"original_title":"Boyhood","release_date":"2014-07-11","poster_path":"/eKi4e5zXhQKs0De4xu5AAMvu376.jpg","popularity":7.42952864349364,"title":"Boyhood","video":false,"vote_average":8.0,"vote_count":440,"media_type":"movie"},{"adult":false,"backdrop_path":"/nLUO2kQyyvG1DlCnHuxHwapbCTX.jpg","id":1584,"original_title":"School
-        of Rock","release_date":"2003-10-03","poster_path":"/cREN222Yw78zvSQ9bg17Y9QZS0c.jpg","popularity":1.44278468591111,"title":"School
-        of Rock","video":false,"vote_average":6.3,"vote_count":346,"media_type":"movie"},{"adult":false,"backdrop_path":"/x2M8mp6wSU4iFPECacHJkQuuvYx.jpg","id":76,"original_title":"Before
-        Sunrise","release_date":"1995-01-27","poster_path":"/4sDmI88gUAInHitaTkGej90Q3Z7.jpg","popularity":0.366357538587391,"title":"Before
-        Sunrise","video":false,"vote_average":7.4,"vote_count":254,"media_type":"movie"}],"name":"Richard
-        Linklater","popularity":2.9970280180699,"profile_path":"/ypiAch9og80uE5hnVBAyXXtY4B1.jpg"}],"total_pages":1,"total_results":1}'
+      string: '{"page":1,"results":[{"adult":false,"id":564,"known_for":[{"adult":false,"backdrop_path":"/f0HeQdnuFkboXWGBgqtwYUKgLZw.jpg","id":85350,"original_title":"Boyhood","release_date":"2014-07-11","poster_path":"/5TSUvN9e9yiGOnjyJ8QIjWOot7S.jpg","popularity":3.1541337906565,"title":"Boyhood","video":false,"vote_average":7.8,"vote_count":640,"media_type":"movie"},{"adult":false,"backdrop_path":"/nLUO2kQyyvG1DlCnHuxHwapbCTX.jpg","id":1584,"original_title":"School
+        of Rock","release_date":"2003-10-03","poster_path":"/cREN222Yw78zvSQ9bg17Y9QZS0c.jpg","popularity":1.3909737789409,"title":"School
+        of Rock","video":false,"vote_average":6.3,"vote_count":384,"media_type":"movie"},{"adult":false,"backdrop_path":"/x2M8mp6wSU4iFPECacHJkQuuvYx.jpg","id":76,"original_title":"Before
+        Sunrise","release_date":"1995-01-27","poster_path":"/4sDmI88gUAInHitaTkGej90Q3Z7.jpg","popularity":0.750558099356213,"title":"Before
+        Sunrise","video":false,"vote_average":7.4,"vote_count":275,"media_type":"movie"}],"name":"Richard
+        Linklater","popularity":0.894868962933543,"profile_path":"/ypiAch9og80uE5hnVBAyXXtY4B1.jpg"}],"total_pages":1,"total_results":1}'
     http_version: 
-  recorded_at: Sun, 08 Feb 2015 04:30:25 GMT
+  recorded_at: Thu, 23 Apr 2015 00:05:03 GMT
 recorded_with: VCR 2.9.3
