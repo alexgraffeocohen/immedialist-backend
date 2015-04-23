@@ -12,7 +12,6 @@ describe Query::Album do
 
         expect(result).to be_an Array
         expect(result.first.name).to eq(real_album.name)
-        expect { result.first.release_date }.to raise_exception(VCR::Errors::UnhandledHTTPRequestError)
         expect(result.first.id).to_not be_nil
       end
 
