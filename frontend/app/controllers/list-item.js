@@ -11,9 +11,18 @@ export default Ember.ObjectController.extend({
   mediaType: function() {
     return this.get('model.mediaType').toLowerCase();
   }.property('model.mediaType'),
-  paramName: function() {
-    return this.get('model.name').underscore();
+  itemType: function() {
+    return this.get('model.itemClass').dasherize();
+  }.property('model.itemClass'),
+  itemName: function() {
+    return this.get('model.name').dasherize();
   }.property('model.name'),
+  itemDOMID: function() {
+    return "#" + this.get('itemName');
+  }.property('model.name'),
+  componentName: function() {
+    return this.get('itemType') + '-detail';
+  }.property('model.mediaType'),
   typeIcon: function() {
     switch(this.get('mediaType')) {
       case "movie":

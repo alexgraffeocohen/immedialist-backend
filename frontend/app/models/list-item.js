@@ -7,5 +7,8 @@ export default DS.Model.extend({
 
   mediaType: function() {
     return this.get('item.mediaType');
+  }.property('item'),
+  itemClass: function() {
+    return this.get('item.className');
   }.property('item')
 });

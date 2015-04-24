@@ -13,7 +13,7 @@ describe 'the list item lifecycle', type: :feature, js: true do
     "Author"
   ] }
 
-  it 'allows for creating and deleting of all list items types' do
+  it 'allows for creating and deleting of all list item types' do
     visit '/'
 
     categories.each do |category|
@@ -30,7 +30,7 @@ describe 'the list item lifecycle', type: :feature, js: true do
 
         wait_for_ajax
 
-        within ".#{category.downcase}.media_title" do
+        within ".#{category.downcase}.media-title" do
           click_button('list-item-delete')
         end
 
