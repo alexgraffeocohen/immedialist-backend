@@ -33,6 +33,7 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'shoulda-matchers', require: false
+  gem 'connection_pool'
 end
 
 group :production do
