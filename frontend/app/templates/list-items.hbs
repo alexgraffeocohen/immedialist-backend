@@ -22,7 +22,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <div {{bind-attr id="listItem.itemName"}} class="collapse">
-            {{dynamic-component type=listItem.componentName listItem=listItem item=listItem.model.item}}
+            {{component listItem.componentName listItem=listItem item=listItem.model.item}}
           </div>
         </a>
       {{/each}}

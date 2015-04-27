@@ -34,7 +34,6 @@
     "express": "^4.8.5",
     "glob": "^4.0.5",
     "ember-cli-rails-addon": "0.0.11",
-    "ember-dynamic-component": "0.0.4",
     "ember-cli-htmlbars": "~0.6.0"
   }
 }
