@@ -12,6 +12,7 @@ class CreateListItem
   def call
     AttachSearchToListItem.call(list_item)
     AttachQueryResultsToSearch.call(list_item.search)
+    list_item.save!
   end
 
   private
