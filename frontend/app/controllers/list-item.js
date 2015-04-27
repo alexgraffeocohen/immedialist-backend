@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
   actions: {
     deleteListItem: function() {
       var listItem = this.get('model');

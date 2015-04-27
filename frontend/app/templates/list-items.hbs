@@ -17,12 +17,12 @@
         <a href="#" {{bind-attr class=":list-item :list-group-item listItem.mediaType listItem.itemName"}}
         data-toggle="collapse" {{bind-attr data-target="listItem.itemDOMID"}}>
           <i {{bind-attr class=":list-item__icon :fa :fa-2x :fa-fw listItem.typeIcon"}}></i>
-          <span class="list-item__name">{{listItem.name}}</span>
+          <span class="list-item__name">{{listItem.model.name}}</span>
           <button type="button" class="close" aria-label="Close" id="list-item-delete" {{action "deleteListItem"}}>
             <span aria-hidden="true">&times;</span>
           </button>
           <div {{bind-attr id="listItem.itemName"}} class="collapse">
-            {{dynamic-component type=listItem.componentName listItem=listItem item=listItem.item}}
+            {{dynamic-component type=listItem.componentName listItem=listItem item=listItem.model.item}}
           </div>
         </a>
       {{/each}}
