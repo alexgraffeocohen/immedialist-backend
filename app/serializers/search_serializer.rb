@@ -3,4 +3,5 @@ class SearchSerializer < ActiveModel::Serializer
 
   attributes :id, :name
   has_many :results, polymorphic: true, key: :item_ids, root: :items
+  has_one :list_item
 end
