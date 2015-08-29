@@ -23,6 +23,9 @@ export default Ember.Controller.extend({
   componentName: function() {
     return this.get('itemType') + '-detail';
   }.property('model.mediaType'),
+  resolved: function() {
+    return this.get('model.resolved');
+  }.property('model.resolved'),
   typeIcon: function() {
     switch(this.get('mediaType')) {
       case "movie":

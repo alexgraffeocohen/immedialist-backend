@@ -22,7 +22,11 @@
             <span aria-hidden="true">&times;</span>
           </button>
           <div id="{{listItem.itemName}}" class="collapse">
-            {{component listItem.componentName listItem=listItem.model}}
+            {{#if listItem.resolved}}
+              {{component listItem.componentName listItem=listItem.model}}
+            {{else}}
+              {{requested-item-detail listItem=listItem.model}}
+            {{/if}}
           </div>
         </a>
       {{/each}}
