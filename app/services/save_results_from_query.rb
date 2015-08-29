@@ -28,7 +28,7 @@ class SaveResultsFromQuery
   end
 
   def query_saver_class
-    QuerySaver.const_get(item_type.name)
+    QuerySaver.const_get(item_type.name, false)
   end
 
   def require_services
