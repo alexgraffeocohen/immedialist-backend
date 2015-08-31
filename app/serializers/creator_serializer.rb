@@ -1,5 +1,5 @@
 class CreatorSerializer < ItemSerializer
   def media_type
-    "Person"
+    "Creator".downcase
   end
 end
