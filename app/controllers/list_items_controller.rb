@@ -4,6 +4,11 @@ class ListItemsController < ActionController::Base
     render json: @list_items
   end
 
+  def show
+    @list_item = ListItem.find(params[:id])
+    render json: @list_item
+  end
+
   def create
     @list_item = ListItem.new(list_item_params)
     CreateListItem.call(@list_item)
