@@ -12,6 +12,6 @@ class RequestedItemsController < ActionController::Base
   private
 
   def requested_item_params
-    params.require(:requested_item).permit(:name, :media_name)
+    params.require(:requested_item).permit(:name, :requested_type)
   end
 end

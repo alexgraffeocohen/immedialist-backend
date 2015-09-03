@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe AttachSearchToListItem, type: :service do
   it 'creates a search for a list_item based on item_type' do
     list_item = build(:list_item, item:
-                      FactoryGirl.build(:requested_item, media_name: "Movie"))
+                      FactoryGirl.build(:requested_item, requested_type: "Movie"))
 
     AttachSearchToListItem.call(list_item)
 

@@ -5,7 +5,7 @@ RSpec.describe CreateListItem, type: :service do
     let(:list_item) { FactoryGirl.build(:list_item,
                                         name: "Generic Query",
                                         item: item) }
-    let(:item) { FactoryGirl.build(:requested_item, media_name: "Movie") }
+    let(:item) { FactoryGirl.build(:requested_item, requested_type: "Movie") }
 
     it 'returns a saved list item' do
       VCR.use_cassette('generic_list_item_query') do
@@ -20,7 +20,7 @@ RSpec.describe CreateListItem, type: :service do
     let(:list_item) { FactoryGirl.build(:list_item,
                                         name: "The Matrix",
                                         item: item) }
-    let(:item) { FactoryGirl.build(:requested_item, media_name: "Movie") }
+    let(:item) { FactoryGirl.build(:requested_item, requested_type: "Movie") }
 
     it 'attaches relevant results to the list item' do
       VCR.use_cassette('real_name_movie_query') do
