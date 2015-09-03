@@ -4,6 +4,7 @@ gem 'rails', '4.2.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'active_model_serializers', '~> 0.8.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'pg'
 
 group :test, :development do
   gem 'rspec-rails'
@@ -13,7 +14,6 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'database_cleaner'
-  gem 'sqlite3'
   gem 'pry'
   gem 'puma'
 end
@@ -32,7 +32,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
