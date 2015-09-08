@@ -3,7 +3,7 @@ class ListItemSerializer < ActiveModel::Serializer
 
   attributes :id, :name, :resolved
   has_one :item, polymorphic: true
-  has_one :search, serializer: SearchSerializer
+  has_one :search, polymorphic: true, root: :searches
 
   def resolved
     search.nil?
