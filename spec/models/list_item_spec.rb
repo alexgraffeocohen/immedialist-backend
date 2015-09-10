@@ -31,9 +31,13 @@ RSpec.describe ListItem, :type => :model do
         list_item.item = FactoryGirl.create(:movie)
         list_item.save!
 
-        # TODO: test that its previous item association is deleted
+        requested_items_assigned_to_list_item = RequestedItem.select { |item|
+          item.list_item == list_item
+        }
+
         expect(list_item.search).to be_nil
         expect(Search.where(list_item: list_item)).to be_empty
+        expect(requested_items_assigned_to_list_item).to be_empty
       end
     end
   end

@@ -16,8 +16,6 @@ class ListItem < ActiveRecord::Base
 
   def clear_search_related_associations_if_user_selected_item
     if requested_item_replaced_with_real_item?
-      # NOTE: this cannot be easily tested because there is no association back
-      # to ListItem. this should probably be done
       requested_item = RequestedItem.find(item_id_was)
       requested_item.destroy
 
