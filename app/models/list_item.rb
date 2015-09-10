@@ -22,6 +22,6 @@ class ListItem < ActiveRecord::Base
   end
 
   def requested_item_replaced_with_real_item?
-    item_id_changed? && !item.kind_of?(RequestedItem)
+    item_id_changed? && item_type_was == "RequestedItem" && item_type != "RequestedItem"
   end
 end
