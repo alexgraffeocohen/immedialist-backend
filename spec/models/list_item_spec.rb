@@ -17,11 +17,12 @@ RSpec.describe ListItem, :type => :model do
     }
 
     context 'item has not been updated' do
-      it 'does not delete its search' do
+      it 'does not delete its search or item' do
         list_item.name = "Just Updating The Name"
         list_item.save!
 
         expect(list_item.search).to_not be_nil
+        expect(list_item.item).to_not be_nil
       end
     end
 
@@ -30,6 +31,7 @@ RSpec.describe ListItem, :type => :model do
         list_item.item = FactoryGirl.create(:movie)
         list_item.save!
 
+        # TODO: test that its previous item association is deleted
         expect(list_item.search).to be_nil
         expect(Search.where(list_item: list_item)).to be_empty
       end
