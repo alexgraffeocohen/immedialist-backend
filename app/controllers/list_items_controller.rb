@@ -19,6 +19,15 @@ class ListItemsController < ActionController::Base
     end
   end
 
+  def update
+    @list_item = ListItem.find(params[:id])
+    if @list_item.update_attributes(list_item_params)
+      render json: @list_item
+    else
+      render status: :unprocessable_entity, json: { errors: @list_item.errors }
+    end
+  end
+
   def destroy
     @list_item = ListItem.find(params[:id])
     @list_item.destroy
