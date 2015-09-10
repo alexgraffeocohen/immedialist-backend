@@ -15,9 +15,13 @@ class ListItem < ActiveRecord::Base
   private
 
   def clear_search_related_associations_if_user_selected_item
-    if item_id_changed? && !item.kind_of?(RequestedItem)
+    if requested_item_replaced_with_real_item?
       search.destroy
       self.search = nil
     end
+  end
+
+  def requested_item_replaced_with_real_item?
+    item_id_changed? && !item.kind_of?(RequestedItem)
   end
 end
