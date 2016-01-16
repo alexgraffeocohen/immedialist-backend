@@ -2,53 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.themoviedb.org/3/search/movie?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=Any%20List%20Item
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Content-Type:
-      - application/json
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - public, max-age=10800
-      Content-Type:
-      - application/json;charset=utf-8
-      Date:
-      - Tue, 03 Feb 2015 03:06:38 GMT
-      Etag:
-      - '"a8d277d2d95f2ea20f792a48c43093dc"'
-      Server:
-      - nginx
-      Status:
-      - 200 OK
-      X-Memc:
-      - MISS, STORE
-      X-Memc-Age:
-      - '0'
-      X-Memc-Expires:
-      - '10800'
-      X-Memc-Key:
-      - b92a6c6e74097b28ba8ef3cd031da432
-      Content-Length:
-      - '57'
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
-    http_version: 
-  recorded_at: Tue, 03 Feb 2015 03:06:38 GMT
-- request:
-    method: get
     uri: http://api.themoviedb.org/3/search/movie?api_key=55b1fc7a27dbd0d38e8c359d425b7ef1&query=Generic%20Query
     body:
       encoding: US-ASCII
@@ -66,32 +19,28 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
-      - public, max-age=10800
+      - public, max-age=21600
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 23 Apr 2015 00:26:37 GMT
+      - Sat, 16 Jan 2016 19:02:23 GMT
       Etag:
-      - '"c9c5e585a4d81ca208adb93d0d87ee42"'
+      - 72b32a1f754ba1c09b3695e0cb6cde7f
       Server:
-      - nginx
-      Status:
-      - 200 OK
-      X-Memc:
-      - HIT
-      X-Memc-Age:
-      - '1318'
-      X-Memc-Expires:
-      - '9482'
-      X-Memc-Key:
-      - c6fa3052b87a36d1a952c52092b91f4e
+      - openresty
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '27'
+      X-Ratelimit-Reset:
+      - '1452970947'
       Content-Length:
       - '57'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"page":1,"results":[],"total_pages":1,"total_results":0}'
+      string: '{"page":1,"results":[],"total_results":0,"total_pages":1}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:26:37 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:23 GMT
 recorded_with: VCR 2.9.3

@@ -19,15 +19,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
-      - public, max-age=21600
+      - public, max-age=28800
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 23 Apr 2015 00:05:05 GMT
+      - Sat, 16 Jan 2016 19:02:22 GMT
       Etag:
       - '"37a6259cc0c1dae299a7866489dff0bd"'
       Server:
-      - nginx
+      - openresty
       Status:
       - 404 Not Found
       X-Memc:
@@ -35,17 +35,23 @@ http_interactions:
       X-Memc-Age:
       - '0'
       X-Memc-Expires:
-      - '21600'
+      - '28800'
       X-Memc-Key:
       - a5b0c9d7204be0a1aaece5eb2781d3d0
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Ratelimit-Reset:
+      - '1452970946'
       Content-Length:
-      - '94'
+      - '84'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"status_code":6,"status_message":"Invalid id: The pre-requisite id
-        is invalid or not found."}'
+      string: '{"status_code":34,"status_message":"The resource you requested could
+        not be found."}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:05:05 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:22 GMT
 recorded_with: VCR 2.9.3

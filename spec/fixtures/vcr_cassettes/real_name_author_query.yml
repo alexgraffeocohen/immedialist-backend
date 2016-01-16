@@ -2,66 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.goodreads.com/api/author_url?format=xml&id=Donna%20Tartt&key=eOR87hBs1BBAUmTdh7EMEA
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sun, 15 Feb 2015 21:27:25 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 10VSVG3DYF4KFAHYPAH7
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.085426'
-      X-Content-Type-Options:
-      - nosniff
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=d8b2ec1e82ba8a50b70691f26dc1e9f9; path=/; expires=Mon, 16-Feb-2015
-        03:27:25 GMT; HttpOnly
-      - csid=BAhJIhg0MjQtNTI1MzgzMC0yMzc3NDQzBjoGRVQ%3D--a5df488d732c2dbac44f5f431a40cf5c972037e5;
-        path=/; expires=Thu, 15-Feb-2035 21:27:25 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2WRwU/DIBTGz+tfUXvwZnGnTaU0nZuejMnSnZalIeVlJRu8
-        CtTqfy/gdIuGy+Pj4/e+B7T8UMf0HYyVqItsmt9mKegWhdT7ItvUTzfzrGQJ
-        fUYUBriwa7A9agssSVO6hrcBrAu13/HBdaCdbLnzMObMAJT8EaPTew/wyejV
-        9nFZ1dUWXtfzWbew08Wi2qhadLPVy6ra7RglwfdNV+A6FOdLvJdNgKNpjlIf
-        ovvkCdHIRbYkmUxiOjSpFEU2n03vMubFCdVcwZm5RK15WnPjXOTF0+gLLVjn
-        XH9PyDiO+f7nPfIWVRwSDbEdjqVvEPh5ZDWRdc1V/zA41SgQclCFj/4rWRxM
-        C8XFJJTEZiHzCexrvxJK/v/CF7xg89bAAQAA
-    http_version: 
-  recorded_at: Sun, 15 Feb 2015 21:27:25 GMT
-- request:
-    method: get
     uri: http://www.goodreads.com/api/author_url/Donna%20Tartt?format=xml&id=Donna%20Tartt&key=eOR87hBs1BBAUmTdh7EMEA
     body:
       encoding: US-ASCII
@@ -79,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 00:26:35 GMT
+      - Sat, 16 Jan 2016 19:02:26 GMT
       Server:
       - Server
       Content-Type:
@@ -94,33 +34,33 @@ http_interactions:
       - nosniff
       - nosniff
       X-Request-Id:
-      - 1213RCCGH46ZXNJ1ZAW0
+      - 0280SFR27E4B3DQ7WP17
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.211177'
+      - '0.133378'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=7c07866209cc314aa37066dd869aada5; path=/; expires=Thu, 23 Apr
-        2015 06:26:35 -0000; HttpOnly
-      - csid=BAhJIhgzNjItNzY4OTQyNS00MzA4MDY2BjoGRVQ%3D--b63f85418d2b6a9f052547af4778f8fea31b11b8;
-        path=/; expires=Mon, 23 Apr 2035 00:26:35 -0000
+      - _session_id2=747aea365788bdbfcf68a1e7b278b93a; path=/; expires=Sun, 17 Jan
+        2016 01:02:26 -0000; HttpOnly
+      - csid=BAhJIhgzOTAtMTc0ODYxMi0yODQzODAxBjoGRVQ%3D--889654e9b4e56b60516cb5bd5f17aac2d84becba;
+        path=/; expires=Wed, 16 Jan 2036 19:02:26 -0000
       - locale=en; path=/
       Vary:
-      - User-Agent
+      - Accept-Encoding,User-Agent
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA2WRwU/DIBTGz+tfUXvwZnGnTaU0nZuejMnSnZalIeVlJRu8
-        CtTqfy/gdIuGy+Pj4/e+B7T8UMf0HYyVqItsmt9mKegWhdT7ItvUTzfzrGQJ
-        fUYUBriwa7A9agssSVO6hrcBrAu13/HBdaCdbLnzMObMAJT8EaPTew/wyejV
-        9nFZ1dUWXtfzWbew08Wi2qhadLPVy6ra7RglwfdNV+A6FOdLvJdNgKNpjlIf
-        ovvkCdHIRbYkmUxiOjSpFEU2n03vMubFCdVcwZm5RK15WnPjXOTF0+gLLVjn
-        XH9PyDiO+f7nPfIWVRwSDbEdjqVvEPh5ZDWRdc1V/zA41SgQclCFj/4rWRxM
-        C8XFJJTEZiHzCexrvxJK/v/CF7xg89bAAQAA
+        H4sIAAAAAAAAA2WQMU/DMBCF5+ZXhAxsxHRqAcdRSgsTQqrSqaoiKz41Vmtf
+        sB0C/x7btGoF8nJ+fv7u3dHySx3TTzBWoi6yaX6fpaBbFFLvi2xTv9zNs5Il
+        9BVRGODCrsH2qC2wJE3pGj4GsC7U/sYH14F2suXOw5gzA1DyR4xO7z3AN6M3
+        2+dlVVdbeF/PZ93CTheLaqNq0c1Wb6tqt2OUBN8vXYHrUFw+8V42AY6mOUp9
+        iO6TJ0QjV9mSZDKJ6dCkUhTZfDZ9yJgXJ1RzBRfmErXmac2Nc5EXX6MvtGCd
+        c/0jIeM45vvzPvIWVRwSDbEdjiTA8whqIqgcnGoUCDmowme+5ap/CpLFwbRQ
+        XI1ASewSwp6IvvYnoeT/+n8A6YaN/LkBAAA=
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:26:35 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:26 GMT
 recorded_with: VCR 2.9.3

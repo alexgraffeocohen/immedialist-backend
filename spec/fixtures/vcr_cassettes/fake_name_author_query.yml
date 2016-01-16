@@ -2,64 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://www.goodreads.com/api/author_url?format=xml&id=The%20Greatest%20Author%20in%20The%20World:%20This%20is%20a%20Tribute&key=eOR87hBs1BBAUmTdh7EMEA
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sun, 15 Feb 2015 21:27:26 GMT
-      Server:
-      - Server
-      Content-Type:
-      - application/xml; charset=utf-8
-      Status:
-      - 200 OK
-      X-Request-Id:
-      - 17SB01ZPQ0QX9JVTCAC6
-      X-Ua-Compatible:
-      - IE=Edge,chrome=1
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Runtime:
-      - '0.052249'
-      X-Content-Type-Options:
-      - nosniff
-      Content-Encoding:
-      - gzip
-      Set-Cookie:
-      - _session_id2=616fc07737d91366bcd9d554e8534a20; path=/; expires=Mon, 16-Feb-2015
-        03:27:26 GMT; HttpOnly
-      - csid=BAhJIhg4MDItNTg5MDIyMS01NDYxMjYwBjoGRVQ%3D--8b8dcdad273e3bd4dbdf57fd1c8e57af4a060c99;
-        path=/; expires=Thu, 15-Feb-2035 21:27:26 GMT
-      - locale=en; path=/
-      Vary:
-      - User-Agent
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA2WOsQ6CMBBAd74C2bUywVBKiqKTMSEwEUIIvUgDtEiL0b+X
-        oolGt7vLu5eHw3vf2TcYFZcicNzN1rFB1JJxcQmcLD2sfSckFj5KyUaomEpA
-        DVIoIJZt4wSuEyht5nmrJt2A0Lyu9CwjepwAo5/jQs5sCw+CV/luT1Oawznx
-        vSZSbhTRrE9Z48WnmBYFwchwL3sPupHs81QNvDRyOZYdF+1CvxmThr7aLIz+
-        +58PoqkR+gAAAA==
-    http_version: 
-  recorded_at: Sun, 15 Feb 2015 21:27:25 GMT
-- request:
-    method: get
     uri: http://www.goodreads.com/api/author_url/The%20Greatest%20Author%20in%20The%20World:%20This%20is%20a%20Tribute?format=xml&id=The%20Greatest%20Author%20in%20The%20World:%20This%20is%20a%20Tribute&key=eOR87hBs1BBAUmTdh7EMEA
     body:
       encoding: US-ASCII
@@ -77,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 23 Apr 2015 00:26:34 GMT
+      - Sat, 16 Jan 2016 19:02:25 GMT
       Server:
       - Server
       Content-Type:
@@ -92,21 +34,21 @@ http_interactions:
       - nosniff
       - nosniff
       X-Request-Id:
-      - 19YTRD692M884K13AF9A
+      - 0EZ23C3YY2X7D28FMB1K
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Runtime:
-      - '0.058720'
+      - '0.045022'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=1f5a282a55755b96cfd20719947682f4; path=/; expires=Thu, 23 Apr
-        2015 06:26:34 -0000; HttpOnly
-      - csid=BAhJIhg3MTMtOTE4NTgwMS04MzE1ODM0BjoGRVQ%3D--538d4f5be9ae70d260921ad1e61bd2e7e249dc19;
-        path=/; expires=Mon, 23 Apr 2035 00:26:34 -0000
+      - _session_id2=d14bd5ff3c627822bc8e2e9f2f1929b7; path=/; expires=Sun, 17 Jan
+        2016 01:02:25 -0000; HttpOnly
+      - csid=BAhJIhgwMzUtODkwNDkzNS04OTQ5NzA0BjoGRVQ%3D--9d1ca6e933bce9a49c8a87b6b6c81f6b9b41f2b2;
+        path=/; expires=Wed, 16 Jan 2036 19:02:25 -0000
       - locale=en; path=/
       Vary:
-      - User-Agent
+      - Accept-Encoding,User-Agent
       Transfer-Encoding:
       - chunked
     body:
@@ -118,5 +60,5 @@ http_interactions:
         vSZSbhTRrE9Z48WnmBYFwchwL3sPupHs81QNvDRyOZYdF+1CvxmThr7aLIz+
         +58PoqkR+gAAAA==
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:26:34 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:25 GMT
 recorded_with: VCR 2.9.3

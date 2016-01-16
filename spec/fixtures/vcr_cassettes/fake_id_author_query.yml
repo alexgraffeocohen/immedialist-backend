@@ -19,7 +19,7 @@ http_interactions:
       message: Not Found
     headers:
       Date:
-      - Thu, 23 Apr 2015 00:05:01 GMT
+      - Sat, 16 Jan 2016 19:02:25 GMT
       Server:
       - Server
       Content-Type:
@@ -33,20 +33,20 @@ http_interactions:
       X-Content-Type-Options:
       - nosniff
       Vary:
-      - User-Agent
+      - User-Agent,Accept-Encoding
       X-Request-Id:
-      - 0XWRP3130XBE9DW9NRE4
+      - 01ZF2HW0TSRS65961DQ2
       Cache-Control:
       - no-cache
       X-Runtime:
-      - '0.022724'
+      - '0.063126'
       Content-Encoding:
       - gzip
       Set-Cookie:
-      - _session_id2=c83fe747b5aeeccd3301c75dc839bef0; path=/; expires=Thu, 23 Apr
-        2015 06:05:01 -0000; HttpOnly
-      - csid=BAhJIhgzNzktNzUyODk4MS0xNDgzMjU3BjoGRVQ%3D--a75129ca5056de52fbc877e24af8c6c8cdc09852;
-        path=/; expires=Mon, 23 Apr 2035 00:05:01 -0000
+      - _session_id2=0654de3686d84b6381b9812ebdcb9d7e; path=/; expires=Sun, 17 Jan
+        2016 01:02:25 -0000; HttpOnly
+      - csid=BAhJIhgwMzctMTQxODA0My0zMjk3NjMyBjoGRVQ%3D--f771856fc8d07dd1341a45efeecc35630fcbdeb2;
+        path=/; expires=Wed, 16 Jan 2036 19:02:25 -0000
       - locale=en; path=/
       Transfer-Encoding:
       - chunked
@@ -56,5 +56,5 @@ http_interactions:
         H4sIAAAAAAAAA7NJLSrKL7JLLC3JyC9SyMsvUUjLL81LsdGHiHMBAOdbIYIg
         AAAA
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:05:01 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:25 GMT
 recorded_with: VCR 2.9.3

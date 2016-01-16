@@ -19,39 +19,46 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
-      - public, max-age=10800
+      - public, max-age=21600
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 23 Apr 2015 00:05:03 GMT
+      - Sat, 16 Jan 2016 19:02:20 GMT
       Etag:
-      - '"f7e7dd5674a3a8586ec4e0188ead727f"'
+      - 07cb5f86508f146774a2fac4373a8e50
       Server:
-      - nginx
-      Status:
-      - 200 OK
+      - openresty
       Vary:
       - Accept-Encoding
-      X-Memc:
-      - MISS, STORE
-      X-Memc-Age:
-      - '0'
-      X-Memc-Expires:
-      - '10800'
-      X-Memc-Key:
-      - 057e6d63b3bec3e2563a0ad7d33f164e
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '30'
+      X-Ratelimit-Reset:
+      - '1452970947'
       Content-Length:
-      - '1129'
+      - '2072'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"page":1,"results":[{"adult":false,"id":564,"known_for":[{"adult":false,"backdrop_path":"/f0HeQdnuFkboXWGBgqtwYUKgLZw.jpg","id":85350,"original_title":"Boyhood","release_date":"2014-07-11","poster_path":"/5TSUvN9e9yiGOnjyJ8QIjWOot7S.jpg","popularity":3.1541337906565,"title":"Boyhood","video":false,"vote_average":7.8,"vote_count":640,"media_type":"movie"},{"adult":false,"backdrop_path":"/nLUO2kQyyvG1DlCnHuxHwapbCTX.jpg","id":1584,"original_title":"School
-        of Rock","release_date":"2003-10-03","poster_path":"/cREN222Yw78zvSQ9bg17Y9QZS0c.jpg","popularity":1.3909737789409,"title":"School
-        of Rock","video":false,"vote_average":6.3,"vote_count":384,"media_type":"movie"},{"adult":false,"backdrop_path":"/x2M8mp6wSU4iFPECacHJkQuuvYx.jpg","id":76,"original_title":"Before
-        Sunrise","release_date":"1995-01-27","poster_path":"/4sDmI88gUAInHitaTkGej90Q3Z7.jpg","popularity":0.750558099356213,"title":"Before
-        Sunrise","video":false,"vote_average":7.4,"vote_count":275,"media_type":"movie"}],"name":"Richard
-        Linklater","popularity":0.894868962933543,"profile_path":"/ypiAch9og80uE5hnVBAyXXtY4B1.jpg"}],"total_pages":1,"total_results":1}'
+      string: '{"page":1,"results":[{"profile_path":"\/ypiAch9og80uE5hnVBAyXXtY4B1.jpg","adult":false,"id":564,"known_for":[{"poster_path":"\/eKi4e5zXhQKs0De4xu5AAMvu376.jpg","adult":false,"overview":"The
+        film tells a story of a divorced couple trying to raise their young son. The
+        story follows the boy for twelve years, from first grade at age 6 through
+        12th grade at age 17-18, and examines his relationship with his parents as
+        he grows.","release_date":"2014-07-11","original_title":"Boyhood","genre_ids":[18],"id":85350,"media_type":"movie","original_language":"en","title":"Boyhood","backdrop_path":"\/aE1gbq6nw8zyVqvEBXMVMCqZpCs.jpg","popularity":3.03355,"vote_count":1013,"video":false,"vote_average":7.62},{"poster_path":"\/cREN222Yw78zvSQ9bg17Y9QZS0c.jpg","adult":false,"overview":"Fired
+        from his band and hard up for cash, guitarist and vocalist Dewey Finn finagles
+        his way into a job as a fourth-grade substitute teacher at a private school,
+        where he secretly begins teaching his students the finer points of rock ''n''
+        roll. The school''s hard-nosed principal is rightly suspicious of Finn''s
+        activities. But Finn''s roommate remains in the dark about what he''s doing.","release_date":"2003-10-03","original_title":"School
+        of Rock","genre_ids":[35,10402],"id":1584,"media_type":"movie","original_language":"en","title":"School
+        of Rock","backdrop_path":"\/nLUO2kQyyvG1DlCnHuxHwapbCTX.jpg","popularity":2.228259,"vote_count":521,"video":false,"vote_average":6.43},{"poster_path":"\/9NBjDNPHA6SkThIweOs8iCfsA8a.jpg","adult":false,"overview":"A
+        dialogue marathon of a film, this fairytale love story of an American boy
+        and French girl. During a day and a night together in Vienna their two hearts
+        collide.","release_date":"1995-01-27","original_title":"Before Sunrise","genre_ids":[18,10749],"id":76,"media_type":"movie","original_language":"en","title":"Before
+        Sunrise","backdrop_path":"\/x2M8mp6wSU4iFPECacHJkQuuvYx.jpg","popularity":1.570383,"vote_count":377,"video":false,"vote_average":7.44}],"name":"Richard
+        Linklater","popularity":1.117472}],"total_results":1,"total_pages":1}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:05:03 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:20 GMT
 recorded_with: VCR 2.9.3

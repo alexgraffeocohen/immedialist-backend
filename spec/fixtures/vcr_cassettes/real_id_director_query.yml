@@ -19,59 +19,47 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
-      - public, max-age=21600
+      - public, max-age=28800
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 23 Apr 2015 00:05:04 GMT
+      - Sat, 16 Jan 2016 19:02:27 GMT
       Etag:
-      - '"9ca6c1e903f55ffd6f69cc20c5896323"'
+      - '"666fba84dda7321e1ca6a5121c97de78"'
       Server:
-      - nginx
+      - openresty
       Status:
       - 200 OK
-      Vary:
-      - Accept-Encoding
       X-Memc:
       - HIT
       X-Memc-Age:
-      - '19364'
+      - '13137'
       X-Memc-Expires:
-      - '2236'
+      - '15663'
       X-Memc-Key:
       - 23ea45b1e4b7fc4d3d4b2acc304fc538
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '23'
+      X-Ratelimit-Reset:
+      - '1452970947'
       Content-Length:
-      - '1105'
+      - '903'
       Connection:
       - keep-alive
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJhZHVsdCI6ZmFsc2UsImFsc29fa25vd25fYXMiOltdLCJiaW9ncmFwaHki
-        OiLigItGcm9tIFdpa2lwZWRpYSwgdGhlIGZyZWUgZW5jeWNsb3BlZGlhLsKg
-        wqDCoMKgwqDCoMKgwqDCoMKgICBTZWxmLXRhdWdodCB3cml0ZXItZGlyZWN0
-        b3IgUmljaGFyZCBMaW5rbGF0ZXIgd2FzIGFtb25nIHRoZSBmaXJzdCBhbmQg
-        bW9zdCBzdWNjZXNzZnVsIHRhbGVudHMgdG8gZW1lcmdlIGR1cmluZyB0aGUg
-        QW1lcmljYW4gaW5kZXBlbmRlbnQgZmlsbSByZW5haXNzYW5jZSBvZiB0aGUg
-        MTk5MHMuIFR5cGljYWxseSBzZXR0aW5nIGVhY2ggb2YgaGlzIG1vdmllcyBk
-        dXJpbmcgb25lIDI0LWhvdXIgcGVyaW9kLCBMaW5rbGF0ZXIncyB3b3JrIGV4
-        cGxvcmVkIHdoYXQgaGUgZHViYmVkIFwidGhlIHlvdXRoIHJlYmVsbGlvbiBj
-        b250aW51dW0sXCIgZm9jdXNpbmcgaW4gZmluZSBkZXRhaWwgb24gZ2VuZXJh
-        dGlvbmFsIHJpdGVzIGFuZCBtb3JlcyB3aXRoIHJhcmUgY29tcGFzc2lvbiBh
-        bmQgdW5kZXJzdGFuZGluZyB3aGlsZSBkZWZpbml0aXZlbHkgY2FwdHVyaW5n
-        IHRoZSAyMC1zb21ldGhpbmcgY3VsdHVyZSBvZiBoaXMgZXJhIHRocm91Z2gg
-        YSBzZXJpZXMgb2YgbnVhbmNlZCwgaWxsdW1pbmF0aW5nIGVuc2VtYmxlIHBp
-        ZWNlcyB3aGljaCBpbnRyb2R1Y2VkIGFueSBudW1iZXIgb2YgdGFsZW50ZWQg
-        eW91bmcgYWN0b3JzIGludG8gdGhlIEhvbGx5d29vZCBmaXJtYW1lbnQuICBE
-        ZXNjcmlwdGlvbiBhYm92ZSBmcm9tIHRoZSBXaWtpcGVkaWEgYXJ0aWNsZSBS
-        aWNoYXJkIExpbmtsYXRlciwgbGljZW5zZWQgdW5kZXIgQ0MtQlktU0EsIGZ1
-        bGwgbGlzdCBvZiBjb250cmlidXRvcnMgb24gV2lraXBlZGlhLiIsImJpcnRo
-        ZGF5IjoiMTk2MC0wNy0zMCIsImRlYXRoZGF5IjoiIiwiaG9tZXBhZ2UiOiJo
-        dHRwOi8vd3d3LmRldG91cmZpbG0uY29tLyIsImlkIjo1NjQsImltZGJfaWQi
-        OiJubTAwMDA1MDAiLCJuYW1lIjoiUmljaGFyZCBMaW5rbGF0ZXIiLCJwbGFj
-        ZV9vZl9iaXJ0aCI6IkhvdXN0b24sIFRleGFzLCBVU0EiLCJwb3B1bGFyaXR5
-        IjowLjg5NDg2ODk2MjkzMzU0MywicHJvZmlsZV9wYXRoIjoiL3lwaUFjaDlv
-        ZzgwdUU1aG5WQkF5WFh0WTRCMS5qcGcifQ==
+      encoding: UTF-8
+      string: '{"adult":false,"also_known_as":[],"biography":"Self-taught writer-director
+        Richard Linklater was among the first and most successful talents to emerge
+        during the American independent film renaissance of the 1990s. Typically setting
+        each of his movies during one 24-hour period, Linklater''s work explored what
+        he dubbed \"the youth rebellion continuum,\" focusing in fine detail on generational
+        rites and mores with rare compassion and understanding while definitively
+        capturing the 20-something culture of his era through a series of nuanced,
+        illuminating ensemble pieces which introduced any number of talented young
+        actors into the Hollywood firmament.","birthday":"1960-07-30","deathday":"","homepage":"http://www.detourfilm.com/","id":564,"imdb_id":"nm0000500","name":"Richard
+        Linklater","place_of_birth":"Houston, Texas, USA","popularity":0.117472,"profile_path":"/ypiAch9og80uE5hnVBAyXXtY4B1.jpg"}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:05:04 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:27 GMT
 recorded_with: VCR 2.9.3

@@ -19,48 +19,106 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Cache-Control:
-      - public, max-age=10800
+      - public, max-age=21600
       Content-Type:
       - application/json;charset=utf-8
       Date:
-      - Thu, 23 Apr 2015 00:05:05 GMT
+      - Sat, 16 Jan 2016 19:02:17 GMT
       Etag:
-      - '"18351e3927ff0e9382bc1be76e291378"'
+      - 83dc55aeb13cc9f621dcbaa80304d506
       Server:
-      - nginx
-      Status:
-      - 200 OK
+      - openresty
       Vary:
       - Accept-Encoding
-      X-Memc:
-      - HIT
-      X-Memc-Age:
-      - '4130'
-      X-Memc-Expires:
-      - '6670'
-      X-Memc-Key:
-      - 3bcecad6784dadc2632229ad29e5aefc
+      X-Ratelimit-Limit:
+      - '40'
+      X-Ratelimit-Remaining:
+      - '38'
+      X-Ratelimit-Reset:
+      - '1452970946'
       Content-Length:
-      - '2302'
+      - '7397'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"page":1,"results":[{"backdrop_path":"/jUPkQdETILcxIW2xSNEzAxUeHgR.jpg","id":1972,"original_name":"Battlestar
-        Galactica","first_air_date":"2005-01-14","origin_country":["US","CA","GB"],"poster_path":"/2jf8SNzIct51xqWBPAO6Gv8NDd6.jpg","popularity":4.3396262907655,"name":"Battlestar
-        Galactica","vote_average":8.6,"vote_count":45},{"backdrop_path":"/h1gSOip8kSS8NHu3A0YSdjSxY9k.jpg","id":33240,"original_name":"Battlestar
-        Galactica : Blood & Chrome","first_air_date":"2012-11-09","origin_country":["US","CA"],"poster_path":"/srpuhSS6liwMPwUAZSg3EnIMfC0.jpg","popularity":1.01264703734061,"name":"Battlestar
-        Galactica: Blood & Chrome","vote_average":5.0,"vote_count":1},{"backdrop_path":"/z6mCUw3jFrCehJv3CjQ9vIIafSs.jpg","id":501,"original_name":"Battlestar
-        Galactica","first_air_date":"1978-09-17","origin_country":["US"],"poster_path":"/vEMEwqmOEZ4u0yVnlZ4d93sh1mE.jpg","popularity":0.0443279732825145,"name":"Battlestar
-        Galactica","vote_average":6.0,"vote_count":1},{"backdrop_path":"/kprS28D7NuLYmyqMd5RihTRLLCs.jpg","id":4882,"original_name":"Battlestar
-        Galactica: The Resistance","first_air_date":"2006-09-05","origin_country":["US"],"poster_path":"/nyz4S8ozmucWk0WjQUMo5lgHryx.jpg","popularity":0.00838707902734303,"name":"Battlestar
-        Galactica: The Resistance","vote_average":7.0,"vote_count":1},{"backdrop_path":"/V1oqPZqiHEDo0Y2620lo9CfEeX.jpg","id":61910,"original_name":"Battlestar
-        Galactica: Razor Flashbacks","first_air_date":"2007-10-05","origin_country":["US"],"poster_path":"/kpPjkgo5baGA5M50zvqF4fpRozj.jpg","popularity":0.0157714444534994,"name":"Battlestar
-        Galactica: Razor Flashbacks","vote_average":7.0,"vote_count":2},{"backdrop_path":null,"id":17392,"original_name":"Battlestar
-        Galactica: The Plan","first_air_date":null,"origin_country":[],"poster_path":"/mXpffsu7CPV6Hg0iyNQCVh68jir.jpg","popularity":1.21120465774121e-35,"name":"Battlestar
-        Galactica: The Plan","vote_average":10.0,"vote_count":1},{"backdrop_path":"/kMZBSo1NVVIts5p5KOaGNVmESE8.jpg","id":8546,"original_name":"Battlestar
-        Galactica: The Face of the Enemy","first_air_date":"2008-12-12","origin_country":[],"poster_path":"/8tAG4khFuqIAIKYnm8SA3RfokZL.jpg","popularity":1.19185984954849e-11,"name":"Battlestar
-        Galactica: The Face of the Enemy","vote_average":7.0,"vote_count":1}],"total_pages":1,"total_results":7}'
+      string: '{"page":1,"results":[{"poster_path":"\/kPCJiwQHA4KenTybRbDPIRBlQls.jpg","popularity":4.716322,"id":1972,"backdrop_path":"\/jUPkQdETILcxIW2xSNEzAxUeHgR.jpg","vote_average":8.2,"overview":"Battlestar
+        Galactica is an American military science fiction television series, and part
+        of the Battlestar Galactica franchise. The show was developed by Ronald D.
+        Moore as a re-imagining of the 1978 Battlestar Galactica television series
+        created by Glen A. Larson.\n\nThe story arc of Battlestar Galactica is set
+        in a distant star system, where a civilization of humans live on a group of
+        planets known as the Twelve Colonies. In the past, the Colonies had been at
+        war with a cybernetic race of their own creation, known as the Cylons. With
+        the unwitting help of a human named Gaius Baltar, the Cylons launch a sudden
+        sneak attack on the Colonies, laying waste to the planets and devastating
+        their populations. Out of a population numbering in the billions, only approximately
+        50,000 humans survive, most of whom were aboard civilian ships that avoided
+        destruction. Of all the Colonial Fleet, the eponymous Battlestar Galactica
+        appears to be the only military capital ship that survived the attack. Under
+        the leadership of Colonial Fleet officer Commander William \"Bill\" Adama
+        and President Laura Roslin, the Galactica and its crew take up the task of
+        leading the small fugitive fleet of survivors into space in search of a fabled
+        refuge known as Earth.","first_air_date":"2005-01-14","origin_country":["US","CA","GB"],"genre_ids":[28,12,18,14,878],"original_language":"en","vote_count":81,"name":"Battlestar
+        Galactica","original_name":"Battlestar Galactica"},{"poster_path":"\/kK3ugC3lf5MgXBywf13U4Vop5cs.jpg","popularity":1.798302,"id":501,"backdrop_path":"\/uq51AqPDl8fef9HtXBJlxUmnyae.jpg","vote_average":7.3,"overview":"When
+        the 12 Colonies of Man are wiped out by a cybernetic race called the Cylons,
+        Commander Adama and the crew of the battlestar Galactica lead a ragtag fleet
+        of human survivors in search of a \"mythical planet\" called Earth.","first_air_date":"1978-09-17","origin_country":["US"],"genre_ids":[18,878],"original_language":"en","vote_count":5,"name":"Battlestar
+        Galactica","original_name":"Battlestar Galactica"},{"poster_path":"\/lmaFzrmRFFzlNml75twuKfAv7JR.jpg","popularity":1.580426,"id":33240,"backdrop_path":"\/h1gSOip8kSS8NHu3A0YSdjSxY9k.jpg","vote_average":5.5,"overview":"The
+        first Cylon war has been raging for 10 years and a young Ensign William Adama
+        joins the fleet. He''s disappointed not to be assigned to a fighter but to
+        a freighter. His co-pilot, Lt. Coker Fasjovic, isn''t too keen on having a
+        rookie flying his aircraft as he has only a short time before he again becomes
+        a civilian. Their cargo is a civilian scientist, Dr. Becca Kelly, but they
+        no sooner leave than she has new orders for them and a new destination. She
+        is less than forthcoming about just what her secret mission is but Adama is
+        keen, particularly as it involves going into Cylon controlled space. Nothing
+        is as it seems however. --- Battlestar Galactica: Blood & Chrome is a prequel
+        to the reimagined Battlestar Galactica series. Distribution began as a pilot
+        of a possible new series in 10 online webisodes and later on as a TV movie.","first_air_date":"2012-11-09","origin_country":["US","CA"],"genre_ids":[10765],"original_language":"en","vote_count":2,"name":"Battlestar
+        Galactica: Blood & Chrome","original_name":"Battlestar Galactica : Blood &
+        Chrome"},{"poster_path":"\/g1yQmmnFrmDhBSkmTII5CnfArqm.jpg","popularity":1.041207,"id":61910,"backdrop_path":"\/d5oQpH7Uc1WkfG1ebY0fyQX8b8k.jpg","vote_average":7,"overview":"A
+        series of webisodes that tell the story of William Adama who as a youth uncovers
+        a Cylon experiment while serving in the first Cylon War.","first_air_date":"2007-10-05","origin_country":["US"],"genre_ids":[18,10765,878],"original_language":"en","vote_count":2,"name":"Battlestar
+        Galactica: Razor Flashbacks","original_name":"Battlestar Galactica: Razor
+        Flashbacks"},{"poster_path":"\/nyz4S8ozmucWk0WjQUMo5lgHryx.jpg","popularity":1.032637,"id":4882,"backdrop_path":null,"vote_average":7,"overview":"Battlestar
+        Galactica: The Resistance is the collective title of 10 two- to five-minute
+        \"webisodes\" released exclusively on the world wide web through the Sci Fi
+        Channel''s website. The serial storyline follows events that occur between
+        the close of season 2 and the beginning of season 3 of the re-imagined Battlestar
+        Galactica TV series.\n\nThe first webisode was released on September 5, 2006,
+        with two subsequent webisodes posted to the site each week through October
+        5 to lead into the season 3 premiere.\n\nThe series was produced as a promotional
+        event to promote Battlestar Galactica, and as such generates no residuals
+        for its writers. The original title of this series was to be Battlestar Galactica:
+        Crossroads but \"Crossroads\" was later used as the title of the third-season
+        finale instead. The WGA has called for the boycott of all un-residualed webisodes
+        by writers and producers from working on them.\n\nThe webisodes are only available
+        for viewers from the United States, to the dismay of many fans worldwide;
+        the decision to restrict the webisodes to the US has forced international
+        fans to use peer-to-peer networks to get content which is supposedly free.
+        The webisodes were later reposted on various free video hosting sites, such
+        as YouTube but have since been removed at \"the request of copyright owner
+        NBC Universal because its content was used without permission\". In late 2006,
+        with Australia''s Network Ten broadcasting of the third season of Battlestar
+        Galactica on Ten HD, The Resistance webisodes were made available to the Australian
+        public on the network''s website but have since been taken down.","first_air_date":"2006-09-05","origin_country":["US"],"genre_ids":[878,18,10765],"original_language":"en","vote_count":1,"name":"Battlestar
+        Galactica: The Resistance","original_name":"Battlestar Galactica: The Resistance"},{"poster_path":"\/8tAG4khFuqIAIKYnm8SA3RfokZL.jpg","popularity":1.03881,"id":8546,"backdrop_path":"\/6jtuaTS4fGiL8tr1INNYtitxJqm.jpg","vote_average":7,"overview":"Battlestar
+        Galactica: The Face of the Enemy is a ten-part series of webisodes that was
+        broadcast in the mid-season break of season 4 of Battlestar Galactica. The
+        episodes are between 3 and 6 minutes in length, with two released per week.
+        The series was written by Jane Espenson and Seamus Kevin Fahey.\n\nThe episodes
+        were released in the break between \"Revelations\" and \"Sometimes a Great
+        Notion\", but are set in between \"Sometimes a Great Notion\" and the following
+        episode, \"A Disquiet Follows My Soul\", and are noteworthy for providing
+        the origins of Lt. Gaeta''s attempted coup in the upcoming episodes, as well
+        as revealing that he and Lt. Hoshi are romantically involved.\n\nIn March
+        2009 the series won several Streamy Awards: Best Dramatic Web Series, Best
+        Writing for a Dramatic Web Series, and Best Male Actor in a Dramatic Web Series
+        for Alessandro Juliani. The series was also nominated for an Emmy Award in
+        the Short-format Live-action Entertainment Program category.","first_air_date":"2008-12-12","origin_country":[],"genre_ids":[878,18],"original_language":"en","vote_count":1,"name":"Battlestar
+        Galactica: The Face of the Enemy","original_name":"Battlestar Galactica: The
+        Face of the Enemy"}],"total_results":6,"total_pages":1}'
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:05:05 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:17 GMT
 recorded_with: VCR 2.9.3

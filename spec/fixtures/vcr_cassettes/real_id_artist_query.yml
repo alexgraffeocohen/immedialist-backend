@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 23 Apr 2015 00:04:58 GMT
+      - Sat, 16 Jan 2016 19:02:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -32,16 +32,16 @@ http_interactions:
       - timeout=600
       Cache-Control:
       - public, max-age=7200
-      Access-Control-Allow-Headers:
-      - Accept, Authorization, Origin, Content-Type
       Access-Control-Allow-Origin:
       - "*"
-      Access-Control-Max-Age:
-      - '604800'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS, PUT, DELETE
       Access-Control-Allow-Credentials:
       - 'true'
+      Access-Control-Max-Age:
+      - '604800'
+      Access-Control-Allow-Headers:
+      - Accept, Authorization, Origin, Content-Type
       Content-Encoding:
       - gzip
       X-Content-Type-Options:
@@ -51,16 +51,16 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAIxSy27bMBC89ysIno2I4kMPH5sEORTIqTkVRUGRS4swLQoU
-        3TQI8u+lKDmNYbjIkbPLmZ3def2CEIY/EcIg3a9jcBNGW/Sa0IRPo4/WvMwI
-        7mMcp21R+BGGm7Vwo/yhkCHaKRZU3T7Fh2/tdPdE7/29G/bk4fErTkRvm1nD
-        eOf8M4SP/H0AMz+Ho3ObBYo+SjdjnFAu6Pv3HQwB8t8fCKteHjoIaPQj3iBs
-        B20BJYH9v9dZKXi1x+hnJjppvhuSoz3z87tcLU3XPGUeqzPLf1sOcnea+eQY
-        7K6PM0TberWcln42UBpH6SHNUmSCQjOuBK3attOVoaUUtOsaaYysQTYlEVoQ
-        xllX4ZXv2erY5xXyKu/vUrxk7JPipeQVh7piimnRNrrVvKNKSU3LRhFBlOkU
-        M0xeiFNCrojzz2oDCMGY7pRQyuhkvGRGS9EAadoaKtUKw+aFXGhXfJZeDz7I
-        A2SZ7z2gRxmtT0lfDpRCcnQy2JgjXueD4PgyLv1LCpbOY7AZW4OyXWrba6F/
-        +wsAAP//AwC4Qz10VwMAAA==
+        H4sIAAAAAAAAAIxSy27bMBC89ysIno2I4kuij02CHArk1JyKoqD4sAjTokDR
+        TYMg/16KktMYhoscObuc2dmd1y8AQPMnmThI/+sY/QTBFrxmNOPTGJKzLzMC
+        +5TGaVtVYTTDzVq4UeFQyZjclCqsbp/Swzcx3T3h+3Dvhz16ePwKM9HbZtaw
+        wfvwbOJH/j4aOz+Ho/ebBUohST9jtOWkQe/fd2aIpvz9AaDq5aEzEYxhhBsA
+        3aCdAVlg/+91VopB7SH4WYhOmu+G5OjO/PyuV0vTNU+Fx+nC8t+Wg9ydZj45
+        Nm7XpxnColkt56WfDZTHUXrIs1SFoNKEKoa5EJ3mFteS4a5rpbWyMbKtEdMM
+        EUo6Dle+Z6dTX1ZIednfpXhNyCfFa0k5NQ0nimgmWi007bBSUuO6VYghZTtF
+        LJEX4hihK+L0s9rGMEaI7hRTyupsvCZWS9Ya1IrGcCWYJfNCLrQ5naXXgw/y
+        YIrM996AR5lcyElfDpRDcvQyulQizkUB08u49C8pWDqP0RVsDcp2qW2vhf7t
+        LwAAAP//AwBVRwfAVwMAAA==
     http_version: 
-  recorded_at: Thu, 23 Apr 2015 00:04:58 GMT
+  recorded_at: Sat, 16 Jan 2016 19:02:19 GMT
 recorded_with: VCR 2.9.3
