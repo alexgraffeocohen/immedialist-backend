@@ -10,18 +10,22 @@ class CreateListItem
   end
 
   def call
-    if requested_item_attached?
-      AttachSearchToListItem.call(list_item)
-      AttachQueryResultsToSearch.call(list_item.search)
-      list_item.save!
-    else
-      @list_item.errors.add(:item, "Must provide a valid item")
-    end
+    return @list_item if list_item_invalid?
+
+    AttachSearchToListItem.call(list_item)
+    AttachQueryResultsToSearch.call(list_item.search)
+    list_item.save!
   end
 
   private
 
   attr_reader :list_item
+
+  def list_item_invalid?
+    if !requested_item_attached?
+      @list_item.errors.add(:item, "Must provide a valid item")
+    end
+  end
 
   def requested_item_attached?
     # The class check is not necessarily ideal. It couples this class to
