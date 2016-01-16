@@ -31,7 +31,8 @@ RSpec.describe ListItem, :type => :model do
         list_item.item = FactoryGirl.create(:movie)
         list_item.save!
 
-        requested_items_assigned_to_list_item = RequestedItem.select { |item|
+        requested_items_assigned_to_list_item = RequestedItem.
+          select { |item|
           item.list_item == list_item
         }
 
