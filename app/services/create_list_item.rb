@@ -10,9 +10,13 @@ class CreateListItem
   end
 
   def call
-    AttachSearchToListItem.call(list_item)
-    AttachQueryResultsToSearch.call(list_item.search)
-    list_item.save!
+    if list_item.item
+      AttachSearchToListItem.call(list_item)
+      AttachQueryResultsToSearch.call(list_item.search)
+      list_item.save!
+    else
+      @list_item.errors.add(:item, "Must provide a valid item")
+    end
   end
 
   private

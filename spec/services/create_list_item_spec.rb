@@ -2,16 +2,31 @@ require 'rails_helper'
 
 RSpec.describe CreateListItem, type: :service do
   context 'given any list item' do
-    let(:list_item) { FactoryGirl.build(:list_item,
-                                        name: "Generic Query",
-                                        item: item) }
-    let(:item) { FactoryGirl.build(:requested_item, requested_type: "Movie") }
+    context 'with a valid item associated' do
+      let(:list_item) { FactoryGirl.build(:list_item,
+                                          name: "Generic Query",
+                                          item: item) }
+      let(:item) { FactoryGirl.build(:requested_item, requested_type: "Movie") }
 
-    it 'returns a saved list item' do
-      VCR.use_cassette('generic_list_item_query') do
+      it 'returns a saved list item' do
+        VCR.use_cassette('generic_list_item_query') do
+          CreateListItem.call(list_item)
+
+          expect(list_item).to be_persisted
+        end
+      end
+    end
+
+    context 'without a valid item associated' do
+      let(:list_item) { FactoryGirl.build(:list_item,
+                                          name: "Generic Query",
+                                          item: nil) }
+
+      it 'does not save the list item and adds errors' do
         CreateListItem.call(list_item)
 
-        expect(list_item).to be_persisted
+        expect(list_item).to_not be_persisted
+        expect(list_item.errors[:item]).to be_present
       end
     end
   end
