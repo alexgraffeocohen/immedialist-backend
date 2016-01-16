@@ -10,7 +10,7 @@ class CreateListItem
   end
 
   def call
-    if list_item.item
+    if item_attached?
       AttachSearchToListItem.call(list_item)
       AttachQueryResultsToSearch.call(list_item.search)
       list_item.save!
@@ -22,4 +22,8 @@ class CreateListItem
   private
 
   attr_reader :list_item
+
+  def item_attached?
+    list_item.item
+  end
 end
