@@ -25,5 +25,18 @@ RSpec.describe "ListItems", type: :request do
         expect(response).to have_http_status(:created)
       end
     end
+
+    context "without a RequestedItem id" do
+      it "fails to create a ListItem" do
+        post "/list_items",
+          { list_item: { name: "Awesome Movie",
+                         item_type: "RequestedItem",
+                         item_id: nil} },
+          headers
+
+        expect(response.content_type).to eq("application/json")
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
   end
 end
