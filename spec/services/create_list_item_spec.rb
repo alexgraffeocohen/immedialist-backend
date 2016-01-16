@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CreateListItem, type: :service do
   context 'given any list item' do
-    context 'with a valid item associated' do
+    context 'with a requested item associated' do
       let(:list_item) { FactoryGirl.build(:list_item,
                                           name: "Generic Query",
                                           item: item) }
@@ -17,7 +17,7 @@ RSpec.describe CreateListItem, type: :service do
       end
     end
 
-    context 'without a valid item associated' do
+    context 'without a requested item associated' do
       let(:list_item) { FactoryGirl.build(:list_item,
                                           name: "Generic Query",
                                           item: nil) }
