@@ -6,6 +6,8 @@ class ListItem < ActiveRecord::Base
   # TODO: if it contains a requested item, it should destroy it on destroy
   has_one :search, dependent: :destroy
 
+  validates_presence_of :name
+
   after_update :clear_search_related_associations_if_user_selected_item
 
   def to_item_type

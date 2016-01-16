@@ -7,6 +7,8 @@ RSpec.describe ListItem, :type => :model do
   it { should belong_to(:user) }
   it { should belong_to(:item) }
 
+  it { should validate_presence_of(:name) }
+
   it_behaves_like 'it can be converted to an item type',
     FactoryGirl.build(:list_item)
 
