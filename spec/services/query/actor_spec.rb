@@ -46,7 +46,8 @@ describe Query::Actor do
       it 'returns an error object if external id is not recognized' do
         result = test_query.call_with_fake_id
 
-        expect(result['status_message']).to include("Invalid id")
+        expect(result['status_message']).to eq("The resource you requested could not be found.")
+        expect(result['status_code']).to eq(34)
       end
     end
   end

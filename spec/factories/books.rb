@@ -14,7 +14,7 @@ FactoryGirl.define do
     end
 
     factory :fake_book do
-      name "The Greatest Book in the World: This is a Tribute"
+      name "Gobbly Goook Blah Blah Blah Blah"
       goodreads_id 999999999
     end
   end
