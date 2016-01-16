@@ -38,5 +38,20 @@ RSpec.describe "ListItems", type: :request do
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
+
+    context "with a different type of item attached" do
+      it "fails to create a ListItem" do
+        movie = FactoryGirl.create(:movie, name: "Awesome Movie")
+
+        post "/list_items",
+          { list_item: { name: "Awesome Movie",
+                         item_type: "Movie",
+                         item_id: movie.id} },
+          headers
+
+        expect(response.content_type).to eq("application/json")
+        expect(response).to have_http_status(:unprocessable_entity)
+      end
+    end
   end
 end
