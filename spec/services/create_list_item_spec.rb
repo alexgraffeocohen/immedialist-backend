@@ -43,6 +43,20 @@ RSpec.describe CreateListItem, type: :service do
         expect(list_item.errors[:item]).to be_present
       end
     end
+
+    context 'with a ListItem that fails its model validations' do
+      let(:list_item) { FactoryGirl.build(:list_item,
+                                          name: nil,
+                                          item: item) }
+      let(:item) { FactoryGirl.build(:requested_item, requested_type: "Movie") }
+
+      it 'does not save the list item and adds errors' do
+        CreateListItem.call(list_item)
+
+        expect(list_item).to_not be_persisted
+        expect(list_item.errors).to be_present
+      end
+    end
   end
 
   context 'when the list item name yields query results' do
