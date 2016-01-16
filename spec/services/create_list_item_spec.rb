@@ -29,6 +29,20 @@ RSpec.describe CreateListItem, type: :service do
         expect(list_item.errors[:item]).to be_present
       end
     end
+
+    context 'with an item other than a RequestedItem associated' do
+      let(:list_item) { FactoryGirl.build(:list_item,
+                                          name: "Awesome Movie",
+                                          item: item) }
+      let(:item) { FactoryGirl.build(:movie, name: "Awesome Movie") }
+
+      it 'does not save the list item and adds errors' do
+        CreateListItem.call(list_item)
+
+        expect(list_item).to_not be_persisted
+        expect(list_item.errors[:item]).to be_present
+      end
+    end
   end
 
   context 'when the list item name yields query results' do

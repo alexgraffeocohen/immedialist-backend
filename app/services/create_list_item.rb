@@ -24,6 +24,9 @@ class CreateListItem
   attr_reader :list_item
 
   def requested_item_attached?
-    list_item.item
+    # The class check is not necessarily ideal. It couples this class to
+    # how I decided to design creating ListItems from client side, with
+    # a RequstedItem attached. At least now that is explicit.
+    list_item.item && list_item.item.is_a?(RequestedItem)
   end
 end
