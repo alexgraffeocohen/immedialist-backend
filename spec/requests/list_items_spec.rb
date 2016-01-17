@@ -23,6 +23,7 @@ RSpec.describe "ListItems", type: :request do
 
         expect(response.content_type).to eq("application/json")
         expect(response).to have_http_status(:created)
+        expect(ListItem.find_by(item: requested_movie)).to be_present
       end
     end
 
