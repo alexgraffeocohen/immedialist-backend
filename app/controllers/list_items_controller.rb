@@ -21,7 +21,7 @@ class ListItemsController < ActionController::Base
 
   def update
     @list_item = ListItem.find(params[:id])
-    if @list_item.update_attributes(list_item_params)
+    if UpdateListItem.call(@list_item, list_item_params)
       render json: @list_item
     else
       render status: :unprocessable_entity, json: { errors: @list_item.errors }
