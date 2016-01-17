@@ -98,4 +98,16 @@ RSpec.describe "ListItems", type: :request do
       end
     end
   end
+
+  context "Destroying a ListItem" do
+    let(:list_item) { FactoryGirl.create(:list_item) }
+
+    it "deletes successfully" do
+      delete "/list_items/#{list_item.id}", headers
+
+      expect(response.content_type).to eq("application/json")
+      expect(response).to have_http_status(:ok)
+      expect(ListItem.find_by(id: list_item.id)).to be_nil
+    end
+  end
 end
