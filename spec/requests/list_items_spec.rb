@@ -74,4 +74,27 @@ RSpec.describe "ListItems", type: :request do
       end
     end
   end
+
+  context "Updating a ListItem" do
+    context "attaching a real item to a ListItem" do
+      let!(:list_item) { FactoryGirl.create(:list_item) }
+      let!(:search) { FactoryGirl.create(:search,
+                                        list_item: list_item) }
+      let!(:movie) { FactoryGirl.create(:movie) }
+
+      it "updates successfully" do
+        patch "/list_items/#{list_item.id}",
+          { list_item: { item_type: "Movie",
+                         item_id: movie.id } },
+          headers
+
+        expect(response.content_type).to eq("application/json")
+        expect(response).to have_http_status(:ok)
+
+        list_item.reload
+
+        expect(list_item.item).to eq(movie)
+      end
+    end
+  end
 end
