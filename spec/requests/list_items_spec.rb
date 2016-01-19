@@ -15,6 +15,9 @@ RSpec.describe "ListItems", type: :request do
                                              name: "Awesome Movie",
                                              requested_type: "Movie")
 
+        expect(AttachSearchToListItem).to receive(:call)
+        expect(AttachQueryResultsToSearch).to receive(:call)
+
         post "/list_items",
           { list_item: { name: "Awesome Movie",
                          item_type: "RequestedItem",
