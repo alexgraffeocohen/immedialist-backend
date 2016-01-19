@@ -14,6 +14,15 @@ class RottenTomatoesMovie
     compare_results_to_api_expectations!
   end
 
+  def attributes
+    {
+      mpaa_rating: mpaa_rating,
+      critics_consensus: critics_consensus,
+      critics_score: critics_score,
+      audience_score: audience_score,
+    }
+  end
+
   def mpaa_rating
     query_result.mpaa_rating
   end

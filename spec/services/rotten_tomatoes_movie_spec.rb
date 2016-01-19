@@ -56,7 +56,22 @@ RSpec.describe RottenTomatoesMovie, type: :service do
     end
   end
 
-  context "attributes" do
+  describe "#attributes" do
+    it "returns a hash of its attributes" do
+      expect(RottenTomatoes::RottenMovie).
+        to receive(:find).
+        and_return(valid_query_result)
+
+      expect(rotten_tomatoes_movie.attributes).to eq({
+        mpaa_rating: "R",
+        critics_consensus: "Brilliant",
+        critics_score: 85,
+        audience_score: 70
+      })
+    end
+  end
+
+  context "attribute methods" do
     before(:each) do
       expect(RottenTomatoes::RottenMovie).
         to receive(:find).
