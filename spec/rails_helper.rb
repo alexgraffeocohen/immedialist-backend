@@ -22,6 +22,7 @@ Dir[Rails.root.join("app/models/search/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/services/query_saver/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/services/query_sanitizer/*.rb")].each { |f| require f }
 Dir[Rails.root.join("app/services/query/*.rb")].each { |f| require f }
+Dir[Rails.root.join("app/services/update_item/*.rb")].each { |f| require f }
 
 Capybara.javascript_driver = :poltergeist
 
