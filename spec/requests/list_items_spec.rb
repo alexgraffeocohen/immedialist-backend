@@ -84,6 +84,11 @@ RSpec.describe "ListItems", type: :request do
       let!(:movie) { FactoryGirl.create(:movie) }
 
       it "updates successfully" do
+        expect(UpdateItem).
+          to receive(:call).
+          with(movie).
+          and_return(movie)
+
         patch "/list_items/#{list_item.id}",
           { list_item: { item_type: "Movie",
                          item_id: movie.id } },
