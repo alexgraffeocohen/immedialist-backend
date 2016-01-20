@@ -9,6 +9,8 @@ class RottenTomatoesMovie
   end
 
   def initialize(imdb_id)
+    raise ArgumentError, "imdb_id can only have digits" if imdb_id =~ /\D/
+
     @imdb_id = imdb_id
     @query_result = RottenMovie.find(imdb: String(imdb_id))
     compare_results_to_api_expectations!

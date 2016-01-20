@@ -34,13 +34,24 @@ RSpec.describe RottenTomatoesMovie, type: :service do
     end
 
     context "invalid imdb id is passed" do
-      it "raises an error" do
-        expect(RottenTomatoes::RottenMovie).
-          to receive(:find).
-          and_return(invalid_query_result)
+      context "does not match on RottenTomatoes" do
+        it "raises a RottenTomatoes::QueryError" do
+          expect(RottenTomatoes::RottenMovie).
+            to receive(:find).
+            and_return(invalid_query_result)
 
-        expect { rotten_tomatoes_movie }.
-          to raise_error(RottenTomatoes::QueryError)
+          expect { rotten_tomatoes_movie }.
+            to raise_error(RottenTomatoes::QueryError)
+        end
+      end
+
+      context "contains non-digit characters" do
+        let(:imdb_id) { "tt1234" }
+
+        it "raises an ArgumentError" do
+          expect { rotten_tomatoes_movie }.
+            to raise_error(ArgumentError)
+        end
       end
     end
 
