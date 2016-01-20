@@ -10,7 +10,7 @@ class UpdateItem::Movie < UpdateItem
   end
 
   def imdb_id
-    sanitized_results.fetch(:imdb_id).gsub(/t/,"")
+    sanitized_results.fetch(:imdb_id).gsub(/\D/,"")
   end
 
   def sanitized_results
