@@ -1,8 +1,7 @@
 module Immedialist
   module RottenTomatoes
     class Movie
-      include ::RottenTomatoes
-      Rotten.api_key = Figaro.env.rotten_tomatoes_api_key
+      include Immedialist::RottenTomatoes
 
       def self.find(imdb_id)
         new(imdb_id)
@@ -12,7 +11,7 @@ module Immedialist
         raise ArgumentError, "imdb_id can only have digits" if imdb_id =~ /\D/
 
         @imdb_id = imdb_id
-        @query_result = RottenMovie.find(imdb: String(imdb_id))
+        @query_result = self.query_movie_by_imdb_id(imdb_id)
         compare_results_to_api_expectations!
       end
 
