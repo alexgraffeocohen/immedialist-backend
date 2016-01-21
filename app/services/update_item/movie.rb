@@ -6,7 +6,7 @@ class UpdateItem::Movie < UpdateItem
   end
 
   def rotten_tomatoes_movie
-    RottenTomatoesMovie.find(imdb_id)
+    Immedialist::RottenTomatoes::Movie.find(imdb_id)
   end
 
   def imdb_id

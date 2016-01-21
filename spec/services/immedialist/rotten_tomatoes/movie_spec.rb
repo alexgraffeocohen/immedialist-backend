@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe RottenTomatoesMovie, type: :service do
+RSpec.describe Immedialist::RottenTomatoes::Movie, type: :service do
   let(:valid_query_result) {
     PatchedOpenStruct.new(
       mpaa_rating: "R",
@@ -20,16 +20,16 @@ RSpec.describe RottenTomatoesMovie, type: :service do
     )
   }
   let(:imdb_id) { "1234" }
-  let(:rotten_tomatoes_movie) { RottenTomatoesMovie.find(imdb_id) }
+  let(:rotten_tomatoes_movie) { Immedialist::RottenTomatoes::Movie.find(imdb_id) }
 
   describe ".find" do
     context "valid imdb id is passed" do
-      it "returns a RottenTomatoesMovie" do
+      it "returns a Immedialist::RottenTomatoes::Movie" do
         expect(RottenTomatoes::RottenMovie).
           to receive(:find).
           and_return(valid_query_result)
 
-        expect(rotten_tomatoes_movie).to be_a(RottenTomatoesMovie)
+        expect(rotten_tomatoes_movie).to be_a(Immedialist::RottenTomatoes::Movie)
       end
     end
 
@@ -41,7 +41,7 @@ RSpec.describe RottenTomatoesMovie, type: :service do
             and_return(invalid_query_result)
 
           expect { rotten_tomatoes_movie }.
-            to raise_error(RottenTomatoes::QueryError)
+            to raise_error(Immedialist::RottenTomatoes::QueryError)
         end
       end
 

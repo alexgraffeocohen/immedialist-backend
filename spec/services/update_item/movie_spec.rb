@@ -15,9 +15,9 @@ RSpec.describe UpdateItem::Movie, type: :service do
       # Also weighing whether stubbing all API calls, rather than using
       # VCR, is the better strategy.
       rotten_tomatoes_movie = instance_double(
-        RottenTomatoesMovie, attributes: {critics_score: 85}
+        Immedialist::RottenTomatoes::Movie, attributes: {critics_score: 85}
       )
-      expect(RottenTomatoesMovie).
+      expect(Immedialist::RottenTomatoes::Movie).
         to receive(:find).
         and_return(rotten_tomatoes_movie)
 
