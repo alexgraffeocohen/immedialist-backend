@@ -1,7 +1,5 @@
 module Immedialist
   module RottenTomatoes
-    class QueryError < StandardError; end
-
     class Movie
       include ::RottenTomatoes
       Rotten.api_key = Figaro.env.rotten_tomatoes_api_key
