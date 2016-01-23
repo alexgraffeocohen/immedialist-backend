@@ -98,6 +98,15 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
     end
   end
 
+  describe "#genres" do
+    it "returns Immedialist::TMDB::Genre objects" do
+      stub_tmdb_api_with_valid_query
+
+      expect(tmdb_movie.genres.map(&:class).uniq.first).
+        to eq(Immedialist::TMDB::Genre)
+    end
+  end
+
   describe "#attributes" do
     it "returns a hash of its attributes" do
       stub_tmdb_api_with_valid_query

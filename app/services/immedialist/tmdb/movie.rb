@@ -43,6 +43,12 @@ module Immedialist
         compare_results_to_api_expectations!
       end
 
+      def genres
+        query_result["genres"].map do |genre_hash|
+          Immedialist::TMDB::Genre.new(genre_hash)
+        end
+      end
+
       def attributes
         {}.tap do |hash|
           ACTIVE_ATTRIBUTES.each do |attribute|
