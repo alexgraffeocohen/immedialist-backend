@@ -54,16 +54,19 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
       "status_message" => "The resource you requested could not be found."
     }
   }
+  let(:stub_tmdb_api_with_valid_query) {
+    expect(Tmdb::Movie).
+    to receive(:detail).
+    with(tmdb_id).
+    and_return(valid_query_result)
+  }
   let(:tmdb_id) { "1234" }
   let(:tmdb_movie) { Immedialist::TMDB::Movie.find(tmdb_id) }
 
   describe ".find" do
     context "valid tmdb id is passed" do
       it "returns a Immedialist::TMDB::Movie" do
-        expect(Tmdb::Movie).
-          to receive(:detail).
-          with(tmdb_id).
-          and_return(valid_query_result)
+        stub_tmdb_api_with_valid_query
 
         expect(tmdb_movie).to be_a(Immedialist::TMDB::Movie)
       end
@@ -97,10 +100,7 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
 
   describe "#attributes" do
     it "returns a hash of its attributes" do
-      expect(Tmdb::Movie).
-        to receive(:detail).
-        with(tmdb_id).
-        and_return(valid_query_result)
+      stub_tmdb_api_with_valid_query
 
       expect(tmdb_movie.attributes.keys).
         to eq(Immedialist::TMDB::Movie::ACTIVE_ATTRIBUTES)
@@ -109,10 +109,7 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
 
   context "attribute methods" do
     before(:each) do
-      expect(Tmdb::Movie).
-        to receive(:detail).
-        with(tmdb_id).
-        and_return(valid_query_result)
+      stub_tmdb_api_with_valid_query
     end
 
     describe "#budget" do
