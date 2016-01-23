@@ -3,6 +3,13 @@ module Immedialist
     class Movie
       include Immedialist::RottenTomatoes
 
+      ACTIVE_ATTRIBUTES = [
+        :audience_score,
+        :critics_consensus,
+        :critics_score,
+        :mpaa_rating,
+      ]
+
       def self.find(imdb_id)
         new(imdb_id)
       end
@@ -16,20 +23,19 @@ module Immedialist
       end
 
       def attributes
-        {
-          mpaa_rating: mpaa_rating,
-          critics_consensus: critics_consensus,
-          critics_score: critics_score,
-          audience_score: audience_score,
-        }
+        {}.tap do |hash|
+          ACTIVE_ATTRIBUTES.each do |attribute|
+            hash[attribute] = self.send(attribute)
+          end
+        end
       end
 
-      def mpaa_rating
-        query_result.mpaa_rating
-      end
-
-      def critics_consensus
-        query_result.critics_consensus
+      def method_missing(method_name)
+        if ACTIVE_ATTRIBUTES.include?(method_name)
+          return query_result.send(method_name)
+        else
+          super
+        end
       end
 
       def critics_score
