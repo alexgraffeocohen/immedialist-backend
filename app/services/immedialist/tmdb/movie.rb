@@ -22,12 +22,6 @@ module Immedialist
         @tmdb_id = tmdb_id
       end
 
-      def find
-        @query_result = query_api
-        compare_results_to_api_expectations!
-        self
-      end
-
       def genres
         query_result["genres"].map do |genre_hash|
           Immedialist::TMDB::Genre.new(genre_hash)

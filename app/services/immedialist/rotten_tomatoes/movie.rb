@@ -9,12 +9,6 @@ module Immedialist
         @imdb_id = imdb_id
       end
 
-      def find
-        @query_result = query_api
-        compare_results_to_api_expectations!
-        self
-      end
-
       def method_missing(method_name)
         if active_attributes.include?(method_name)
           return query_result.send(method_name)
