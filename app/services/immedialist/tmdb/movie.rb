@@ -54,6 +54,8 @@ module Immedialist
       def method_missing(method_name)
         if ACTIVE_ATTRIBUTES.include?(method_name)
           return query_result[method_name.to_s]
+        else
+          super
         end
       end
 
