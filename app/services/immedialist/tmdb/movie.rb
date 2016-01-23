@@ -49,6 +49,10 @@ module Immedialist
         end
       end
 
+      def imdb_id
+        query_result["imdb_id"].gsub(/\D/,"")
+      end
+
       def attributes
         {}.tap do |hash|
           ACTIVE_ATTRIBUTES.each do |attribute|

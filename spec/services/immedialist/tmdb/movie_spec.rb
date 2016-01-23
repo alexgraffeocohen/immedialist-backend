@@ -126,5 +126,11 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
         expect(tmdb_movie.budget).to eq(63000000)
       end
     end
+
+    describe "#imdb_id" do
+      it "returns the imdb id stripped of letters" do
+        expect(tmdb_movie.imdb_id).to eq("0133093")
+      end
+    end
   end
 end
