@@ -1,6 +1,10 @@
 class APIResource
   def self.find(id)
-    new(id)
+    new(id).find
+  end
+
+  def find
+    raise NotImplementedError
   end
 
   def attributes

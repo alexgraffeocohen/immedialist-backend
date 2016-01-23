@@ -20,8 +20,12 @@ module Immedialist
 
       def initialize(tmdb_id)
         @tmdb_id = tmdb_id
+      end
+
+      def find
         @query_result = self.find_by_tmdb_id(tmdb_id)
         compare_results_to_api_expectations!
+        self
       end
 
       def genres
