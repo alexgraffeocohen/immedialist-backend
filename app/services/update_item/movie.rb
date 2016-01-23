@@ -9,7 +9,11 @@ class UpdateItem::Movie < UpdateItem
     Immedialist::RottenTomatoes::Movie.find(imdb_id)
   end
 
+  def tmdb_movie
+    Immedialist::TMDB::Movie.find(item.tmdb_id)
+  end
+
   def imdb_id
-    Immedialist::TMDB::Movie.find(item.tmdb_id).imdb_id
+    tmdb_movie.imdb_id
   end
 end
