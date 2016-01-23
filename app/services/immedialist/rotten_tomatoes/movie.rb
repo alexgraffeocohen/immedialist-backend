@@ -1,11 +1,7 @@
 module Immedialist
   module RottenTomatoes
-    class Movie
+    class Movie < APIResource
       include Immedialist::RottenTomatoes
-
-      def self.find(imdb_id)
-        new(imdb_id)
-      end
 
       def initialize(imdb_id)
         raise ArgumentError, "imdb_id can only have digits" if imdb_id =~ /\D/
@@ -13,14 +9,6 @@ module Immedialist
         @imdb_id = imdb_id
         @query_result = self.query_movie_by_imdb_id(imdb_id)
         compare_results_to_api_expectations!
-      end
-
-      def attributes
-        {}.tap do |hash|
-          ACTIVE_ATTRIBUTES.each do |attribute|
-            hash[attribute] = self.send(attribute)
-          end
-        end
       end
 
       def method_missing(method_name)
