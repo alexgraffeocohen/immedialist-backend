@@ -10,7 +10,7 @@ module Immedialist
       end
 
       def find
-        @query_result = self.query_movie_by_imdb_id(imdb_id)
+        @query_result = query_api
         compare_results_to_api_expectations!
         self
       end
@@ -34,6 +34,10 @@ module Immedialist
       private
 
       attr_reader :imdb_id, :query_result
+
+      def query_api
+        self.query_movie_by_imdb_id(imdb_id)
+      end
 
       def active_attributes
         [
