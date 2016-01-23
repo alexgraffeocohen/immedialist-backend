@@ -7,6 +7,14 @@ module Immedialist
         @tmdb_id = tmdb_id
       end
 
+      def method_missing(method_name)
+        if active_attributes.include?(method_name)
+          return query_result[method_name.to_s]
+        else
+          super
+        end
+      end
+
       def genres
         query_result["genres"].map do |genre_hash|
           Immedialist::TMDB::Genre.new(genre_hash)
@@ -15,14 +23,6 @@ module Immedialist
 
       def imdb_id
         query_result["imdb_id"].gsub(/\D/,"")
-      end
-
-      def method_missing(method_name)
-        if active_attributes.include?(method_name)
-          return query_result[method_name.to_s]
-        else
-          super
-        end
       end
 
       private
