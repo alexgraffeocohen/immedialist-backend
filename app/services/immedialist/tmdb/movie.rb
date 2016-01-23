@@ -1,6 +1,6 @@
 module Immedialist
   module TMDB
-    class Movie
+    class Movie < APIResource
       include Immedialist::TMDB
 
       INACTIVE_ATTRIBUTES = [
@@ -18,10 +18,6 @@ module Immedialist
         :vote_count
       ]
 
-      def self.find(tmdb_id)
-        new(tmdb_id)
-      end
-
       def initialize(tmdb_id)
         @tmdb_id = tmdb_id
         @query_result = self.find_by_tmdb_id(tmdb_id)
@@ -36,14 +32,6 @@ module Immedialist
 
       def imdb_id
         query_result["imdb_id"].gsub(/\D/,"")
-      end
-
-      def attributes
-        {}.tap do |hash|
-          active_attributes.each do |attribute|
-            hash[attribute] = self.send(attribute)
-          end
-        end
       end
 
       def method_missing(method_name)
