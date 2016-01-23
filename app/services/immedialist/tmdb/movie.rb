@@ -23,7 +23,7 @@ module Immedialist
       end
 
       def find
-        @query_result = self.find_by_tmdb_id(tmdb_id)
+        @query_result = query_api
         compare_results_to_api_expectations!
         self
       end
@@ -49,6 +49,10 @@ module Immedialist
       private
 
       attr_reader :tmdb_id, :query_result
+
+      def query_api
+        self.find_by_tmdb_id(tmdb_id)
+      end
 
       def active_attributes
         [
