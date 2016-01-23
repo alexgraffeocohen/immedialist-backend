@@ -10,18 +10,6 @@ class UpdateItem::Movie < UpdateItem
   end
 
   def imdb_id
-    sanitized_results.fetch(:imdb_id).gsub(/\D/,"")
-  end
-
-  def sanitized_results
-    query.call.symbolize_keys
-  end
-
-  def query
-    query_class.new(external_id: item.tmdb_id)
-  end
-
-  def query_class
-    Query.const_get(item.class.name, false)
+    Immedialist::TMDB::Movie.find(item.tmdb_id).imdb_id
   end
 end
