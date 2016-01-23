@@ -3,21 +3,6 @@ module Immedialist
     class Movie < APIResource
       include Immedialist::TMDB
 
-      INACTIVE_ATTRIBUTES = [
-        :adult,
-        :belongs_to_collection,
-        :original_title,
-        :original_title,
-        :popularity,
-        :production_companies,
-        :production_countries,
-        :spoken_languages,
-        :tagline,
-        :video,
-        :vote_average,
-        :vote_count
-      ]
-
       def initialize(tmdb_id)
         @tmdb_id = tmdb_id
       end
@@ -63,6 +48,23 @@ module Immedialist
           :title,
           :tmdb_id,
           :tmdb_poster_path,
+        ]
+      end
+
+      def inactive_attributes
+        [
+          :adult,
+          :belongs_to_collection,
+          :original_title,
+          :original_title,
+          :popularity,
+          :production_companies,
+          :production_countries,
+          :spoken_languages,
+          :tagline,
+          :video,
+          :vote_average,
+          :vote_count
         ]
       end
 
