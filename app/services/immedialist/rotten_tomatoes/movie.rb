@@ -3,13 +3,6 @@ module Immedialist
     class Movie
       include Immedialist::RottenTomatoes
 
-      ACTIVE_ATTRIBUTES = [
-        :audience_score,
-        :critics_consensus,
-        :critics_score,
-        :mpaa_rating,
-      ]
-
       def self.find(imdb_id)
         new(imdb_id)
       end
@@ -31,7 +24,7 @@ module Immedialist
       end
 
       def method_missing(method_name)
-        if ACTIVE_ATTRIBUTES.include?(method_name)
+        if active_attributes.include?(method_name)
           return query_result.send(method_name)
         else
           super
@@ -49,6 +42,15 @@ module Immedialist
       private
 
       attr_reader :imdb_id, :query_result
+
+      def active_attributes
+        [
+          :audience_score,
+          :critics_consensus,
+          :critics_score,
+          :mpaa_rating,
+        ]
+      end
 
       def compare_results_to_api_expectations!
         if !query_result.is_a?(PatchedOpenStruct)
