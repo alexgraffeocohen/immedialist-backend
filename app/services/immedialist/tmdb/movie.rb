@@ -3,21 +3,6 @@ module Immedialist
     class Movie
       include Immedialist::TMDB
 
-      ACTIVE_ATTRIBUTES = [
-        :budget,
-        :genres,
-        :homepage,
-        :imdb_id,
-        :original_language,
-        :overview,
-        :release_date,
-        :revenue,
-        :runtime,
-        :status,
-        :title,
-        :tmdb_id,
-        :tmdb_poster_path,
-      ]
       INACTIVE_ATTRIBUTES = [
         :adult,
         :belongs_to_collection,
@@ -55,14 +40,14 @@ module Immedialist
 
       def attributes
         {}.tap do |hash|
-          ACTIVE_ATTRIBUTES.each do |attribute|
+          active_attributes.each do |attribute|
             hash[attribute] = self.send(attribute)
           end
         end
       end
 
       def method_missing(method_name)
-        if ACTIVE_ATTRIBUTES.include?(method_name)
+        if active_attributes.include?(method_name)
           return query_result[method_name.to_s]
         else
           super
@@ -72,6 +57,24 @@ module Immedialist
       private
 
       attr_reader :tmdb_id, :query_result
+
+      def active_attributes
+        [
+          :budget,
+          :genres,
+          :homepage,
+          :imdb_id,
+          :original_language,
+          :overview,
+          :release_date,
+          :revenue,
+          :runtime,
+          :status,
+          :title,
+          :tmdb_id,
+          :tmdb_poster_path,
+        ]
+      end
 
       def compare_results_to_api_expectations!
         if !query_result.is_a?(Hash)

@@ -112,7 +112,7 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
       stub_tmdb_api_with_valid_query
 
       expect(tmdb_movie.attributes.keys).
-        to eq(Immedialist::TMDB::Movie::ACTIVE_ATTRIBUTES)
+        to eq(tmdb_movie.send(:active_attributes))
     end
   end
 
