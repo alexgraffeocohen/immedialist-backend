@@ -1,6 +1,8 @@
 module Immedialist
   module TMDB
     class TMDBResource < APIResource
+      attr_reader :tmdb_id
+
       def initialize(attributes)
         @query_result = attributes.symbolize_keys
         @tmdb_id = @query_result[:id]
@@ -22,7 +24,7 @@ module Immedialist
 
       private
 
-      attr_reader :tmdb_id, :query_result
+      attr_reader :query_result
 
       def compare_results_to_api_expectations!
         if !query_result.is_a?(Hash)
