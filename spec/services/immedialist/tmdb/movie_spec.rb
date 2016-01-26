@@ -175,6 +175,17 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
         expect(search_result.imdb_id).to be_nil
       end
     end
+
+    context "unsuccessful search result" do
+      it "returns an empty array" do
+        expect(Tmdb::Movie).
+          to receive(:find).
+          with("nothing").
+          and_return([])
+
+        expect(Immedialist::TMDB::Movie.search("nothing")).to eq([])
+      end
+    end
   end
 
   describe "#genres" do
