@@ -52,7 +52,6 @@ module Immedialist
       def active_attributes
         [
           :budget,
-          :genres,
           :homepage,
           :imdb_id,
           :original_language,
