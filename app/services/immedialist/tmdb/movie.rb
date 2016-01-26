@@ -8,14 +8,14 @@ module Immedialist
 
       def method_missing(method_name)
         if active_attributes.include?(method_name)
-          return query_result[method_name.to_s]
+          return query_result[method_name]
         else
           super
         end
       end
 
       def genres
-        query_result["genres"].map do |genre_hash|
+        query_result[:genres].map do |genre_hash|
           Immedialist::TMDB::Genre.new(genre_hash)
         end
       end
@@ -27,7 +27,7 @@ module Immedialist
       end
 
       def imdb_id
-        query_result["imdb_id"].gsub(/\D/,"")
+        query_result[:imdb_id].gsub(/\D/,"")
       end
 
       private
@@ -35,7 +35,7 @@ module Immedialist
       attr_reader :tmdb_id, :query_result
 
       def query_api
-        ::Tmdb::Movie.detail(tmdb_id)
+        ::Tmdb::Movie.detail(tmdb_id).try(:symbolize_keys)
       end
 
       def movie_crew
@@ -82,7 +82,7 @@ module Immedialist
           raise TypeError, "Query result is not a Hash"
         end
 
-        if query_result["status_code"] == 34
+        if query_result[:status_code] == 34
           raise TMDB::QueryError,
             "TMDB could not find a movie with ID #{tmdb_id}"
         end
