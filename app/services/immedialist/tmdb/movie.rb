@@ -25,6 +25,8 @@ module Immedialist
 
       def movie_crew
         @movie_crew ||= ::Tmdb::Movie.credits(tmdb_id)
+        raise TMDB::QueryError if !@movie_crew.is_a?(Hash)
+        @movie_crew
       end
 
       def active_attributes

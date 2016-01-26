@@ -100,6 +100,12 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
     with(tmdb_id).
     and_return(movie_credits_result)
   }
+  let(:stub_tmdb_movie_crew_query_with_invalid_response) {
+    expect(Tmdb::Movie).
+    to receive(:credits).
+    with(tmdb_id).
+    and_return([])
+  }
 
   let(:tmdb_id) { "1234" }
   let(:tmdb_movie) { Immedialist::TMDB::Movie.find(tmdb_id) }
@@ -149,21 +155,33 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
   end
 
   describe "#actors" do
-    before(:each) do
-      stub_tmdb_api_with_valid_query
-      stub_tmdb_movie_crew_query
+    context "movie crew query returns expected data structure" do
+      before(:each) do
+        stub_tmdb_api_with_valid_query
+        stub_tmdb_movie_crew_query
+      end
+
+      it "retuns Immedialist::TMDB::Person objects" do
+        expect(tmdb_movie.actors.map(&:class).uniq.first).
+          to eq(Immedialist::TMDB::Person)
+      end
+
+      it "sets basic attributes on each object" do
+        expect(tmdb_movie.actors.first.attributes).to eq({
+          name: "Kevin Conroy",
+          id: 34947
+        })
+      end
     end
 
-    it "retuns Immedialist::TMDB::Person objects" do
-      expect(tmdb_movie.actors.map(&:class).uniq.first).
-        to eq(Immedialist::TMDB::Person)
-    end
+    context "movie crew query does not return expected data structure" do
+      it "raises a TMDB::QueryError" do
+        stub_tmdb_api_with_valid_query
+        stub_tmdb_movie_crew_query_with_invalid_response
 
-    it "sets basic attributes on each object" do
-      expect(tmdb_movie.actors.first.attributes).to eq({
-        name: "Kevin Conroy",
-        id: 34947
-      })
+        expect { tmdb_movie.actors }.
+          to raise_error(Immedialist::TMDB::QueryError)
+      end
     end
   end
 
