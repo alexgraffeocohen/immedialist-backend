@@ -1,6 +1,6 @@
 module Immedialist
   module TMDB
-    class Movie < Resource
+    class Movie < TMDBResource
       def self.search(film_title)
         Tmdb::Movie.find(film_title).
           map(&:as_json).

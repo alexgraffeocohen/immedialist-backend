@@ -1,6 +1,6 @@
 module Immedialist
   module TMDB
-    class Resource < APIResource
+    class TMDBResource < APIResource
       attr_reader :tmdb_id
 
       def initialize(attributes)
