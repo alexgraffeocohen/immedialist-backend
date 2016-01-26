@@ -25,6 +25,14 @@ module Immedialist
         end
       end
 
+      def directors
+        movie_crew["crew"].
+          select { |member| member["job"] == "Director" }.
+          map { |director_attributes|
+            Immedialist::TMDB::Person.new(director_attributes)
+          }
+      end
+
       def imdb_id
         query_result[:imdb_id].gsub(/\D/,"") if query_result[:imdb_id]
       end

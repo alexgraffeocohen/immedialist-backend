@@ -228,6 +228,37 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
     end
   end
 
+  describe "#directors" do
+    context "movie crew query returns expected data structure" do
+      before(:each) do
+        stub_tmdb_api_with_valid_query
+        stub_tmdb_movie_crew_query
+      end
+
+      it "retuns Immedialist::TMDB::Person objects" do
+        expect(tmdb_movie.directors.map(&:class).uniq.first).
+          to eq(Immedialist::TMDB::Person)
+      end
+
+      it "sets basic attributes on each object" do
+        expect(tmdb_movie.directors.first.attributes).to eq({
+          name: "Sam Liu",
+          id: 90367
+        })
+      end
+    end
+
+    context "movie crew query does not return expected data structure" do
+      it "raises a TMDB::QueryError" do
+        stub_tmdb_api_with_valid_query
+        stub_tmdb_movie_crew_query_with_invalid_response
+
+        expect { tmdb_movie.directors }.
+          to raise_error(Immedialist::TMDB::QueryError)
+      end
+    end
+  end
+
   describe "#attributes" do
     it "returns a hash of its attributes" do
       stub_tmdb_api_with_valid_query
