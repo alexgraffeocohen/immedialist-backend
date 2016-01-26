@@ -1,19 +1,6 @@
 module Immedialist
   module TMDB
-    class Movie < APIResource
-      def initialize(attributes)
-        @query_result = attributes.symbolize_keys
-        @tmdb_id = @query_result[:id]
-      end
-
-      def method_missing(method_name)
-        if active_attributes.include?(method_name)
-          return query_result[method_name]
-        else
-          super
-        end
-      end
-
+    class Movie < TMDBResource
       def genres
         query_result[:genres].map do |genre_hash|
           Immedialist::TMDB::Genre.new(genre_hash)
@@ -32,10 +19,8 @@ module Immedialist
 
       private
 
-      attr_reader :tmdb_id, :query_result
-
       def query_api
-        ::Tmdb::Movie.detail(tmdb_id).try(:symbolize_keys)
+        ::Tmdb::Movie.detail(tmdb_id)
       end
 
       def movie_crew
