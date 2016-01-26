@@ -1,8 +1,9 @@
 module Immedialist
   module TMDB
     class Movie < APIResource
-      def initialize(tmdb_id)
-        @tmdb_id = tmdb_id
+      def initialize(attributes)
+        @query_result = attributes.symbolize_keys
+        @tmdb_id = @query_result[:id]
       end
 
       def method_missing(method_name)

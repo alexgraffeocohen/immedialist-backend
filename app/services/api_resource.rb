@@ -1,6 +1,6 @@
 class APIResource
   def self.find(id)
-    new(id).find
+    new({id: id}).find
   end
 
   def find

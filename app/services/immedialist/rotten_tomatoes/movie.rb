@@ -3,10 +3,11 @@ module Immedialist
     class Movie < APIResource
       include Immedialist::RottenTomatoes
 
-      def initialize(imdb_id)
-        raise ArgumentError, "imdb_id can only have digits" if imdb_id =~ /\D/
+      def initialize(attributes)
+        @query_result = attributes.symbolize_keys
+        @imdb_id = @query_result[:id]
 
-        @imdb_id = imdb_id
+        raise ArgumentError, "imdb_id can only have digits" if imdb_id =~ /\D/
       end
 
       def method_missing(method_name)
