@@ -1,6 +1,6 @@
 module Immedialist
   module TMDB
-    class Person < TMDBResource
+    class Person < Resource
       private
 
       def active_attributes
