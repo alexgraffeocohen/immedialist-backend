@@ -1,8 +1,6 @@
 module Immedialist
   module TMDB
     class Movie < APIResource
-      include Immedialist::TMDB
-
       def initialize(tmdb_id)
         @tmdb_id = tmdb_id
       end
@@ -36,7 +34,7 @@ module Immedialist
       attr_reader :tmdb_id, :query_result
 
       def query_api
-        self.find_by_tmdb_id(tmdb_id)
+        ::Tmdb::Movie.detail(tmdb_id)
       end
 
       def movie_crew
