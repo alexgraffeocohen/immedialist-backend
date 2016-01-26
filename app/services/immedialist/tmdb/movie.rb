@@ -1,6 +1,14 @@
 module Immedialist
   module TMDB
     class Movie < TMDBResource
+      def self.search(film_title)
+        Tmdb::Movie.find(film_title).
+          map(&:as_json).
+          map do |movie_attributes|
+            new(movie_attributes)
+          end
+      end
+
       def genres
         query_result[:genres].map do |genre_hash|
           Immedialist::TMDB::Genre.new(genre_hash)

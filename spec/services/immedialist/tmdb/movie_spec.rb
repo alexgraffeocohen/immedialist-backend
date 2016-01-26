@@ -145,6 +145,25 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
     end
   end
 
+  describe ".search" do
+    it "returns Immmedialist::TMDB::Movie objects" do
+      expect(Tmdb::Movie).
+        to receive(:find).
+        with("The Matrix").
+        and_return([
+          Tmdb::Movie.new(title: "The Matrix")
+        ])
+
+        expect(
+          Immedialist::TMDB::Movie.
+          search("The Matrix").
+          map(&:class).
+          uniq.
+          first
+        ).to eq(Immedialist::TMDB::Movie)
+    end
+  end
+
   describe "#genres" do
     it "returns Immedialist::TMDB::Genre objects" do
       stub_tmdb_api_with_valid_query
