@@ -54,12 +54,53 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
       "status_message" => "The resource you requested could not be found."
     }
   }
+  let(:movie_credits_result) {
+    {
+      "id" => 1234,
+      "cast" => [
+        {
+          "cast_id"=>1,
+          "character"=>"Batman",
+          "credit_id"=>"52fe4452c3a368484e01c7df",
+          "id"=>34947,
+          "name"=>"Kevin Conroy",
+          "order"=>0,
+          "profile_path"=>"/cttsgPVJRbOcB8AEj4MQh4gJPr8.jpg"
+        }
+      ],
+      "crew" => [
+        {
+          "credit_id"=>"52fe4452c3a368484e01c7db",
+          "department"=>"Directing",
+          "id"=>90367,
+          "job"=>"Director",
+          "name"=>"Sam Liu",
+          "profile_path"=>nil
+        },
+        {
+          "credit_id"=>"52fe4452c3a368484e01c809",
+          "department"=>"Writing",
+          "id"=>17310,
+          "job"=>"Screenplay",
+          "name"=>"Jeph Loeb",
+          "profile_path"=>"/l9Ww2gmFPEZw95yHcxYjx29aD3K.jpg"
+        }
+      ]
+    }
+  }
   let(:stub_tmdb_api_with_valid_query) {
     expect(Tmdb::Movie).
     to receive(:detail).
     with(tmdb_id).
     and_return(valid_query_result)
   }
+  let(:stub_tmdb_movie_crew_query) {
+    expect(Tmdb::Movie).
+    to receive(:credits).
+    with(tmdb_id).
+    and_return(movie_credits_result)
+  }
+
   let(:tmdb_id) { "1234" }
   let(:tmdb_movie) { Immedialist::TMDB::Movie.find(tmdb_id) }
 
@@ -104,6 +145,25 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
 
       expect(tmdb_movie.genres.map(&:class).uniq.first).
         to eq(Immedialist::TMDB::Genre)
+    end
+  end
+
+  describe "#actors" do
+    before(:each) do
+      stub_tmdb_api_with_valid_query
+      stub_tmdb_movie_crew_query
+    end
+
+    it "retuns Immedialist::TMDB::Person objects" do
+      expect(tmdb_movie.actors.map(&:class).uniq.first).
+        to eq(Immedialist::TMDB::Person)
+    end
+
+    it "sets basic attributes on each object" do
+      expect(tmdb_movie.actors.first.attributes).to eq({
+        name: "Kevin Conroy",
+        id: 34947
+      })
     end
   end
 

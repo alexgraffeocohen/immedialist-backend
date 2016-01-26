@@ -21,6 +21,12 @@ module Immedialist
         end
       end
 
+      def actors
+        movie_crew["cast"].map do |actor_attributes|
+          Immedialist::TMDB::Person.new(actor_attributes)
+        end
+      end
+
       def imdb_id
         query_result["imdb_id"].gsub(/\D/,"")
       end
@@ -31,6 +37,10 @@ module Immedialist
 
       def query_api
         self.find_by_tmdb_id(tmdb_id)
+      end
+
+      def movie_crew
+        @movie_crew ||= ::Tmdb::Movie.credits(tmdb_id)
       end
 
       def active_attributes
