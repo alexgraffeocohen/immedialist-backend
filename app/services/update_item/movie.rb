@@ -2,7 +2,11 @@ class UpdateItem::Movie < UpdateItem
   private
 
   def update_item!
-    item.update_attributes!(rotten_tomatoes_movie.attributes)
+    item.update_attributes!(updated_attributes)
+  end
+
+  def updated_attributes
+    rotten_tomatoes_movie.attributes.merge(tmdb_movie.attributes)
   end
 
   def rotten_tomatoes_movie
@@ -10,7 +14,7 @@ class UpdateItem::Movie < UpdateItem
   end
 
   def tmdb_movie
-    Immedialist::TMDB::Movie.find(item.tmdb_id)
+    @tmdb_movie ||= Immedialist::TMDB::Movie.find(item.tmdb_id)
   end
 
   def imdb_id
