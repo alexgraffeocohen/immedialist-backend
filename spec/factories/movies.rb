@@ -11,6 +11,7 @@ FactoryGirl.define do
     rating "R"
     rt_link "http://www.rottentomatoes.com/m/awesome_movie_name/"
     tmdb_id 666
+    imdb_id 1234
 
     factory :real_movie do
       name "The Matrix"
