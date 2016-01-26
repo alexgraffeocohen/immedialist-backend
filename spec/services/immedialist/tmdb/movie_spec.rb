@@ -146,14 +146,20 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
   end
 
   describe ".search" do
-    it "returns Immmedialist::TMDB::Movie objects" do
-      expect(Tmdb::Movie).
-        to receive(:find).
-        with("The Matrix").
-        and_return([
-          Tmdb::Movie.new(title: "The Matrix")
-        ])
-
+    context "successful search result" do
+      before(:each) do
+        expect(Tmdb::Movie).
+          to receive(:find).
+          with("The Matrix").
+          and_return([
+            Tmdb::Movie.new(
+              title: "The Matrix",
+              genres: nil,
+              imdb_id: nil
+            )
+          ])
+      end
+      it "returns Immmedialist::TMDB::Movie objects" do
         expect(
           Immedialist::TMDB::Movie.
           search("The Matrix").
@@ -161,6 +167,13 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
           uniq.
           first
         ).to eq(Immedialist::TMDB::Movie)
+      end
+
+      it "does not return results with genres or imdb_id populated" do
+        search_result = Immedialist::TMDB::Movie.search("The Matrix").first
+        expect(search_result.genres).to eq([])
+        expect(search_result.imdb_id).to be_nil
+      end
     end
   end
 

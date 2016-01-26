@@ -10,8 +10,12 @@ module Immedialist
       end
 
       def genres
-        query_result[:genres].map do |genre_hash|
-          Immedialist::TMDB::Genre.new(genre_hash)
+        if query_result[:genres]
+          query_result[:genres].map do |genre_hash|
+            Immedialist::TMDB::Genre.new(genre_hash)
+          end
+        else
+          []
         end
       end
 
@@ -22,7 +26,7 @@ module Immedialist
       end
 
       def imdb_id
-        query_result[:imdb_id].gsub(/\D/,"")
+        query_result[:imdb_id].gsub(/\D/,"") if query_result[:imdb_id]
       end
 
       private
