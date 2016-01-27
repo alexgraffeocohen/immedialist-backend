@@ -1,11 +1,13 @@
 module Immedialist
   module TMDB
-    class Genre
-      attr_reader :name, :tmdb_id
+    class Genre < TMDBResource
+      private
 
-      def initialize(attributes)
-        @name = attributes["name"]
-        @tmdb_id = attributes["id"]
+      def active_attributes
+        [
+          :name,
+          :tmdb_id
+        ]
       end
     end
   end
