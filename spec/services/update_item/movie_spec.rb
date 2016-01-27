@@ -46,15 +46,49 @@ RSpec.describe UpdateItem::Movie, type: :service do
       instance_double(Immedialist::TMDB::Movie,
                       attributes: {imdb_id: 1234},
                       genres: [
-                        Immedialist::TMDB::Genre.new(name: "Action")
+                        Immedialist::TMDB::Genre.new(
+                          name: "Action",
+                          id: 1234,
+                        )
                       ],
                       imdb_id: "1234")
     }
 
-    it "saves new genres to the movie passed to it" do
-      UpdateItem::Movie.call(movie)
+    context "tmdb genres do not exist in database" do
+      it "persists tmdb movie genres" do
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { Genre.count }.
+          by(1)
+      end
+    end
 
-      expect(movie.genres.first.name).to eq("Action")
+    context "tmdb genres do exist in database" do
+      it "finds the genres" do
+        FactoryGirl.create(:genre, tmdb_id: 1234)
+
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { Genre.count }.
+          by(0)
+      end
+    end
+
+    context "movie does not have tmdb genre" do
+      it "adds the genre to the movie" do
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { movie.genres.count }.
+          by(1)
+        expect(movie.genres.first.name).to eq("Action")
+      end
+    end
+
+    context "movie does have tmdb genre" do
+      it "does not add the genre to the movie" do
+        movie.genres << FactoryGirl.create(:genre, tmdb_id: 1234)
+
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { movie.genres.count }.
+          by(0)
+      end
     end
   end
 end
