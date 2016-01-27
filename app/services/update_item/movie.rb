@@ -27,15 +27,15 @@ class UpdateItem::Movie < UpdateItem
   def update_genres!(api_resource, api_identifier)
     join_model_name = "#{item.class.name.downcase}_genres"
 
-    api_resource.genres.each do |api_genre|
-      genre = Genre.find_by(
-        api_identifier => api_genre.send(api_identifier)
+    api_resource.genres.each do |association_record|
+      db_record = Genre.find_by(
+        api_identifier => association_record.send(api_identifier)
       )
 
-      if genre
-        item.send(join_model_name).find_or_create_by!(genre: genre)
+      if db_record
+        item.send(join_model_name).find_or_create_by!(genre: db_record)
       else
-        item.genres << Genre.create!(api_genre.attributes)
+        item.genres << Genre.create!(association_record.attributes)
       end
     end
   end
@@ -43,15 +43,15 @@ class UpdateItem::Movie < UpdateItem
   def update_actors!(api_resource, api_identifier)
     join_model_name = "#{item.class.name.downcase}_actors"
 
-    api_resource.actors.each do |api_actor|
-      actor = Creator.find_by(
-        api_identifier => api_actor.send(api_identifier)
+    api_resource.actors.each do |association_record|
+      db_record = Creator.find_by(
+        api_identifier => association_record.send(api_identifier)
       )
 
-      if actor
-        item.send(join_model_name).find_or_create_by!(creator: actor)
+      if db_record
+        item.send(join_model_name).find_or_create_by!(creator: db_record)
       else
-        item.actors << Creator.create!(api_actor.attributes)
+        item.actors << Creator.create!(association_record.attributes)
       end
     end
   end
