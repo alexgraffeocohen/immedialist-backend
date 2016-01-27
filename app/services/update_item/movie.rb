@@ -4,6 +4,7 @@ class UpdateItem::Movie < UpdateItem
   def update_item!
     item.assign_attributes(updated_attributes)
     update_genres! if tmdb_movie.genres.present?
+    update_actors! if tmdb_movie.actors.present?
     item.save!
   end
 
@@ -31,6 +32,18 @@ class UpdateItem::Movie < UpdateItem
         item.movie_genres.find_or_create_by!(genre: genre)
       else
         item.genres << Genre.create!(tmdb_genre.attributes)
+      end
+    end
+  end
+
+  def update_actors!
+    tmdb_movie.actors.each do |tmdb_actor|
+      actor = Creator.find_by(tmdb_id: tmdb_actor.tmdb_id)
+
+      if actor
+        item.movie_actors.find_or_create_by!(creator: actor)
+      else
+        item.actors << Creator.create!(tmdb_actor.attributes)
       end
     end
   end

@@ -29,6 +29,7 @@ RSpec.describe UpdateItem::Movie, type: :service do
       instance_double(Immedialist::TMDB::Movie,
                       attributes: {imdb_id: 1234},
                       genres: [ ],
+                      actors: [ ],
                       imdb_id: "1234")
     }
 
@@ -51,6 +52,7 @@ RSpec.describe UpdateItem::Movie, type: :service do
                           id: 1234,
                         )
                       ],
+                      actors: [],
                       imdb_id: "1234")
     }
 
@@ -87,6 +89,58 @@ RSpec.describe UpdateItem::Movie, type: :service do
 
         expect { UpdateItem::Movie.call(movie) }.
           to change { movie.genres.count }.
+          by(0)
+      end
+    end
+  end
+
+  context "actors" do
+    let(:tmdb_movie) {
+      instance_double(Immedialist::TMDB::Movie,
+                      attributes: {imdb_id: 1234},
+                      genres: [],
+                      actors: [
+                        Immedialist::TMDB::Person.new(
+                          name: "John Boyega",
+                          id: 1234
+                        )
+                      ],
+                      imdb_id: "1234")
+    }
+
+    context "tmdb actors do not exist in database" do
+      it "persists tmdb movie actors" do
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { Creator.count }.
+          by(1)
+      end
+    end
+
+    context "tmdb actors do exist in database" do
+      it "finds the actors" do
+        FactoryGirl.create(:creator, tmdb_id: 1234)
+
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { Creator.count }.
+          by(0)
+      end
+    end
+
+    context "movie does not have tmdb actor" do
+      it "adds the actor to the movie" do
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { movie.actors.count }.
+          by(1)
+        expect(movie.actors.first.name).to eq("John Boyega")
+      end
+    end
+
+    context "movie does have tmdb actor" do
+      it "does not add the actor to the movie" do
+        movie.actors << FactoryGirl.create(:creator, tmdb_id: 1234)
+
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { movie.actors.count }.
           by(0)
       end
     end
