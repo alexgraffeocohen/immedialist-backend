@@ -3,7 +3,7 @@ class UpdateItem::Movie < UpdateItem
 
   def update_item!
     item.assign_attributes(updated_attributes)
-    update_genres! if tmdb_movie.genres.present?
+    update_genres!(tmdb_movie, :tmdb_id) if tmdb_movie.genres.present?
     update_actors! if tmdb_movie.actors.present?
     item.save!
   end
@@ -24,14 +24,18 @@ class UpdateItem::Movie < UpdateItem
     tmdb_movie.imdb_id
   end
 
-  def update_genres!
-    tmdb_movie.genres.each do |tmdb_genre|
-      genre = Genre.find_by(tmdb_id: tmdb_genre.tmdb_id)
+  def update_genres!(api_resource, api_identifier)
+    join_model_name = "#{item.class.name.downcase}_genres"
+
+    api_resource.genres.each do |api_genre|
+      genre = Genre.find_by(
+        api_identifier => api_genre.send(api_identifier)
+      )
 
       if genre
-        item.movie_genres.find_or_create_by!(genre: genre)
+        item.send(join_model_name).find_or_create_by!(genre: genre)
       else
-        item.genres << Genre.create!(tmdb_genre.attributes)
+        item.genres << Genre.create!(api_genre.attributes)
       end
     end
   end
