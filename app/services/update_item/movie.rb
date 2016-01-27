@@ -5,6 +5,7 @@ class UpdateItem::Movie < UpdateItem
     item.assign_attributes(updated_attributes)
     update_genres!(tmdb_movie, :tmdb_id) if tmdb_movie.genres.present?
     update_actors!(tmdb_movie, :tmdb_id) if tmdb_movie.actors.present?
+    update_directors!(tmdb_movie, :tmdb_id) if tmdb_movie.directors.present?
     item.save!
   end
 
@@ -52,6 +53,22 @@ class UpdateItem::Movie < UpdateItem
         item.send(join_model_name).find_or_create_by!(creator: db_record)
       else
         item.actors << Creator.create!(association_record.attributes)
+      end
+    end
+  end
+
+  def update_directors!(api_resource, api_identifier)
+    join_model_name = "#{item.class.name.downcase}_directors"
+
+    api_resource.directors.each do |association_record|
+      db_record = Creator.find_by(
+        api_identifier => association_record.send(api_identifier)
+      )
+
+      if db_record
+        item.send(join_model_name).find_or_create_by!(creator: db_record)
+      else
+        item.directors << Creator.create!(association_record.attributes)
       end
     end
   end

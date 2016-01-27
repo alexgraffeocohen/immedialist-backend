@@ -30,6 +30,7 @@ RSpec.describe UpdateItem::Movie, type: :service do
                       attributes: {imdb_id: 1234},
                       genres: [ ],
                       actors: [ ],
+                      directors: [ ],
                       imdb_id: "1234")
     }
 
@@ -53,6 +54,7 @@ RSpec.describe UpdateItem::Movie, type: :service do
                         )
                       ],
                       actors: [],
+                      directors: [],
                       imdb_id: "1234")
     }
 
@@ -105,6 +107,7 @@ RSpec.describe UpdateItem::Movie, type: :service do
                           id: 1234
                         )
                       ],
+                      directors: [],
                       imdb_id: "1234")
     }
 
@@ -141,6 +144,59 @@ RSpec.describe UpdateItem::Movie, type: :service do
 
         expect { UpdateItem::Movie.call(movie) }.
           to change { movie.actors.count }.
+          by(0)
+      end
+    end
+  end
+
+  context "directors" do
+    let(:tmdb_movie) {
+      instance_double(Immedialist::TMDB::Movie,
+                      attributes: {imdb_id: 1234},
+                      genres: [],
+                      actors: [],
+                      directors: [
+                        Immedialist::TMDB::Person.new(
+                          name: "George Lucas",
+                          id: 1234
+                        )
+                      ],
+                      imdb_id: "1234")
+    }
+
+    context "tmdb directors do not exist in database" do
+      it "persists tmdb movie directors" do
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { Creator.count }.
+          by(1)
+      end
+    end
+
+    context "tmdb directors do exist in database" do
+      it "finds the directors" do
+        FactoryGirl.create(:creator, tmdb_id: 1234)
+
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { Creator.count }.
+          by(0)
+      end
+    end
+
+    context "movie does not have tmdb director" do
+      it "adds the director to the movie" do
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { movie.directors.count }.
+          by(1)
+        expect(movie.directors.first.name).to eq("George Lucas")
+      end
+    end
+
+    context "movie does have tmdb director" do
+      it "does not add the director to the movie" do
+        movie.directors << FactoryGirl.create(:creator, tmdb_id: 1234)
+
+        expect { UpdateItem::Movie.call(movie) }.
+          to change { movie.directors.count }.
           by(0)
       end
     end
