@@ -2,6 +2,17 @@ require 'rails_helper'
 
 RSpec.describe UpdateItem::Movie, type: :service do
   let(:test_query) { TestQuery::Movie.new }
+  let(:rotten_tomatoes_movie) {
+    instance_double(
+      Immedialist::RottenTomatoes::Movie,
+      attributes: {critics_score: 85}
+    )
+  }
+  let(:movie) {
+    FactoryGirl.create(:real_movie,
+                       critics_score: nil,
+                       imdb_id: nil)
+  }
 
   before(:each) do
     expect(Immedialist::TMDB::Movie).
@@ -14,20 +25,11 @@ RSpec.describe UpdateItem::Movie, type: :service do
   end
 
   context "movie with a valid imdb id" do
-    let(:movie) { FactoryGirl.create(:real_movie,
-                                     critics_score: nil,
-                                     imdb_id: nil) }
     let(:tmdb_movie) {
       instance_double(Immedialist::TMDB::Movie,
                       attributes: {imdb_id: 1234},
                       genres: [ ],
                       imdb_id: "1234")
-    }
-    let(:rotten_tomatoes_movie) {
-      instance_double(
-        Immedialist::RottenTomatoes::Movie,
-        attributes: {critics_score: 85}
-      )
     }
 
     it 'saves more details onto the movie passed to it' do
@@ -40,9 +42,6 @@ RSpec.describe UpdateItem::Movie, type: :service do
   end
 
   context "genres" do
-    let(:movie) { FactoryGirl.create(:real_movie,
-                                     critics_score: nil,
-                                     imdb_id: nil) }
     let(:tmdb_movie) {
       instance_double(Immedialist::TMDB::Movie,
                       attributes: {imdb_id: 1234},
@@ -50,12 +49,6 @@ RSpec.describe UpdateItem::Movie, type: :service do
                         Immedialist::TMDB::Genre.new(name: "Action")
                       ],
                       imdb_id: "1234")
-    }
-    let(:rotten_tomatoes_movie) {
-      instance_double(
-        Immedialist::RottenTomatoes::Movie,
-        attributes: {critics_score: 85}
-      )
     }
 
     it "saves new genres to the movie passed to it" do
