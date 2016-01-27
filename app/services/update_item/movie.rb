@@ -2,7 +2,9 @@ class UpdateItem::Movie < UpdateItem
   private
 
   def update_item!
-    item.update_attributes!(updated_attributes)
+    item.assign_attributes(updated_attributes)
+    update_genres! if tmdb_movie.genres.present?
+    item.save!
   end
 
   def updated_attributes
@@ -19,5 +21,17 @@ class UpdateItem::Movie < UpdateItem
 
   def imdb_id
     tmdb_movie.imdb_id
+  end
+
+  def update_genres!
+    tmdb_movie.genres.each do |tmdb_genre|
+      genre = Genre.find_by(tmdb_id: tmdb_genre.tmdb_id)
+
+      if genre
+        item.movie_genres.find_or_create_by!(genre: genre)
+      else
+        item.genres << Genre.create!(tmdb_genre.attributes)
+      end
+    end
   end
 end
