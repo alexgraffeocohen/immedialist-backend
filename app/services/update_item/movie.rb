@@ -42,25 +42,17 @@ class UpdateItem::Movie < UpdateItem
   end
 
   def update_actors!(api_resource, api_identifier)
-    join_model_name = "#{item.class.name.downcase}_actors"
-
-    api_resource.actors.each do |association_record|
-      db_record = Creator.find_by(
-        api_identifier => association_record.send(api_identifier)
-      )
-
-      if db_record
-        item.send(join_model_name).find_or_create_by!(creator: db_record)
-      else
-        item.actors << Creator.create!(association_record.attributes)
-      end
-    end
+    update_creator_association!(api_resource, api_identifier, "actors")
   end
 
   def update_directors!(api_resource, api_identifier)
-    join_model_name = "#{item.class.name.downcase}_directors"
+    update_creator_association!(api_resource, api_identifier, "directors")
+  end
 
-    api_resource.directors.each do |association_record|
+  def update_creator_association!(api_resource, api_identifier, association_name)
+    join_model_name = "#{item.class.name.downcase}_#{association_name}"
+
+    api_resource.send(association_name).each do |association_record|
       db_record = Creator.find_by(
         api_identifier => association_record.send(api_identifier)
       )
@@ -68,7 +60,7 @@ class UpdateItem::Movie < UpdateItem
       if db_record
         item.send(join_model_name).find_or_create_by!(creator: db_record)
       else
-        item.directors << Creator.create!(association_record.attributes)
+        item.send(association_name) << Creator.create!(association_record.attributes)
       end
     end
   end
