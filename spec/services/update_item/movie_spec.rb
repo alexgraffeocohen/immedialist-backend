@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe UpdateItem::Movie, type: :service do
-  let(:test_query) { TestQuery::Movie.new }
   let(:rotten_tomatoes_movie) {
     instance_double(
       Immedialist::RottenTomatoes::Movie,
