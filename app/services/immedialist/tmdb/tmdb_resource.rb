@@ -22,6 +22,16 @@ module Immedialist
         end
       end
 
+      def genres
+        if query_result[:genres]
+          query_result[:genres].map do |genre_hash|
+            Immedialist::TMDB::Genre.new(genre_hash)
+          end
+        else
+          []
+        end
+      end
+
       private
 
       attr_reader :query_result

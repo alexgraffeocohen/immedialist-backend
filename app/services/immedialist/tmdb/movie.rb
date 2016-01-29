@@ -9,16 +9,6 @@ module Immedialist
           end
       end
 
-      def genres
-        if query_result[:genres]
-          query_result[:genres].map do |genre_hash|
-            Immedialist::TMDB::Genre.new(genre_hash)
-          end
-        else
-          []
-        end
-      end
-
       def actors
         movie_crew["cast"].map do |actor_attributes|
           Immedialist::TMDB::Person.new(actor_attributes)
