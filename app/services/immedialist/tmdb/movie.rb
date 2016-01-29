@@ -72,17 +72,6 @@ module Immedialist
           :vote_count
         ]
       end
-
-      def compare_results_to_api_expectations!
-        if !query_result.is_a?(Hash)
-          raise TypeError, "Query result is not a Hash"
-        end
-
-        if query_result[:status_code] == 34
-          raise TMDB::QueryError,
-            "TMDB could not find a movie with ID #{tmdb_id}"
-        end
-      end
     end
   end
 end
