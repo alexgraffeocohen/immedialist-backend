@@ -41,7 +41,7 @@ module Immedialist
           raise TypeError, "Query result is not a Hash"
         end
 
-        if query_result["status_code"] == 34
+        if query_result[:status_code] == 34
           raise TMDB::QueryError,
             "TMDB could not find a movie with ID #{tmdb_id}"
         end
