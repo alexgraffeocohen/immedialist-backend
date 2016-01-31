@@ -33,7 +33,9 @@ class UpdateItem::Creator < UpdateItem
       movie_in_db = media_class.find_by(tmdb_id: tmdb_movie.tmdb_id)
 
       if movie_in_db
-        item.send(join_model_name).find_or_create_by!(movie: movie_in_db)
+        item.send(join_model_name).find_or_create_by!(
+          media_class.name.downcase => movie_in_db
+        )
       else
         item.send(association_name) << media_class.create!(tmdb_movie.attributes)
       end
