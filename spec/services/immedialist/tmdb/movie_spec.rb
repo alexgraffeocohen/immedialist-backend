@@ -273,9 +273,9 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
       stub_tmdb_api_with_valid_query
     end
 
-    describe "#budget" do
-      it "returns the movie's budget" do
-        expect(tmdb_movie.budget).to eq(63000000)
+    describe "#release_date" do
+      it "returns the movie's release date" do
+        expect(tmdb_movie.release_date).to eq("1999-03-30")
       end
     end
 
