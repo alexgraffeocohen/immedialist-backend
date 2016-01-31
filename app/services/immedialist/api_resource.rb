@@ -20,6 +20,10 @@ module Immedialist
 
     private
 
+    def query_api
+      raise NotImplementedError
+    end
+
     def compare_results_to_api_expectations!
       raise NotImplementedError
     end
