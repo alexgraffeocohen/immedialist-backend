@@ -81,28 +81,41 @@ RSpec.describe "ListItems", type: :request do
 
   context "Updating a ListItem" do
     context "attaching a real item to a ListItem" do
+      let(:list_item_types) {
+        [
+          "movie",
+          "show",
+          # "song",
+          # "album",
+          # "book",
+          "creator"
+        ]
+      }
       let!(:list_item) { FactoryGirl.create(:list_item) }
       let!(:search) { FactoryGirl.create(:search,
                                         list_item: list_item) }
-      let!(:movie) { FactoryGirl.create(:movie) }
 
-      it "updates successfully" do
-        expect(UpdateItem).
-          to receive(:call).
-          with(movie).
-          and_return(movie)
+        it "updates list item successfully" do
+          list_item_types.each do |type|
+            item = FactoryGirl.create(type.to_sym)
 
-        patch "/list_items/#{list_item.id}",
-          { list_item: { item_type: "Movie",
-                         item_id: movie.id } },
-          headers
+            expect(UpdateItem).
+              to receive(:call).
+              with(item).
+              and_return(item)
 
-        expect(response.content_type).to eq("application/json")
-        expect(response).to have_http_status(:ok)
+            patch "/list_items/#{list_item.id}",
+              { list_item: { item_type: type.capitalize,
+                             item_id: item.id } },
+                             headers
 
-        list_item.reload
+            expect(response.content_type).to eq("application/json")
+            expect(response).to have_http_status(:ok)
 
-        expect(list_item.item).to eq(movie)
+            list_item.reload
+
+            expect(list_item.item).to eq(item)
+        end
       end
     end
   end
