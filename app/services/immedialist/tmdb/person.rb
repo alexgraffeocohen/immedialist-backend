@@ -19,6 +19,12 @@ module Immedialist
         }
       end
 
+      def shows_acted_in
+        tv_credits.map { |credit_attributes|
+          Immedialist::TMDB::Show.new(credit_attributes.slice("name", "id"))
+        }
+      end
+
       private
 
       def active_attributes
@@ -44,6 +50,12 @@ module Immedialist
       def movie_credits
         person_credits["cast"].select { |cast_attributes|
           cast_attributes["media_type"] == "movie"
+        }
+      end
+
+      def tv_credits
+        person_credits["cast"].select { |cast_attributes|
+          cast_attributes["media_type"] == "tv"
         }
       end
     end
