@@ -15,6 +15,7 @@ RSpec.describe UpdateItem::Creator, type: :service do
     let(:tmdb_person) {
       instance_double(Immedialist::TMDB::Person,
                       attributes: {date_of_birth: "1960-11-10"},
+                      movies_directed: [],
                       movies_acted_in: [],
                      )
     }
@@ -30,6 +31,7 @@ RSpec.describe UpdateItem::Creator, type: :service do
       let(:tmdb_person) {
         instance_double(Immedialist::TMDB::Person,
                         attributes: {date_of_birth: "1960-11-10"},
+                        movies_directed: [],
                         movies_acted_in: [
                           instance_double(
                             Immedialist::TMDB::Movie,
@@ -79,6 +81,65 @@ RSpec.describe UpdateItem::Creator, type: :service do
 
           expect { UpdateItem::Creator.call(creator) }.
             to change { creator.movies_acted_in.count }.
+            by(0)
+        end
+      end
+    end
+
+    context "movies directed" do
+      let(:tmdb_person) {
+        instance_double(Immedialist::TMDB::Person,
+                        attributes: {date_of_birth: "1960-11-10"},
+                        movies_directed: [
+                          instance_double(
+                            Immedialist::TMDB::Movie,
+                            attributes: {
+                              name: "Interstellar",
+                              tmdb_id: 1234,
+                            },
+                            tmdb_id: 1234
+                          )
+                        ],
+                        movies_acted_in: [])
+      }
+
+      context "associated movies do not exist in database" do
+        it "persists associated movies" do
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { Movie.count }.
+            by(1)
+        end
+      end
+
+      context "associated movies do exist in database" do
+        it "finds the associated movies" do
+          FactoryGirl.create(:movie, tmdb_id: 1234)
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { Movie.count }.
+            by(0)
+        end
+      end
+
+      context "creator does not have the movie associated yet" do
+        it "associates the movie with the creator" do
+          creator.movies_directed = []
+          creator.save!
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { creator.movies_directed.count }.
+            by(1)
+          expect(creator.movies_directed.first.name).to eq("Interstellar")
+        end
+      end
+
+      context "creator does have the movies associated already" do
+        it "does not try to associate the movie with the creator" do
+          creator.movies_directed << FactoryGirl.create(:movie, tmdb_id: 1234)
+          creator.save!
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { creator.movies_directed.count }.
             by(0)
         end
       end
