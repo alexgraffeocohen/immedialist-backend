@@ -14,6 +14,7 @@ class UpdateItem::Creator < UpdateItem
     item.assign_attributes(tmdb_person.attributes)
     update_movies_acted_in! if tmdb_person.movies_acted_in.present?
     update_movies_directed! if tmdb_person.movies_directed.present?
+    update_shows_acted_in!  if tmdb_person.shows_acted_in.present?
   end
 
   def tmdb_person
@@ -26,6 +27,10 @@ class UpdateItem::Creator < UpdateItem
 
   def update_movies_directed!
     update_tmdb_association!(::Movie, :movie_directors, :movies_directed)
+  end
+
+  def update_shows_acted_in!
+    update_tmdb_association!(::Show, :show_actors, :shows_acted_in)
   end
 
   def update_tmdb_association!(media_class, join_model_name, association_name)
