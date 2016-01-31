@@ -133,7 +133,7 @@ RSpec.describe Immedialist::TMDB::Show, type: :service do
       end
 
       it "sets basic attributes on each object" do
-        expect(tmdb_show.actors.first.attributes).to eq({
+        expect(tmdb_show.actors.first.attributes).to include({
           name: "Bryan Cranston",
           id: 17419
         })

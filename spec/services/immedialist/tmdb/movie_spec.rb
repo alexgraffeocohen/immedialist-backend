@@ -210,7 +210,7 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
       end
 
       it "sets basic attributes on each object" do
-        expect(tmdb_movie.actors.first.attributes).to eq({
+        expect(tmdb_movie.actors.first.attributes).to include({
           name: "Kevin Conroy",
           id: 34947
         })
@@ -241,7 +241,7 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
       end
 
       it "sets basic attributes on each object" do
-        expect(tmdb_movie.directors.first.attributes).to eq({
+        expect(tmdb_movie.directors.first.attributes).to include({
           name: "Sam Liu",
           id: 90367
         })
