@@ -21,25 +21,21 @@ class UpdateItem::Creator < UpdateItem
   end
 
   def update_movies_acted_in!
-    tmdb_person.movies_acted_in.each do |tmdb_movie|
-      movie_in_db = ::Movie.find_by(tmdb_id: tmdb_movie.tmdb_id)
-
-      if movie_in_db
-        item.movie_actors.find_or_create_by!(movie: movie_in_db)
-      else
-        item.movies_acted_in << ::Movie.create!(tmdb_movie.attributes)
-      end
-    end
+    update_tmdb_association!(::Movie, :movie_actors, :movies_acted_in)
   end
 
   def update_movies_directed!
-    tmdb_person.movies_directed.each do |tmdb_movie|
-      movie_in_db = ::Movie.find_by(tmdb_id: tmdb_movie.tmdb_id)
+    update_tmdb_association!(::Movie, :movie_directors, :movies_directed)
+  end
+
+  def update_tmdb_association!(media_class, join_model_name, association_name)
+    tmdb_person.send(association_name).each do |tmdb_movie|
+      movie_in_db = media_class.find_by(tmdb_id: tmdb_movie.tmdb_id)
 
       if movie_in_db
-        item.movie_directors.find_or_create_by!(movie: movie_in_db)
+        item.send(join_model_name).find_or_create_by!(movie: movie_in_db)
       else
-        item.movies_directed << ::Movie.create!(tmdb_movie.attributes)
+        item.send(association_name) << media_class.create!(tmdb_movie.attributes)
       end
     end
   end
