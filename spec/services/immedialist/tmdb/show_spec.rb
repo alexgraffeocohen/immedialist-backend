@@ -135,7 +135,7 @@ RSpec.describe Immedialist::TMDB::Show, type: :service do
       it "sets basic attributes on each object" do
         expect(tmdb_show.actors.first.attributes).to include({
           name: "Bryan Cranston",
-          id: 17419
+          tmdb_id: 17419
         })
       end
     end

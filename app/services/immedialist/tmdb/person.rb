@@ -5,7 +5,7 @@ module Immedialist
 
       def active_attributes
         [
-          :id,
+          :tmdb_id,
           :name
         ]
       end
