@@ -166,6 +166,39 @@ RSpec.describe Immedialist::TMDB::Person, type: :service do
     end
   end
 
+  describe "#movies_directed" do
+    context "person credits query returns expected data structure" do
+      before(:each) do
+        stub_person_query_with_valid_response
+        stub_credits_query_with_valid_response
+      end
+
+      it "retuns Immedialist::TMDB::Movie objects" do
+        expect(tmdb_person.movies_directed.map(&:class).uniq.first).
+          to eq(Immedialist::TMDB::Movie)
+      end
+
+      it "sets basic attributes on each object" do
+        expect(tmdb_person.movies_directed.first.attributes).to include({
+          # Angelina Jolie actually directed this, I was too lazy to
+          # swap Brad for Angelina >_<
+          title: "Africa",
+          tmdb_id: 327437
+        })
+      end
+    end
+
+    context "person credits query does not return expected data structure" do
+      it "raises a TMDB::QueryError" do
+        stub_person_query_with_valid_response
+        stub_credits_query_with_invalid_response
+
+        expect { tmdb_person.movies_directed }.
+          to raise_error(Immedialist::TMDB::QueryError)
+      end
+    end
+  end
+
   describe "#attributes" do
     it "returns a hash of its attributes" do
       stub_person_query_with_valid_response

@@ -25,6 +25,14 @@ module Immedialist
         }
       end
 
+      def movies_directed
+        director_jobs.map { |director_job_attributes|
+          Immedialist::TMDB::Movie.new(
+            director_job_attributes.slice("title", "id")
+          )
+        }
+      end
+
       private
 
       def active_attributes
@@ -56,6 +64,13 @@ module Immedialist
       def tv_credits
         person_credits["cast"].select { |cast_attributes|
           cast_attributes["media_type"] == "tv"
+        }
+      end
+
+      def director_jobs
+        person_credits["crew"].select { |crew_attributes|
+          crew_attributes["media_type"] == "movie" &&
+            crew_attributes["job"] == "Director"
         }
       end
     end

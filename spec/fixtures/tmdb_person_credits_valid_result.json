@@ -29,6 +29,18 @@
       "poster_path":"/kb3X943WMIJYVg4SOAyK0pmWL5D.jpg",
       "release_date":"2013-10-18",
       "title":"12 Years a Slave",
+      "media_type":"movie"
+    },
+    // Angelina Jolie actually directed this one
+    {"adult":false,
+      "credit_id":"54ef5bd0c3a3686b9a003e87",
+      "department":"Directing",
+      "id":327437,
+      "job":"Director",
+      "original_title":"Africa",
+      "poster_path":null,
+      "release_date":"2016-01-01",
+      "title":"Africa",
       "media_type":"movie"}
   ]
 }
