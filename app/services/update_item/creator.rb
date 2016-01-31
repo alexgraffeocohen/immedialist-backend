@@ -42,7 +42,8 @@ class UpdateItem::Creator < UpdateItem
           media_class.name.downcase => movie_in_db
         )
       else
-        item.send(association_name) << media_class.create!(tmdb_movie.attributes)
+        item.send(association_name) << media_class.
+          create!(tmdb_movie.attributes)
       end
     end
   end
