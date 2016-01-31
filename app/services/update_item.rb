@@ -47,14 +47,14 @@ class UpdateItem
     join_model_name = "#{item.class.name.downcase}_#{association_name}"
 
     api_resource.send(association_name).each do |association_record|
-      db_record = Creator.find_by(
+      db_record = ::Creator.find_by(
         api_identifier => association_record.send(api_identifier)
       )
 
       if db_record
         item.send(join_model_name).find_or_create_by!(creator: db_record)
       else
-        item.send(association_name) << Creator.create!(association_record.attributes)
+        item.send(association_name) << ::Creator.create!(association_record.attributes)
       end
     end
   end
