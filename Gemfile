@@ -36,7 +36,7 @@ group :production do
 end
 
 gem 'devise'
-gem 'themoviedb'
+gem 'themoviedb', '0.1.0'
 gem 'rottentomatoes'
 gem 'figaro', git: 'https://github.com/laserlemon/figaro.git'
 gem 'vacuum'
