@@ -27,7 +27,6 @@ group :test do
   gem 'vcr'
   gem 'webmock'
   gem 'shoulda-matchers', '~> 2.8.0', require: false
-  gem 'connection_pool'
 end
 
 group :production do

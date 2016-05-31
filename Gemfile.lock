@@ -70,7 +70,6 @@ GEM
     cliver (0.3.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
-    connection_pool (2.2.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.5.3)
@@ -275,7 +274,6 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.8.3)
   capybara
-  connection_pool
   database_cleaner
   devise
   factory_girl_rails
