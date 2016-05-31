@@ -34,7 +34,6 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Helpers
   config.include Immedialist
-  config.include WaitForAjax
 
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
