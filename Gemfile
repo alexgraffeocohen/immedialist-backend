@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.6'
 gem 'uglifier', '>= 1.3.0'
 gem 'active_model_serializers', '~> 0.8.3'
 gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -27,7 +27,7 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers', '~> 2.8.0', require: false
   gem 'connection_pool'
 end
 
@@ -37,9 +37,9 @@ end
 
 gem 'devise'
 gem 'themoviedb', '0.1.0'
-gem 'rottentomatoes'
+gem 'rottentomatoes', '~> 1.1.3'
 gem 'figaro', git: 'https://github.com/laserlemon/figaro.git'
 gem 'vacuum'
 gem 'goodreads', git: 'https://github.com/heliostatic/goodreads.git'
-gem 'rspotify'
+gem 'rspotify', '~> 1.18.0'
 gem 'typhoeus'
