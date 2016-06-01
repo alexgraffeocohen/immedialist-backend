@@ -45,7 +45,7 @@ module Immedialist
 
       def compare_results_to_api_expectations!
         if !query_result.is_a?(PatchedOpenStruct)
-          raise TypeError, "Query result is not a PatchedOpenStruct"
+          raise TypeError, "Query result is not a PatchedOpenStruct. It is a #{query_result.class}"
         end
 
         if query_result.error.present?

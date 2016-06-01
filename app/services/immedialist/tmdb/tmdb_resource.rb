@@ -38,7 +38,7 @@ module Immedialist
 
       def compare_results_to_api_expectations!
         if !query_result.is_a?(Hash)
-          raise TypeError, "Query result is not a Hash"
+          raise TypeError, "Query result is not a Hash. It is a #{query_result.class}"
         end
 
         if query_result[:status_code] == 34

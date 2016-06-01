@@ -71,7 +71,7 @@ module Immedialist
 
       def compare_results_to_api_expectations!
         if !query_result.is_a?(RSpotify::Track)
-          raise TypeError, "Query result is not a RSpotify::Track"
+          raise TypeError, "Query result is not an RSpotify::Track. It is a #{query_result.class}"
         end
       end
     end

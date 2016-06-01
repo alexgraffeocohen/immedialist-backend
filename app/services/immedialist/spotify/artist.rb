@@ -60,7 +60,7 @@ module Immedialist
 
       def compare_results_to_api_expectations!
         if !query_result.is_a?(RSpotify::Artist)
-          raise TypeError, "Query result is not an RSpotify::Artist"
+          raise TypeError, "Query result is not an RSpotify::Artist. It is a #{query_result.class}"
         end
       end
     end
