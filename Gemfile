@@ -16,6 +16,8 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'pry'
   gem 'puma'
+  gem 'guard-rspec'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
 end
 
 group :development do
