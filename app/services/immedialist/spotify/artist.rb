@@ -4,6 +4,8 @@ module Immedialist
       attr_reader :spotify_id
 
       def self.search(artist_name)
+        # FIXME: the returned instances cannot have #albums called on them
+        # until #find is called. this is because #api_object is not set.
         RSpotify::Artist.search(artist_name).
           map(&:as_json).
           map do |artist_attributes|
@@ -31,7 +33,7 @@ module Immedialist
       end
 
       def albums
-        # requesting albums requires an extra internet request
+        @albums ||= download_albums
       end
 
       private
@@ -56,6 +58,20 @@ module Immedialist
           :name,
           :spotify_id,
         ]
+      end
+
+      def download_albums
+        # FIXME: this method blows up if api_object is nil, which can happen
+        # with instances returned from .search,
+        # Immedialist::Spotify::Song#artists, or
+        # Immedialist::Spotify::Album#artists.
+
+        # This will cause a separate API request
+        api_object.albums.
+          map(&:as_json).
+          map do |album|
+            Immedialist::Spotify::Album.new(album)
+          end
       end
 
       def compare_results_to_api_expectations!

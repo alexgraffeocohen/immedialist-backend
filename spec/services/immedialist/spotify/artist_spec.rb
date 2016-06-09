@@ -95,4 +95,34 @@ RSpec.describe Immedialist::Spotify::Artist, type: :service do
         to eq(spotify_artist.send(:active_attributes))
     end
   end
+
+  describe "#albums" do
+    let(:album) {
+      Immedialist::Spotify::Album.new(id: "test", name: "Boxer")
+    }
+
+    context "albums have not already been downloaded" do
+      it "makes a Spotify API request and returns the artist's albums" do
+        stub_spotify_api_with_valid_query
+        expect(spotify_artist).to receive(:download_albums).
+          and_return([album])
+
+        expect(spotify_artist.albums).to match_array([album])
+      end
+    end
+
+    context "albums have already been downloaded" do
+      it "does not make a Spotify API request" do
+        stub_spotify_api_with_valid_query
+        expect(spotify_artist).to receive(:download_albums).
+          and_return([album])
+
+        spotify_artist.albums
+
+        expect(spotify_artist).to_not receive(:download_albums)
+
+        expect(spotify_artist.albums).to match_array([album])
+      end
+    end
+  end
 end
