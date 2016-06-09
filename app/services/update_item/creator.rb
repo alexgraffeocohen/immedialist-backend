@@ -18,7 +18,7 @@ class UpdateItem::Creator < UpdateItem
   end
 
   def tmdb_person
-    @tmdb_show ||= Immedialist::TMDB::Person.find(item.tmdb_id)
+    @tmdb_person ||= Immedialist::TMDB::Person.find(item.tmdb_id)
   end
 
   def update_movies_acted_in!
