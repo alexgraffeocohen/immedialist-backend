@@ -57,6 +57,7 @@ module Immedialist
         [
           :name,
           :spotify_id,
+          :genres
         ]
       end
 
