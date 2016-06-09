@@ -36,11 +36,11 @@ module Immedialist
 
       private
 
-      attr_reader :query_result
+      attr_reader :api_object, :query_result
 
       def query_api
         begin
-          @query_result = RSpotify::Artist.find(spotify_id)
+          @api_object = RSpotify::Artist.find(spotify_id)
           compare_results_to_api_expectations!
         rescue RestClient::ResourceNotFound
           raise Spotify::ResourceNotFound, "Couldn't find Artist with ID #{spotify_id}"
@@ -48,7 +48,7 @@ module Immedialist
       end
 
       def sanitize_result
-        @query_result = query_result.as_json.deep_symbolize_keys
+        @query_result = api_object.as_json.deep_symbolize_keys
       end
 
       def active_attributes
@@ -59,7 +59,7 @@ module Immedialist
       end
 
       def compare_results_to_api_expectations!
-        if !query_result.is_a?(RSpotify::Artist)
+        if !api_object.is_a?(RSpotify::Artist)
           raise TypeError, "Query result is not an RSpotify::Artist. It is a #{query_result.class}"
         end
       end
