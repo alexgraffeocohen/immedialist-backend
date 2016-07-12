@@ -37,7 +37,7 @@ RSpec.describe UpdateItem::Movie, type: :service do
       UpdateItem::Movie.call(movie)
 
       movie.reload
-      expect(movie.critics_score).to_not be_nil
+      expect(movie.critics_score).to eq(85)
       expect(movie.imdb_id).to eq("1234")
     end
   end
