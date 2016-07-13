@@ -80,6 +80,22 @@ RSpec.describe Immedialist::RottenTomatoes::Movie, type: :service do
         audience_score: 70
       })
     end
+
+    it "returns keys that are Movie table columns" do
+      expect(RottenTomatoes::RottenMovie).
+        to receive(:find).
+        and_return(valid_query_result)
+
+      movie_class_attributes = Movie.
+        column_names.
+        map(&:downcase).
+        map(&:to_sym)
+
+      rotten_tomatoes_movie.attributes.keys.each do |key|
+        expect(movie_class_attributes.include?(key)).to be_truthy,
+          "#{key} is not a Movie column name"
+      end
+    end
   end
 
   context "attribute methods" do
