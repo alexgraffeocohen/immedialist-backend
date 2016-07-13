@@ -20,3 +20,5 @@
 
 # Ignore dev notes
 /notes
+
+/.byebug_history
