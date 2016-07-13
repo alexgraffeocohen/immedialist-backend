@@ -14,7 +14,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'simplecov'
   gem 'database_cleaner'
-  gem 'pry'
+  gem 'byebug'
   gem 'puma'
   gem 'guard-rspec'
   gem 'rb-fsevent' if `uname` =~ /Darwin/

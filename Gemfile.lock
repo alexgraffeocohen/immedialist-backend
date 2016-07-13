@@ -60,6 +60,7 @@ GEM
     arel (6.0.3)
     bcrypt (3.1.11)
     builder (3.2.2)
+    byebug (9.0.5)
     capybara (2.7.1)
       addressable
       mime-types (>= 1.16)
@@ -303,6 +304,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.8.3)
+  byebug
   capybara
   database_cleaner
   devise
@@ -313,7 +315,6 @@ DEPENDENCIES
   guard-rspec
   pg
   poltergeist
-  pry
   puma
   rails (= 4.2.6)
   rails_12factor
