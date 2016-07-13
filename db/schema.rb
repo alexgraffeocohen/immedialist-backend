@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160712031443) do
+ActiveRecord::Schema.define(version: 20160713214641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -250,18 +250,21 @@ ActiveRecord::Schema.define(version: 20160712031443) do
 
   create_table "shows", force: :cascade do |t|
     t.string   "name"
-    t.string   "creator"
-    t.integer  "episode_length"
     t.date     "first_air_date"
     t.date     "last_air_date"
     t.string   "status"
-    t.integer  "seasons_count"
-    t.integer  "episodes_count"
+    t.integer  "number_of_seasons"
+    t.integer  "number_of_episodes"
     t.integer  "tmdb_id"
     t.text     "overview"
     t.integer  "imdb_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "episode_run_time",   default: [], array: true
+    t.string   "homepage"
+    t.boolean  "in_production"
+    t.string   "original_language"
+    t.string   "poster_link"
   end
 
   create_table "song_searches", force: :cascade do |t|
