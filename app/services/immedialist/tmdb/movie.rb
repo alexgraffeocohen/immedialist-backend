@@ -27,6 +27,19 @@ module Immedialist
         query_result[:imdb_id].gsub(/\D/,"") if query_result[:imdb_id]
       end
 
+      def poster_link
+        poster_path = query_result[:poster_path]
+        "https://image.tmdb.org/t/p/original#{poster_path}"
+      end
+
+      def release_status
+        query_result[:status]
+      end
+
+      def name
+        query_result[:title]
+      end
+
       private
 
       def query_api
@@ -49,10 +62,10 @@ module Immedialist
           :release_date,
           :revenue,
           :runtime,
-          :status,
-          :title,
+          :release_status,
+          :name,
           :tmdb_id,
-          :tmdb_poster_path,
+          :poster_link,
         ]
       end
 

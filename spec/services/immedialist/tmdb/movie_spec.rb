@@ -266,6 +266,19 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
       expect(tmdb_movie.attributes.keys).
         to eq(tmdb_movie.send(:active_attributes))
     end
+
+    it "returns keys that are Movie table columns" do
+      stub_tmdb_api_with_valid_query
+      movie_class_attributes = Movie.
+        column_names.
+        map(&:downcase).
+        map(&:to_sym)
+
+      tmdb_movie.attributes.keys.each do |key|
+        expect(movie_class_attributes.include?(key)).to be_truthy,
+          "#{key} is not a Movie column name"
+      end
+    end
   end
 
   context "attribute methods" do
@@ -282,6 +295,25 @@ RSpec.describe Immedialist::TMDB::Movie, type: :service do
     describe "#imdb_id" do
       it "returns the imdb id stripped of letters" do
         expect(tmdb_movie.imdb_id).to eq("0133093")
+      end
+    end
+
+    describe "#poster_link" do
+      it "returns fully qualified link for poster" do
+        expect(tmdb_movie.poster_link).
+          to eq("https://image.tmdb.org/t/p/original/lZpWprJqbIFpEV5uoHfoK0KCnTW.jpg")
+      end
+    end
+
+    describe "#release_status" do
+      it "returns status from TMDB" do
+        expect(tmdb_movie.release_status).to eq("Released")
+      end
+    end
+
+    describe "#name" do
+      it "returns title from TMDB" do
+        expect(tmdb_movie.name).to eq("The Matrix")
       end
     end
   end

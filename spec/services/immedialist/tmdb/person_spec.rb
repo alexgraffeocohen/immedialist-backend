@@ -118,7 +118,7 @@ RSpec.describe Immedialist::TMDB::Person, type: :service do
 
       it "sets basic attributes on each object" do
         expect(tmdb_person.movies_acted_in.first.attributes).to include({
-          title: "The Curious Case of Benjamin Button",
+          name: "The Curious Case of Benjamin Button",
           tmdb_id: 4922
         })
       end
@@ -182,7 +182,7 @@ RSpec.describe Immedialist::TMDB::Person, type: :service do
         expect(tmdb_person.movies_directed.first.attributes).to include({
           # Angelina Jolie actually directed this, I was too lazy to
           # swap Brad for Angelina >_<
-          title: "Africa",
+          name: "Africa",
           tmdb_id: 327437
         })
       end
