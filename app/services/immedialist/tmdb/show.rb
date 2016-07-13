@@ -15,6 +15,11 @@ module Immedialist
         end
       end
 
+      def poster_link
+        poster_path = query_result[:poster_path]
+        "https://image.tmdb.org/t/p/original#{poster_path}"
+      end
+
       private
 
       def query_api
@@ -37,14 +42,12 @@ module Immedialist
           :in_production,
           :last_air_date,
           :name,
-          :networks,
+          # :networks,
           :number_of_episodes,
           :number_of_seasons,
-          :origin_country,
           :original_language,
           :overview,
-          :poster_path,
-          :production_companies,
+          :poster_link,
           :status
         ]
       end

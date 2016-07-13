@@ -158,6 +158,19 @@ RSpec.describe Immedialist::TMDB::Show, type: :service do
       expect(tmdb_show.attributes.keys).
         to eq(tmdb_show.send(:active_attributes))
     end
+
+    it "returns keys that are Show table columns" do
+      stub_show_query_with_valid_response
+      show_class_attributes = Show.
+        column_names.
+        map(&:downcase).
+        map(&:to_sym)
+
+      tmdb_show.attributes.keys.each do |key|
+        expect(show_class_attributes.include?(key)).to be_truthy,
+          "#{key} is not a Show column name"
+      end
+    end
   end
 
   context "attribute methods" do
@@ -168,6 +181,13 @@ RSpec.describe Immedialist::TMDB::Show, type: :service do
     describe "#number_of_seasons" do
       it "returns the show's number of seasons" do
         expect(tmdb_show.number_of_seasons).to eq(5)
+      end
+    end
+
+    describe "#poster_link" do
+      it "returns fully qualified link for poster" do
+        expect(tmdb_show.poster_link).
+          to eq("https://image.tmdb.org/t/p/original/1yeVJox3rjo2jBKrrihIMj7uoS9.jpg")
       end
     end
   end
