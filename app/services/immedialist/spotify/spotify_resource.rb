@@ -3,6 +3,14 @@ module Immedialist
     class SpotifyResource < APIResource
       attr_reader :spotify_id
 
+      def self.search(resource_name, rspotify_class)
+        rspotify_class.search(resource_name).
+          map(&:as_json).
+          map do |resource_attributes|
+            new(resource_attributes)
+          end
+      end
+
       def initialize(attributes)
         @query_result = attributes.symbolize_keys
         @spotify_id = @query_result[:id]

@@ -2,11 +2,7 @@ module Immedialist
   module Spotify
     class Album < SpotifyResource
       def self.search(album_name)
-        RSpotify::Album.search(album_name).
-          map(&:as_json).
-          map do |album_attributes|
-            new(album_attributes)
-          end
+        super(album_name, RSpotify::Album)
       end
 
       def artists

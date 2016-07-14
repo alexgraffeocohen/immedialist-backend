@@ -4,11 +4,7 @@ module Immedialist
       def self.search(artist_name)
         # FIXME: the returned instances cannot have #albums called on them
         # until #find is called. this is because #api_object is not set.
-        RSpotify::Artist.search(artist_name).
-          map(&:as_json).
-          map do |artist_attributes|
-            new(artist_attributes)
-          end
+        super(artist_name, RSpotify::Artist)
       end
 
       def albums
