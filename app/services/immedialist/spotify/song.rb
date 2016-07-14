@@ -36,7 +36,7 @@ module Immedialist
       end
 
       def sanitize_result
-        @query_result = api_object.as_json.symbolize_keys
+        @query_result = api_object.as_json.deep_symbolize_keys
       end
 
       def active_attributes

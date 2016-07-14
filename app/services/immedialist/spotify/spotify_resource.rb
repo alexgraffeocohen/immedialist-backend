@@ -23,7 +23,7 @@ module Immedialist
       end
 
       def spotify_url
-        query_result[:external_urls]["spotify"]
+        query_result[:external_urls][:spotify]
       end
 
       def spotify_popularity
