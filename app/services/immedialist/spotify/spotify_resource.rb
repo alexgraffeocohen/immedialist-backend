@@ -55,6 +55,12 @@ module Immedialist
       def sanitize_result
         @query_result = api_object.as_json.deep_symbolize_keys
       end
+
+      def compare_results_to_api_expectations!
+        if !api_object.is_a?(rspotify_class)
+          raise TypeError, "Query result is not an #{rspotify_class}. It is a #{query_result.class}"
+        end
+      end
     end
   end
 end

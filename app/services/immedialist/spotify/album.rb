@@ -47,12 +47,6 @@ module Immedialist
           :spotify_popularity
         ]
       end
-
-      def compare_results_to_api_expectations!
-        if !api_object.is_a?(RSpotify::Album)
-          raise TypeError, "Query result is not an RSpotify::Album. It is a #{query_result.class}"
-        end
-      end
     end
   end
 end
