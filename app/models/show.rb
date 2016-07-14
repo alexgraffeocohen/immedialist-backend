@@ -1,4 +1,6 @@
 class Show < ActiveRecord::Base
+  has_many :creators, through: :show_creators # created_by collection from TMDB
+  has_many :show_creators
   has_many :directors, through: :show_directors, source: :creator
   has_many :show_directors
   has_many :actors, through: :show_actors, source: :creator

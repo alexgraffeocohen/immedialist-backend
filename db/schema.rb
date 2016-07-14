@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160713214641) do
+ActiveRecord::Schema.define(version: 20160713235546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -226,6 +226,16 @@ ActiveRecord::Schema.define(version: 20160713214641) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "show_creators", force: :cascade do |t|
+    t.integer  "show_id",    null: false
+    t.integer  "creator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "show_creators", ["creator_id"], name: "index_show_creators_on_creator_id", using: :btree
+  add_index "show_creators", ["show_id"], name: "index_show_creators_on_show_id", using: :btree
 
   create_table "show_directors", force: :cascade do |t|
     t.integer  "show_id"
