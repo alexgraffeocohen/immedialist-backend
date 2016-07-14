@@ -34,6 +34,22 @@ module Immedialist
 
       attr_reader :query_result, :api_object
 
+      def rspotify_class_name
+        raise NotImplementedError
+      end
+
+      def query_api
+        rspotify_class = "RSpotify::#{rspotify_class_name}".constantize
+
+        begin
+          @api_object = rspotify_class.find(spotify_id)
+          compare_results_to_api_expectations!
+        rescue RestClient::ResourceNotFound
+          raise Spotify::ResourceNotFound,
+            "Couldn't find #{rspotify_class} with ID #{spotify_id}"
+        end
+      end
+
       def sanitize_result
         @query_result = api_object.as_json.deep_symbolize_keys
       end

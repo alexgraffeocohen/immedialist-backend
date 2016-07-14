@@ -25,14 +25,8 @@ module Immedialist
 
       private
 
-      def query_api
-        begin
-          @api_object = RSpotify::Track.find(spotify_id)
-          compare_results_to_api_expectations!
-        rescue RestClient::ResourceNotFound
-          raise Spotify::ResourceNotFound,
-            "Couldn't find Song with ID #{spotify_id}"
-        end
+      def rspotify_class_name
+        "Track"
       end
 
       def active_attributes

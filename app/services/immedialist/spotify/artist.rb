@@ -17,13 +17,8 @@ module Immedialist
 
       private
 
-      def query_api
-        begin
-          @api_object = RSpotify::Artist.find(spotify_id)
-          compare_results_to_api_expectations!
-        rescue RestClient::ResourceNotFound
-          raise Spotify::ResourceNotFound, "Couldn't find Artist with ID #{spotify_id}"
-        end
+      def rspotify_class_name
+        "Artist"
       end
 
       def active_attributes
