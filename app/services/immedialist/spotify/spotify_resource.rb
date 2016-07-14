@@ -33,6 +33,10 @@ module Immedialist
       private
 
       attr_reader :query_result, :api_object
+
+      def sanitize_result
+        @query_result = api_object.as_json.deep_symbolize_keys
+      end
     end
   end
 end
