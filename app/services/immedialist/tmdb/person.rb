@@ -15,13 +15,17 @@ module Immedialist
 
       def movies_acted_in
         movie_credits.map { |credit_attributes|
-          Immedialist::TMDB::Movie.new(credit_attributes.slice("title", "id"))
+          Immedialist::TMDB::Movie.new(
+            credit_attributes.slice("title", "id")
+          )
         }
       end
 
       def shows_acted_in
         tv_credits.map { |credit_attributes|
-          Immedialist::TMDB::Show.new(credit_attributes.slice("name", "id"))
+          Immedialist::TMDB::Show.new(
+            credit_attributes.slice("name", "id")
+          )
         }
       end
 
