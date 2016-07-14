@@ -1,8 +1,6 @@
 module Immedialist
   module Spotify
-    class Artist < APIResource
-      attr_reader :spotify_id
-
+    class Artist < SpotifyResource
       def self.search(artist_name)
         # FIXME: the returned instances cannot have #albums called on them
         # until #find is called. this is because #api_object is not set.
@@ -13,32 +11,11 @@ module Immedialist
           end
       end
 
-      def initialize(attributes)
-        @query_result = attributes.symbolize_keys
-        @spotify_id = @query_result[:id]
-      end
-
-      def find
-        query_api
-        sanitize_result
-        self
-      end
-
-      def method_missing(method_name)
-        if active_attributes.include?(method_name)
-          return query_result[method_name]
-        else
-          super
-        end
-      end
-
       def albums
         @albums ||= download_albums
       end
 
       private
-
-      attr_reader :api_object, :query_result
 
       def query_api
         begin
