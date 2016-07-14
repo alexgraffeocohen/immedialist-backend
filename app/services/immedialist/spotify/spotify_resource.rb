@@ -32,7 +32,7 @@ module Immedialist
 
       private
 
-      attr_reader :query_result
+      attr_reader :query_result, :api_object
     end
   end
 end

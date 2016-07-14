@@ -35,7 +35,7 @@ module Immedialist
 
       def query_api
         begin
-          @query_result = RSpotify::Album.find(spotify_id)
+          @api_object = RSpotify::Album.find(spotify_id)
           compare_results_to_api_expectations!
         rescue RestClient::ResourceNotFound
           raise Spotify::ResourceNotFound, "Couldn't find Album with ID #{spotify_id}"
@@ -43,7 +43,7 @@ module Immedialist
       end
 
       def sanitize_result
-        @query_result = query_result.as_json.deep_symbolize_keys
+        @query_result = api_object.as_json.deep_symbolize_keys
       end
 
       def active_attributes
@@ -58,7 +58,7 @@ module Immedialist
       end
 
       def compare_results_to_api_expectations!
-        if !query_result.is_a?(RSpotify::Album)
+        if !api_object.is_a?(RSpotify::Album)
           raise TypeError, "Query result is not an RSpotify::Album. It is a #{query_result.class}"
         end
       end
