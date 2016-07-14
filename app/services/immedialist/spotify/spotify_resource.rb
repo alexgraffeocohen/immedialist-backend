@@ -38,9 +38,11 @@ module Immedialist
         raise NotImplementedError
       end
 
-      def query_api
-        rspotify_class = "RSpotify::#{rspotify_class_name}".constantize
+      def rspotify_class
+        "RSpotify::#{rspotify_class_name}".constantize
+      end
 
+      def query_api
         begin
           @api_object = rspotify_class.find(spotify_id)
           compare_results_to_api_expectations!
