@@ -42,12 +42,8 @@ module Immedialist
 
       attr_reader :query_result, :api_object
 
-      def rspotify_class_name
-        raise NotImplementedError
-      end
-
       def rspotify_class
-        "RSpotify::#{rspotify_class_name}".constantize
+        raise NotImplementedError
       end
 
       def query_api

@@ -1,8 +1,10 @@
 module Immedialist
   module Spotify
     class Album < SpotifyResource
+      RSPOTIFY_CLASS = RSpotify::Album
+
       def self.search(album_name)
-        super(album_name, RSpotify::Album)
+        super(album_name, RSPOTIFY_CLASS)
       end
 
       def artists
@@ -29,8 +31,8 @@ module Immedialist
 
       private
 
-      def rspotify_class_name
-        "Album"
+      def rspotify_class
+        RSPOTIFY_CLASS
       end
 
       def active_attributes

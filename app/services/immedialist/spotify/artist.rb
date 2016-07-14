@@ -1,10 +1,12 @@
 module Immedialist
   module Spotify
     class Artist < SpotifyResource
+      RSPOTIFY_CLASS = RSpotify::Artist
+
       def self.search(artist_name)
         # FIXME: the returned instances cannot have #albums called on them
         # until #find is called. this is because #api_object is not set.
-        super(artist_name, RSpotify::Artist)
+        super(artist_name, RSPOTIFY_CLASS)
       end
 
       def albums
@@ -13,8 +15,8 @@ module Immedialist
 
       private
 
-      def rspotify_class_name
-        "Artist"
+      def rspotify_class
+        RSPOTIFY_CLASS
       end
 
       def active_attributes
