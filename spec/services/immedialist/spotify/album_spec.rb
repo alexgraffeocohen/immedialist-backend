@@ -5,6 +5,7 @@ RSpec.describe Immedialist::Spotify::Album, type: :service do
     RSpotify::Album.new(
       'name' => "Boxer",
       'release_date' => "2007-05-21",
+      'popularity' => 90,
       'images' => [
         {
           "height" => 10,
@@ -142,12 +143,33 @@ RSpec.describe Immedialist::Spotify::Album, type: :service do
     end
   end
 
+  describe "#spotify_popularity" do
+    it "returns the song's popularity" do
+      stub_spotify_api_with_valid_query
+
+      expect(spotify_album.spotify_popularity).to eq(90)
+    end
+  end
+
   describe "#attributes" do
     it "returns a hash of its attributes" do
       stub_spotify_api_with_valid_query
 
       expect(spotify_album.attributes.keys).
         to eq(spotify_album.send(:active_attributes))
+    end
+
+    it "returns keys that are Album table columns" do
+      stub_spotify_api_with_valid_query
+      album_class_attributes = Album.
+        column_names.
+        map(&:downcase).
+        map(&:to_sym)
+
+      spotify_album.attributes.keys.each do |key|
+        expect(album_class_attributes.include?(key)).to be_truthy,
+          "#{key} is not an Album column name"
+      end
     end
   end
 end

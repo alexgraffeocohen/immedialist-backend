@@ -52,6 +52,10 @@ module Immedialist
         end
       end
 
+      def spotify_popularity
+        query_result[:popularity]
+      end
+
       private
 
       attr_reader :query_result
@@ -74,7 +78,9 @@ module Immedialist
           :release_date,
           :name,
           :spotify_id,
-          :cover_url
+          :cover_url,
+          :total_tracks,
+          :spotify_popularity
         ]
       end
 
