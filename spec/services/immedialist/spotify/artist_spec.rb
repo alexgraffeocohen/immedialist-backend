@@ -15,14 +15,17 @@ RSpec.describe Immedialist::Spotify::Artist, type: :service do
   }
 
   let(:spotify_id) { "1234" }
-  let(:spotify_artist) { Immedialist::Spotify::Artist.find(spotify_id) }
+  let(:spotify_artist) {
+    Immedialist::Spotify::Artist.find(spotify_id)
+  }
 
   describe ".find" do
     context "valid spotify id is passed" do
       it "returns a Immedialist::Spotify::Artist" do
         stub_spotify_api_with_valid_query
 
-        expect(spotify_artist).to be_a(Immedialist::Spotify::Artist)
+        expect(spotify_artist).
+          to be_a(Immedialist::Spotify::Artist)
       end
     end
 
@@ -35,7 +38,8 @@ RSpec.describe Immedialist::Spotify::Artist, type: :service do
             and_raise(RestClient::ResourceNotFound)
 
           expect { spotify_artist }.
-            to raise_error(Immedialist::Spotify::ResourceNotFound)
+            to raise_error(
+              Immedialist::Spotify::ResourceNotFound)
         end
       end
     end
@@ -82,7 +86,9 @@ RSpec.describe Immedialist::Spotify::Artist, type: :service do
           with("nothing").
           and_return([])
 
-        expect(Immedialist::Spotify::Artist.search("nothing")).to eq([])
+        expect(
+          Immedialist::Spotify::Artist.search("nothing")
+        ).to eq([])
       end
     end
   end
