@@ -13,6 +13,7 @@ RSpec.describe UpdateItem::Show, type: :service do
     let(:tmdb_show) {
       instance_double(Immedialist::TMDB::Show,
                       attributes: {first_air_date: "2008-01-19"},
+                      creators: [],
                       genres: [],
                       actors: [])
     }
@@ -29,6 +30,7 @@ RSpec.describe UpdateItem::Show, type: :service do
     let(:tmdb_show) {
       instance_double(Immedialist::TMDB::Show,
                       attributes: {first_air_date: "2008-01-19"},
+                      creators: [],
                       genres: [
                         Immedialist::TMDB::Genre.new(
                           name: "Action",
@@ -80,6 +82,7 @@ RSpec.describe UpdateItem::Show, type: :service do
     let(:tmdb_show) {
       instance_double(Immedialist::TMDB::Show,
                       attributes: {first_air_date: "2008-01-19"},
+                      creators: [],
                       genres: [],
                       actors: [
                         Immedialist::TMDB::Person.new(
@@ -122,6 +125,55 @@ RSpec.describe UpdateItem::Show, type: :service do
 
         expect { UpdateItem::Show.call(show) }.
           to change { show.actors.count }.
+          by(0)
+      end
+    end
+  end
+
+  context "creators" do
+    let(:tmdb_show) {
+      instance_double(Immedialist::TMDB::Show,
+                      attributes: {first_air_date: "2008-01-19"},
+                      creators: [
+                        {tmdb_id: 1234, name: "Vince Gilligan"}
+                      ],
+                      genres: [],
+                      actors: [])
+    }
+
+    context "show creators do not exist in database" do
+      it "persists show creators" do
+        expect { UpdateItem::Show.call(show) }.
+          to change { Creator.count }.
+          by(1)
+      end
+    end
+
+    context "show creators do exist in databse" do
+      it "does not persist new creator records" do
+        FactoryGirl.create(:creator, tmdb_id: 1234)
+
+        expect { UpdateItem::Show.call(show) }.
+          to change { Creator.count }.
+          by(0)
+      end
+    end
+
+    context "show does not have creator" do
+      it "adds the creator to the show" do
+        expect { UpdateItem::Show.call(show) }.
+          to change { show.creators.count }.
+          by(1)
+        expect(show.creators.first.name).to eq("Vince Gilligan")
+      end
+    end
+
+    context "show does have creator" do
+      it "does not add the creator to the show" do
+        show.creators << FactoryGirl.create(:creator, tmdb_id: 1234)
+
+        expect { UpdateItem::Show.call(show) }.
+          to change { show.creators.count }.
           by(0)
       end
     end

@@ -15,6 +15,16 @@ module Immedialist
         end
       end
 
+      def creators
+        show_creators = query_result[:created_by].map(&:symbolize_keys)
+        show_creators.each do |creator_attributes|
+          creator_attributes.delete(:profile_path)
+          creator_attributes[:tmdb_id] = creator_attributes.delete(:id)
+        end
+
+        show_creators
+      end
+
       def poster_link
         poster_path = query_result[:poster_path]
         "https://image.tmdb.org/t/p/original#{poster_path}"
@@ -34,7 +44,6 @@ module Immedialist
 
       def active_attributes
         [
-          :created_by,
           :episode_run_time,
           :first_air_date,
           :homepage,

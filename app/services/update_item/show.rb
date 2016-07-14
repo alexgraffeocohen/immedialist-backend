@@ -5,6 +5,7 @@ class UpdateItem::Show < UpdateItem
     item.assign_attributes(tmdb_show.attributes)
     update_genres!(tmdb_show, :tmdb_id) if tmdb_show.genres.present?
     update_actors!(tmdb_show, :tmdb_id) if tmdb_show.actors.present?
+    update_creators! if tmdb_show.creators.present?
     item.save!
   end
 
@@ -24,6 +25,22 @@ class UpdateItem::Show < UpdateItem
         item.send(join_model_name).find_or_create_by!(genre: db_record)
       else
         item.genres << Genre.create!(association_record.attributes)
+      end
+    end
+  end
+
+  def update_creators!
+    tmdb_show.creators.each do |creator_attributes|
+      creator_record = ::Creator.find_by(
+        tmdb_id: creator_attributes[:tmdb_id]
+      )
+
+      if creator_record
+        item.
+          show_creators.
+          find_or_create_by!(creator: creator_record)
+      else
+        item.creators << ::Creator.create!(creator_attributes)
       end
     end
   end

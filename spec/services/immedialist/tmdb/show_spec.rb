@@ -173,6 +173,16 @@ RSpec.describe Immedialist::TMDB::Show, type: :service do
     end
   end
 
+  describe "#creators" do
+    it "returns an array of attributes for Creator models" do
+      stub_show_query_with_valid_response
+
+      expect(tmdb_show.creators).to eq([{
+        tmdb_id: 66633, name: "Vince Gilligan"
+      }])
+    end
+  end
+
   context "attribute methods" do
     before(:each) do
       stub_show_query_with_valid_response
