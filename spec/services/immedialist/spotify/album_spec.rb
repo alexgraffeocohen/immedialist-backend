@@ -119,10 +119,8 @@ RSpec.describe Immedialist::Spotify::Album, type: :service do
     it "sets basic attributes on each object" do
       stub_spotify_api_with_valid_query
 
-      expect(spotify_album.songs.first.attributes).to include({
-        name: "Slow Show",
-        spotify_id: 1234
-      })
+      expect(spotify_album.songs.first.name).to eq("Slow Show")
+      expect(spotify_album.spotify_id).to eq("1234")
     end
   end
 

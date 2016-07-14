@@ -40,6 +40,18 @@ module Immedialist
         Immedialist::Spotify::Album.new(query_result[:album])
       end
 
+      def spotify_preview_url
+        query_result[:preview_url]
+      end
+
+      def spotify_url
+        query_result[:external_urls]["spotify"]
+      end
+
+      def spotify_popularity
+        query_result[:popularity]
+      end
+
       private
 
       attr_reader :query_result
@@ -60,12 +72,14 @@ module Immedialist
 
       def active_attributes
         [
-          :duration,
+          :duration_ms,
           :name,
-          :preview_url,
+          :spotify_preview_url,
+          :spotify_url,
           :spotify_id,
           :disc_number,
-          :track_number
+          :track_number,
+          :spotify_popularity
         ]
       end
 

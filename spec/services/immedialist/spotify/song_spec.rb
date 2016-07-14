@@ -5,6 +5,10 @@ RSpec.describe Immedialist::Spotify::Song, type: :service do
     RSpotify::Track.new(
       'name' => "Slow Show",
       'preview_url' => "https://p.scdn.co/mp3-preview/some-code",
+      'popularity' => 90,
+      'external_urls' => {
+        "spotify"=>"https://open.spotify.com/track/2ZO1Y1Bbot1jrdPApAyCV2"
+      },
       'album' => {
         'name' => "Boxer",
         'id' => 1234
@@ -136,14 +140,45 @@ RSpec.describe Immedialist::Spotify::Song, type: :service do
       expect(spotify_song.attributes.keys).
         to eq(spotify_song.send(:active_attributes))
     end
+
+    it "returns keys that are Song table columns" do
+      stub_spotify_api_with_valid_query
+      song_class_attributes = Song.
+        column_names.
+        map(&:downcase).
+        map(&:to_sym)
+
+      spotify_song.attributes.keys.each do |key|
+        expect(song_class_attributes.include?(key)).to be_truthy,
+          "#{key} is not a Song column name"
+      end
+    end
   end
 
-  describe "#preview_url" do
+  describe "#spotify_popularity" do
+    it "returns the song's popularity" do
+      stub_spotify_api_with_valid_query
+
+      expect(spotify_song.spotify_popularity).
+        to eq(90)
+    end
+  end
+
+  describe "#spotify_url" do
+    it "returns the song's url" do
+      stub_spotify_api_with_valid_query
+
+      expect(spotify_song.spotify_url).
+        to eq("https://open.spotify.com/track/2ZO1Y1Bbot1jrdPApAyCV2")
+    end
+  end
+
+  describe "#spotify_preview_url" do
 
     it "returns the song's preview url" do
       stub_spotify_api_with_valid_query
 
-      expect(spotify_song.preview_url).
+      expect(spotify_song.spotify_preview_url).
         to eq("https://p.scdn.co/mp3-preview/some-code")
     end
   end
