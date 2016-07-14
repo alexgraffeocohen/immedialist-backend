@@ -1,33 +1,12 @@
 module Immedialist
   module Spotify
-    class Album < APIResource
-      attr_reader :spotify_id
-
+    class Album < SpotifyResource
       def self.search(album_name)
         RSpotify::Album.search(album_name).
           map(&:as_json).
           map do |album_attributes|
             new(album_attributes)
           end
-      end
-
-      def initialize(attributes)
-        @query_result = attributes.symbolize_keys
-        @spotify_id = @query_result[:id]
-      end
-
-      def find
-        query_api
-        sanitize_result
-        self
-      end
-
-      def method_missing(method_name)
-        if active_attributes.include?(method_name)
-          return query_result[method_name]
-        else
-          super
-        end
       end
 
       def artists
@@ -52,13 +31,7 @@ module Immedialist
         end
       end
 
-      def spotify_popularity
-        query_result[:popularity]
-      end
-
       private
-
-      attr_reader :query_result
 
       def query_api
         begin
