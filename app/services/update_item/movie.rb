@@ -9,22 +9,6 @@ class UpdateItem::Movie < UpdateItem
     item.save!
   end
 
-  def update_genres!(api_resource, api_identifier)
-    join_model_name = "#{item.class.name.downcase}_genres"
-
-    api_resource.genres.each do |association_record|
-      db_record = Genre.find_by(
-        api_identifier => association_record.send(api_identifier)
-      )
-
-      if db_record
-        item.send(join_model_name).find_or_create_by!(genre: db_record)
-      else
-        item.genres << Genre.create!(association_record.attributes)
-      end
-    end
-  end
-
   def updated_attributes
     rotten_tomatoes_movie.attributes.merge(tmdb_movie.attributes)
   end
