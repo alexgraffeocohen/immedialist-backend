@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe UpdateItem::Creator, type: :service do
   context "creator with a tmdb id" do
     let(:creator) {
-      FactoryGirl.create(:creator, date_of_birth: nil, tmdb_id: 1234)
+      FactoryGirl.create(:creator,
+                         date_of_birth: nil,
+                         spotify_id: nil,
+                         tmdb_id: 1234)
     }
 
     before(:each) do
@@ -207,6 +210,43 @@ RSpec.describe UpdateItem::Creator, type: :service do
             by(0)
         end
       end
+    end
+  end
+
+  context "creator with a #spotify_id" do
+    let(:creator) {
+      FactoryGirl.create(
+        :creator,
+        date_of_birth: nil,
+        spotify_id: 1234,
+        tmdb_id: nil
+      )
+    }
+
+    before(:each) do
+      expect(Immedialist::Spotify::Artist).
+        to receive(:find).
+        and_return(spotify_artist)
+    end
+
+    let(:spotify_artist) {
+      instance_double(
+        Immedialist::Spotify::Artist,
+        attributes: {
+          name: "CHVRCHES",
+          spotify_url: "http://spotify.com",
+          spotify_id: 1234,
+        },
+        genres: [],
+        albums: []
+      )
+    }
+
+    it 'saves more Spotify details onto the creator' do
+      UpdateItem::Creator.call(creator)
+
+      creator.reload
+      expect(creator.spotify_url).to eq("http://spotify.com")
     end
   end
 end

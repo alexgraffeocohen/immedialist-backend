@@ -3,6 +3,7 @@ class UpdateItem::Creator < UpdateItem
 
   def update_item!
     sync_with_tmdb! if item.tmdb_id
+    sync_with_spotify! if item.spotify_id
     item.save!
   end
 
@@ -17,8 +18,16 @@ class UpdateItem::Creator < UpdateItem
     update_shows_acted_in!  if tmdb_person.shows_acted_in.present?
   end
 
+  def sync_with_spotify!
+    item.assign_attributes(spotify_artist.attributes)
+  end
+
   def tmdb_person
     @tmdb_person ||= Immedialist::TMDB::Person.find(item.tmdb_id)
+  end
+
+  def spotify_artist
+    @spotify_artist ||= Immedialist::Spotify::Artist.find(item.spotify_id)
   end
 
   def update_movies_acted_in!
