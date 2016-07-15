@@ -20,6 +20,7 @@ class UpdateItem::Creator < UpdateItem
 
   def sync_with_spotify!
     item.assign_attributes(spotify_artist.attributes)
+    update_albums! if spotify_artist.albums.present?
   end
 
   def tmdb_person
@@ -65,6 +66,22 @@ class UpdateItem::Creator < UpdateItem
       else
         item.send(association_name) << media_class.
           create!(tmdb_movie.attributes)
+      end
+    end
+  end
+
+  def update_albums!
+    spotify_artist.albums.each do |spotify_album|
+      album_in_db = Album.find_by(
+        spotify_id: spotify_album.spotify_id
+      )
+
+      if album_in_db
+        item.artist_albums.find_or_create_by!(
+          album: album_in_db
+        )
+      else
+        item.albums << Album.create!(spotify_album.attributes)
       end
     end
   end

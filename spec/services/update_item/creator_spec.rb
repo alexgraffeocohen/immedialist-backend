@@ -248,5 +248,72 @@ RSpec.describe UpdateItem::Creator, type: :service do
       creator.reload
       expect(creator.spotify_url).to eq("http://spotify.com")
     end
+
+    context "albums present on the Spotify::Artist" do
+      let(:spotify_artist) {
+        instance_double(
+          Immedialist::Spotify::Artist,
+          attributes: {
+            name: "CHVRCHES",
+            spotify_url: "http://spotify.com",
+            spotify_id: 1234,
+          },
+          genres: [],
+          albums: [
+            instance_double(
+              Immedialist::Spotify::Album,
+              spotify_id: 5678,
+              attributes: {
+                name: "Every Open Eye"
+              }
+            )
+          ]
+        )
+      }
+
+      context "albums do not exist in database" do
+        it "persists albums" do
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { Album.count }.
+            by(1)
+        end
+      end
+
+      context "albums do exist in database" do
+        it "finds but does not create the albums" do
+          FactoryGirl.create(:album, spotify_id: 5678)
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { Album.count }.
+            by(0)
+        end
+      end
+
+      context "creator does not have albums associated" do
+        it "associates the albums with the creator" do
+          creator.albums = []
+          creator.save!
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { creator.albums.count }.
+            by(1)
+          expect(creator.albums.first.name).
+            to eq("Every Open Eye")
+        end
+      end
+
+      context "creator has the albums associated" do
+        it "does not associate the album with the creator" do
+          creator.albums << FactoryGirl.create(
+            :album, spotify_id: 5678
+          )
+          creator.save!
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { creator.albums.count }.
+            by(0)
+        end
+      end
+    end
   end
 end
