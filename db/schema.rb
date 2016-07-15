@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714024232) do
+ActiveRecord::Schema.define(version: 20160715124655) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20160714024232) do
     t.datetime "updated_at"
     t.integer  "tmdb_id"
     t.integer  "goodreads_id"
+    t.string   "spotify_image_url"
   end
 
   create_table "director_searches", force: :cascade do |t|
