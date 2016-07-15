@@ -65,6 +65,16 @@ module Immedialist
           raise TypeError, "Query result is not an #{rspotify_class}. It is a #{query_result.class}"
         end
       end
+
+      def highest_resolution_image_url
+        images = query_result.fetch(:images)
+
+        if images
+          images.sort { |h, other_h|
+            other_h[:height] <=> h[:height]
+          }.first.fetch(:url)
+        end
+      end
     end
   end
 end

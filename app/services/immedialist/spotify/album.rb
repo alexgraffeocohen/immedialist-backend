@@ -20,13 +20,7 @@ module Immedialist
       end
 
       def cover_url
-        images = query_result.fetch(:images)
-
-        if images
-          images.sort { |h, other_h|
-            other_h[:height] <=> h[:height]
-          }.first.fetch(:url)
-        end
+        highest_resolution_image_url
       end
 
       private
