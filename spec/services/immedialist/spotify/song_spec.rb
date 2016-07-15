@@ -14,7 +14,13 @@ RSpec.describe Immedialist::Spotify::Song, type: :service do
         'id' => 1234
       },
       'artists' => [
-        { 'name' => "The National", 'id' => 34947 }
+        {
+          'name' => "The National",
+          'id' => 34947,
+          'external_urls' => {
+            'spotify' => 'http://spotify.com'
+          }
+        }
       ]
     )
   }

@@ -4,7 +4,21 @@ RSpec.describe Immedialist::Spotify::Artist, type: :service do
   let(:valid_query_result) {
     RSpotify::Artist.new(
       'name' => "The National",
-      'genres' => ['indie']
+      'genres' => ['indie'],
+      'popularity' => 90,
+      'external_urls' => {
+        'spotify' => 'http://spotify.com'
+      },
+      'images' => [
+        {
+          "height" => 10,
+          "url" => "http://google.com"
+        },
+        {
+          "height" => 20,
+          "url" => "http://googleplex.com"
+        }
+      ]
     )
   }
   let(:stub_spotify_api_with_valid_query) {
@@ -99,6 +113,45 @@ RSpec.describe Immedialist::Spotify::Artist, type: :service do
 
       expect(spotify_artist.attributes.keys).
         to eq(spotify_artist.send(:active_attributes))
+    end
+
+    it "returns keys that are Creator table columns" do
+      stub_spotify_api_with_valid_query
+      creator_class_attributes = Creator.
+        column_names.
+        map(&:downcase).
+        map(&:to_sym)
+
+      spotify_artist.attributes.keys.each do |key|
+        expect(creator_class_attributes.include?(key)).
+          to be_truthy, "#{key} is not a Creator column name"
+      end
+    end
+  end
+
+  describe "#spotify_popularity" do
+    it "returns the artist's popularity" do
+      stub_spotify_api_with_valid_query
+
+      expect(spotify_artist.spotify_popularity).to eq(90)
+    end
+  end
+
+  describe "#spotify_url" do
+    it "returns the artist's url on Spotify" do
+      stub_spotify_api_with_valid_query
+
+      expect(spotify_artist.spotify_url).
+        to eq("http://spotify.com")
+    end
+  end
+
+  describe "#spotify_image_url" do
+    it "returns the highest resolution image of artist" do
+      stub_spotify_api_with_valid_query
+
+      expect(spotify_artist.spotify_image_url).
+        to eq("http://googleplex.com")
     end
   end
 

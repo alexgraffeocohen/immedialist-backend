@@ -13,6 +13,14 @@ module Immedialist
         @albums ||= download_albums
       end
 
+      def genres
+        query_result[:genres]
+      end
+
+      def spotify_image_url
+        highest_resolution_image_url
+      end
+
       private
 
       def rspotify_class
@@ -23,7 +31,9 @@ module Immedialist
         [
           :name,
           :spotify_id,
-          :genres
+          :spotify_popularity,
+          :spotify_url,
+          :spotify_image_url
         ]
       end
 
