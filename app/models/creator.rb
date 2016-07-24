@@ -5,7 +5,7 @@ class Creator < ActiveRecord::Base
   has_many :albums, through: :artist_albums, source: :album
   has_many :artist_albums
   has_many :songs, through: :albums
-  has_many :music_genres, through: :artist_genres, source: :genre
+  has_many :music_genres, through: :artist_genres
   has_many :artist_genres
 
   has_many :movies_directed, through: :movie_directors, source: :movie

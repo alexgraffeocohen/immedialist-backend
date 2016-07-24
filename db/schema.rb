@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715124655) do
+ActiveRecord::Schema.define(version: 20160724022527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160715124655) do
 
   create_table "artist_genres", force: :cascade do |t|
     t.integer  "creator_id"
-    t.integer  "genre_id"
+    t.integer  "music_genre_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -205,6 +205,13 @@ ActiveRecord::Schema.define(version: 20160715124655) do
     t.integer  "revenue"
     t.integer  "runtime"
     t.string   "release_status"
+  end
+
+  create_table "music_genres", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "spotify_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "requested_items", force: :cascade do |t|

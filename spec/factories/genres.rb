@@ -8,10 +8,6 @@ FactoryGirl.define do
       name 'Action'
     end
 
-    factory :artist_genre do
-      name 'Indie'
-    end
-
     factory :book_genre do
       name 'Western'
     end

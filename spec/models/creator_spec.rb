@@ -22,8 +22,7 @@ RSpec.describe Creator, :type => :model do
        source(:album) }
   it { should have_many(:songs).through(:albums) }
   it { should have_many(:music_genres).
-       through(:artist_genres).
-       source(:genre) }
+       through(:artist_genres) }
 
   it { should have_many(:books).
        through(:book_authors).
