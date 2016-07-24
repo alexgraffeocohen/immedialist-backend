@@ -21,6 +21,7 @@ class UpdateItem::Creator < UpdateItem
   def sync_with_spotify!
     item.assign_attributes(spotify_artist.attributes)
     update_albums! if spotify_artist.albums.present?
+    update_genres! if spotify_artist.genres.present?
   end
 
   def tmdb_person
@@ -82,6 +83,24 @@ class UpdateItem::Creator < UpdateItem
         )
       else
         item.albums << Album.create!(spotify_album.attributes)
+      end
+    end
+  end
+
+  def update_genres!
+    spotify_artist.genres.each do |spotify_genre|
+      genre_in_db = MusicGenre.find_by(
+        spotify_id: spotify_genre.spotify_id
+      )
+
+      if genre_in_db
+        item.artist_genres.find_or_create_by!(
+          music_genre: genre_in_db
+        )
+      else
+        item.music_genres << MusicGenre.create!(
+          spotify_genre.attributes
+        )
       end
     end
   end

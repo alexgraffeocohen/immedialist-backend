@@ -315,5 +315,70 @@ RSpec.describe UpdateItem::Creator, type: :service do
         end
       end
     end
+
+    context "music genres present on the creator" do
+      let(:spotify_artist) {
+        instance_double(
+          Immedialist::Spotify::Artist,
+          attributes: {
+            name: "CHVRCHES",
+            spotify_url: "http://spotify.com",
+            spotify_id: 1234,
+          },
+          genres: [
+            Immedialist::Spotify::Genre.new("alternative")
+          ],
+          albums: []
+        )
+      }
+
+      context "music genres do not exist in database" do
+        it "persists music genres" do
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { MusicGenre.count }.
+            by(1)
+        end
+      end
+
+      context "music genres do exist in database" do
+        it "does not create another music genre record" do
+          FactoryGirl.create(
+            :music_genre,
+            spotify_id: "alternative"
+          )
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { MusicGenre.count }.
+            by(0)
+        end
+      end
+
+      context "creator does not have music genres associated" do
+        it "associates the music genres with the creator" do
+          creator.music_genres = []
+          creator.save!
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { creator.music_genres.count }.
+            by(1)
+          expect(creator.music_genres.first.name).
+            to eq("Alternative")
+        end
+      end
+
+      context "creator has the music genres associated" do
+        it "does not associate the genres with the creator" do
+          creator.music_genres << FactoryGirl.create(
+            :music_genre,
+            spotify_id: "alternative"
+          )
+          creator.save!
+
+          expect { UpdateItem::Creator.call(creator) }.
+            to change { creator.music_genres.count }.
+            by(0)
+        end
+      end
+    end
   end
 end
