@@ -14,7 +14,9 @@ module Immedialist
       end
 
       def genres
-        query_result[:genres]
+        query_result[:genres].map do |genre_name|
+          Immedialist::Spotify::Genre.new(genre_name)
+        end
       end
 
       def spotify_image_url
