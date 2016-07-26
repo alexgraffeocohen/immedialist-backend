@@ -3,14 +3,22 @@ class UpdateItem::Show < UpdateItem
 
   def update_item!
     item.assign_attributes(tmdb_show.attributes)
-    update_association!(tmdb_show, :tmdb_id, Genre, "show_genres", "genres") if tmdb_show.genres.present?
-    update_association!(tmdb_show, :tmdb_id, ::Creator, "show_actors", "actors") if tmdb_show.actors.present?
+    update_genres! if tmdb_show.genres.present?
+    update_actors! if tmdb_show.actors.present?
     update_creators! if tmdb_show.creators.present?
     item.save!
   end
 
   def tmdb_show
     @tmdb_show ||= Immedialist::TMDB::Show.find(item.tmdb_id)
+  end
+
+  def update_genres!
+    update_association!(tmdb_show, :tmdb_id, Genre, "show_genres", "genres")
+  end
+
+  def update_actors!
+    update_association!(tmdb_show, :tmdb_id, ::Creator, "show_actors", "actors")
   end
 
   def update_creators!
