@@ -55,18 +55,18 @@ class UpdateItem::Creator < UpdateItem
   end
 
   def update_tmdb_association!(media_class, join_model_name, association_name)
-    tmdb_person.send(association_name).each do |tmdb_movie|
-      movie_in_db = media_class.find_by(
-        tmdb_id: tmdb_movie.tmdb_id
+    tmdb_person.send(association_name).each do |tmdb_resource|
+      resource_in_db = media_class.find_by(
+        tmdb_id: tmdb_resource.tmdb_id
       )
 
-      if movie_in_db
+      if resource_in_db
         item.send(join_model_name).find_or_create_by!(
-          media_class.name.downcase => movie_in_db
+          media_class.name.downcase => resource_in_db
         )
       else
         item.send(association_name) << media_class.
-          create!(tmdb_movie.attributes)
+          create!(tmdb_resource.attributes)
       end
     end
   end
