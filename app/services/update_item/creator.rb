@@ -72,35 +72,28 @@ class UpdateItem::Creator < UpdateItem
   end
 
   def update_albums!
-    spotify_artist.albums.each do |spotify_album|
-      album_in_db = Album.find_by(
-        spotify_id: spotify_album.spotify_id
-      )
-
-      if album_in_db
-        item.artist_albums.find_or_create_by!(
-          album: album_in_db
-        )
-      else
-        item.albums << Album.create!(spotify_album.attributes)
-      end
-    end
+    update_spotify_association!("albums", Album)
   end
 
   def update_genres!
-    spotify_artist.genres.each do |spotify_genre|
-      genre_in_db = MusicGenre.find_by(
-        spotify_id: spotify_genre.spotify_id
+    update_spotify_association!("genres", MusicGenre)
+  end
+
+  def update_spotify_association!(spotify_association, class_name)
+    class_association = class_name.table_name
+
+    spotify_artist.send(spotify_association).each do |spotify_resource|
+      resource_in_db = class_name.find_by(
+        spotify_id: spotify_resource.spotify_id
       )
 
-      if genre_in_db
-        item.artist_genres.find_or_create_by!(
-          music_genre: genre_in_db
+      if resource_in_db
+        item.send("artist_#{spotify_association}").find_or_create_by!(
+          class_association.singularize => resource_in_db
         )
       else
-        item.music_genres << MusicGenre.create!(
-          spotify_genre.attributes
-        )
+        item.send(class_association) << class_name.
+          create!(spotify_resource.attributes)
       end
     end
   end
