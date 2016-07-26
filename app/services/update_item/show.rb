@@ -3,8 +3,8 @@ class UpdateItem::Show < UpdateItem
 
   def update_item!
     item.assign_attributes(tmdb_show.attributes)
-    update_genres!(tmdb_show, :tmdb_id) if tmdb_show.genres.present?
-    update_actors!(tmdb_show, :tmdb_id) if tmdb_show.actors.present?
+    update_association!(tmdb_show, :tmdb_id, Genre, "show_genres", "genres") if tmdb_show.genres.present?
+    update_association!(tmdb_show, :tmdb_id, ::Creator, "show_actors", "actors") if tmdb_show.actors.present?
     update_creators! if tmdb_show.creators.present?
     item.save!
   end

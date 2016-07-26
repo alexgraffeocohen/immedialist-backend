@@ -3,9 +3,9 @@ class UpdateItem::Movie < UpdateItem
 
   def update_item!
     item.assign_attributes(updated_attributes)
-    update_genres!(tmdb_movie, :tmdb_id) if tmdb_movie.genres.present?
-    update_actors!(tmdb_movie, :tmdb_id) if tmdb_movie.actors.present?
-    update_directors!(tmdb_movie, :tmdb_id) if tmdb_movie.directors.present?
+    update_association!(tmdb_movie, :tmdb_id, Genre, "movie_genres", "genres") if tmdb_movie.genres.present?
+    update_association!(tmdb_movie, :tmdb_id, ::Creator, "movie_actors", "actors") if tmdb_movie.actors.present?
+    update_association!(tmdb_movie, :tmdb_id, ::Creator, "movie_directors", "directors") if tmdb_movie.directors.present?
     item.save!
   end
 
