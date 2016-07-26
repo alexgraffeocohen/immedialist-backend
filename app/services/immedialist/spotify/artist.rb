@@ -13,7 +13,7 @@ module Immedialist
         @albums ||= download_albums
       end
 
-      def genres
+      def music_genres
         query_result[:genres].map do |genre_name|
           Immedialist::Spotify::Genre.new(genre_name)
         end

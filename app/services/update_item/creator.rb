@@ -21,7 +21,7 @@ class UpdateItem::Creator < UpdateItem
   def sync_with_spotify!
     item.assign_attributes(spotify_artist.attributes)
     update_albums! if spotify_artist.albums.present?
-    update_genres! if spotify_artist.genres.present?
+    update_genres! if spotify_artist.music_genres.present?
   end
 
   def tmdb_person
@@ -72,27 +72,25 @@ class UpdateItem::Creator < UpdateItem
   end
 
   def update_albums!
-    update_spotify_association!("albums", Album)
+    update_spotify_association!(Album, "artist_albums", "albums")
   end
 
   def update_genres!
-    update_spotify_association!("genres", MusicGenre)
+    update_spotify_association!(MusicGenre, "artist_genres", "music_genres")
   end
 
-  def update_spotify_association!(spotify_association, class_name)
-    class_association = class_name.table_name
-
-    spotify_artist.send(spotify_association).each do |spotify_resource|
-      resource_in_db = class_name.find_by(
+  def update_spotify_association!(model_name, join_model_name, association_name)
+    spotify_artist.send(association_name).each do |spotify_resource|
+      resource_in_db = model_name.find_by(
         spotify_id: spotify_resource.spotify_id
       )
 
       if resource_in_db
-        item.send("artist_#{spotify_association}").find_or_create_by!(
-          class_association.singularize => resource_in_db
+        item.send(join_model_name).find_or_create_by!(
+          model_name.table_name.singularize => resource_in_db
         )
       else
-        item.send(class_association) << class_name.
+        item.send(association_name) << model_name.
           create!(spotify_resource.attributes)
       end
     end

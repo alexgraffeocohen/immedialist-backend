@@ -185,14 +185,14 @@ RSpec.describe Immedialist::Spotify::Artist, type: :service do
     end
   end
 
-  describe "#genres" do
+  describe "#music_genres" do
     it "returns genres as Spotify::Genre classes" do
       stub_spotify_api_with_valid_query
 
-      expect(spotify_artist.genres.count).to eq(1)
-      expect(spotify_artist.genres.first.class).
+      expect(spotify_artist.music_genres.count).to eq(1)
+      expect(spotify_artist.music_genres.first.class).
         to eq(Immedialist::Spotify::Genre)
-      expect(spotify_artist.genres.first.name).to eq("Indie")
+      expect(spotify_artist.music_genres.first.name).to eq("Indie")
     end
   end
 end

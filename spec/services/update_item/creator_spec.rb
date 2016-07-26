@@ -237,7 +237,7 @@ RSpec.describe UpdateItem::Creator, type: :service do
           spotify_url: "http://spotify.com",
           spotify_id: 1234,
         },
-        genres: [],
+        music_genres: [],
         albums: []
       )
     }
@@ -258,7 +258,7 @@ RSpec.describe UpdateItem::Creator, type: :service do
             spotify_url: "http://spotify.com",
             spotify_id: 1234,
           },
-          genres: [],
+          music_genres: [],
           albums: [
             instance_double(
               Immedialist::Spotify::Album,
@@ -325,7 +325,7 @@ RSpec.describe UpdateItem::Creator, type: :service do
             spotify_url: "http://spotify.com",
             spotify_id: 1234,
           },
-          genres: [
+          music_genres: [
             Immedialist::Spotify::Genre.new("alternative")
           ],
           albums: []
