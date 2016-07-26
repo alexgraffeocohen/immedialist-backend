@@ -55,20 +55,7 @@ class UpdateItem::Creator < UpdateItem
   end
 
   def update_tmdb_association!(model_name, join_model_name, association_name)
-    tmdb_person.send(association_name).each do |tmdb_resource|
-      resource_in_db = model_name.find_by(
-        tmdb_id: tmdb_resource.tmdb_id
-      )
-
-      if resource_in_db
-        item.send(join_model_name).find_or_create_by!(
-          model_name.table_name.singularize => resource_in_db
-        )
-      else
-        item.send(association_name) << model_name.
-          create!(tmdb_resource.attributes)
-      end
-    end
+    update_association!(tmdb_person, "tmdb_id", model_name, join_model_name, association_name)
   end
 
   def update_albums!
@@ -80,9 +67,13 @@ class UpdateItem::Creator < UpdateItem
   end
 
   def update_spotify_association!(model_name, join_model_name, association_name)
-    spotify_artist.send(association_name).each do |spotify_resource|
+    update_association!(spotify_artist, "spotify_id", model_name, join_model_name, association_name)
+  end
+
+  def update_association!(api_resource, api_identifier, model_name, join_model_name, association_name)
+    api_resource.send(association_name).each do |association_resource|
       resource_in_db = model_name.find_by(
-        spotify_id: spotify_resource.spotify_id
+        api_identifier => association_resource.send(api_identifier)
       )
 
       if resource_in_db
@@ -91,7 +82,7 @@ class UpdateItem::Creator < UpdateItem
         )
       else
         item.send(association_name) << model_name.
-          create!(spotify_resource.attributes)
+          create!(association_resource.attributes)
       end
     end
   end
