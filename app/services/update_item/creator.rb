@@ -62,7 +62,7 @@ class UpdateItem::Creator < UpdateItem
 
       if resource_in_db
         item.send(join_model_name).find_or_create_by!(
-          model_name.name.downcase => resource_in_db
+          model_name.table_name.singularize => resource_in_db
         )
       else
         item.send(association_name) << model_name.
