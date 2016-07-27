@@ -99,7 +99,7 @@ RSpec.describe "ListItems", type: :request do
           list_item_types.each do |type|
             item = FactoryGirl.create(type.to_sym)
 
-            expect(UpdateItem).
+            expect(UpdateItem::Base).
               to receive(:call).
               with(item).
               and_return(item)

@@ -9,7 +9,7 @@ RSpec.describe UpdateListItem, type: :service do
     }
 
     it 'updates the item and attaches it to the ListItem' do
-      expect(UpdateItem).
+      expect(UpdateItem::Base).
         to receive(:call).
         with(item).
         and_return(item)

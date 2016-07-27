@@ -1,4 +1,4 @@
-class UpdateItem
+class UpdateItem::Base
   def self.call(item)
     new(item).call
   end
