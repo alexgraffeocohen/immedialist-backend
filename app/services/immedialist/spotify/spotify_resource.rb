@@ -12,7 +12,7 @@ module Immedialist
       end
 
       def initialize(attributes)
-        @query_result = attributes.symbolize_keys
+        @query_result = attributes.deep_symbolize_keys
         @spotify_id = @query_result[:id]
       end
 
